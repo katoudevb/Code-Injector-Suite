@@ -1,10 +1,11 @@
 import type { Section } from "../types";
 import { jsCourse } from "./jsCourse";
+import { jsFrontend } from "./jsFrontend";
 
 export const js: Section = {
   id: "javascript",
   title: "JavaScript",
   icon: "Braces",
   tags: ["js"],
-  subsections: jsCourse,
+  subsections: [...jsCourse, ...jsFrontend],
 };

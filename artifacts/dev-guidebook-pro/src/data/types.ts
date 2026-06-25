@@ -7,6 +7,7 @@ export type Block =
   | { type: "note"; variant: "info" | "warning" | "success"; title?: string; text: string }
   | { type: "code"; filename: string; language: string; code: string }
   | { type: "image"; src: string; alt: string }
+  | { type: "diagram"; content: string }
   | { type: "table"; headers: string[]; rows: string[][] };
 
 export interface SubSection {

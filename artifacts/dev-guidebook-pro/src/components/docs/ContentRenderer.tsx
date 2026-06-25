@@ -1,6 +1,7 @@
 import { Info, TriangleAlert, Lightbulb } from "lucide-react";
 import type { Block } from "@/data";
 import { CodeBlock } from "./CodeBlock";
+import { DiagramBlock } from "./DiagramBlock";
 
 const BASE = import.meta.env.BASE_URL ?? "/";
 
@@ -80,6 +81,8 @@ export function ContentRenderer({ blocks }: { blocks: Block[] }) {
                 />
               </div>
             );
+          case "diagram":
+            return <DiagramBlock key={i} content={block.content} />;
           case "table":
             return (
               <div
