@@ -85,7 +85,8 @@ export const jsCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Cours JavaScript</title>\n    <meta charset=\"utf-8\">\n    <script>\n      window.addEventListener('load', horloge);\n      function horloge(){\n        let d = new Date();\n        document.getElementById('heure').innerHTML = d.toLocaleTimeString();\n        setTimeout(horloge, 1000);\n      }\n\n      document.addEventListener('DOMContentLoaded', function(){\n        const cache = document.getElementById('bouton');\n        cache.addEventListener('click', cacheHorloge);\n        document.getElementById('tog').style.display = 'block';\n        function cacheHorloge(){\n          let para = document.getElementById('tog');\n          if(para.style.display == 'block'){\n            para.style.display = 'none';\n          }else{\n            para.style.display = 'block';\n          }\n        }\n      });\n    </script>\n  </head>\n\n  <body>\n    <h1>Titre principal</h1>\n    <p id='tog'>Il est actuellement <span id='heure'></span></p>\n    <button id='bouton'>Cacher / Afficher l'heure</button>\n  </body>\n</html>"
       },
-      {
+            { "type": "image", "src": "images/js/img-003.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -229,7 +230,14 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Fichier JavaScript externe\n// Ce fichier est lié au HTML via <script src=\"script.js\" defer></script>\n\nalert('Bonjour depuis le fichier script.js !');"
 },
-      {
+            { "type": "image", "src": "images/js/img-004.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-005.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-006.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-007.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-008.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-009.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-010.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -272,7 +280,9 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Ceci est un commentaire sur une seule ligne\n\n/* Ceci est un commentaire\n   sur plusieurs lignes */\n\n// Instructions JavaScript - chaque instruction se termine par un point-virgule\nalert('Bonjour'); // Affiche une alerte\nconsole.log('Bonjour console'); // Affiche dans la console\n\n// L'indentation améliore la lisibilité du code\nif (true) {\n  // Code indenté à l'intérieur du bloc\n  console.log('Bloc conditionnel');\n}\n\n// Le JavaScript est sensible à la casse\nlet maVariable = 'valeur1';\nlet mavariable = 'valeur2'; // Variable différente !\nconsole.log(maVariable); // 'valeur1'\nconsole.log(mavariable); // 'valeur2'"
 },
-      {
+            { "type": "image", "src": "images/js/img-011.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-012.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -389,7 +399,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Déclaration avec let (syntaxe moderne recommandée)\nlet prenom = 'Pierre';\nlet age = 29;\n\n// Déclaration avec var (ancienne syntaxe)\nvar nom = 'Giraud';\n\n// Affichage des variables\nconsole.log(prenom); // 'Pierre'\nconsole.log(age);    // 29\n\n// Modification de la valeur d'une variable\nage = 30;\nconsole.log(age); // 30\n\n// La remontée (hoisting) avec var\nconsole.log(x); // undefined (pas d'erreur avec var)\nvar x = 5;\n\n// Erreur avec let (pas de hoisting)\n// console.log(y); // ReferenceError\n// let y = 10;\n\n// Redéclaration : interdite avec let, permise avec var\nvar a = 1;\nvar a = 2; // OK avec var\n// let b = 1;\n// let b = 2; // SyntaxError avec let"
 },
-      {
+            { "type": "image", "src": "images/js/img-013.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-014.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-015.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-016.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-017.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -452,7 +467,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Les 7 types primitifs + Object\n\n// String (chaîne de caractères)\nlet prenom = 'Pierre';\nlet phrase = \"Bonjour tout le monde\";\nlet autre = `Template literal`;\n\n// Number (nombre)\nlet entier = 29;\nlet decimal = 3.14;\nlet negatif = -5;\n\n// Boolean (booléen)\nlet vrai = true;\nlet faux = false;\n\n// Undefined (variable déclarée mais non initialisée)\nlet indefini;\nconsole.log(indefini); // undefined\n\n// Null (absence volontaire de valeur)\nlet vide = null;\n\n// BigInt (grands entiers)\nlet grandNombre = 9007199254740991n;\n\n// Symbol (identifiant unique)\nlet symbole = Symbol('description');\n\n// Opérateur typeof pour connaître le type\nconsole.log(typeof prenom);    // \"string\"\nconsole.log(typeof entier);    // \"number\"\nconsole.log(typeof vrai);      // \"boolean\"\nconsole.log(typeof indefini);  // \"undefined\"\nconsole.log(typeof vide);      // \"object\" (cas particulier !)\nconsole.log(typeof symbole);   // \"symbol\"\n\n// La conversion de types (type coercion)\nlet resultat = '29' + 5; // '295' (concaténation)\nconsole.log(typeof resultat);  // \"string\"\n\nlet calcul = '29' - 5; // 24 (conversion automatique)\nconsole.log(typeof calcul);    // \"number\""
 },
-      {
+            { "type": "image", "src": "images/js/img-018.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-019.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-020.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-021.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-022.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-024.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-025.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-026.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-027.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -580,7 +604,14 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Opérateurs arithmétiques\nlet a = 10;\nlet b = 3;\n\nconsole.log(a + b);  // 13 (addition)\nconsole.log(a - b);  // 7  (soustraction)\nconsole.log(a * b);  // 30 (multiplication)\nconsole.log(a / b);  // 3.333... (division)\nconsole.log(a % b);  // 1  (modulo - reste)\nconsole.log(a ** b); // 1000 (exponentiation)\n\n// Opérateurs d'affectation\nlet x = 5;\nx += 3;  // équivaut à x = x + 3  => x = 8\nx -= 2;  // équivaut à x = x - 2  => x = 6\nx *= 4;  // équivaut à x = x * 4  => x = 24\nx /= 6;  // équivaut à x = x / 6  => x = 4\nx **= 2; // équivaut à x = x ** 2 => x = 16\nx %= 5;  // équivaut à x = x % 5  => x = 1\n\nconsole.log(x); // 1\n\n// Priorité des opérateurs (PEMDAS)\nlet resultat = 2 + 3 * 4;       // 14 (pas 20)\nlet resultat2 = (2 + 3) * 4;    // 20\n\n// Associativité (de gauche à droite sauf **)\nlet y = 1 - 2 - 3;   // (1 - 2) - 3 = -4\nlet z = 2 ** 3 ** 2; // 2 ** (3 ** 2) = 2 ** 9 = 512\n\nconsole.log(resultat);  // 14\nconsole.log(resultat2); // 20\nconsole.log(y);         // -4\nconsole.log(z);         // 512"
 },
-      {
+            { "type": "image", "src": "images/js/img-028.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-029.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-030.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-031.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-032.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-033.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-034.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -619,7 +650,13 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "let prenom = 'Pierre';\nlet age = 29;\n\n// Concaténation avec +\nlet phrase1 = 'Bonjour, je m'appelle ' + prenom + ' et j'ai ' + age + ' ans.';\nconsole.log(phrase1);\n// 'Bonjour, je m'appelle Pierre et j'ai 29 ans.'\n\n// Problème de la concaténation (espaces, guillemets, lisibilité)\nlet message = 'Résultat : ' + (age + 10) + ' ans dans 10 ans';\n\n// Template literals (littéraux de gabarits) - syntaxe ES6\nlet phrase2 = `Bonjour, je m'appelle ${prenom} et j'ai ${age} ans.`;\nconsole.log(phrase2);\n\n// Expressions dans les templates literals\nlet phrase3 = `Dans 10 ans, j'aurai ${age + 10} ans.`;\nconsole.log(phrase3);\n\n// Multiligne avec template literals\nlet multiligne = `Ligne 1\nLigne 2\nLigne 3`;\nconsole.log(multiligne);\n\n// Appel de fonction dans un template literal\nfunction majuscule(str) {\n  return str.toUpperCase();\n}\nlet phrase4 = `Bonjour ${majuscule(prenom)} !`;\nconsole.log(phrase4); // 'Bonjour PIERRE !'"
 },
-      {
+            { "type": "image", "src": "images/js/img-035.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-036.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-037.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-038.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-039.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-040.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -658,7 +695,8 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Déclaration d'une constante avec const\nconst PI = 3.14159;\nconst VITESSE_LUMIERE = 299792458; // en m/s\nconst NOM_SITE = 'Dev Guidebook';\n\nconsole.log(PI);             // 3.14159\nconsole.log(VITESSE_LUMIERE); // 299792458\n\n// Une constante ne peut pas être réaffectée\n// PI = 3.14; // TypeError: Assignment to constant variable.\n\n// Une constante doit être initialisée à la déclaration\n// const TAUX; // SyntaxError: Missing initializer in const declaration\n\n// ATTENTION : les objets et tableaux constants peuvent être mutés\nconst personne = { nom: 'Pierre', age: 29 };\npersonne.age = 30; // OK : on modifie une propriété, pas la référence\nconsole.log(personne.age); // 30\n\n// personne = { nom: 'Paul' }; // TypeError : on ne peut pas réaffecter la référence\n\nconst tableau = [1, 2, 3];\ntableau.push(4); // OK : on modifie le tableau\nconsole.log(tableau); // [1, 2, 3, 4]\n\n// Bonne pratique : utiliser const par défaut, let si on doit réaffecter\nconst MAX = 100;\nlet compteur = 0;\ncompteur++; // OK car let"
 },
-      {
+            { "type": "image", "src": "images/js/img-042.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -745,7 +783,9 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Opérateurs de comparaison\nlet a = 5;\nlet b = '5';\n\nconsole.log(a == b);   // true  (égalité simple - avec conversion de type)\nconsole.log(a === b);  // false (égalité stricte - sans conversion)\nconsole.log(a != b);   // false (inégalité simple)\nconsole.log(a !== b);  // true  (inégalité stricte)\nconsole.log(a > 3);    // true\nconsole.log(a < 3);    // false\nconsole.log(a >= 5);   // true\nconsole.log(a <= 5);   // true\n\n// Toujours préférer === et !== pour éviter les surprises\nconsole.log(0 == false);  // true (conversion de type)\nconsole.log(0 === false); // false (types différents)\nconsole.log('' == false); // true\nconsole.log(null == undefined);  // true\nconsole.log(null === undefined); // false\n\n// Les valeurs \"falsy\" en JavaScript\n// false, 0, '', null, undefined, NaN => toutes évaluées à false\n// Tout le reste est \"truthy\"\nconsole.log(Boolean(0));         // false\nconsole.log(Boolean(''));        // false\nconsole.log(Boolean(null));      // false\nconsole.log(Boolean(undefined)); // false\nconsole.log(Boolean('hello'));   // true\nconsole.log(Boolean(42));        // true"
 },
-      {
+            { "type": "image", "src": "images/js/img-043.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-044.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -819,7 +859,18 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "let age = 17;\n\n// if simple\nif (age >= 18) {\n  console.log('Vous êtes majeur');\n}\n\n// if...else\nif (age >= 18) {\n  console.log('Vous êtes majeur');\n} else {\n  console.log('Vous êtes mineur');\n}\n// 'Vous êtes mineur'\n\n// if...else if...else\nlet note = 75;\n\nif (note >= 90) {\n  console.log('Mention Très Bien');\n} else if (note >= 80) {\n  console.log('Mention Bien');\n} else if (note >= 70) {\n  console.log('Mention Assez Bien');\n} else if (note >= 60) {\n  console.log('Mention Passable');\n} else {\n  console.log('Non admis');\n}\n// 'Mention Assez Bien'\n\n// Conditions imbriquées\nlet heure = 14;\nlet aBilletCinema = true;\n\nif (heure >= 12 && heure < 22) {\n  if (aBilletCinema) {\n    console.log('Vous pouvez entrer dans la salle');\n  } else {\n    console.log('Achetez votre billet d'abord');\n  }\n} else {\n  console.log('Le cinéma est fermé');\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-045.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-046.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-047.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-048.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-049.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-050.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-051.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-052.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-053.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-054.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-055.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -977,7 +1028,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Opérateur ET logique (&&)\nconsole.log(true && true);   // true\nconsole.log(true && false);  // false\nconsole.log(false && true);  // false\nconsole.log(false && false); // false\n\n// Opérateur OU logique (||)\nconsole.log(true || true);   // true\nconsole.log(true || false);  // true\nconsole.log(false || true);  // true\nconsole.log(false || false); // false\n\n// Opérateur NON logique (!)\nconsole.log(!true);  // false\nconsole.log(!false); // true\n\n// Exemple pratique\nlet age = 20;\nlet aPermis = true;\n\nif (age >= 18 && aPermis) {\n  console.log('Peut conduire');\n}\n\nlet estMembre = false;\nlet aCodePromo = true;\n\nif (estMembre || aCodePromo) {\n  console.log('Bénéficie de la réduction');\n}\n\n// Court-circuit (short-circuit evaluation)\n// && : si le 1er opérande est false, le 2ème n'est pas évalué\n// || : si le 1er opérande est true, le 2ème n'est pas évalué\n\nlet x = null;\nlet valeur = x || 'valeur par défaut'; // Utilisation fréquente\nconsole.log(valeur); // 'valeur par défaut'\n\n// Précédence des opérateurs logiques : ! > && > ||\nlet a = true || false && false; // true || (false && false) = true || false = true\nconsole.log(a); // true\n\nlet b = (true || false) && false; // true && false = false\nconsole.log(b); // false"
 },
-      {
+            { "type": "image", "src": "images/js/img-056.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-057.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-058.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-059.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-060.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1016,7 +1072,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Syntaxe : condition ? expression_si_vrai : expression_si_faux\n\nlet age = 20;\n\n// if...else classique\nlet statut;\nif (age >= 18) {\n  statut = 'majeur';\n} else {\n  statut = 'mineur';\n}\n\n// Équivalent avec l'opérateur ternaire\nlet statut2 = age >= 18 ? 'majeur' : 'mineur';\nconsole.log(statut2); // 'majeur'\n\n// Dans une chaîne de gabarit\nconsole.log(`Vous êtes ${age >= 18 ? 'majeur' : 'mineur'}`);\n\n// Ternaire imbriqués (à utiliser avec modération)\nlet note = 75;\nlet mention = note >= 90 ? 'Très Bien'\n            : note >= 80 ? 'Bien'\n            : note >= 70 ? 'Assez Bien'\n            : note >= 60 ? 'Passable'\n            : 'Insuffisant';\nconsole.log(mention); // 'Assez Bien'\n\n// Affichage conditionnel dans le DOM\nlet utilisateurConnecte = true;\nlet bouton = utilisateurConnecte ? 'Déconnexion' : 'Connexion';\nconsole.log(bouton); // 'Déconnexion'"
 },
-      {
+            { "type": "image", "src": "images/js/img-061.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-062.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-063.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-064.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-065.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1055,7 +1116,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "let jour = 3;\n\n// switch avec des cas numériques\nswitch (jour) {\n  case 1:\n    console.log('Lundi');\n    break;\n  case 2:\n    console.log('Mardi');\n    break;\n  case 3:\n    console.log('Mercredi');\n    break;\n  case 4:\n    console.log('Jeudi');\n    break;\n  case 5:\n    console.log('Vendredi');\n    break;\n  case 6:\n    console.log('Samedi');\n    break;\n  case 7:\n    console.log('Dimanche');\n    break;\n  default:\n    console.log('Jour invalide');\n}\n// 'Mercredi'\n\n// switch avec des cas groupés (fall-through intentionnel)\nlet mois = 2;\nswitch (mois) {\n  case 1:\n  case 3:\n  case 5:\n  case 7:\n  case 8:\n  case 10:\n  case 12:\n    console.log('31 jours');\n    break;\n  case 4:\n  case 6:\n  case 9:\n  case 11:\n    console.log('30 jours');\n    break;\n  case 2:\n    console.log('28 ou 29 jours');\n    break;\n  default:\n    console.log('Mois invalide');\n}\n// '28 ou 29 jours'\n\n// switch avec des chaînes de caractères\nlet animal = 'chien';\nswitch (animal) {\n  case 'chien':\n    console.log('Wouf !');\n    break;\n  case 'chat':\n    console.log('Miaou !');\n    break;\n  default:\n    console.log('...');\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-066.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-067.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-068.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1122,7 +1186,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Opérateurs d'incrémentation et décrémentation\nlet x = 5;\n\n// Post-incrémentation : retourne la valeur AVANT incrémentation\nlet a = x++;\nconsole.log(a); // 5 (ancienne valeur)\nconsole.log(x); // 6 (valeur après)\n\n// Pré-incrémentation : retourne la valeur APRÈS incrémentation\nlet y = 5;\nlet b = ++y;\nconsole.log(b); // 6 (nouvelle valeur)\nconsole.log(y); // 6\n\n// Post-décrémentation\nlet z = 5;\nlet c = z--;\nconsole.log(c); // 5 (ancienne valeur)\nconsole.log(z); // 4 (valeur après)\n\n// Pré-décrémentation\nlet w = 5;\nlet d = --w;\nconsole.log(d); // 4 (nouvelle valeur)\nconsole.log(w); // 4\n\n// Utilisation pratique dans les boucles\nlet compteur = 0;\nwhile (compteur < 5) {\n  console.log(compteur); // 0, 1, 2, 3, 4\n  compteur++;            // équivaut à compteur += 1\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-069.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-070.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-071.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1188,7 +1255,20 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Boucle while\nlet i = 1;\nwhile (i <= 5) {\n  console.log(i); // 1, 2, 3, 4, 5\n  i++;\n}\n\n// Boucle do...while (s'exécute au moins une fois)\nlet j = 1;\ndo {\n  console.log(j); // 1, 2, 3, 4, 5\n  j++;\n} while (j <= 5);\n\n// Boucle for\nfor (let k = 1; k <= 5; k++) {\n  console.log(k); // 1, 2, 3, 4, 5\n}\n\n// Boucle for...in (pour les propriétés d'un objet)\nconst personne = { nom: 'Pierre', age: 29, ville: 'Lyon' };\nfor (let propriete in personne) {\n  console.log(propriete + ' : ' + personne[propriete]);\n  // nom : Pierre\n  // age : 29\n  // ville : Lyon\n}\n\n// Instructions break et continue\nfor (let n = 1; n <= 10; n++) {\n  if (n === 6) break;    // sort de la boucle à 6\n  if (n % 2 === 0) continue; // saute les pairs\n  console.log(n); // 1, 3, 5 (puis arrêt avant 6)\n}\n\n// Boucle for...of (pour les tableaux/itérables)\nconst fruits = ['pomme', 'banane', 'cerise'];\nfor (let fruit of fruits) {\n  console.log(fruit);\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-072.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-073.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-074.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-075.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-076.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-077.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-078.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-079.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-080.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-081.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-082.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-083.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-084.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1268,7 +1348,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Déclaration de fonction (function declaration)\nfunction direBonjour() {\n  console.log('Bonjour !');\n}\ndireBonjour(); // 'Bonjour !'\n\n// Fonction avec paramètres\nfunction saluer(prenom) {\n  console.log('Bonjour ' + prenom + ' !');\n}\nsaluer('Pierre'); // 'Bonjour Pierre !'\nsaluer('Marie');  // 'Bonjour Marie !'\n\n// Fonction avec plusieurs paramètres et valeur de retour\nfunction additionner(a, b) {\n  return a + b;\n}\nlet resultat = additionner(3, 5);\nconsole.log(resultat); // 8\n\n// Paramètres par défaut (ES6)\nfunction saluerAvecDefault(prenom = 'visiteur') {\n  console.log('Bonjour ' + prenom + ' !');\n}\nsaluerAvecDefault();         // 'Bonjour visiteur !'\nsaluerAvecDefault('Pierre'); // 'Bonjour Pierre !'\n\n// La remontée (hoisting) des fonctions déclarées\nbonjour(); // Fonctionne ! (la déclaration est remontée)\nfunction bonjour() {\n  console.log('Hoisting !');\n}\n\n// Appel d'une fonction dans une autre fonction\nfunction carre(n) {\n  return n * n;\n}\nfunction sommeDesCarres(a, b) {\n  return carre(a) + carre(b);\n}\nconsole.log(sommeDesCarres(3, 4)); // 9 + 16 = 25"
 },
-      {
+            { "type": "image", "src": "images/js/img-085.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-086.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-087.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-088.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-089.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1323,7 +1408,14 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Portée globale\nlet x = 'je suis global';\n\nfunction test() {\n  // Portée locale (accessible seulement dans la fonction)\n  let y = 'je suis local';\n  console.log(x); // Accède à la variable globale : 'je suis global'\n  console.log(y); // 'je suis local'\n}\n\ntest();\nconsole.log(x); // 'je suis global'\n// console.log(y); // ReferenceError: y is not defined\n\n// Variable locale qui masque une variable globale\nlet prenom = 'Pierre';\nfunction renomme() {\n  let prenom = 'Paul'; // Variable locale qui masque\n  console.log(prenom); // 'Paul'\n}\nrenomme();\nconsole.log(prenom); // 'Pierre' (non modifié)\n\n// Valeur de retour\nfunction maximum(a, b) {\n  if (a > b) {\n    return a; // Arrête la fonction et retourne a\n  }\n  return b;   // Retourne b si a n'est pas > b\n}\nconsole.log(maximum(10, 5));  // 10\nconsole.log(maximum(3, 8));   // 8\n\n// Une fonction sans return retourne undefined\nfunction sansRetour() {\n  let z = 5; // Calcul interne mais pas de return\n}\nconsole.log(sansRetour()); // undefined\n\n// Retourner plusieurs valeurs via un objet ou tableau\nfunction minMax(tableau) {\n  return {\n    min: Math.min(...tableau),\n    max: Math.max(...tableau)\n  };\n}\nlet { min, max } = minMax([3, 1, 7, 2, 9]);\nconsole.log(min, max); // 1 9"
 },
-      {
+            { "type": "image", "src": "images/js/img-090.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-091.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-092.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-093.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-094.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-095.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-096.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1387,7 +1479,18 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Expression de fonction (function expression)\nconst carre = function(n) {\n  return n * n;\n};\nconsole.log(carre(5)); // 25\n\n// Différence : pas de hoisting avec les expressions\n// carre2(3); // TypeError: carre2 is not a function\nconst carre2 = function(n) { return n * n; };\n\n// Fonction auto-invoquée (IIFE - Immediately Invoked Function Expression)\n(function() {\n  let messageLocal = 'Je suis dans une IIFE';\n  console.log(messageLocal);\n})();\n// messageLocal n'est pas accessible ici\n\n// IIFE avec paramètre\n(function(prenom) {\n  console.log('Bonjour ' + prenom + ' !');\n})('Pierre'); // 'Bonjour Pierre !'\n\n// Fonction récursive (qui s'appelle elle-même)\nfunction factorielle(n) {\n  if (n <= 1) return 1;       // Cas de base\n  return n * factorielle(n - 1); // Appel récursif\n}\nconsole.log(factorielle(5)); // 5 * 4 * 3 * 2 * 1 = 120\nconsole.log(factorielle(0)); // 1\n\n// Fibonacci avec récursion\nfunction fibonacci(n) {\n  if (n <= 1) return n;\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}\nconsole.log(fibonacci(10)); // 55"
 },
-      {
+            { "type": "image", "src": "images/js/img-098.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-099.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-100.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-101.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-102.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-103.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-104.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-105.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-106.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-107.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-108.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1450,7 +1553,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// La Programmation Orientée Objet (POO) en JavaScript\n// Un objet regroupe des données (propriétés) et des comportements (méthodes)\n\n// Concept de base : tout est (presque) objet en JS\nlet texte = 'Bonjour';\nconsole.log(texte.length);        // Propriété : 7\nconsole.log(texte.toUpperCase()); // Méthode : 'BONJOUR'\n\n// Les 4 piliers de la POO :\n// 1. Encapsulation : regrouper données + comportements\n// 2. Abstraction : cacher la complexité interne\n// 3. Héritage : réutiliser le code d'autres objets\n// 4. Polymorphisme : un même code peut s'appliquer à différents types\n\n// Exemple simple d'encapsulation avec un objet\nconst voiture = {\n  marque: 'Peugeot',\n  modele: '308',\n  annee: 2020,\n  demarrer: function() {\n    console.log(`La ${this.marque} ${this.modele} démarre...`);\n  },\n  klaxonner: function() {\n    console.log('Tuuuut !');\n  }\n};\n\nvoiture.demarrer();  // 'La Peugeot 308 démarre...'\nvoiture.klaxonner(); // 'Tuuuut !'\n\n// this fait référence à l'objet qui appelle la méthode\nconsole.log(voiture.marque); // 'Peugeot'"
 },
-      {
+            { "type": "image", "src": "images/js/img-109.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-110.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-111.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1502,7 +1608,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Création d'un objet littéral avec des accolades {}\nconst personne = {\n  prenom: 'Pierre',\n  nom: 'Giraud',\n  age: 29,\n  ville: 'Lyon',\n  // Méthode d'objet\n  sePresenter: function() {\n    return `Bonjour, je m'appelle ${this.prenom} ${this.nom}`;\n  },\n  // Syntaxe raccourcie ES6 pour les méthodes\n  direAge() {\n    return `J'ai ${this.age} ans`;\n  }\n};\n\n// Accès aux propriétés : notation pointée\nconsole.log(personne.prenom); // 'Pierre'\nconsole.log(personne['nom']); // 'Giraud' (notation crochets)\n\n// Appel de méthodes\nconsole.log(personne.sePresenter()); // 'Bonjour, je m'appelle Pierre Giraud'\nconsole.log(personne.direAge());     // 'J'ai 29 ans'\n\n// Modification des propriétés\npersonne.age = 30;\nconsole.log(personne.age); // 30\n\n// Ajout de nouvelles propriétés\npersonne.email = 'pierre@exemple.fr';\nconsole.log(personne.email);\n\n// Suppression de propriétés\ndelete personne.ville;\nconsole.log(personne.ville); // undefined\n\n// Vérification de l'existence d'une propriété\nconsole.log('prenom' in personne); // true\nconsole.log('ville' in personne);  // false"
 },
-      {
+            { "type": "image", "src": "images/js/img-112.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-113.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-114.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-115.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-116.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-117.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-118.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-119.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-120.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1533,7 +1648,15 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Fonction constructeur : permet de créer plusieurs objets du même type\nfunction Personne(prenom, nom, age) {\n  this.prenom = prenom;\n  this.nom = nom;\n  this.age = age;\n  this.sePresenter = function() {\n    return `Je m'appelle ${this.prenom} ${this.nom} et j'ai ${this.age} ans`;\n  };\n}\n\n// Création d'instances avec new\nconst pierre = new Personne('Pierre', 'Giraud', 29);\nconst paul = new Personne('Paul', 'Martin', 35);\n\nconsole.log(pierre.prenom);       // 'Pierre'\nconsole.log(paul.age);            // 35\nconsole.log(pierre.sePresenter()); // 'Je m'appelle Pierre Giraud et j'ai 29 ans'\n\n// Vérification de l'instanceof\nconsole.log(pierre instanceof Personne); // true\n\n// Chaque instance est un objet indépendant\npierre.age = 30;\nconsole.log(pierre.age); // 30\nconsole.log(paul.age);   // 35 (inchangé)\n\n// La propriété constructor\nconsole.log(pierre.constructor === Personne); // true\n\n// Convention : les constructeurs commencent par une majuscule\nfunction Voiture(marque, modele) {\n  this.marque = marque;\n  this.modele = modele;\n  this.rouler = function() {\n    console.log(`La ${this.marque} roule !`);\n  };\n}\n\nconst maVoiture = new Voiture('Renault', 'Clio');\nmaVoiture.rouler(); // 'La Renault roule !'"
 },
-      {
+            { "type": "image", "src": "images/js/img-121.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-122.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-123.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-124.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-125.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-126.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-127.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-128.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1580,7 +1703,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Constructeur Object\nconst obj1 = new Object();\nobj1.nom = 'Pierre';\nobj1.age = 29;\nconsole.log(obj1); // { nom: 'Pierre', age: 29 }\n\n// Object.create() - crée un objet avec un prototype spécifié\nconst animal = {\n  type: 'Animal',\n  decrire() {\n    return `Je suis un ${this.type} nommé ${this.nom}`;\n  }\n};\n\nconst chien = Object.create(animal);\nchien.nom = 'Rex';\nchien.type = 'Chien';\nconsole.log(chien.decrire()); // 'Je suis un Chien nommé Rex'\n\n// Le prototype : chaîne de prototypes\nfunction Personne(prenom) {\n  this.prenom = prenom;\n}\n\n// Ajout d'une méthode sur le prototype (partagée par toutes les instances)\nPersonne.prototype.saluer = function() {\n  return `Bonjour, je suis ${this.prenom}`;\n};\n\nconst p1 = new Personne('Pierre');\nconst p2 = new Personne('Paul');\n\nconsole.log(p1.saluer()); // 'Bonjour, je suis Pierre'\nconsole.log(p2.saluer()); // 'Bonjour, je suis Paul'\n\n// Les deux instances partagent la même méthode via le prototype\nconsole.log(p1.saluer === p2.saluer); // true (même référence)\n\n// Héritage via prototype\nfunction Etudiant(prenom, ecole) {\n  Personne.call(this, prenom); // Appel du constructeur parent\n  this.ecole = ecole;\n}\nEtudiant.prototype = Object.create(Personne.prototype);\nEtudiant.prototype.constructor = Etudiant;\n\nconst etudiant = new Etudiant('Marie', 'INSA');\nconsole.log(etudiant.saluer()); // Hérite de Personne\nconsole.log(etudiant.ecole);   // 'INSA'"
 },
-      {
+            { "type": "image", "src": "images/js/img-129.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-130.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-131.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-132.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-133.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-134.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-135.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-136.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-137.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1677,7 +1809,14 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Les classes ES6 : syntaxe moderne pour la POO\nclass Personne {\n  constructor(prenom, nom, age) {\n    this.prenom = prenom;\n    this.nom = nom;\n    this.age = age;\n  }\n\n  // Méthode de prototype (partagée par toutes les instances)\n  sePresenter() {\n    return `Je m'appelle ${this.prenom} ${this.nom}, j'ai ${this.age} ans`;\n  }\n\n  // Getter\n  get nomComplet() {\n    return `${this.prenom} ${this.nom}`;\n  }\n\n  // Setter\n  set nouvellAge(valeur) {\n    if (valeur > 0) this.age = valeur;\n  }\n\n  // Méthode statique (appelée sur la classe, pas les instances)\n  static espece() {\n    return 'Homo sapiens';\n  }\n}\n\nconst pierre = new Personne('Pierre', 'Giraud', 29);\nconsole.log(pierre.sePresenter());\n// 'Je m'appelle Pierre Giraud, j'ai 29 ans'\n\nconsole.log(pierre.nomComplet); // 'Pierre Giraud' (getter)\npierre.nouvellAge = 30;          // setter\nconsole.log(pierre.age);        // 30\n\nconsole.log(Personne.espece()); // 'Homo sapiens' (statique)\n\n// Héritage avec extends et super\nclass Etudiant extends Personne {\n  constructor(prenom, nom, age, ecole) {\n    super(prenom, nom, age); // Appelle le constructeur de Personne\n    this.ecole = ecole;\n  }\n\n  sePresenter() {\n    return super.sePresenter() + `, étudiant à ${this.ecole}`;\n  }\n}\n\nconst marie = new Etudiant('Marie', 'Dupont', 22, 'INSA Lyon');\nconsole.log(marie.sePresenter());\n// 'Je m'appelle Marie Dupont, j'ai 22 ans, étudiant à INSA Lyon'\nconsole.log(marie instanceof Personne);  // true\nconsole.log(marie instanceof Etudiant);  // true"
 },
-      {
+            { "type": "image", "src": "images/js/img-138.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-139.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-140.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-141.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-142.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-143.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-144.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1732,7 +1871,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Valeurs primitives vs objets\n// Les primitifs sont copiés par valeur\nlet a = 5;\nlet b = a;\nb = 10;\nconsole.log(a); // 5 (inchangé)\nconsole.log(b); // 10\n\n// Les objets sont copiés par référence\nlet obj1 = { x: 5 };\nlet obj2 = obj1;  // obj2 pointe vers le même objet\nobj2.x = 10;\nconsole.log(obj1.x); // 10 (modifié !)\nconsole.log(obj2.x); // 10\n\n// Les primitifs se comportent comme des objets (autoboxing)\nlet str = 'bonjour';\nconsole.log(str.length);        // 7\nconsole.log(str.toUpperCase()); // 'BONJOUR'\n// Sous le capot : JS crée temporairement new String('bonjour')\n\n// Différence entre primitif et objet équivalent\nlet prim = 'hello';\nlet obj = new String('hello');\nconsole.log(typeof prim); // 'string'\nconsole.log(typeof obj);  // 'object'\nconsole.log(prim == obj); // true (avec conversion)\nconsole.log(prim === obj); // false (types différents)\n\n// Objets prédéfinis (built-in)\nconsole.log(String.prototype.toUpperCase); // Méthode de String\nconsole.log(Number.MAX_VALUE);             // Plus grand nombre JS\nconsole.log(Math.PI);                      // 3.14159...\nconsole.log(Array.isArray([]));            // true"
 },
-      {
+            { "type": "image", "src": "images/js/img-145.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-146.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-147.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-148.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-149.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-150.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-151.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-152.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-153.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1791,7 +1939,27 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "let str = 'Bonjour tout le monde !';\n\n// Propriété\nconsole.log(str.length); // 22\n\n// Méthodes de recherche\nconsole.log(str.indexOf('tout'));    // 8 (index de la 1ère occurrence)\nconsole.log(str.includes('monde')); // true\nconsole.log(str.startsWith('Bon')); // true\nconsole.log(str.endsWith('!'));     // true\n\n// Extraction\nconsole.log(str.slice(8, 12));   // 'tout'\nconsole.log(str.slice(-7));      // 'monde !'\nconsole.log(str.substring(8, 12)); // 'tout'\n\n// Transformation\nconsole.log(str.toUpperCase()); // 'BONJOUR TOUT LE MONDE !'\nconsole.log(str.toLowerCase()); // 'bonjour tout le monde !'\n\n// Remplacement\nconsole.log(str.replace('tout', 'tout le')); // remplace 1ère occurrence\nconsole.log(str.replaceAll('o', '0'));        // remplace toutes les occurrences\n\n// Découpage et jonction\nlet csv = 'pomme,banane,cerise';\nlet fruits = csv.split(',');\nconsole.log(fruits); // ['pomme', 'banane', 'cerise']\nconsole.log(fruits.join(' - ')); // 'pomme - banane - cerise'\n\n// Suppression des espaces\nlet espaces = '   bonjour   ';\nconsole.log(espaces.trim());       // 'bonjour'\nconsole.log(espaces.trimStart()); // 'bonjour   '\nconsole.log(espaces.trimEnd());   // '   bonjour'\n\n// Répétition et remplissage\nconsole.log('ha'.repeat(3));       // 'hahaha'\nconsole.log('5'.padStart(3, '0')); // '005'\nconsole.log('5'.padEnd(3, '0'));   // '500'\n\n// Accès aux caractères\nconsole.log(str[0]);          // 'B'\nconsole.log(str.charAt(0));   // 'B'\nconsole.log(str.charCodeAt(0)); // 66 (code Unicode de 'B')"
 },
-      {
+            { "type": "image", "src": "images/js/img-154.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-155.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-156.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-157.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-158.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-159.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-160.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-161.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-162.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-163.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-164.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-165.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-166.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-167.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-168.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-169.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-170.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-171.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-172.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-173.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1866,7 +2034,28 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Propriétés statiques de Number\nconsole.log(Number.MAX_VALUE);         // Plus grand nombre représentable\nconsole.log(Number.MIN_VALUE);         // Plus petit positif représentable\nconsole.log(Number.POSITIVE_INFINITY); // Infinity\nconsole.log(Number.NEGATIVE_INFINITY); // -Infinity\nconsole.log(Number.NaN);              // NaN\nconsole.log(Number.MAX_SAFE_INTEGER); // 2^53 - 1 = 9007199254740991\n\n// Méthodes statiques\nconsole.log(Number.isInteger(42));     // true\nconsole.log(Number.isInteger(42.5));   // false\nconsole.log(Number.isFinite(Infinity)); // false\nconsole.log(Number.isFinite(42));      // true\nconsole.log(Number.isNaN(NaN));        // true\nconsole.log(Number.isNaN(42));         // false\nconsole.log(Number.parseInt('42px'));  // 42\nconsole.log(Number.parseFloat('3.14km')); // 3.14\n\n// Méthodes d'instance\nlet n = 3.14159;\nconsole.log(n.toFixed(2));       // '3.14' (2 décimales, retourne string)\nconsole.log(n.toPrecision(4));   // '3.142' (4 chiffres significatifs)\nconsole.log(n.toString());       // '3.14159'\nconsole.log(n.toString(2));      // Binaire\nconsole.log(n.toString(16));     // Hexadécimal\n\n// Conversions\nconsole.log(parseInt('42'));     // 42\nconsole.log(parseInt('0xFF', 16)); // 255\nconsole.log(parseFloat('3.14')); // 3.14\nconsole.log(Number('42'));       // 42\nconsole.log(Number(''));         // 0\nconsole.log(Number('abc'));      // NaN\n\n// NaN est spécial\nconsole.log(NaN === NaN); // false !\nconsole.log(Number.isNaN(NaN)); // true"
 },
-      {
+            { "type": "image", "src": "images/js/img-174.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-175.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-176.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-177.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-178.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-179.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-180.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-181.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-182.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-183.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-184.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-185.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-186.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-187.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-188.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-189.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-190.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-191.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-192.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-193.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-194.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1923,7 +2112,18 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Propriétés de Math (constantes mathématiques)\nconsole.log(Math.PI);    // 3.14159265358979...\nconsole.log(Math.E);     // 2.71828... (nombre d'Euler)\nconsole.log(Math.LN2);   // 0.693... (logarithme naturel de 2)\nconsole.log(Math.SQRT2); // 1.41421... (racine carrée de 2)\n\n// Arrondi\nconsole.log(Math.round(4.5));  // 5  (arrondi standard)\nconsole.log(Math.round(4.4));  // 4\nconsole.log(Math.floor(4.9));  // 4  (arrondi inférieur)\nconsole.log(Math.ceil(4.1));   // 5  (arrondi supérieur)\nconsole.log(Math.trunc(4.9));  // 4  (supprime la décimale)\nconsole.log(Math.trunc(-4.9)); // -4\n\n// Valeur absolue, minimum, maximum\nconsole.log(Math.abs(-5));         // 5\nconsole.log(Math.min(3, 1, 4, 1)); // 1\nconsole.log(Math.max(3, 1, 4, 1)); // 4\n\n// Puissance et racines\nconsole.log(Math.pow(2, 10));  // 1024\nconsole.log(Math.sqrt(16));    // 4  (racine carrée)\nconsole.log(Math.cbrt(27));    // 3  (racine cubique)\n\n// Logarithmes et trigonométrie\nconsole.log(Math.log(Math.E));  // 1\nconsole.log(Math.log2(8));      // 3\nconsole.log(Math.log10(1000));  // 3\nconsole.log(Math.sin(Math.PI)); // 0 (quasi, en radians)\n\n// Nombre aléatoire entre 0 (inclus) et 1 (exclus)\nconsole.log(Math.random()); // ex: 0.7234...\n\n// Nombre aléatoire entre min et max (inclus)\nfunction random(min, max) {\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\nconsole.log(random(1, 6)); // Dé à 6 faces : 1 à 6"
 },
-      {
+            { "type": "image", "src": "images/js/img-195.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-196.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-197.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-198.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-199.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-200.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-201.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-203.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-205.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-207.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-209.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1974,7 +2174,28 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Création d'un tableau\nlet fruits = ['pomme', 'banane', 'cerise'];\nlet nombres = [1, 2, 3, 4, 5];\nlet mixte = [1, 'bonjour', true, null, { nom: 'Pierre' }];\n\n// Accès aux éléments (index commence à 0)\nconsole.log(fruits[0]); // 'pomme'\nconsole.log(fruits[2]); // 'cerise'\nconsole.log(fruits.at(-1)); // 'cerise' (dernier élément avec at())\n\n// Propriété length\nconsole.log(fruits.length); // 3\n\n// Méthodes de modification\nfruits.push('mangue');     // Ajoute à la fin\nconsole.log(fruits);       // ['pomme', 'banane', 'cerise', 'mangue']\nfruits.pop();              // Retire le dernier\nfruits.unshift('abricot'); // Ajoute au début\nfruits.shift();            // Retire le premier\n\n// splice(index, nbSupprimer, ...ajouts) - modification en place\nfruits.splice(1, 1, 'fraise', 'kiwi'); // Remplace 'banane' par 'fraise', 'kiwi'\nconsole.log(fruits);\n\n// Méthodes sans modification (retournent un nouveau tableau)\nlet tri = [...fruits].sort();\nlet reverse = [...fruits].reverse();\nlet sous = fruits.slice(0, 2); // Sous-tableau\n\n// Méthodes de parcours (ES6+)\nnombres.forEach(n => console.log(n));      // Itère sans retour\nlet doubles = nombres.map(n => n * 2);     // Transforme chaque élément\nlet pairs = nombres.filter(n => n % 2 === 0); // Filtre\nlet somme = nombres.reduce((acc, n) => acc + n, 0); // Réduit à une valeur\n\nconsole.log(doubles);  // [2, 4, 6, 8, 10]\nconsole.log(pairs);    // [2, 4]\nconsole.log(somme);    // 15\n\n// Recherche\nconsole.log(nombres.find(n => n > 3));      // 4 (premier qui passe)\nconsole.log(nombres.findIndex(n => n > 3)); // 3 (index)\nconsole.log(nombres.includes(3));           // true\nconsole.log(nombres.indexOf(3));            // 2\n\n// Aplatissement et concaténation\nlet nested = [[1, 2], [3, 4]];\nconsole.log(nested.flat()); // [1, 2, 3, 4]\nconsole.log(nombres.concat([6, 7])); // [1,2,3,4,5,6,7]"
 },
-      {
+            { "type": "image", "src": "images/js/img-211.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-212.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-213.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-214.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-215.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-216.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-217.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-218.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-219.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-220.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-221.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-222.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-223.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-224.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-225.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-226.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-227.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-228.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-229.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-230.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-231.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2317,7 +2538,19 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Création d'objets Date\nlet maintenant = new Date();          // Date et heure actuelles\nlet date1 = new Date(2020, 0, 15);    // 15 janvier 2020 (mois commence à 0!)\nlet date2 = new Date('2020-01-15');   // Depuis une chaîne ISO\nlet date3 = new Date(1578960000000);  // Depuis un timestamp\n\nconsole.log(maintenant);\nconsole.log(date1);\n\n// Récupérer des composantes\nconsole.log(maintenant.getFullYear()); // ex: 2024 (année)\nconsole.log(maintenant.getMonth());    // 0-11 (mois, 0=janvier)\nconsole.log(maintenant.getDate());     // 1-31 (jour du mois)\nconsole.log(maintenant.getDay());      // 0-6 (0=dimanche)\nconsole.log(maintenant.getHours());    // 0-23\nconsole.log(maintenant.getMinutes()); // 0-59\nconsole.log(maintenant.getSeconds()); // 0-59\nconsole.log(maintenant.getTime());    // Timestamp en millisecondes\n\n// Modifier des composantes\nlet maDate = new Date();\nmaDate.setFullYear(2025);\nmaDate.setMonth(11); // Décembre\nmaDate.setDate(25);  // 25ème jour\n\n// Formatage des dates\nconsole.log(maintenant.toLocaleDateString('fr-FR'));\n// ex: '24/06/2024'\nconsole.log(maintenant.toLocaleTimeString('fr-FR'));\n// ex: '14:30:00'\nconsole.log(maintenant.toLocaleString('fr-FR'));\n// ex: '24/06/2024 14:30:00'\nconsole.log(maintenant.toISOString());\n// ex: '2024-06-24T12:30:00.000Z'\n\n// Calcul d'intervalle entre deux dates\nlet debut = new Date('2024-01-01');\nlet fin = new Date('2024-12-31');\nlet diff = fin - debut; // Différence en millisecondes\nlet jours = Math.floor(diff / (1000 * 60 * 60 * 24));\nconsole.log(jours + ' jours');\n\n// Date.now() - timestamp actuel (sans créer d'objet)\nconsole.log(Date.now());"
 },
-      {
+            { "type": "image", "src": "images/js/img-232.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-233.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-234.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-235.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-236.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-237.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-238.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-239.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-240.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-241.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-242.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-243.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2432,7 +2665,19 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// L'objet window : objet global dans le navigateur\n// En dehors d'une fonction, 'this' = window\nconsole.log(window === this); // true (dans le navigateur)\n\n// Propriétés de window\nconsole.log(window.innerWidth);   // Largeur de la fenêtre (viewport)\nconsole.log(window.innerHeight);  // Hauteur de la fenêtre\nconsole.log(window.outerWidth);   // Largeur totale de la fenêtre\nconsole.log(window.outerHeight);  // Hauteur totale\n\n// Le préfixe window. est optionnel pour les éléments globaux\nwindow.alert('Bonjour !');  // = alert('Bonjour !')\nwindow.console.log('Test'); // = console.log('Test')\n\n// Méthodes de fenêtre\n// window.open(url, cible, options) - Ouvre une nouvelle fenêtre\n// window.close()                  - Ferme la fenêtre\n// window.print()                  - Lance l'impression\n\n// Boîtes de dialogue\n// alert('Message');          // Alerte simple\n// confirm('Êtes-vous sûr ?'); // true/false\n// prompt('Votre nom ?', '');  // Retourne la saisie utilisateur\n\nlet nom = prompt('Quel est votre prénom ?', 'Pierre');\nif (nom !== null) {\n  alert('Bonjour ' + nom + ' !');\n}\n\nlet reponse = confirm('Voulez-vous continuer ?');\nconsole.log(reponse); // true ou false\n\n// Scroll\nwindow.scrollTo(0, 500);   // Scroll vers la position (x, y)\nwindow.scrollBy(0, 100);   // Scroll relatif\n\n// Dimensions et position du scroll\nconsole.log(window.scrollX); // Position horizontale du scroll\nconsole.log(window.scrollY); // Position verticale du scroll"
 },
-      {
+            { "type": "image", "src": "images/js/img-244.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-245.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-246.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-247.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-248.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-249.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-250.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-251.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-252.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-253.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-254.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-256.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2608,7 +2853,13 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// L'objet navigator : informations sur le navigateur\nconsole.log(navigator.userAgent);   // Chaîne User-Agent complète\nconsole.log(navigator.language);    // Langue du navigateur (ex: 'fr-FR')\nconsole.log(navigator.languages);   // Tableau des langues préférées\nconsole.log(navigator.platform);    // Plateforme (ex: 'Win32', 'MacIntel')\nconsole.log(navigator.cookieEnabled); // Cookies activés ?\nconsole.log(navigator.onLine);       // Connecté à internet ?\n\n// API de géolocalisation\nif ('geolocation' in navigator) {\n  // Récupérer la position une fois\n  navigator.geolocation.getCurrentPosition(\n    function(position) {\n      // Succès\n      console.log('Latitude :', position.coords.latitude);\n      console.log('Longitude :', position.coords.longitude);\n      console.log('Précision :', position.coords.accuracy, 'mètres');\n      console.log('Altitude :', position.coords.altitude);\n      console.log('Timestamp :', position.timestamp);\n    },\n    function(erreur) {\n      // Erreur\n      switch (erreur.code) {\n        case erreur.PERMISSION_DENIED:\n          console.log('Permission refusée');\n          break;\n        case erreur.POSITION_UNAVAILABLE:\n          console.log('Position indisponible');\n          break;\n        case erreur.TIMEOUT:\n          console.log('Délai dépassé');\n          break;\n      }\n    },\n    { // Options\n      enableHighAccuracy: true, // Haute précision\n      timeout: 5000,            // 5 secondes max\n      maximumAge: 0             // Ne pas utiliser le cache\n    }\n  );\n} else {\n  console.log('Géolocalisation non supportée');\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-257.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-258.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-259.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-260.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-261.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-262.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2691,7 +2942,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// L'objet history : historique de navigation\nconsole.log(history.length); // Nombre d'entrées dans l'historique\n\n// Navigation dans l'historique\n// history.back();     // Équivaut au bouton \"Précédent\"\n// history.forward();  // Équivaut au bouton \"Suivant\"\n// history.go(-2);     // Recule de 2 pages\n// history.go(1);      // Avance d'1 page\n// history.go(0);      // Recharge la page actuelle\n\n// API History (HTML5) - Navigation sans rechargement de page\n// Ajouter une entrée dans l'historique\nhistory.pushState(\n  { page: 'accueil', id: 1 },  // Données d'état (objet)\n  'Accueil',                    // Titre (ignoré par la plupart des navigateurs)\n  '/accueil'                    // Nouvelle URL (relative ou absolue)\n);\n\n// Remplacer l'entrée actuelle (sans ajouter dans l'historique)\nhistory.replaceState(\n  { page: 'profil', id: 42 },\n  'Profil',\n  '/profil/42'\n);\n\n// Écouter les changements d'état (bouton précédent/suivant)\nwindow.addEventListener('popstate', function(event) {\n  if (event.state) {\n    console.log('État restauré :', event.state);\n    console.log('URL :', location.pathname);\n  }\n});\n\n// Exemple d'utilisation typique (SPA)\nfunction naviguerVers(page) {\n  history.pushState({ page: page }, page, '/' + page);\n  console.log('Navigation vers :', page);\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-263.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-264.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-265.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2773,7 +3027,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// L'objet location : URL de la page actuelle\n// Supposons l'URL : https://www.exemple.fr:8080/dossier/page.html?id=5&lang=fr#section\n\nconsole.log(location.href);     // URL complète\nconsole.log(location.protocol); // 'https:'\nconsole.log(location.hostname); // 'www.exemple.fr'\nconsole.log(location.host);     // 'www.exemple.fr:8080' (avec port)\nconsole.log(location.port);     // '8080'\nconsole.log(location.pathname); // '/dossier/page.html'\nconsole.log(location.search);   // '?id=5&lang=fr'\nconsole.log(location.hash);     // '#section'\nconsole.log(location.origin);   // 'https://www.exemple.fr:8080'\n\n// Navigation\n// location.href = 'https://google.com'; // Redirige (conserve l'historique)\n// location.assign('https://google.com'); // Identique à href\n// location.replace('https://google.com'); // Redirige SANS conserver l'historique\n// location.reload();       // Recharge la page\n// location.reload(true);   // Recharge depuis le serveur (sans cache)\n\n// Récupérer les paramètres de l'URL (query string)\nconst params = new URLSearchParams(location.search);\nconsole.log(params.get('id'));   // '5'\nconsole.log(params.get('lang')); // 'fr'\nconsole.log(params.has('id'));   // true\n\n// Exemple pratique : lire et modifier un paramètre\nfunction obtenirParam(nom) {\n  return new URLSearchParams(location.search).get(nom);\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-266.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-267.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-268.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2831,7 +3088,11 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// L'objet screen : informations sur l'écran physique de l'utilisateur\nconsole.log(screen.width);       // Largeur totale de l'écran (ex: 1920)\nconsole.log(screen.height);      // Hauteur totale de l'écran (ex: 1080)\nconsole.log(screen.availWidth);  // Largeur disponible (sans la barre des tâches)\nconsole.log(screen.availHeight); // Hauteur disponible\nconsole.log(screen.colorDepth);  // Profondeur des couleurs (ex: 24 bits)\nconsole.log(screen.pixelDepth);  // Profondeur en pixels (généralement = colorDepth)\n\n// Différence entre screen, window et document\nconsole.log('=== Écran physique ===');\nconsole.log('screen.width:', screen.width);\nconsole.log('screen.height:', screen.height);\n\nconsole.log('=== Fenêtre navigateur ===');\nconsole.log('window.outerWidth:', window.outerWidth);\nconsole.log('window.outerHeight:', window.outerHeight);\n\nconsole.log('=== Zone d\\'affichage (viewport) ===');\nconsole.log('window.innerWidth:', window.innerWidth);\nconsole.log('window.innerHeight:', window.innerHeight);\n\n// Exemple : détecter si l'utilisateur est sur mobile\nfunction estMobile() {\n  return screen.width <= 768;\n}\nconsole.log('Mobile :', estMobile());\n\n// Centrer une fenêtre popup selon la taille de l'écran\nfunction ouvrirPopup(url) {\n  const largeur = 600;\n  const hauteur = 400;\n  const x = (screen.width - largeur) / 2;\n  const y = (screen.height - hauteur) / 2;\n  window.open(url, 'popup',\n    `width=${largeur},height=${hauteur},left=${x},top=${y}`);\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-269.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-270.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-271.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-272.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3025,7 +3286,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Le DOM (Document Object Model) est une représentation\n// arborescente de la page HTML accessible par JavaScript\n\n// La racine du DOM est l'objet document\nconsole.log(document);          // L'ensemble du document HTML\nconsole.log(document.head);     // L'élément <head>\nconsole.log(document.body);     // L'élément <body>\nconsole.log(document.title);    // Le titre de la page\nconsole.log(document.URL);      // L'URL de la page\nconsole.log(document.domain);   // Le domaine\n\n// Le nœud racine\nconsole.log(document.documentElement); // <html>\n\n// Types de nœuds\nconsole.log(document.nodeType);            // 9 = DOCUMENT_NODE\nconsole.log(document.body.nodeType);       // 1 = ELEMENT_NODE\nconsole.log(document.body.firstChild);     // Peut être un TEXT_NODE (3)\nconsole.log(document.body.nodeName);       // 'BODY'\nconsole.log(document.body.childNodes);     // NodeList de tous les enfants\n\n// Arborescence du DOM (exemple HTML)\n/*\ndocument\n└── html\n    ├── head\n    │   ├── meta\n    │   └── title\n    └── body\n        ├── h1\n        ├── p\n        └── div\n            ├── p\n            └── a\n*/"
 },
-      {
+            { "type": "image", "src": "images/js/img-273.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-274.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-275.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3166,7 +3430,20 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Sélection par ID (retourne UN élément ou null)\nconst titre = document.getElementById('titre');\n\n// Sélection par classe (retourne une HTMLCollection \"live\")\nconst textes = document.getElementsByClassName('texte');\n\n// Sélection par balise (HTMLCollection)\nconst items = document.getElementsByTagName('li');\n\n// querySelector : 1er élément correspondant au sélecteur CSS\nconst premierTexte = document.querySelector('.texte');\nconst titreQ = document.querySelector('#titre');\n\n// querySelectorAll : tous les éléments (NodeList statique)\nconst tousTextes = document.querySelectorAll('.texte');\n\n// Modification du contenu\ntitre.textContent = 'Nouveau titre';         // Texte seulement (sécurisé)\ntitre.innerHTML = 'Titre avec <em>style</em>'; // HTML (attention XSS !)\n\n// Modification de la valeur HTML du parent\ndocument.getElementById('contenu').innerHTML = '<p>Nouveau <strong>contenu</strong></p>';\n\n// Accéder à des propriétés de l'élément\nconsole.log(titre.id);          // 'titre'\nconsole.log(titre.tagName);     // 'H1'\nconsole.log(titre.textContent); // Texte de l'élément\nconsole.log(titre.innerHTML);   // HTML interne\n\n// Parcourir une NodeList / HTMLCollection\ntousTextes.forEach(el => {\n  console.log(el.textContent);\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-276.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-277.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-278.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-280.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-281.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-282.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-283.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-284.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-285.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-286.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-287.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-288.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-289.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3227,7 +3504,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Supposons cette structure HTML :\n// <div id=\"parent\">\n//   <p id=\"enfant1\">Texte 1</p>\n//   <p id=\"enfant2\">Texte 2</p>\n//   <p id=\"enfant3\">Texte 3</p>\n// </div>\n\nconst parent = document.getElementById('parent');\nconst enfant2 = document.getElementById('enfant2');\n\n// Navigation depuis un parent vers ses enfants\nconsole.log(parent.children);          // HTMLCollection des enfants éléments\nconsole.log(parent.childNodes);        // NodeList (inclut textes, commentaires)\nconsole.log(parent.firstElementChild); // Premier enfant élément (<p id=\"enfant1\">)\nconsole.log(parent.lastElementChild);  // Dernier enfant élément\nconsole.log(parent.firstChild);        // Premier nœud (peut être un texte)\nconsole.log(parent.childElementCount); // Nombre d'enfants éléments\n\n// Navigation depuis un enfant vers ses frères\nconsole.log(enfant2.previousElementSibling); // <p id=\"enfant1\">\nconsole.log(enfant2.nextElementSibling);     // <p id=\"enfant3\">\n\n// Navigation vers le parent\nconsole.log(enfant2.parentElement); // <div id=\"parent\">\nconsole.log(enfant2.parentNode);    // Similaire mais peut retourner un nœud non-élément\n\n// Vérifications\nconsole.log(parent.hasChildNodes());     // true\nconsole.log(parent.contains(enfant2));  // true\n\n// closest() : remonte les ancêtres et trouve le 1er qui correspond\nconst article = document.querySelector('.commentaire');\nconst sectionParente = article.closest('section'); // Remonte jusqu'à <section>"
 },
-      {
+            { "type": "image", "src": "images/js/img-290.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-291.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-292.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-293.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-294.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-295.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-296.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-297.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-298.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3321,7 +3607,23 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Créer un nouvel élément\nconst nouvelElem = document.createElement('p');\nnouvelElem.textContent = 'Nouveau paragraphe créé dynamiquement';\nnouvelElem.className = 'nouveau';\n\n// Insérer dans le DOM\nconst body = document.body;\nbody.appendChild(nouvelElem);           // Ajoute à la fin du parent\nbody.insertBefore(nouvelElem, body.firstChild); // Avant un enfant existant\n\n// Méthodes modernes d'insertion (ES2015+)\nconst div = document.querySelector('#contenu');\ndiv.prepend('Début, ');         // Ajoute au début (texte ou nœud)\ndiv.append(' fin');             // Ajoute à la fin\ndiv.before('<section>');        // Insère avant l'élément\ndiv.after('</section>');        // Insère après l'élément\n\n// insertAdjacentHTML : très pratique\ndiv.insertAdjacentHTML('beforeend', '<strong>texte en gras</strong>');\n// Positions : 'beforebegin', 'afterbegin', 'beforeend', 'afterend'\n\n// Cloner un élément\nconst clone = div.cloneNode(true); // true = clone profond (avec enfants)\n\n// Modifier un élément existant\nconst titre = document.getElementById('titre');\ntitre.textContent = 'Titre modifié';\n\n// Supprimer un élément\nconst aSupprimer = document.getElementById('a-supprimer');\naSupprimer.remove(); // Méthode moderne\n// Ancienne méthode :\n// aSupprimer.parentNode.removeChild(aSupprimer);\n\n// Remplacer un élément\nconst ancien = document.getElementById('ancien');\nconst nouveau = document.createElement('h2');\nnouveau.textContent = 'Nouveau titre';\nancien.replaceWith(nouveau); // Méthode moderne"
 },
-      {
+            { "type": "image", "src": "images/js/img-301.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-302.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-303.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-304.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-305.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-306.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-307.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-308.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-309.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-310.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-311.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-312.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-313.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-314.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-315.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-316.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3368,7 +3670,20 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const elem = document.querySelector('a#lien');\n\n// Lire / écrire des attributs\nconsole.log(elem.getAttribute('href'));     // Valeur de l'attribut href\nconsole.log(elem.getAttribute('class'));    // Valeur de l'attribut class\nelem.setAttribute('href', 'https://exemple.fr'); // Modifie ou crée\nelem.setAttribute('title', 'Mon lien');\n\n// Vérifier et supprimer un attribut\nconsole.log(elem.hasAttribute('href'));   // true\nelem.removeAttribute('title');\n\n// Propriétés de raccourci pour attributs courants\nelem.href = 'https://nouveau.fr';    // Équivalent à setAttribute\nelem.id = 'nouveau-id';\nelem.className = 'classe1 classe2';\n\n// classList : manipulation des classes CSS\nconst div = document.querySelector('div');\ndiv.classList.add('active');           // Ajoute une classe\ndiv.classList.remove('inactive');      // Supprime une classe\ndiv.classList.toggle('visible');       // Ajoute si absente, supprime si présente\ndiv.classList.replace('old', 'new');   // Remplace une classe\nconsole.log(div.classList.contains('active')); // true\n\n// Styles inline\nelem.style.color = 'red';\nelem.style.fontSize = '18px';         // camelCase !\nelem.style.backgroundColor = '#f0f0f0';\nelem.style.display = 'none';          // Cacher un élément\nelem.style.display = '';              // Réinitialiser (reprend le CSS)\n\n// Lire les styles calculés (incluant CSS externe)\nconst styles = window.getComputedStyle(elem);\nconsole.log(styles.color);     // Valeur calculée finale\nconsole.log(styles.fontSize);\n\n// data-* attributs personnalisés\nconst article = document.querySelector('article');\n// <article data-id=\"42\" data-auteur=\"Pierre\">\nconsole.log(article.dataset.id);     // '42'\nconsole.log(article.dataset.auteur); // 'Pierre'\narticle.dataset.dateCreation = '2024'; // Crée data-date-creation"
 },
-      {
+            { "type": "image", "src": "images/js/img-317.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-318.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-319.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-320.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-321.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-322.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-323.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-324.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-325.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-326.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-328.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-329.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-330.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3492,7 +3807,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const btn = document.getElementById('btn');\nconst saisie = document.getElementById('saisie');\nconst zone = document.getElementById('zone');\n\n// addEventListener(événement, gestionnaire, options)\nbtn.addEventListener('click', function(event) {\n  console.log('Bouton cliqué !');\n  console.log('Élément cible :', event.target);\n  console.log('Type d\\'événement :', event.type);\n});\n\n// Avec une fonction nommée (permet removeEventListener)\nfunction handleClick(event) {\n  console.log('Clic !', event.clientX, event.clientY);\n}\nbtn.addEventListener('click', handleClick);\n// btn.removeEventListener('click', handleClick); // Supprime le gestionnaire\n\n// Événements de clavier\nsaisie.addEventListener('keydown', e => console.log('Touche appuyée :', e.key));\nsaisie.addEventListener('keyup', e => console.log('Touche relâchée :', e.key));\nsaisie.addEventListener('input', e => console.log('Valeur :', e.target.value));\n\n// Événements de souris\nzone.addEventListener('mouseenter', () => zone.style.background = '#aaa');\nzone.addEventListener('mouseleave', () => zone.style.background = '#ddd');\nzone.addEventListener('mousemove', e => {\n  zone.textContent = `X: ${e.offsetX}, Y: ${e.offsetY}`;\n});\n\n// Événements de formulaire\ndocument.querySelector('form')?.addEventListener('submit', e => {\n  e.preventDefault(); // Empêche l'envoi du formulaire\n  console.log('Formulaire soumis');\n});\n\n// Événement DOMContentLoaded : DOM prêt (sans les images)\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log('DOM chargé !');\n});\n\n// load : tout est chargé (images, scripts)\nwindow.addEventListener('load', () => {\n  console.log('Page complètement chargée !');\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-331.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-332.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-333.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-334.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-335.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3523,7 +3843,14 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// La propagation des événements se fait en 3 phases :\n// 1. Phase de capture (de la racine vers la cible)\n// 2. Phase cible (sur l'élément cible)\n// 3. Phase de bouillonnement (de la cible vers la racine)\n\n// Structure HTML supposée :\n// <div id=\"grand-parent\">\n//   <div id=\"parent\">\n//     <button id=\"enfant\">Cliquer</button>\n//   </div>\n// </div>\n\nconst grandParent = document.getElementById('grand-parent');\nconst parent = document.getElementById('parent');\nconst enfant = document.getElementById('enfant');\n\n// Phase de bouillonnement (par défaut, 3ème argument false ou omis)\ngrandParent.addEventListener('click', () => console.log('Grand-parent cliqué (bouillonnement)'));\nparent.addEventListener('click', () => console.log('Parent cliqué (bouillonnement)'));\nenfant.addEventListener('click', () => console.log('Enfant cliqué (bouillonnement)'));\n\n// Quand on clique sur le bouton, l'ordre d'affichage est :\n// 1. 'Enfant cliqué (bouillonnement)'\n// 2. 'Parent cliqué (bouillonnement)'\n// 3. 'Grand-parent cliqué (bouillonnement)'\n\n// Phase de capture (3ème argument = true)\ngrandParent.addEventListener('click', () => {\n  console.log('Grand-parent (capture)');\n}, true);\n\n// Délégation d'événements : utiliser le bouillonnement\n// Écouter sur le parent au lieu de chaque enfant\nconst liste = document.querySelector('ul');\nliste.addEventListener('click', function(e) {\n  if (e.target.tagName === 'LI') {\n    console.log('Item cliqué :', e.target.textContent);\n    // e.currentTarget = liste (sur qui l'écouteur est)\n    // e.target = li (l'élément cliqué)\n  }\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-336.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-337.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-338.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-339.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-340.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-341.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-342.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3562,7 +3889,13 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const parent = document.getElementById('parent');\nconst enfant = document.getElementById('enfant');\nconst lien = document.querySelector('a');\nconst formulaire = document.querySelector('form');\n\n// stopPropagation() : empêche la propagation vers les parents\nenfant.addEventListener('click', function(e) {\n  e.stopPropagation(); // Le clic ne remonte pas au parent\n  console.log('Enfant cliqué - propagation stoppée');\n});\n\nparent.addEventListener('click', function() {\n  // Ne sera PAS déclenché si stopPropagation() est appelé sur enfant\n  console.log('Parent cliqué');\n});\n\n// stopImmediatePropagation() : empêche également les autres écouteurs sur le même élément\nenfant.addEventListener('click', function(e) {\n  e.stopImmediatePropagation();\n  console.log('1er écouteur - les suivants ne s\\'exécuteront pas');\n});\nenfant.addEventListener('click', function() {\n  // Ne sera jamais appelé grâce à stopImmediatePropagation()\n  console.log('2ème écouteur');\n});\n\n// preventDefault() : empêche le comportement par défaut du navigateur\n// Empêcher la navigation d'un lien\nlien.addEventListener('click', function(e) {\n  e.preventDefault();\n  console.log('Lien cliqué mais navigation annulée');\n});\n\n// Empêcher l'envoi d'un formulaire\nformulaire.addEventListener('submit', function(e) {\n  e.preventDefault();\n  console.log('Formulaire intercepté - validation manuelle');\n  // Faire la validation ici...\n});\n\n// Empêcher le menu contextuel sur clic droit\ndocument.addEventListener('contextmenu', e => e.preventDefault());"
 },
-      {
+            { "type": "image", "src": "images/js/img-343.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-344.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-345.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-346.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-347.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-348.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3630,7 +3963,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const valeurInput = document.getElementById('valeur');\nconst uniteSelect = document.getElementById('unite');\nconst resultatDiv = document.getElementById('resultat');\n\n// Facteurs de conversion vers les mètres\nconst versMetres = {\n  km: 1000,\n  miles: 1609.344,\n  m: 1,\n  pieds: 0.3048\n};\n\nconst unites = {\n  km: 'kilomètres',\n  miles: 'miles',\n  m: 'mètres',\n  pieds: 'pieds'\n};\n\nfunction convertir() {\n  const valeur = parseFloat(valeurInput.value);\n  const unite = uniteSelect.value;\n\n  if (isNaN(valeur)) {\n    resultatDiv.textContent = 'Veuillez saisir un nombre valide';\n    return;\n  }\n\n  // Convertir en mètres d'abord, puis vers toutes les unités\n  const enMetres = valeur * versMetres[unite];\n\n  let html = `<strong>${valeur} ${unites[unite]}</strong> = <br><br>`;\n  for (let u in versMetres) {\n    if (u !== unite) {\n      let converti = (enMetres / versMetres[u]).toFixed(4);\n      html += `${parseFloat(converti)} ${unites[u]}<br>`;\n    }\n  }\n  resultatDiv.innerHTML = html;\n}\n\n// Écouter les événements\nvaleurInput.addEventListener('input', convertir);\nuniteSelect.addEventListener('change', convertir);"
 },
-      {
+            { "type": "image", "src": "images/js/img-349.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-350.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-351.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-352.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-353.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3661,7 +3999,8 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Une expression régulière (regex) est un motif de recherche\n\n// Création d'une regex\nconst regex1 = /bonjour/;          // Notation littérale\nconst regex2 = new RegExp('bonjour'); // Constructeur\n\n// Méthodes de test\nconst texte = 'Bonjour tout le monde !';\n\nconsole.log(regex1.test('bonjour monde')); // true : teste si le motif est présent\nconsole.log(/monde/.test(texte));          // true\n\n// Utiliser les méthodes String avec les regex\nconsole.log(texte.match(/[A-Z]/g));   // ['B'] : retourne un tableau des correspondances\nconsole.log(texte.search(/tout/));    // 8 : retourne l'index de la 1ère correspondance\n\n// Les flags (modificateurs)\nconst regexI = /bonjour/i; // i = insensible à la casse\nconsole.log(regexI.test('BONJOUR')); // true\n\nconst regexG = /o/g; // g = global (toutes les correspondances)\nconsole.log('Bonjour'.match(regexG)); // ['o', 'o']\n\nconst regexM = /^ligne/m; // m = multiligne\n\n// Exemples de motifs simples\nconsole.log(/d/.test('abc3'));  // true : contient un chiffre (d)\nconsole.log(/w/.test('abc'));   // true : contient un caractère alphanumérique\nconsole.log(/s/.test('a b'));   // true : contient un espace"
 },
-      {
+            { "type": "image", "src": "images/js/img-354.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3708,7 +4047,20 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "let texte = 'Le chat et le chien sont des animaux. Le chat miaule.';\n\n// search() : retourne l'index de la 1ère correspondance (-1 si non trouvé)\nconsole.log(texte.search(/chat/)); // 3\n\n// match() : retourne un tableau des correspondances\nconsole.log(texte.match(/chat/));  // ['chat'] (1ère occurrence uniquement)\nconsole.log(texte.match(/chat/g)); // ['chat', 'chat'] (toutes avec flag g)\n\n// matchAll() : retourne un itérateur de TOUTES les correspondances avec détails\nconst correspondances = [...texte.matchAll(/chat/g)];\ncorrespondances.forEach(m => {\n  console.log(`Trouvé \"${m[0]}\" à l'index ${m.index}`);\n});\n\n// replace() : remplace la 1ère occurrence (ou toutes avec g)\nconsole.log(texte.replace(/chat/, 'chien'));   // Remplace 1ère\nconsole.log(texte.replace(/chat/g, 'lapin'));  // Remplace toutes\n\n// replace() avec une fonction de remplacement\nlet resultat = texte.replace(/\bw+\b/g, function(mot) {\n  return mot.charAt(0).toUpperCase() + mot.slice(1);\n});\nconsole.log(resultat); // Chaque mot mis en majuscule\n\n// replaceAll() (ES2021) - remplace toutes sans flag g\nconsole.log(texte.replaceAll('chat', 'tigre'));\n\n// Groupes de capture dans replace\n// $1, $2... référencent les groupes capturés\nlet date = '15-06-2024';\nlet dateFormatee = date.replace(/(d{2})-(d{2})-(d{4})/, '$3/$2/$1');\nconsole.log(dateFormatee); // '2024/06/15'\n\n// split() avec une regex\nlet phrase = 'un,deux; trois   quatre';\nconsole.log(phrase.split(/[,;s]+/)); // ['un', 'deux', 'trois', 'quatre']"
 },
-      {
+            { "type": "image", "src": "images/js/img-355.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-356.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-357.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-358.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-359.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-360.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-361.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-362.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-363.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-364.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-365.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-366.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-367.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3799,7 +4151,14 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Classes de caractères : [...]\nconst regex1 = /[aeiou]/;          // Toute voyelle minuscule\nconst regex2 = /[a-z]/;            // Toute lettre minuscule\nconst regex3 = /[A-Z]/;            // Toute lettre majuscule\nconst regex4 = /[0-9]/;            // Tout chiffre\nconst regex5 = /[a-zA-Z0-9]/;      // Lettre ou chiffre\nconst regex6 = /[^aeiou]/;         // PAS une voyelle (négation avec ^)\n\nconsole.log(regex1.test('bonjour')); // true\nconsole.log(regex2.test('ABC'));     // false (minuscule uniquement)\nconsole.log(regex6.test('b'));       // true (b n'est pas une voyelle)\n\n// Classes abrégées (shorthand)\n// d = [0-9]       un chiffre\n// D = [^0-9]      pas un chiffre\n// w = [a-zA-Z0-9_] caractère \"mot\"\n// W = [^a-zA-Z0-9_] pas un caractère \"mot\"\n// s = espace, tabulation, retour à la ligne, etc.\n// S = pas un espace\n\nconsole.log(/d+/.test('123abc'));    // true (d+ = un ou plusieurs chiffres)\nconsole.log(/D/.test('abc'));        // true\nconsole.log(/w+/.test('bonjour_'));  // true\nconsole.log(/s/.test('a b'));        // true\nconsole.log(/S+/.test('   '));       // false (que des espaces)\n\n// Exemples pratiques\nconst telRegex = /^d{10}$/;        // Exactement 10 chiffres\nconsole.log(telRegex.test('0612345678')); // true\nconsole.log(telRegex.test('061234'));     // false\n\nconst emailRegex = /^[w.-]+@[w.-]+.w{2,}$/;\nconsole.log(emailRegex.test('pierre@exemple.fr')); // true\nconsole.log(emailRegex.test('invalide'));            // false"
 },
-      {
+            { "type": "image", "src": "images/js/img-368.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-369.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-370.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-371.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-372.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-373.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-374.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3862,7 +4221,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Quantificateurs (combien de fois un motif se répète)\nconst texte = 'cooolllor';\n\nconsole.log(/colou?r/.test('color'));   // true (u est optionnel: 0 ou 1 fois)\nconsole.log(/colou?r/.test('colour')); // true\n\nconsole.log(/zo+m/.test('zm'));    // false (+ = 1 ou plus)\nconsole.log(/zo+m/.test('zoom'));  // true\nconsole.log(/zo+m/.test('zooom')); // true\n\nconsole.log(/zo*m/.test('zm'));    // true (* = 0 ou plus)\n\nconsole.log(/d{4}/.test('2024'));      // true (exactement 4 chiffres)\nconsole.log(/d{2,4}/.test('123'));     // true (entre 2 et 4)\nconsole.log(/d{2,}/.test('12345'));    // true (2 ou plus)\n\n// Ancres\nconsole.log(/^Bonjour/.test('Bonjour tout le monde')); // true (^ = début)\nconsole.log(/^Bonjour/.test('Dire Bonjour'));          // false\n\nconsole.log(/monde !$/.test('Bonjour monde !')); // true ($ = fin)\nconsole.log(/monde !$/.test('monde ! Hello'));   // false\n\n// Le point (.) : n'importe quel caractère sauf \n\nconsole.log(/c.t/.test('cat'));  // true\nconsole.log(/c.t/.test('cut'));  // true\nconsole.log(/c.t/.test('ct'));   // false (besoin d'un caractère entre c et t)\n\n// Échapper les métacaractères avec console.log(/./.test('3.14')); // true (point littéral)\nconsole.log(/./.test('314'));  // false\n\n// L'alternative (|)\nconsole.log(/chat|chien/.test('J\\'ai un chat'));    // true\nconsole.log(/chat|chien/.test('J\\'ai un poisson')); // false"
 },
-      {
+            { "type": "image", "src": "images/js/img-375.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-376.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-377.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-378.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-379.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-380.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-381.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-382.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-383.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3909,7 +4277,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Sous-masques (groupes de capture) avec ()\nconst regex = /(\\w+)\\s(\\w+)/;\nconst texte = 'Pierre Giraud';\nconst match = texte.match(regex);\n\nif (match) {\n  console.log(match[0]); // 'Pierre Giraud' (correspondance entière)\n  console.log(match[1]); // 'Pierre' (1er groupe)\n  console.log(match[2]); // 'Giraud' (2ème groupe)\n}\n\n// Groupe non-capturant (?:...)\nconst regex2 = /(?:M.?|Mme.?) (\\w+)/;\nconst match2 = 'M. Dupont'.match(regex2);\nconsole.log(match2[1]); // 'Dupont' (seul groupe capturant)\n\n// Groupes nommés (?<nom>...)\nconst dateRegex = /(?<annee>\\d{4})-(?<mois>\\d{2})-(?<jour>\\d{2})/;\nconst matchDate = '2024-06-15'.match(dateRegex);\nconsole.log(matchDate.groups.annee); // '2024'\nconsole.log(matchDate.groups.mois);  // '06'\nconsole.log(matchDate.groups.jour);  // '15'\n\n// Assertions (lookahead/lookbehind) - ne capturent pas\n// (?=...) : assertion positive avant (ce qui suit DOIT correspondre)\nconst prixRegex = /\\d+(?= euros)/;\nconsole.log('25 euros'.match(prixRegex)?.[0]);    // '25'\nconsole.log('25 dollars'.match(prixRegex)?.[0]);  // null\n\n// (?!...) : assertion négative avant (ce qui suit NE DOIT PAS correspondre)\nconst pasEuros = /\\d+(?! euros)/;\nconsole.log('25 dollars'.match(pasEuros)?.[0]); // '25'\n\n// (?<=...) : assertion positive arrière\nconst apresEuro = /(?<=€)\\d+/;\nconsole.log('€25'.match(apresEuro)?.[0]); // '25'"
 },
-      {
+            { "type": "image", "src": "images/js/img-384.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-385.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-386.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-387.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-388.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3956,7 +4329,11 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Les flags modifient le comportement de la regex\n\n// i - insensible à la casse (case-insensitive)\nconst regexI = /bonjour/i;\nconsole.log(regexI.test('BONJOUR'));  // true\nconsole.log(regexI.test('Bonjour')); // true\nconsole.log(regexI.test('bonjour')); // true\n\n// g - global (cherche toutes les occurrences)\nconst texte = 'le chat et le chien';\nconst sansG = texte.match(/le/);   // ['le'] - 1ère occurrence seulement\nconst avecG = texte.match(/le/g);  // ['le', 'le'] - toutes\n\nconsole.log(sansG); // ['le']\nconsole.log(avecG); // ['le', 'le']\n\n// m - multiligne (^ et $ correspondent à chaque début/fin de ligne)\nconst multiLigne = `Ligne 1\nLigne 2\nLigne 3`;\n\nconsole.log(/^Ligne/m.test(multiLigne));    // true (début de n'importe quelle ligne)\nconsole.log(/^Ligne/g.test(multiLigne));    // true (mais sans m, seulement 1ère ligne)\nconst allLines = multiLigne.match(/^Ligne \\d/gm); // Toutes les lignes avec gm\nconsole.log(allLines); // ['Ligne 1', 'Ligne 2', 'Ligne 3']\n\n// s - dotAll : le point (.) correspond aussi aux retours à la ligne\nconst regexS = /début.+fin/s;\nconsole.log(regexS.test('début\\nfin')); // true (sans s : false)\n\n// u - unicode : support complet Unicode\nconst emoji = '😀';\nconsole.log(/./u.test(emoji));  // true (sans u, l'emoji compte pour 2)\n\n// Combiner plusieurs flags\nconst regexGI = /bonjour/gi;\nconsole.log('Bonjour et BONJOUR !'.match(regexGI)); // ['Bonjour', 'BONJOUR']\n\n// Vérifier les flags d'une regex\nconst r = /test/gim;\nconsole.log(r.flags);  // 'gim'\nconsole.log(r.global); // true\nconsole.log(r.multiline); // true"
 },
-      {
+            { "type": "image", "src": "images/js/img-389.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-390.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-391.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-392.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -3995,7 +4372,11 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Paramètres du reste (rest parameters) - ...args\n// Regroupe les arguments restants dans un tableau\nfunction somme(...nombres) {\n  return nombres.reduce((acc, n) => acc + n, 0);\n}\nconsole.log(somme(1, 2, 3));          // 6\nconsole.log(somme(1, 2, 3, 4, 5));   // 15\n\nfunction maFonction(premier, deuxieme, ...reste) {\n  console.log(premier);  // 1er argument\n  console.log(deuxieme); // 2ème argument\n  console.log(reste);    // Tableau des arguments restants\n}\nmaFonction('a', 'b', 'c', 'd', 'e');\n// 'a', 'b', ['c', 'd', 'e']\n\n// Opérateur de décomposition (spread operator) - ...\n// Étale les éléments d'un itérable\n\n// Dans les appels de fonctions\nconst nombres = [1, 2, 3];\nconsole.log(Math.max(...nombres)); // 3 (équivaut à Math.max(1, 2, 3))\nconsole.log(Math.min(...nombres)); // 1\n\n// Fusionner des tableaux\nconst fruits1 = ['pomme', 'banane'];\nconst fruits2 = ['cerise', 'mangue'];\nconst tousLesFruits = [...fruits1, ...fruits2];\nconsole.log(tousLesFruits); // ['pomme', 'banane', 'cerise', 'mangue']\n\n// Copier un tableau (copie superficielle)\nconst original = [1, 2, 3];\nconst copie = [...original];\ncopie.push(4);\nconsole.log(original); // [1, 2, 3] (non modifié)\n\n// Spread avec les objets\nconst personne = { nom: 'Pierre', age: 29 };\nconst personne2 = { ...personne, ville: 'Lyon' };\nconsole.log(personne2); // { nom: 'Pierre', age: 29, ville: 'Lyon' }\n\n// Spread pour convertir une chaîne en tableau de caractères\nconsole.log([...'Bonjour']); // ['B', 'o', 'n', 'j', 'o', 'u', 'r']"
 },
-      {
+            { "type": "image", "src": "images/js/img-393.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-394.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-395.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-396.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4071,7 +4452,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Syntaxe des fonctions fléchées (arrow functions) - ES6\n// const maFonction = (params) => { corps };\n\n// Fonction classique\nconst carre = function(n) { return n * n; };\n\n// Équivalent en fonction fléchée\nconst carreF = (n) => { return n * n; };\n\n// Simplification : sans return si corps = expression unique\nconst carreSimple = n => n * n;  // Pas besoin de () si 1 seul paramètre\n\nconsole.log(carre(5));       // 25\nconsole.log(carreSimple(5)); // 25\n\n// Pas de paramètre : () obligatoires\nconst direBonjour = () => console.log('Bonjour !');\n\n// Plusieurs paramètres : () obligatoires\nconst additionner = (a, b) => a + b;\nconsole.log(additionner(3, 4)); // 7\n\n// Retourner un objet littéral : wrapper avec ()\nconst creerPersonne = (nom, age) => ({ nom, age });\nconsole.log(creerPersonne('Pierre', 29)); // { nom: 'Pierre', age: 29 }\n\n// DIFFÉRENCE IMPORTANTE : le contexte this\n// Les fonctions fléchées n'ont pas leur propre this\n// Elles héritent du this du contexte englobant\n\nconst personne = {\n  prenom: 'Pierre',\n  // Problème avec fonction classique dans setTimeout\n  saluerClassique: function() {\n    setTimeout(function() {\n      // this = window ici (pas personne !)\n      console.log('Classique : this = window');\n    }, 100);\n  },\n  // Solution avec fonction fléchée\n  saluerFlechee: function() {\n    setTimeout(() => {\n      console.log('Fléchée :', this.prenom); // 'Pierre' ✓\n    }, 100);\n  }\n};\n\n// Utilisation avec les méthodes de tableau\nconst nombres = [1, 2, 3, 4, 5];\nconst doubles = nombres.map(n => n * 2);\nconst pairs = nombres.filter(n => n % 2 === 0);\nconst somme = nombres.reduce((acc, n) => acc + n, 0);\nconsole.log(doubles, pairs, somme);"
 },
-      {
+            { "type": "image", "src": "images/js/img-397.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-398.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-399.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-400.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-401.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-402.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-403.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-404.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-405.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4110,7 +4500,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Une closure est une fonction qui \"se souvient\" de son contexte de création\n// même après que ce contexte a disparu\n\n// Exemple de base\nfunction creerCompteur() {\n  let compteur = 0; // Variable dans la portée de creerCompteur\n\n  return function() {\n    compteur++; // La fonction interne \"se souvient\" de compteur\n    return compteur;\n  };\n}\n\nconst incrementer = creerCompteur();\nconsole.log(incrementer()); // 1\nconsole.log(incrementer()); // 2\nconsole.log(incrementer()); // 3\n\n// Chaque appel à creerCompteur() crée une nouvelle closure indépendante\nconst compteurA = creerCompteur();\nconst compteurB = creerCompteur();\nconsole.log(compteurA()); // 1\nconsole.log(compteurA()); // 2\nconsole.log(compteurB()); // 1 (indépendant de compteurA)\n\n// Closure avec paramètre (fabrique de fonctions)\nfunction multiplierPar(facteur) {\n  return function(nombre) {\n    return nombre * facteur; // facteur est \"fermé\" dans la closure\n  };\n}\n\nconst doubler = multiplierPar(2);\nconst tripler = multiplierPar(3);\n\nconsole.log(doubler(5));  // 10\nconsole.log(tripler(5));  // 15\n\n// Exemple pratique : module pattern\nconst module = (function() {\n  let _variable = 'privée'; // Variable \"privée\" via closure\n\n  return {\n    getVariable: () => _variable,\n    setVariable: (val) => { _variable = val; }\n  };\n})();\n\nconsole.log(module.getVariable()); // 'privée'\nmodule.setVariable('modifiée');\nconsole.log(module.getVariable()); // 'modifiée'"
 },
-      {
+            { "type": "image", "src": "images/js/img-406.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-407.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-408.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-409.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-410.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4133,7 +4528,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// setTimeout() : exécute une fonction UNE FOIS après un délai (en ms)\n\n// Syntaxe : setTimeout(fonction, délaiMs, ...args)\nconst idTimeout = setTimeout(function() {\n  console.log('Exécuté après 2 secondes');\n}, 2000);\n\n// Avec une fonction fléchée\nsetTimeout(() => console.log('Exécuté après 1 seconde'), 1000);\n\n// Avec des arguments\nsetTimeout((msg) => console.log(msg), 500, 'Bonjour depuis setTimeout');\n\n// Annuler un timeout avant son exécution\nconst id = setTimeout(() => console.log('Jamais exécuté'), 5000);\nclearTimeout(id); // Annule le timeout\n\n// setInterval() : exécute une fonction RÉPÉTITIVEMENT à intervalles réguliers\nlet compteur = 0;\nconst idInterval = setInterval(function() {\n  compteur++;\n  console.log('Compteur :', compteur);\n  if (compteur >= 5) {\n    clearInterval(idInterval); // Arrête le setInterval après 5 exécutions\n    console.log('Arrêté !');\n  }\n}, 1000);\n\n// Exemple pratique : horloge en temps réel\nfunction afficherHeure() {\n  const now = new Date();\n  const heureFormatee = now.toLocaleTimeString('fr-FR');\n  document.getElementById('horloge').textContent = heureFormatee;\n}\n\nafficherHeure(); // Affiche immédiatement\nsetInterval(afficherHeure, 1000); // Puis toutes les secondes\n\n// requestAnimationFrame : pour les animations (plus performant que setInterval)\nfunction animer() {\n  // Mise à jour de l'animation...\n  requestAnimationFrame(animer); // Rappelle à chaque frame (60fps)\n}\nrequestAnimationFrame(animer);"
 },
-      {
+            { "type": "image", "src": "images/js/img-411.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-412.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-413.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-414.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-415.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4178,7 +4578,9 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// --- Afficher / Cacher ---\nconst btnToggle = document.getElementById('btnToggle');\nconst contenu = document.getElementById('contenu');\n\nbtnToggle.addEventListener('click', function() {\n  contenu.classList.toggle('cache');\n  btnToggle.textContent = contenu.classList.contains('cache')\n    ? 'Afficher' : 'Cacher';\n});\n\n// --- Chronomètre ---\nconst chrono = document.getElementById('chrono');\nconst btnStart = document.getElementById('btnStart');\nconst btnStop = document.getElementById('btnStop');\nconst btnReset = document.getElementById('btnReset');\n\nlet secondes = 0;\nlet intervalId = null;\nlet running = false;\n\nfunction formaterTemps(s) {\n  const h = Math.floor(s / 3600);\n  const m = Math.floor((s % 3600) / 60);\n  const sec = s % 60;\n  return [h, m, sec].map(v => String(v).padStart(2, '0')).join(':');\n}\n\nbtnStart.addEventListener('click', function() {\n  if (!running) {\n    running = true;\n    intervalId = setInterval(function() {\n      secondes++;\n      chrono.textContent = formaterTemps(secondes);\n    }, 1000);\n  }\n});\n\nbtnStop.addEventListener('click', function() {\n  clearInterval(intervalId);\n  running = false;\n});\n\nbtnReset.addEventListener('click', function() {\n  clearInterval(intervalId);\n  running = false;\n  secondes = 0;\n  chrono.textContent = '00:00:00';\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-416.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-418.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4361,7 +4763,24 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const donnees = [\n  { nom: 'Dupont', prenom: 'Pierre', age: 35, ville: 'Paris' },\n  { nom: 'Martin', prenom: 'Sophie', age: 28, ville: 'Lyon' },\n  { nom: 'Bernard', prenom: 'Luc', age: 42, ville: 'Bordeaux' },\n  { nom: 'Moreau', prenom: 'Camille', age: 31, ville: 'Marseille' },\n  { nom: 'Petit', prenom: 'Antoine', age: 25, ville: 'Nantes' },\n  { nom: 'Leroy', prenom: 'Emma', age: 38, ville: 'Toulouse' },\n];\n\nlet etatTri = { col: null, ordre: 'asc' };\n\nfunction afficherTableau(data) {\n  const corps = document.getElementById('corps');\n  corps.innerHTML = data.map(p => `\n    <tr>\n      <td>${p.nom}</td>\n      <td>${p.prenom}</td>\n      <td>${p.age}</td>\n      <td>${p.ville}</td>\n    </tr>\n  `).join('');\n}\n\nfunction trier(col) {\n  // Alterner entre asc et desc\n  if (etatTri.col === col) {\n    etatTri.ordre = etatTri.ordre === 'asc' ? 'desc' : 'asc';\n  } else {\n    etatTri.col = col;\n    etatTri.ordre = 'asc';\n  }\n\n  // Mettre à jour les classes CSS des en-têtes\n  document.querySelectorAll('th').forEach(th => {\n    th.classList.remove('asc', 'desc');\n    if (th.dataset.col === col) {\n      th.classList.add(etatTri.ordre);\n    }\n  });\n\n  const triees = [...donnees].sort((a, b) => {\n    let valA = a[col], valB = b[col];\n    if (typeof valA === 'string') valA = valA.toLowerCase();\n    if (typeof valB === 'string') valB = valB.toLowerCase();\n    if (valA < valB) return etatTri.ordre === 'asc' ? -1 : 1;\n    if (valA > valB) return etatTri.ordre === 'asc' ? 1 : -1;\n    return 0;\n  });\n\n  afficherTableau(triees);\n}\n\n// Délégation d'événements sur les en-têtes\ndocument.querySelectorAll('th').forEach(th => {\n  th.addEventListener('click', () => trier(th.dataset.col));\n});\n\n// Affichage initial\nafficherTableau(donnees);"
 },
-      {
+            { "type": "image", "src": "images/js/img-419.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-420.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-421.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-422.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-423.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-424.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-425.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-426.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-427.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-428.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-429.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-430.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-431.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-432.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-433.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-434.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-435.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4455,7 +4874,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// try...catch : attraper les erreurs\ntry {\n  // Code susceptible de générer une erreur\n  let resultat = variableIndefinie + 5; // ReferenceError !\n  console.log('Cette ligne ne s\\'exécute pas');\n} catch (erreur) {\n  // Exécuté si une erreur survient dans try\n  console.log('Erreur attrapée !');\n  console.log('Type :', erreur.name);    // 'ReferenceError'\n  console.log('Message :', erreur.message); // \"variableIndefinie is not defined\"\n  console.log('Pile :', erreur.stack);\n} finally {\n  // Toujours exécuté, erreur ou pas\n  console.log('Le bloc finally s\\'exécute toujours');\n}\n\n// Les types d'erreurs en JavaScript\ntry {\n  null.propriete; // TypeError\n} catch (e) { console.log(e.name); } // 'TypeError'\n\ntry {\n  eval('{'); // SyntaxError (en strict mode)\n} catch (e) { console.log(e.name); } // 'SyntaxError'\n\ntry {\n  decodeURIComponent('%'); // URIError\n} catch (e) { console.log(e.name); } // 'URIError'\n\n// Lancer une erreur personnalisée avec throw\nfunction diviser(a, b) {\n  if (b === 0) {\n    throw new Error('Division par zéro impossible !');\n  }\n  return a / b;\n}\n\ntry {\n  console.log(diviser(10, 2));  // 5\n  console.log(diviser(10, 0)); // Lance une erreur\n} catch (e) {\n  console.log('Erreur :', e.message); // 'Division par zéro impossible !'\n}\n\n// Classe d'erreur personnalisée\nclass ErreurValidation extends Error {\n  constructor(message, champ) {\n    super(message);\n    this.name = 'ErreurValidation';\n    this.champ = champ;\n  }\n}\n\ntry {\n  throw new ErreurValidation('Email invalide', 'email');\n} catch (e) {\n  if (e instanceof ErreurValidation) {\n    console.log(`Validation échouée sur \"${e.champ}\" : ${e.message}`);\n  }\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-436.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-438.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-439.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-440.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-441.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4550,7 +4974,9 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Le mode strict : 'use strict' active des règles plus strictes\n// Aide à détecter les erreurs courantes\n\n'use strict'; // Peut être placé en haut d'un fichier ou d'une fonction\n\n// 1. Les variables DOIVENT être déclarées avant utilisation\ntry {\n  x = 5; // ReferenceError en mode strict (sans let/var/const)\n} catch(e) { console.log(e.name); }\n\n// 2. Les propriétés en lecture seule ne peuvent pas être modifiées\ntry {\n  const obj = {};\n  Object.defineProperty(obj, 'x', { value: 1, writable: false });\n  obj.x = 2; // TypeError en mode strict\n} catch(e) { console.log(e.name); }\n\n// 3. Les paramètres de fonction ne peuvent pas être dupliqués\n// function test(a, a) {} // SyntaxError en mode strict\n\n// 4. 'this' est undefined (pas window) dans les fonctions appelées sans contexte\nfunction maFonction() {\n  'use strict';\n  console.log(this); // undefined (pas window)\n}\nmaFonction();\n\n// 5. Interdiction de supprimer des variables/fonctions avec delete\nlet variable = 5;\ntry {\n  delete variable; // SyntaxError en mode strict\n} catch(e) { console.log(e.name); }\n\n// 6. Mots-clés réservés ne peuvent pas être utilisés comme variables\n// let let = 5;       // SyntaxError\n// let static = 5;    // SyntaxError\n\n// Les modules ES6 utilisent automatiquement le mode strict\n// Les classes ES6 utilisent automatiquement le mode strict\n\n// Bonne pratique : toujours utiliser le mode strict !\nfunction avecStrict() {\n  'use strict';\n  // Code plus sécurisé et prévisible\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-443.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-444.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4619,7 +5045,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// JavaScript est mono-thread : une seule opération à la fois\n// L'asynchrone permet de ne pas bloquer l'exécution\n\n// Le modèle de la boucle d'événements (Event Loop)\nconsole.log('1 - Synchrone : début');\n\n// setTimeout avec délai 0 : va dans la file des tâches\nsetTimeout(() => {\n  console.log('3 - Asynchrone : setTimeout (délai 0)');\n}, 0);\n\n// Les Promesses vont dans la file des microtâches (priorité plus haute)\nPromise.resolve().then(() => {\n  console.log('2.5 - Microtâche : promesse résolue');\n});\n\nconsole.log('2 - Synchrone : fin');\n\n// Ordre d'affichage :\n// 1 - Synchrone : début\n// 2 - Synchrone : fin\n// 2.5 - Microtâche : promesse résolue (microtâches avant macrotâches)\n// 3 - Asynchrone : setTimeout (délai 0)\n\n// Le problème du \"callback hell\" (avant les Promesses)\nfunction chargerDonnees(callback) {\n  setTimeout(() => {\n    const donnees = { nom: 'Pierre', age: 29 };\n    callback(null, donnees);\n  }, 1000);\n}\n\nchargerDonnees(function(erreur, donnees) {\n  if (erreur) {\n    console.log('Erreur:', erreur);\n    return;\n  }\n  console.log('Données reçues :', donnees);\n  // Si on devait chaîner d'autres opérations, on imbriquerait encore...\n});\n\nconsole.log('Ce code s\\'exécute avant la réception des données !');"
 },
-      {
+            { "type": "image", "src": "images/js/img-445.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-446.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-447.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-448.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-449.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4678,7 +5109,17 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Une Promesse (Promise) représente une valeur qui sera disponible plus tard\n// 3 états : pending (en attente), fulfilled (résolue), rejected (rejetée)\n\n// Créer une promesse\nconst maPromesse = new Promise(function(resolve, reject) {\n  // Code asynchrone...\n  setTimeout(function() {\n    const succes = true;\n    if (succes) {\n      resolve('Données chargées !'); // Résolution (succès)\n    } else {\n      reject('Erreur de chargement'); // Rejet (erreur)\n    }\n  }, 1000);\n});\n\n// Consommer une promesse avec .then() et .catch()\nmaPromesse\n  .then(function(resultat) {\n    console.log('Succès :', resultat); // 'Données chargées !'\n    return resultat.toUpperCase();     // On peut retourner une valeur pour chaîner\n  })\n  .then(function(resultatMaj) {\n    console.log('En majuscules :', resultatMaj);\n  })\n  .catch(function(erreur) {\n    console.log('Erreur :', erreur);\n  })\n  .finally(function() {\n    console.log('Toujours exécuté (comme try/finally)');\n  });\n\n// Promesses utilitaires\n// Promise.resolve() : crée une promesse déjà résolue\nPromise.resolve('Valeur immédiate').then(v => console.log(v));\n\n// Promise.all() : attend que TOUTES les promesses soient résolues\nconst p1 = new Promise(res => setTimeout(() => res('P1'), 100));\nconst p2 = new Promise(res => setTimeout(() => res('P2'), 200));\nconst p3 = new Promise(res => setTimeout(() => res('P3'), 50));\n\nPromise.all([p1, p2, p3]).then(resultats => {\n  console.log(resultats); // ['P1', 'P2', 'P3']\n});\n\n// Promise.race() : retourne la 1ère promesse qui se termine\nPromise.race([p1, p2, p3]).then(resultat => {\n  console.log('1er :', resultat); // 'P3' (50ms)\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-450.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-451.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-452.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-453.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-454.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-455.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-456.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-457.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-458.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-459.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4741,7 +5182,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// async/await : syntaxe plus lisible pour les promesses (ES2017)\n\n// Une fonction async retourne toujours une Promesse\nasync function maFonctionAsync() {\n  return 'Bonjour !'; // Automatiquement enveloppé dans Promise.resolve()\n}\nmaFonctionAsync().then(v => console.log(v)); // 'Bonjour !'\n\n// await suspend l'exécution jusqu'à ce que la promesse soit résolue\nfunction delai(ms) {\n  return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nasync function principal() {\n  console.log('Début');\n  await delai(1000); // Attend 1 seconde\n  console.log('Après 1 seconde');\n  await delai(500);\n  console.log('Après 500ms de plus');\n}\nprincipal();\n\n// Gestion des erreurs avec try/catch\nasync function chargerUtilisateur(id) {\n  try {\n    const reponse = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);\n    \n    if (!reponse.ok) {\n      throw new Error(`HTTP erreur ! statut: ${reponse.status}`);\n    }\n    \n    const utilisateur = await reponse.json();\n    console.log('Utilisateur :', utilisateur.name);\n    return utilisateur;\n  } catch (erreur) {\n    console.log('Erreur :', erreur.message);\n  }\n}\n\nchargerUtilisateur(1);\n\n// Exécuter plusieurs promises en parallèle avec await\nasync function parallele() {\n  const [user1, user2] = await Promise.all([\n    fetch('https://jsonplaceholder.typicode.com/users/1').then(r => r.json()),\n    fetch('https://jsonplaceholder.typicode.com/users/2').then(r => r.json()),\n  ]);\n  console.log(user1.name, user2.name);\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-460.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-461.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-462.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-463.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-464.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4794,7 +5240,8 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Résumé des différences :\n//\n// <script>        : Bloque le parsing HTML. Télécharge ET exécute immédiatement.\n//                   → Utiliser UNIQUEMENT si le script doit s'exécuter avant le DOM\n//\n// <script async>  : Télécharge en parallèle. Exécute dès disponible (interrompt le parsing).\n//                   → Pour les scripts INDÉPENDANTS (analytics, publicités)\n//                   → Ordre d'exécution NON garanti\n//\n// <script defer>  : Télécharge en parallèle. Exécute APRÈS le parsing complet.\n//                   → Pour les scripts qui manipulent le DOM\n//                   → Ordre d'exécution GARANTI\n//                   → RECOMMANDÉ pour la plupart des scripts\n//\n// <script type=\"module\"> : Toujours différé. Supporte import/export ES6.\n//                   → Pour les modules JavaScript modernes\n\n// Alternative à defer : placer le script avant </body>\n// <script src=\"script.js\"></script> juste avant </body>\n// Mais defer est plus propre et performant\n\n// DOMContentLoaded vs load\ndocument.addEventListener('DOMContentLoaded', () => {\n  // Le DOM est prêt (HTML parsé), pas besoin avec defer !\n  console.log('DOM prêt');\n});\n\nwindow.addEventListener('load', () => {\n  // Tout est chargé (images, CSS, etc.)\n  console.log('Page complètement chargée');\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-465.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4878,7 +5325,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Symbol : type primitif ES6, crée des identifiants uniques\n// Chaque Symbol est garantied'être unique\n\nconst sym1 = Symbol('description');\nconst sym2 = Symbol('description');\nconsole.log(sym1 === sym2); // false ! (chaque Symbol est unique)\nconsole.log(typeof sym1);   // 'symbol'\nconsole.log(sym1.toString()); // 'Symbol(description)'\nconsole.log(sym1.description); // 'description'\n\n// Usage principal : clés d'objets uniques (évite les collisions)\nconst ID = Symbol('id');\nconst NOM = Symbol('nom');\n\nconst personne = {\n  [ID]: 42,         // Utiliser un symbol comme clé\n  [NOM]: 'Pierre',\n  nom: 'nom public' // Propriété publique ordinaire\n};\n\nconsole.log(personne[ID]);   // 42\nconsole.log(personne[NOM]);  // 'Pierre'\nconsole.log(personne.nom);   // 'nom public'\n\n// Les symboles ne sont PAS énumérés par for...in ou Object.keys()\nfor (let cle in personne) {\n  console.log(cle); // Ne voit PAS ID ni NOM, seulement 'nom'\n}\nconsole.log(Object.keys(personne));       // ['nom'] (pas les symboles)\nconsole.log(Object.getOwnPropertySymbols(personne)); // [Symbol(id), Symbol(nom)]\n\n// Symbol.for() : registre global de symboles (réutilisables)\nconst symGlobal1 = Symbol.for('partage');\nconst symGlobal2 = Symbol.for('partage');\nconsole.log(symGlobal1 === symGlobal2); // true (même registre global)\n\n// Well-known Symbols : modifier le comportement interne de JS\nclass MonTableau {\n  [Symbol.iterator]() {\n    let index = 0;\n    const data = [1, 2, 3];\n    return {\n      next: () => ({\n        done: index >= data.length,\n        value: data[index++]\n      })\n    };\n  }\n}\n\nfor (let val of new MonTableau()) {\n  console.log(val); // 1, 2, 3\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-467.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-468.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-469.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4925,7 +5375,8 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Protocole Itérable : un objet est itérable s'il implémente Symbol.iterator\n// Protocole Itérateur : l'itérateur doit avoir une méthode next() qui retourne {value, done}\n\n// Les iterables natifs : String, Array, Set, Map, arguments, NodeList\nconst tableau = [1, 2, 3];\nconst chaine = 'bonjour';\n\nfor (let val of tableau) console.log(val);  // 1, 2, 3\nfor (let char of chaine) console.log(char); // b, o, n, j, o, u, r\n\n// Utiliser l'itérateur manuellement\nconst iter = tableau[Symbol.iterator]();\nconsole.log(iter.next()); // { value: 1, done: false }\nconsole.log(iter.next()); // { value: 2, done: false }\nconsole.log(iter.next()); // { value: 3, done: false }\nconsole.log(iter.next()); // { value: undefined, done: true }\n\n// Créer un objet itérable personnalisé\nclass Plage {\n  constructor(debut, fin) {\n    this.debut = debut;\n    this.fin = fin;\n  }\n\n  [Symbol.iterator]() {\n    let courant = this.debut;\n    const fin = this.fin;\n    return {\n      next() {\n        if (courant <= fin) {\n          return { value: courant++, done: false };\n        }\n        return { value: undefined, done: true };\n      }\n    };\n  }\n}\n\nconst plage = new Plage(1, 5);\nfor (let n of plage) console.log(n); // 1, 2, 3, 4, 5\nconsole.log([...plage]); // [1, 2, 3, 4, 5] (spread fonctionne aussi !)"
 },
-      {
+            { "type": "image", "src": "images/js/img-470.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -4984,7 +5435,12 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Les générateurs : fonctions qui peuvent être mises en pause et reprises\n// function* (astérisque) pour déclarer un générateur\n// yield pour \"produire\" une valeur et se mettre en pause\n\nfunction* monGenerateur() {\n  console.log('Avant le 1er yield');\n  yield 1; // Pause, retourne 1\n  console.log('Après le 1er yield');\n  yield 2; // Pause, retourne 2\n  console.log('Après le 2ème yield');\n  yield 3; // Pause, retourne 3\n  console.log('Fin du générateur');\n}\n\nconst gen = monGenerateur();\nconsole.log(gen.next()); // 'Avant le 1er yield' + { value: 1, done: false }\nconsole.log(gen.next()); // 'Après le 1er yield' + { value: 2, done: false }\nconsole.log(gen.next()); // 'Après le 2ème yield' + { value: 3, done: false }\nconsole.log(gen.next()); // 'Fin du générateur' + { value: undefined, done: true }\n\n// Les générateurs sont des itérables\nfor (let val of monGenerateur()) {\n  console.log(val); // 1, 2, 3\n}\n\n// Générateur infini (séquence de Fibonacci)\nfunction* fibonacci() {\n  let [a, b] = [0, 1];\n  while (true) {\n    yield a;\n    [a, b] = [b, a + b];\n  }\n}\n\nconst fib = fibonacci();\nfor (let i = 0; i < 8; i++) {\n  process.stdout.write(fib.next().value + ' ');\n}\n// 0 1 1 2 3 5 8 13\n\n// Passer des valeurs à un générateur via next(valeur)\nfunction* calculateur() {\n  const x = yield 'Entrez x :';\n  const y = yield 'Entrez y :';\n  yield x + y;\n}\nconst calc = calculateur();\nconsole.log(calc.next().value);    // 'Entrez x :'\nconsole.log(calc.next(10).value);  // 'Entrez y :' (x = 10)\nconsole.log(calc.next(5).value);   // 15 (y = 5, x + y = 15)"
 },
-      {
+            { "type": "image", "src": "images/js/img-471.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-472.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-473.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-474.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-475.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5091,7 +5547,15 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Les cookies : petits fichiers texte stockés dans le navigateur\n// Envoyés automatiquement au serveur avec chaque requête HTTP\n\n// Lire tous les cookies de la page\nconsole.log(document.cookie); // ex: \"nom=Pierre; age=29; theme=dark\"\n\n// Créer / modifier un cookie\n// Format : \"clé=valeur; options\"\ndocument.cookie = \"nom=Pierre\";\n\n// Avec options\ndocument.cookie = \"prenom=Pierre; max-age=3600; path=/; SameSite=Strict\";\n// max-age : durée en secondes (3600 = 1 heure)\n// expires : date d'expiration (format UTC)\n// path : / = accessible sur tout le site\n// domain : sous-domaine\n// secure : HTTPS uniquement\n// HttpOnly : non accessible par JS (sécurité - via serveur uniquement)\n// SameSite=Strict|Lax|None : protection CSRF\n\n// Date d'expiration avec expires\nconst expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // +7 jours\ndocument.cookie = `theme=dark; expires=${expires.toUTCString()}; path=/`;\n\n// Supprimer un cookie (expiration dans le passé)\ndocument.cookie = \"nom=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/\";\n\n// Fonctions utilitaires pour les cookies\nfunction setCookie(nom, valeur, joursDuree) {\n  const expires = new Date(Date.now() + joursDuree * 864e5).toUTCString();\n  document.cookie = `${nom}=${encodeURIComponent(valeur)}; expires=${expires}; path=/`;\n}\n\nfunction getCookie(nom) {\n  return document.cookie\n    .split('; ')\n    .find(c => c.startsWith(nom + '='))\n    ?.split('=')[1]\n    .split('; ')[0];\n}\n\nfunction deleteCookie(nom) {\n  document.cookie = `${nom}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;\n}\n\nsetCookie('utilisateur', 'Pierre', 7); // Expire dans 7 jours\nconsole.log(getCookie('utilisateur'));  // 'Pierre'\ndeleteCookie('utilisateur');"
 },
-      {
+            { "type": "image", "src": "images/js/img-477.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-478.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-479.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-480.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-481.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-482.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-483.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-484.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5170,7 +5634,11 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Web Storage : stockage clé-valeur dans le navigateur\n// localStorage  : persistant (survit à la fermeture du navigateur, ~5MB)\n// sessionStorage: session (effacé à la fermeture de l'onglet, ~5MB)\n// Stocke uniquement des CHAÎNES DE CARACTÈRES\n\n// --- localStorage ---\n\n// Écrire\nlocalStorage.setItem('nom', 'Pierre');\nlocalStorage.setItem('age', '29');\n\n// Lire\nconsole.log(localStorage.getItem('nom'));  // 'Pierre'\nconsole.log(localStorage.getItem('age'));  // '29' (string !)\nconsole.log(localStorage.getItem('inexistant')); // null\n\n// Supprimer\nlocalStorage.removeItem('age');\n\n// Vider tout le localStorage\n// localStorage.clear();\n\n// Nombre d'entrées\nconsole.log(localStorage.length); // nombre de clés\n\n// Itérer sur toutes les clés\nfor (let i = 0; i < localStorage.length; i++) {\n  const cle = localStorage.key(i);\n  console.log(cle, ':', localStorage.getItem(cle));\n}\n\n// Stocker des objets : sérialiser en JSON\nconst utilisateur = { nom: 'Pierre', age: 29, preferences: ['JS', 'Python'] };\nlocalStorage.setItem('utilisateur', JSON.stringify(utilisateur));\nconst recupere = JSON.parse(localStorage.getItem('utilisateur'));\nconsole.log(recupere.nom); // 'Pierre'\nconsole.log(recupere.preferences); // ['JS', 'Python']\n\n// --- sessionStorage ---\n// Même API, mais données effacées à la fermeture de l'onglet\nsessionStorage.setItem('temporaire', 'session en cours');\nconsole.log(sessionStorage.getItem('temporaire'));\n\n// Événement storage : déclenché quand localStorage change dans un autre onglet\nwindow.addEventListener('storage', (event) => {\n  console.log('Clé modifiée :', event.key);\n  console.log('Ancienne valeur :', event.oldValue);\n  console.log('Nouvelle valeur :', event.newValue);\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-485.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-487.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-488.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-489.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5237,7 +5705,13 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// IndexedDB : base de données NoSQL côté client pour de grandes quantités de données\n// Stocke des objets JS structurés, des fichiers, des blobs...\n\n// Ouvrir (ou créer) une base de données\nconst requete = indexedDB.open('MaBase', 1); // Nom, version\n\n// Créer/mettre à jour la structure (appelé lors de la 1ère ouverture ou changement de version)\nrequete.onupgradeneeded = function(event) {\n  const db = event.target.result;\n\n  // Créer un \"object store\" (équivalent d'une table)\n  const store = db.createObjectStore('utilisateurs', {\n    keyPath: 'id',       // Clé primaire\n    autoIncrement: true  // Auto-incrément\n  });\n\n  // Créer des index pour la recherche\n  store.createIndex('nom', 'nom', { unique: false });\n  store.createIndex('email', 'email', { unique: true });\n\n  console.log('Base de données créée/mise à jour');\n};\n\nrequete.onsuccess = function(event) {\n  const db = event.target.result;\n\n  // Ajouter des données\n  function ajouterUtilisateur(user) {\n    const transaction = db.transaction('utilisateurs', 'readwrite');\n    const store = transaction.objectStore('utilisateurs');\n    const req = store.add(user);\n    req.onsuccess = () => console.log('Ajouté avec id :', req.result);\n  }\n\n  // Lire toutes les données\n  function lireTous() {\n    const transaction = db.transaction('utilisateurs', 'readonly');\n    const store = transaction.objectStore('utilisateurs');\n    const req = store.getAll();\n    req.onsuccess = () => console.log('Tous les utilisateurs :', req.result);\n  }\n\n  // Utilisation\n  ajouterUtilisateur({ nom: 'Pierre', email: 'pierre@ex.fr', age: 29 });\n  ajouterUtilisateur({ nom: 'Marie', email: 'marie@ex.fr', age: 25 });\n  setTimeout(lireTous, 100);\n};\n\nrequete.onerror = function(event) {\n  console.log('Erreur :', event.target.error);\n};"
 },
-      {
+            { "type": "image", "src": "images/js/img-492.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-493.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-494.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-495.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-496.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-497.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5282,7 +5756,9 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Récupérer le canvas et le contexte 2D\nconst canvas = document.getElementById('monCanvas');\nconst ctx = canvas.getContext('2d'); // Contexte de dessin 2D\n\n// Dimensions du canvas\nconsole.log(canvas.width);  // 600\nconsole.log(canvas.height); // 400\n\n// Propriétés de dessin principales\nctx.fillStyle = '#3498db';     // Couleur de remplissage\nctx.strokeStyle = '#2c3e50';   // Couleur de bordure\nctx.lineWidth = 3;             // Épaisseur des traits\nctx.font = '20px Arial';       // Police pour le texte\nctx.textAlign = 'center';      // Alignement du texte\n\n// Dessiner un rectangle plein\nctx.fillRect(10, 10, 150, 80);   // x, y, largeur, hauteur\n\n// Dessiner le contour d'un rectangle\nctx.strokeRect(180, 10, 150, 80);\n\n// Effacer une zone rectangulaire\nctx.clearRect(20, 20, 50, 30);   // Efface une partie du canvas\n\n// Dessiner du texte\nctx.fillStyle = 'black';\nctx.fillText('Bonjour Canvas !', 300, 200);\nctx.strokeText('Texte contour', 300, 240);\n\n// Accès aux pixels bruts\nconst imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);\nconsole.log(imageData.data.length); // largeur * hauteur * 4 (RGBA)"
 },
-      {
+            { "type": "image", "src": "images/js/img-498.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-499.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5313,7 +5789,17 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const canvas = document.getElementById('canvas');\nconst ctx = canvas.getContext('2d');\n\n// fillRect(x, y, largeur, hauteur) : rectangle plein\nctx.fillStyle = '#e74c3c'; // rouge\nctx.fillRect(50, 50, 200, 100);\n\nctx.fillStyle = 'rgba(52, 152, 219, 0.7)'; // bleu semi-transparent\nctx.fillRect(150, 100, 200, 120);\n\n// strokeRect(x, y, largeur, hauteur) : contour seulement\nctx.strokeStyle = '#2c3e50';\nctx.lineWidth = 4;\nctx.strokeRect(300, 50, 150, 100);\n\n// clearRect(x, y, largeur, hauteur) : efface la zone\nctx.clearRect(100, 80, 80, 60); // Trou dans le rouge\n\n// Exemple : grille\nctx.strokeStyle = '#ddd';\nctx.lineWidth = 1;\n\nfor (let x = 0; x <= canvas.width; x += 50) {\n  for (let y = 0; y <= canvas.height; y += 50) {\n    ctx.strokeRect(x, y, 50, 50);\n  }\n}\n\n// Exemple : barres d'un histogramme\nconst donnees = [65, 90, 40, 75, 55, 85];\nconst largeurBarre = 60;\nconst hauteurMax = 200;\nconst couleurs = ['#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6','#1abc9c'];\n\ndonnees.forEach((val, i) => {\n  const hauteur = (val / 100) * hauteurMax;\n  ctx.fillStyle = couleurs[i];\n  ctx.fillRect(\n    50 + i * (largeurBarre + 10), // x\n    250 - hauteur,                 // y (dessiner de bas en haut)\n    largeurBarre,\n    hauteur\n  );\n  // Label\n  ctx.fillStyle = '#333';\n  ctx.font = '14px Arial';\n  ctx.textAlign = 'center';\n  ctx.fillText(val + '%', 50 + i * (largeurBarre + 10) + largeurBarre / 2, 270);\n});"
 },
-      {
+            { "type": "image", "src": "images/js/img-502.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-503.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-504.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-505.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-506.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-507.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-508.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-509.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-510.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-511.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5352,7 +5838,18 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const canvas = document.getElementById('canvas');\nconst ctx = canvas.getContext('2d');\n\n// Les tracés (paths) permettent de dessiner des formes complexes\n\n// --- Lignes ---\nctx.beginPath();          // Commencer un nouveau tracé\nctx.moveTo(50, 50);       // Déplacer le curseur sans dessiner\nctx.lineTo(200, 50);      // Ligne jusqu'à (200, 50)\nctx.lineTo(200, 150);     // Ligne jusqu'à (200, 150)\nctx.closePath();          // Ferme le tracé (ligne jusqu'au début)\nctx.stroke();             // Dessiner le contour\n// ctx.fill();             // Remplir la forme\n\n// --- Triangle ---\nctx.beginPath();\nctx.fillStyle = '#e74c3c';\nctx.moveTo(300, 50);\nctx.lineTo(250, 150);\nctx.lineTo(350, 150);\nctx.closePath();\nctx.fill();\nctx.strokeStyle = '#c0392b';\nctx.lineWidth = 2;\nctx.stroke();\n\n// --- Cercle (arc) ---\n// arc(x, y, rayon, angleDebut, angleFin, sensHoraire)\nctx.beginPath();\nctx.fillStyle = '#3498db';\nctx.arc(150, 250, 60, 0, Math.PI * 2); // Cercle complet\nctx.fill();\n\n// --- Demi-cercle ---\nctx.beginPath();\nctx.fillStyle = '#2ecc71';\nctx.arc(300, 270, 50, 0, Math.PI); // Demi-cercle (0 à π)\nctx.fill();\n\n// --- Arc de cercle ---\nctx.beginPath();\nctx.strokeStyle = '#f39c12';\nctx.lineWidth = 5;\nctx.arc(450, 200, 70, 0, Math.PI * 1.5); // 3/4 de cercle\nctx.stroke();\n\n// --- Bézier quadratique ---\nctx.beginPath();\nctx.strokeStyle = '#9b59b6';\nctx.lineWidth = 3;\nctx.moveTo(50, 350);\nctx.quadraticCurveTo(200, 270, 350, 350); // Point de contrôle, point final\nctx.stroke();"
 },
-      {
+            { "type": "image", "src": "images/js/img-512.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-513.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-514.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-515.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-516.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-517.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-518.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-519.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-520.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-521.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-522.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5404,7 +5901,16 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const canvas = document.getElementById('canvas');\nconst ctx = canvas.getContext('2d');\n\n// --- Dégradé linéaire ---\n// createLinearGradient(x1, y1, x2, y2) : ligne de x1,y1 à x2,y2\nconst degrade1 = ctx.createLinearGradient(0, 0, 300, 0); // Horizontal\ndegrade1.addColorStop(0, '#e74c3c');     // Début : rouge\ndegrade1.addColorStop(0.5, '#f39c12');  // Milieu : orange\ndegrade1.addColorStop(1, '#3498db');    // Fin : bleu\n\nctx.fillStyle = degrade1;\nctx.fillRect(50, 50, 300, 100);\n\n// Dégradé diagonal\nconst degrade2 = ctx.createLinearGradient(0, 200, 300, 350);\ndegrade2.addColorStop(0, '#2ecc71');\ndegrade2.addColorStop(1, '#1abc9c');\n\nctx.fillStyle = degrade2;\nctx.fillRect(50, 200, 300, 100);\n\n// --- Dégradé radial ---\n// createRadialGradient(x1,y1,r1, x2,y2,r2) : deux cercles concentriques\nconst degrade3 = ctx.createRadialGradient(\n  450, 150, 10,   // Cercle intérieur : centre (450,150), rayon 10\n  450, 150, 80    // Cercle extérieur : même centre, rayon 80\n);\ndegrade3.addColorStop(0, '#ffffff');  // Centre : blanc\ndegrade3.addColorStop(1, '#9b59b6'); // Bord : violet\n\nctx.fillStyle = degrade3;\nctx.beginPath();\nctx.arc(450, 150, 80, 0, Math.PI * 2);\nctx.fill();\n\n// --- Motif (pattern) ---\n// Créer un motif à partir d'une image\nconst img = new Image();\nimg.src = 'texture.png';\nimg.onload = function() {\n  const motif = ctx.createPattern(img, 'repeat'); // repeat, repeat-x, repeat-y, no-repeat\n  ctx.fillStyle = motif;\n  ctx.fillRect(50, 350, 300, 100);\n};"
 },
-      {
+            { "type": "image", "src": "images/js/img-523.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-524.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-525.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-526.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-527.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-528.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-529.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-530.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-531.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5435,7 +5941,14 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const canvas = document.getElementById('canvas');\nconst ctx = canvas.getContext('2d');\n\n// --- Transparence (opacité globale) ---\n// globalAlpha : entre 0 (transparent) et 1 (opaque)\nctx.globalAlpha = 1;\nctx.fillStyle = '#e74c3c';\nctx.fillRect(50, 50, 150, 100); // Rouge opaque\n\nctx.globalAlpha = 0.5; // 50% de transparence\nctx.fillStyle = '#3498db';\nctx.fillRect(120, 80, 150, 100); // Bleu semi-transparent (se superpose)\n\nctx.globalAlpha = 1; // Réinitialiser pour la suite\n\n// Transparence via RGBA\nctx.fillStyle = 'rgba(46, 204, 113, 0.6)';\nctx.fillRect(200, 120, 150, 100); // Vert à 60%\n\n// --- Ombres ---\nctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Couleur de l'ombre\nctx.shadowBlur = 15;    // Flou de l'ombre (en pixels)\nctx.shadowOffsetX = 5;  // Décalage horizontal\nctx.shadowOffsetY = 5;  // Décalage vertical\n\nctx.fillStyle = '#f39c12';\nctx.fillRect(50, 250, 200, 100);\n\n// Ombre sur du texte\nctx.shadowColor = '#000';\nctx.shadowBlur = 5;\nctx.shadowOffsetX = 3;\nctx.shadowOffsetY = 3;\nctx.font = 'bold 36px Arial';\nctx.fillStyle = '#9b59b6';\nctx.fillText('Ombre!', 300, 150);\n\n// Réinitialiser les ombres\nctx.shadowColor = 'transparent';\nctx.shadowBlur = 0;\nctx.shadowOffsetX = 0;\nctx.shadowOffsetY = 0;\n\n// --- Modes de composition ---\n// globalCompositeOperation : définit comment les pixels se mélangent\nctx.globalCompositeOperation = 'multiply'; // 'source-over' par défaut\nctx.fillStyle = '#e74c3c';\nctx.fillRect(350, 50, 100, 100);\nctx.fillStyle = '#3498db';\nctx.fillRect(400, 100, 100, 100);\nctx.globalCompositeOperation = 'source-over'; // Remettre par défaut"
 },
-      {
+            { "type": "image", "src": "images/js/img-532.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-533.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-534.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-535.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-536.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-537.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-538.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5466,7 +5979,13 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const canvas = document.getElementById('canvas');\nconst ctx = canvas.getContext('2d');\n\n// --- Texte ---\n\n// Propriétés du texte\nctx.font = 'bold 32px Georgia';   // style taille famille\nctx.fillStyle = '#2c3e50';\nctx.textAlign = 'left';   // 'left', 'right', 'center', 'start', 'end'\nctx.textBaseline = 'top'; // 'top', 'middle', 'bottom', 'alphabetic'\n\n// Texte plein\nctx.fillText('Bonjour Canvas !', 50, 50);\n\n// Texte avec largeur max (pour tronquer)\nctx.fillText('Texte long tronqué...', 50, 100, 200);\n\n// Contour de texte\nctx.strokeStyle = '#e74c3c';\nctx.lineWidth = 1;\nctx.font = 'bold 40px Arial';\nctx.strokeText('Contour', 50, 160);\n\n// Mesurer la largeur d'un texte\nconst mesures = ctx.measureText('Bonjour');\nconsole.log('Largeur :', mesures.width);\n\n// --- Images ---\nconst img = new Image();\nimg.src = 'https://placekitten.com/200/150'; // URL d'une image\n\nimg.onload = function() {\n  // drawImage(image, x, y) : taille originale\n  ctx.drawImage(img, 50, 220);\n\n  // drawImage(image, x, y, largeur, hauteur) : redimensionner\n  ctx.drawImage(img, 300, 220, 100, 75);\n\n  // drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) : recadrer puis placer\n  ctx.drawImage(\n    img,\n    0, 0, 100, 75,   // Source : x, y, largeur, hauteur\n    430, 220, 150, 112  // Destination\n  );\n};"
 },
-      {
+            { "type": "image", "src": "images/js/img-539.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-540.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-541.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-542.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-543.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-544.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5512,7 +6031,21 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "const canvas = document.getElementById('canvas');\nconst ctx = canvas.getContext('2d');\n\n// save() et restore() : empile/dépile l'état du contexte\n// TOUJOURS utiliser avec les transformations pour ne pas affecter la suite\n\n// --- Translation ---\nctx.save();\nctx.translate(100, 100); // Déplace l'origine au point (100, 100)\nctx.fillStyle = '#e74c3c';\nctx.fillRect(0, 0, 80, 60); // Se dessine en (100, 100) sur le canvas\nctx.restore(); // Restore l'état précédent\n\n// --- Rotation ---\nctx.save();\nctx.translate(250, 150); // Centrer la rotation\nctx.rotate(Math.PI / 4); // Rotation de 45° (en radians)\nctx.fillStyle = '#3498db';\nctx.fillRect(-40, -30, 80, 60); // Centré sur l'origine\nctx.restore();\n\n// --- Mise à l'échelle ---\nctx.save();\nctx.translate(400, 100);\nctx.scale(2, 0.5); // Doubler horizontalement, réduire verticalement\nctx.fillStyle = '#2ecc71';\nctx.fillRect(-50, -25, 100, 50);\nctx.restore();\n\n// --- Transformation matricielle ---\n// transform(a, b, c, d, e, f)\n// a=scaleX, b=skewY, c=skewX, d=scaleY, e=translateX, f=translateY\nctx.save();\nctx.transform(1, 0.3, 0, 1, 50, 300); // Effet de cisaillement\nctx.fillStyle = '#f39c12';\nctx.fillRect(0, 0, 150, 80);\nctx.restore();\n\n// Exemple : carrés rotatifs\nfor (let i = 0; i < 8; i++) {\n  ctx.save();\n  ctx.translate(canvas.width / 2, canvas.height / 2);\n  ctx.rotate((Math.PI * 2 / 8) * i);\n  ctx.fillStyle = `hsl(${i * 45}, 70%, 60%)`;\n  ctx.fillRect(60, -10, 40, 20);\n  ctx.restore();\n}"
 },
-      {
+            { "type": "image", "src": "images/js/img-545.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-546.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-547.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-548.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-549.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-550.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-551.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-552.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-553.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-554.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-555.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-556.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-557.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-558.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5657,7 +6190,15 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Import nommé (le nom DOIT correspondre à l'export)\nimport { PI, additionner, multiplier, Calculatrice } from './math.js';\n\nconsole.log(PI);                // 3.14159\nconsole.log(additionner(3, 5)); // 8\nconsole.log(multiplier(4, 6));  // 24\n\nconst calc = new Calculatrice();\nconsole.log(calc.ajouter(10).ajouter(5).resultat); // 15\n\n// Renommer à l'import avec 'as'\nimport { additionner as somme } from './math.js';\nconsole.log(somme(1, 2)); // 3\n\n// Tout importer sous un namespace\nimport * as Math from './math.js';\nconsole.log(Math.PI);\nconsole.log(Math.additionner(2, 3));\n\n// Import dynamique (asynchrone) avec import()\nasync function chargerModule() {\n  const module = await import('./math.js');\n  console.log(module.PI);\n}\n\n// Dans le HTML, utiliser type=\"module\"\n// <script type=\"module\" src=\"app.js\"></script>"
 },
-      {
+            { "type": "image", "src": "images/js/img-559.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-561.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-562.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-563.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-564.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-565.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-566.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-567.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -5752,7 +6293,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// JSON (JavaScript Object Notation) : format d'échange de données textuel\n\n// Exemple de JSON valide (string)\nconst jsonString = `{\n  \"nom\": \"Pierre\",\n  \"age\": 29,\n  \"estDeveloppeur\": true,\n  \"competences\": [\"JavaScript\", \"HTML\", \"CSS\"],\n  \"adresse\": {\n    \"ville\": \"Lyon\",\n    \"pays\": \"France\"\n  },\n  \"conjoint\": null\n}`;\n\n// JSON.parse() : convertit une chaîne JSON en objet JavaScript\nconst objet = JSON.parse(jsonString);\nconsole.log(objet.nom);              // 'Pierre'\nconsole.log(objet.competences[0]);   // 'JavaScript'\nconsole.log(objet.adresse.ville);   // 'Lyon'\n\n// JSON.stringify() : convertit un objet JavaScript en chaîne JSON\nconst personne = {\n  prenom: 'Marie',\n  age: 25,\n  hobbies: ['lecture', 'randonnée'],\n  direBonjour: function() { return 'Bonjour'; } // Ignoré !\n};\n\nconst json = JSON.stringify(personne);\nconsole.log(json);\n// '{\"prenom\":\"Marie\",\"age\":25,\"hobbies\":[\"lecture\",\"randonnée\"]}'\n// (la fonction est ignorée dans JSON)\n\n// Avec indentation (pour la lisibilité)\nconst jsonFormate = JSON.stringify(personne, null, 2); // 2 espaces\nconsole.log(jsonFormate);\n\n// Avec replacer (filtre les propriétés)\nconst jsonFiltre = JSON.stringify(personne, ['prenom', 'age']);\n// '{\"prenom\":\"Marie\",\"age\":25}'\n\n// Règles JSON : les clés DOIVENT être entre guillemets doubles\n// Valeurs autorisées : string, number, boolean, null, array, object\n// Valeurs interdites : undefined, function, Symbol, Date (→ string)\n\n// Deep copy simple (mais sans functions, undefined, Symbol...)\nconst copie = JSON.parse(JSON.stringify(objet));"
 },
-      {
+            { "type": "image", "src": "images/js/img-568.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-569.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-570.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -6190,7 +6734,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// XMLHttpRequest (XHR) : l'API originale pour les requêtes Ajax\n\n// --- Requête GET ---\nconst xhr = new XMLHttpRequest();\nxhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);\n// true = asynchrone (recommandé), false = synchrone (bloquant, déconseillé)\n\nxhr.onreadystatechange = function() {\n  // readyState : 0=UNSENT, 1=OPENED, 2=HEADERS_RECEIVED, 3=LOADING, 4=DONE\n  if (xhr.readyState === XMLHttpRequest.DONE) {\n    if (xhr.status === 200) {\n      const post = JSON.parse(xhr.responseText);\n      console.log('Titre :', post.title);\n      console.log('Corps :', post.body);\n    } else {\n      console.log('Erreur :', xhr.status, xhr.statusText);\n    }\n  }\n};\n\nxhr.onerror = function() {\n  console.log('Erreur réseau');\n};\n\nxhr.send(); // Envoyer la requête\n\n// --- Requête POST ---\nconst xhrPost = new XMLHttpRequest();\nxhrPost.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);\nxhrPost.setRequestHeader('Content-Type', 'application/json');\n\nxhrPost.onload = function() {\n  if (xhrPost.status === 201) {\n    const reponse = JSON.parse(xhrPost.responseText);\n    console.log('Créé :', reponse);\n  }\n};\n\nconst donnees = JSON.stringify({\n  title: 'Mon titre',\n  body: 'Mon contenu',\n  userId: 1\n});\nxhrPost.send(donnees);\n\n// Suivi de la progression (utile pour les téléchargements)\nxhr.onprogress = function(e) {\n  if (e.lengthComputable) {\n    console.log(`Reçu ${e.loaded} / ${e.total} bytes`);\n  }\n};"
 },
-      {
+            { "type": "image", "src": "images/js/img-571.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-572.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-573.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -6329,7 +6876,10 @@ export const jsCourse: SubSection[] = [
         "language": "javascript",
         "code": "// Fetch API : interface moderne pour les requêtes HTTP (Promesses)\n// Plus simple et plus propre que XMLHttpRequest\n\n// --- GET ---\nfetch('https://jsonplaceholder.typicode.com/posts/1')\n  .then(response => {\n    console.log('Statut :', response.status);     // 200\n    console.log('OK ?', response.ok);            // true\n    return response.json(); // Retourne une Promesse avec les données JSON\n  })\n  .then(post => {\n    console.log('Post :', post.title);\n  })\n  .catch(erreur => {\n    console.log('Erreur réseau :', erreur.message);\n  });\n\n// --- Avec async/await (plus lisible) ---\nasync function obtenirPost(id) {\n  try {\n    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);\n    if (!response.ok) throw new Error(`HTTP ${response.status}`);\n    return await response.json();\n  } catch (e) {\n    console.log('Erreur :', e.message);\n  }\n}\n\n// --- POST avec options ---\nasync function creerPost() {\n  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n      'Authorization': 'Bearer mon-token'\n    },\n    body: JSON.stringify({\n      title: 'Mon nouvel article',\n      body: 'Contenu de l\\'article',\n      userId: 1\n    })\n  });\n\n  if (response.status === 201) {\n    const data = await response.json();\n    console.log('Créé avec l\\'ID :', data.id);\n  }\n}\n\n// --- Récupérer différents types de réponse ---\nfetch('/data.json').then(r => r.json());   // JSON\nfetch('/texte.txt').then(r => r.text());   // Texte\nfetch('/image.png').then(r => r.blob());   // Blob (image, fichier)\nfetch('/data').then(r => r.arrayBuffer()); // Binary data\n\ncreerPost();"
 },
-      {
+            { "type": "image", "src": "images/js/img-574.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-575.png", "alt": "Illustration du cours JavaScript" },
+      { "type": "image", "src": "images/js/img-576.png", "alt": "Illustration du cours JavaScript" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",

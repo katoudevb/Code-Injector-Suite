@@ -6,6 +6,7 @@ export type Block =
   | { type: "list"; items: string[] }
   | { type: "note"; variant: "info" | "warning" | "success"; title?: string; text: string }
   | { type: "code"; filename: string; language: string; code: string }
+  | { type: "image"; src: string; alt: string }
   | { type: "table"; headers: string[]; rows: string[][] };
 
 export interface SubSection {

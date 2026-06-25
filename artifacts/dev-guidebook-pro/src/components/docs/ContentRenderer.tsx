@@ -2,6 +2,8 @@ import { Info, TriangleAlert, Lightbulb } from "lucide-react";
 import type { Block } from "@/data";
 import { CodeBlock } from "./CodeBlock";
 
+const BASE = import.meta.env.BASE_URL ?? "/";
+
 export function ContentRenderer({ blocks }: { blocks: Block[] }) {
   return (
     <div className="space-y-2">
@@ -66,6 +68,17 @@ export function ContentRenderer({ blocks }: { blocks: Block[] }) {
                 language={block.language}
                 code={block.code}
               />
+            );
+          case "image":
+            return (
+              <div key={i} className="my-4">
+                <img
+                  src={`${BASE}${block.src}`}
+                  alt={block.alt}
+                  className="max-w-full rounded-lg border border-border shadow-sm"
+                  loading="lazy"
+                />
+              </div>
             );
           case "table":
             return (

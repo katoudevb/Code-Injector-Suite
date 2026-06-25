@@ -171,7 +171,11 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!-- Anatomie d'un élément HTML -->\n\n<!-- Balise ouvrante + contenu + balise fermante -->\n<p>Ceci est un paragraphe.</p>\n\n<!-- Balise auto-fermante (élément vide) -->\n<br>\n<img src=\"image.jpg\" alt=\"Description\">\n<input type=\"text\" placeholder=\"Saisissez...\">\n\n<!-- Attributs : nom=\"valeur\" dans la balise ouvrante -->\n<a href=\"https://exemple.fr\" target=\"_blank\" rel=\"noopener\">Lien</a>\n<!-- href    = destination du lien\n     target  = ouvre dans un nouvel onglet\n     rel     = relation avec la cible (sécurité)  -->\n\n<!-- Les attributs booléens (présence = true) -->\n<input type=\"checkbox\" checked>\n<button disabled>Bouton désactivé</button>\n<input type=\"text\" required>\n\n<!-- L'attribut id : identifiant UNIQUE sur la page -->\n<div id=\"contenu-principal\">...</div>\n\n<!-- L'attribut class : peut être partagé entre plusieurs éléments -->\n<p class=\"texte-important mise-en-avant\">Texte important</p>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-015.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-016.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-017.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-018.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -242,7 +246,10 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <!-- Métadonnées (invisibles dans la page) -->\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Description de la page pour les moteurs de recherche\">\n    <title>Titre de la page (affiché dans l'onglet)</title>\n    <!-- Lien vers une feuille de styles externe -->\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <!-- Icône du site (favicon) -->\n    <link rel=\"icon\" type=\"image/png\" href=\"favicon.png\">\n  </head>\n  <body>\n    <!-- Contenu visible de la page -->\n    <h1>Bienvenue sur ma page</h1>\n    <p>Ceci est mon premier paragraphe HTML.</p>\n\n    <!-- Script JavaScript (avant la fermeture de body, ou avec defer dans head) -->\n    <script src=\"script.js\"></script>\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-019.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-020.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-021.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -281,7 +288,9 @@ export const htmlCourse: SubSection[] = [
         "title": "💾 Enregistrement et affichage",
         "text": "Enregistrez votre fichier avec l'extension .html (ex: index.html). Ouvrez-le dans votre navigateur via Fichier > Ouvrir, ou glissez-déposez le fichier. Pour le développement, utilisez l'extension Live Server de VS Code pour un rechargement automatique. Le fichier index.html est le fichier d'accueil par défaut des serveurs web."
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-022.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-023.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -328,7 +337,12 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Indentation et commentaires</title>\n  </head>\n  <body>\n    <!-- Ceci est un commentaire HTML : invisible dans le navigateur -->\n    <!-- Les commentaires sont utiles pour documenter le code -->\n\n    <!--\n      Commentaire sur\n      plusieurs lignes\n    -->\n\n    <!-- L'indentation (décalage) améliore la lisibilité -->\n    <!-- Convention : 2 espaces ou 1 tabulation par niveau -->\n    <div>             <!-- Niveau 1 -->\n      <p>             <!-- Niveau 2 -->\n        <strong>      <!-- Niveau 3 -->\n          Texte\n        </strong>\n      </p>\n    </div>\n\n    <!-- Les commentaires ne sont PAS affichés dans la page web -->\n    <!-- Mais ils SONT visibles dans le code source (Ctrl+U) -->\n    <!-- Ne jamais mettre d'informations sensibles en commentaire ! -->\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-024.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-025.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-026.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-027.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-028.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -375,7 +389,11 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Titres et paragraphes</title></head>\n  <body>\n\n    <!-- 6 niveaux de titres (heading) : h1 à h6 -->\n    <h1>Titre de niveau 1 (le plus important)</h1>\n    <h2>Titre de niveau 2</h2>\n    <h3>Titre de niveau 3</h3>\n    <h4>Titre de niveau 4</h4>\n    <h5>Titre de niveau 5</h5>\n    <h6>Titre de niveau 6 (le moins important)</h6>\n\n    <!-- Règle SEO : un seul <h1> par page ! -->\n    <!-- Utiliser les titres de manière hiérarchique -->\n\n    <!-- Paragraphes -->\n    <p>Ceci est un premier paragraphe. Le navigateur gère automatiquement\n    l'espacement entre les paragraphes.</p>\n\n    <p>Ceci est un deuxième paragraphe. Même si le code source est\n    sur plusieurs lignes, le navigateur n'en tient pas compte.</p>\n\n    <!-- Saut de ligne (à utiliser avec parcimonie) -->\n    <p>Première ligne.<br>Deuxième ligne après un saut de ligne.</p>\n\n    <!-- Ligne horizontale (séparateur) -->\n    <hr>\n\n    <p>Contenu après le séparateur.</p>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-029.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-030.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-031.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-032.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -490,7 +508,17 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Espaces en HTML</title></head>\n  <body>\n\n    <!-- Le HTML compresse les espaces multiples en UN seul espace -->\n    <p>Un     seul    espace    entre    les    mots.</p>\n    <!-- Affiche : \"Un seul espace entre les mots.\" -->\n\n    <!-- Les retours à la ligne dans le code sont ignorés -->\n    <p>Cette phrase est écrite\n       sur plusieurs lignes\n       dans le code source.</p>\n    <!-- Affiche tout sur une seule ligne -->\n\n    <!-- Entités HTML pour les caractères spéciaux -->\n    <p>&nbsp;</p>              <!-- Espace insécable -->\n    <p>5&nbsp;&gt;&nbsp;3</p>  <!-- 5 > 3 (> = &gt;) -->\n    <p>&lt;balise&gt;</p>      <!-- <balise> -->\n    <p>&amp;</p>               <!-- & -->\n    <p>&copy; 2024</p>         <!-- © 2024 -->\n    <p>&euro;25</p>            <!-- €25 -->\n\n    <!-- Pour préserver les espaces et retours à la ligne : <pre> -->\n    <pre>\n      Ce texte conserve\n        son   formatage\n      exact.\n    </pre>\n\n    <!-- Forcer un saut de ligne -->\n    <p>Ligne 1<br>Ligne 2<br>Ligne 3</p>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-033.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-034.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-035.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-036.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-037.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-038.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-039.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-040.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-041.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-042.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -537,7 +565,13 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Mise en valeur du texte</title></head>\n  <body>\n\n    <!-- strong : importance forte (gras + sémantique) -->\n    <p>Attention : <strong>ne jamais partager votre mot de passe !</strong></p>\n\n    <!-- em : emphase/accent (italique + sémantique) -->\n    <p>Je <em>veux vraiment</em> apprendre le HTML.</p>\n\n    <!-- Différence entre balises sémantiques et visuelles -->\n    <p><strong>Gras avec sens (important)</strong></p>\n    <p><b>Gras sans sens particulier (stylistique)</b></p>\n    <p><em>Italique avec sens (emphase)</em></p>\n    <p><i>Italique sans sens (stylistique, termes techniques)</i></p>\n\n    <!-- Autres balises de mise en valeur -->\n    <p><mark>Texte surligné (mis en évidence)</mark></p>\n    <p><small>Texte plus petit (mentions légales, copyright)</small></p>\n    <p><del>Texte barré (supprimé)</del></p>\n    <p><ins>Texte souligné (inséré)</ins></p>\n    <p>H<sub>2</sub>O (indice)</p>\n    <p>E = mc<sup>2</sup> (exposant)</p>\n    <p><abbr title=\"HyperText Markup Language\">HTML</abbr></p>\n    <p><cite>Le Petit Prince</cite> d'Antoine de Saint-Exupéry</p>\n    <p><code>console.log('Bonjour')</code> (code inline)</p>\n    <p><kbd>Ctrl</kbd> + <kbd>C</kbd> pour copier</p>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-043.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-044.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-045.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-046.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-047.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-048.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -661,7 +695,21 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Les listes HTML</title></head>\n  <body>\n\n    <!-- Liste non ordonnée (ul = unordered list) -->\n    <h2>Courses</h2>\n    <ul>\n      <li>Pommes</li>\n      <li>Bananes</li>\n      <li>Pain</li>\n      <li>Lait</li>\n    </ul>\n\n    <!-- Liste ordonnée (ol = ordered list) -->\n    <h2>Étapes de la recette</h2>\n    <ol>\n      <li>Préchauffer le four à 180°C</li>\n      <li>Mélanger les ingrédients</li>\n      <li>Verser dans un moule</li>\n      <li>Cuire 30 minutes</li>\n    </ol>\n\n    <!-- Attributs de ol -->\n    <ol start=\"3\" reversed type=\"A\">\n      <!-- start : numéro de départ -->\n      <!-- reversed : ordre décroissant -->\n      <!-- type : \"1\" (défaut), \"a\", \"A\", \"i\", \"I\" -->\n      <li>Troisième élément (affiché C car type=\"A\")</li>\n      <li>Quatrième élément</li>\n    </ol>\n\n    <!-- Listes imbriquées -->\n    <ul>\n      <li>Fruits\n        <ul>\n          <li>Pommes</li>\n          <li>Poires</li>\n        </ul>\n      </li>\n      <li>Légumes\n        <ul>\n          <li>Carottes</li>\n          <li>Courgettes</li>\n        </ul>\n      </li>\n    </ul>\n\n    <!-- Liste de définitions (dl) -->\n    <dl>\n      <dt>HTML</dt>\n      <dd>HyperText Markup Language - langage de structure des pages web</dd>\n      <dt>CSS</dt>\n      <dd>Cascading Style Sheets - langage de mise en forme</dd>\n    </dl>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-049.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-050.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-051.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-052.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-053.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-054.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-055.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-056.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-057.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-058.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-059.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-060.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-061.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-062.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -885,7 +933,19 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Les liens HTML</title></head>\n  <body>\n\n    <!-- Lien externe (vers un autre site) -->\n    <a href=\"https://www.google.fr\">Aller sur Google</a>\n\n    <!-- Ouvrir dans un nouvel onglet -->\n    <a href=\"https://www.google.fr\" target=\"_blank\" rel=\"noopener noreferrer\">\n      Google (nouvel onglet)\n    </a>\n\n    <!-- Lien relatif (vers une page de notre propre site) -->\n    <a href=\"contact.html\">Page de contact</a>\n    <a href=\"pages/apropos.html\">À propos</a>\n    <a href=\"../index.html\">Retour à l'accueil</a>\n\n    <!-- Lien vers une ancre (section sur la même page) -->\n    <a href=\"#section1\">Aller à la section 1</a>\n    <a href=\"#section2\">Aller à la section 2</a>\n\n    <!-- Cibles des ancres -->\n    <h2 id=\"section1\">Section 1</h2>\n    <p>Contenu de la section 1...</p>\n\n    <h2 id=\"section2\">Section 2</h2>\n    <p>Contenu de la section 2...</p>\n\n    <!-- Lien vers une ancre d'une autre page -->\n    <a href=\"autre-page.html#section3\">Section 3 de l'autre page</a>\n\n    <!-- Image cliquable (lien avec image à l'intérieur) -->\n    <a href=\"https://exemple.fr\">\n      <img src=\"logo.png\" alt=\"Logo exemple\">\n    </a>\n\n    <!-- Liens de navigation typiques -->\n    <nav>\n      <a href=\"index.html\">Accueil</a>\n      <a href=\"services.html\">Services</a>\n      <a href=\"portfolio.html\">Portfolio</a>\n      <a href=\"contact.html\">Contact</a>\n    </nav>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-063.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-064.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-065.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-066.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-067.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-068.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-069.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-070.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-071.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-072.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-073.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-074.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -923,7 +983,10 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Mails et téléchargements</title></head>\n  <body>\n\n    <!-- Lien mailto : ouvre le client mail de l'utilisateur -->\n    <a href=\"mailto:contact@exemple.fr\">Nous écrire</a>\n\n    <!-- Avec sujet et corps pré-remplis -->\n    <a href=\"mailto:contact@exemple.fr?subject=Demande d'info&body=Bonjour,\">\n      Demander une info\n    </a>\n\n    <!-- Plusieurs destinataires (séparés par des virgules) -->\n    <a href=\"mailto:a@ex.fr,b@ex.fr?cc=c@ex.fr&bcc=d@ex.fr\">\n      Envoyer à plusieurs\n    </a>\n\n    <!-- Lien téléphone (pratique sur mobile) -->\n    <a href=\"tel:+33612345678\">+33 6 12 34 56 78</a>\n\n    <!-- Téléchargement d'un fichier avec l'attribut download -->\n    <a href=\"documents/guide.pdf\" download>\n      Télécharger le guide PDF\n    </a>\n\n    <!-- download avec nom de fichier personnalisé -->\n    <a href=\"documents/guide-v2.pdf\" download=\"guide-utilisateur.pdf\">\n      Télécharger le guide\n    </a>\n\n    <!-- Liens vers différents types de fichiers -->\n    <a href=\"data/export.csv\" download>Exporter en CSV</a>\n    <a href=\"media/presentation.pptx\" download>Télécharger la présentation</a>\n    <a href=\"images/photo.jpg\" download=\"ma-photo.jpg\">Télécharger la photo</a>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-075.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-076.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-077.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -977,7 +1040,10 @@ export const htmlCourse: SubSection[] = [
         "title": "🔧 Compatibilité et validation",
         "text": "Outils utiles : Can I Use (caniuse.com) pour vérifier le support navigateur des fonctionnalités. W3C Validator (validator.w3.org) pour valider votre HTML. MDN Web Docs (developer.mozilla.org) pour la documentation. Les préfixes vendeurs (-webkit-, -moz-, -ms-) assurent la compatibilité avec les anciens navigateurs."
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-078.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-079.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-080.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1040,7 +1106,16 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\"><title>div et span</title>\n    <style>\n      .boite { background: #eee; padding: 10px; margin: 10px; }\n      .rouge { color: red; }\n      .gras { font-weight: bold; }\n    </style>\n  </head>\n  <body>\n\n    <!-- div : conteneur block (prend toute la largeur disponible) -->\n    <!-- Sans signification sémantique particulière -->\n    <div class=\"boite\">\n      <div class=\"boite\">\n        <p>Un paragraphe à l'intérieur d'un div imbriqué.</p>\n      </div>\n      <div class=\"boite\">\n        <p>Un autre div au même niveau.</p>\n      </div>\n    </div>\n\n    <!-- span : conteneur inline (dans le flux du texte) -->\n    <!-- Sans signification sémantique particulière -->\n    <p>\n      Ce texte contient un mot\n      <span class=\"rouge gras\">important</span>\n      au milieu de la phrase.\n    </p>\n\n    <!-- Cas d'utilisation typiques -->\n    <!-- div : créer des sections de mise en page -->\n    <div id=\"header\">En-tête</div>\n    <div id=\"main\">Contenu principal</div>\n    <div id=\"footer\">Pied de page</div>\n\n    <!-- span : cibler du texte inline pour le styliser -->\n    <p>Prix : <span style=\"color:green;font-weight:bold;\">€25.00</span></p>\n    <p>Statut : <span class=\"badge-succes\">Actif</span></p>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-147.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-148.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-149.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-150.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-151.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-152.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-153.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-154.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-155.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1247,7 +1322,13 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\"><title>Block vs Inline</title>\n    <style>\n      .block { background: #3498db; color: white; padding: 5px; margin: 5px 0; }\n      .inline { background: #e74c3c; color: white; padding: 3px; }\n    </style>\n  </head>\n  <body>\n\n    <!-- Éléments BLOCK -->\n    <!-- Occupent toute la largeur disponible -->\n    <!-- Commencent toujours sur une nouvelle ligne -->\n    <!-- Peuvent contenir des éléments block et inline -->\n    <div class=\"block\">div (block)</div>\n    <p class=\"block\">p (block)</p>\n    <h1 class=\"block\">h1 (block)</h1>\n    <!-- Autres block : h1-h6, ul, ol, li, table, form, header, footer... -->\n\n    <!-- Éléments INLINE -->\n    <!-- Occupent seulement l'espace nécessaire -->\n    <!-- Ne démarrent pas sur une nouvelle ligne -->\n    <!-- En général, contiennent uniquement du texte ou d'autres éléments inline -->\n    <p>\n      Texte normal avec\n      <span class=\"inline\">span (inline)</span>,\n      <a class=\"inline\" href=\"#\">a (inline)</a>,\n      <strong class=\"inline\">strong (inline)</strong> et\n      <em class=\"inline\">em (inline)</em>.\n    </p>\n    <!-- Autres inline : img, input, button, label, code, br... -->\n\n    <!-- ATTENTION : ne pas mettre d'élément block dans un inline -->\n    <!-- INCORRECT : <span><div>...</div></span> -->\n    <!-- CORRECT : <div><span>...</span></div> -->\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-156.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-157.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-159.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-160.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-161.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-162.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1298,7 +1379,22 @@ export const htmlCourse: SubSection[] = [
         "language": "css",
         "code": "/* Largeur (width) et hauteur (height) de la boite de contenu */\n\n/* Valeurs absolues */\n.boite-fixe {\n  width: 300px;\n  height: 150px;\n  background: #3498db;\n}\n\n/* Valeurs en pourcentage (par rapport au parent) */\n.boite-pourcent {\n  width: 50%;   /* 50% de la largeur du parent */\n  height: 200px;\n  background: #e74c3c;\n}\n\n/* Valeurs min/max pour la responsivité */\n.boite-adaptable {\n  width: 100%;          /* Prend 100% de l'espace disponible */\n  max-width: 800px;     /* Mais pas plus de 800px */\n  min-width: 300px;     /* Mais pas moins de 300px */\n  min-height: 100px;    /* Hauteur minimale */\n  background: #2ecc71;\n}\n\n/* Valeurs spéciales */\n.auto {\n  width: auto;   /* Valeur par défaut : largeur calculée automatiquement */\n  height: auto;  /* Hauteur déterminée par le contenu */\n}\n\n/* fit-content, max-content, min-content */\n.fit {\n  width: fit-content;   /* Largeur adaptée au contenu */\n}\n\n/* Unités modernes */\n.viewport {\n  width: 100vw;   /* 100% de la largeur du viewport */\n  height: 100vh;  /* 100% de la hauteur du viewport */\n}"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-268.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-269.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-270.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-271.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-272.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-273.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-274.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-275.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-276.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-277.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-278.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-279.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-280.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-281.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-282.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1366,7 +1462,14 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\"><title>Tableaux HTML</title>\n    <style>\n      table { border-collapse: collapse; width: 100%; }\n      th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }\n      th { background-color: #333; color: white; }\n      tr:nth-child(even) { background-color: #f2f2f2; }\n    </style>\n  </head>\n  <body>\n\n    <!-- Structure de base d'un tableau -->\n    <table>\n      <!-- En-tête du tableau -->\n      <thead>\n        <tr>\n          <th>Prénom</th>\n          <th>Nom</th>\n          <th>Âge</th>\n          <th>Ville</th>\n        </tr>\n      </thead>\n      <!-- Corps du tableau -->\n      <tbody>\n        <tr>\n          <td>Pierre</td>\n          <td>Dupont</td>\n          <td>29</td>\n          <td>Lyon</td>\n        </tr>\n        <tr>\n          <td>Marie</td>\n          <td>Martin</td>\n          <td>35</td>\n          <td>Paris</td>\n        </tr>\n      </tbody>\n      <!-- Pied de tableau -->\n      <tfoot>\n        <tr>\n          <td colspan=\"4\">Total : 2 personnes</td>\n        </tr>\n      </tfoot>\n    </table>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-397.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-398.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-399.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-400.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-401.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-402.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-403.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1425,7 +1528,17 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\"><title>Tableau structuré</title>\n    <style>\n      table { border-collapse: collapse; width: 100%; }\n      th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }\n      th { background: #2c3e50; color: white; }\n    </style>\n  </head>\n  <body>\n\n    <table>\n      <!-- caption : titre du tableau (accessibility) -->\n      <caption>Planning de la semaine</caption>\n\n      <!-- colgroup / col : cibler des colonnes pour le style -->\n      <colgroup>\n        <col style=\"background-color: #f0f0f0;\">  <!-- 1ère colonne -->\n        <col span=\"5\">                             <!-- 5 colonnes suivantes -->\n      </colgroup>\n\n      <thead>\n        <tr>\n          <th>Heure</th>\n          <th>Lundi</th>\n          <th>Mardi</th>\n          <th>Mercredi</th>\n          <th>Jeudi</th>\n          <th>Vendredi</th>\n        </tr>\n      </thead>\n\n      <tbody>\n        <tr>\n          <th>8h-10h</th>\n          <!-- colspan : fusionne des cellules horizontalement -->\n          <td colspan=\"2\">JavaScript</td>\n          <td>HTML</td>\n          <!-- rowspan : fusionne des cellules verticalement -->\n          <td rowspan=\"2\">CSS</td>\n          <td>PHP</td>\n        </tr>\n        <tr>\n          <th>10h-12h</th>\n          <td>React</td>\n          <td>Node.js</td>\n          <td>SQL</td>\n          <td>Git</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-404.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-405.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-406.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-407.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-408.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-409.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-410.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-411.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-412.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-413.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1591,7 +1704,28 @@ export const htmlCourse: SubSection[] = [
         "language": "css",
         "code": "/* Mise en forme d'un tableau HTML */\n\ntable {\n  border-collapse: collapse; /* Fusionne les bordures adjacentes */\n  /* border-separate : bordures séparées (défaut) */\n  width: 100%;\n  margin: 20px 0;\n  font-family: Arial, sans-serif;\n}\n\n/* border-spacing : espace entre cellules (avec border-separate) */\n/* table { border-spacing: 5px; } */\n\nth, td {\n  border: 1px solid #ddd;\n  padding: 12px 15px;\n  text-align: left;\n  vertical-align: middle; /* top, middle, bottom */\n}\n\nth {\n  background-color: #2c3e50;\n  color: white;\n  font-weight: bold;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\n/* Lignes alternées (zebra striping) */\ntbody tr:nth-child(even) {\n  background-color: #f8f9fa;\n}\n\ntbody tr:nth-child(odd) {\n  background-color: #ffffff;\n}\n\n/* Effet de survol */\ntbody tr:hover {\n  background-color: #d1ecf1;\n  cursor: pointer;\n}\n\n/* Première colonne en gras */\ntd:first-child {\n  font-weight: bold;\n  color: #333;\n}\n\n/* Tableau responsive */\n.table-responsive {\n  overflow-x: auto; /* Défilement horizontal sur mobile */\n}"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-414.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-415.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-416.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-417.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-418.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-419.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-420.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-421.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-422.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-423.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-424.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-425.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-426.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-427.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-428.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-429.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-430.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-431.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-432.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-433.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-434.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1699,7 +1833,24 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\"><title>Images en HTML</title>\n  </head>\n  <body>\n\n    <!-- Balise img (auto-fermante) -->\n    <!-- src : source de l'image (URL relative ou absolue) -->\n    <!-- alt : texte alternatif (OBLIGATOIRE pour l'accessibilité et le SEO) -->\n    <img src=\"images/photo.jpg\" alt=\"Photo d'un paysage de montagne\">\n\n    <!-- Image avec dimensions (pour éviter le layout shift) -->\n    <img src=\"logo.png\" alt=\"Logo de l'entreprise\" width=\"200\" height=\"100\">\n\n    <!-- Image avec lien -->\n    <a href=\"https://exemple.fr\">\n      <img src=\"logo.png\" alt=\"Accueil - Logo\">\n    </a>\n\n    <!-- Balise figure et figcaption pour les images avec légende -->\n    <figure>\n      <img src=\"images/graphique.png\" alt=\"Graphique des ventes 2024\">\n      <figcaption>Fig. 1 - Évolution des ventes en 2024</figcaption>\n    </figure>\n\n    <!-- Images responsives avec srcset (différentes résolutions) -->\n    <img\n      src=\"image-400.jpg\"\n      srcset=\"image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w\"\n      sizes=\"(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px\"\n      alt=\"Image responsive\">\n\n    <!-- Formats modernes avec <picture> (WebP avec fallback) -->\n    <picture>\n      <source srcset=\"image.webp\" type=\"image/webp\">\n      <source srcset=\"image.avif\" type=\"image/avif\">\n      <img src=\"image.jpg\" alt=\"Image avec format moderne\">\n    </picture>\n\n    <!-- Chargement différé (lazy loading) -->\n    <img src=\"image-en-bas.jpg\" alt=\"Image lazy loaded\" loading=\"lazy\">\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-435.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-436.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-437.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-438.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-439.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-440.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-441.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-442.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-443.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-444.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-445.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-446.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-447.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-448.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-449.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-450.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-451.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -1838,7 +1989,13 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Audio en HTML</title></head>\n  <body>\n\n    <!-- Balise audio simple -->\n    <audio src=\"musique.mp3\" controls>\n      Votre navigateur ne supporte pas l'audio HTML5.\n    </audio>\n\n    <!-- Avec plusieurs sources (compatibilité navigateurs) -->\n    <audio controls>\n      <source src=\"musique.ogg\" type=\"audio/ogg\">\n      <source src=\"musique.mp3\" type=\"audio/mpeg\">\n      <source src=\"musique.wav\" type=\"audio/wav\">\n      Votre navigateur ne supporte pas l'audio HTML5.\n    </audio>\n\n    <!-- Attributs de l'élément audio -->\n    <audio\n      controls          <!-- Affiche les contrôles de lecture -->\n      autoplay          <!-- Lecture automatique (souvent bloquée par les navigateurs) -->\n      loop              <!-- Lecture en boucle -->\n      muted             <!-- Muet au démarrage -->\n      preload=\"auto\"    <!-- auto|metadata|none - préchargement -->\n      src=\"podcast.mp3\">\n    </audio>\n\n    <!-- Formats audio courants -->\n    <!-- MP3 : format universel, bon support -->\n    <!-- OGG : open source, bon support -->\n    <!-- WAV : non compressé, haute qualité -->\n    <!-- AAC : meilleure compression que MP3 -->\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-452.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-453.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-454.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-455.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-456.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-457.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2114,7 +2271,17 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Vidéo en HTML</title></head>\n  <body>\n\n    <!-- Balise video avec plusieurs sources -->\n    <video controls width=\"640\" height=\"360\">\n      <source src=\"video.mp4\" type=\"video/mp4\">\n      <source src=\"video.webm\" type=\"video/webm\">\n      <source src=\"video.ogv\" type=\"video/ogg\">\n      Votre navigateur ne supporte pas la vidéo HTML5.\n    </video>\n\n    <!-- Vidéo avec toutes les options -->\n    <video\n      src=\"video.mp4\"\n      controls                 <!-- Contrôles de lecture -->\n      autoplay                 <!-- Lecture auto (nécessite muted) -->\n      muted                    <!-- Muet (requis pour autoplay) -->\n      loop                     <!-- Lecture en boucle -->\n      poster=\"miniature.jpg\"   <!-- Image affichée avant lecture -->\n      preload=\"metadata\"       <!-- Précharger seulement les métadonnées -->\n      width=\"800\"\n      height=\"450\">\n    </video>\n\n    <!-- Sous-titres avec track -->\n    <video controls src=\"video.mp4\">\n      <track\n        kind=\"subtitles\"        <!-- subtitles, captions, chapters, metadata -->\n        src=\"sous-titres-fr.vtt\"\n        srclang=\"fr\"\n        label=\"Français\"\n        default>                <!-- Activé par défaut -->\n      <track kind=\"subtitles\" src=\"sous-titres-en.vtt\" srclang=\"en\" label=\"English\">\n    </video>\n\n    <!-- Vidéo YouTube (via iframe) -->\n    <iframe\n      width=\"560\" height=\"315\"\n      src=\"https://www.youtube.com/embed/ID_VIDEO\"\n      title=\"Titre de la vidéo\"\n      allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope\"\n      allowfullscreen>\n    </iframe>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-458.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-459.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-460.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-461.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-462.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-463.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-464.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-465.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-466.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-467.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2245,7 +2412,12 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Les iframes</title></head>\n  <body>\n\n    <!-- iframe : fenêtre intégrée vers une autre page -->\n    <iframe\n      src=\"https://www.exemple.fr\"\n      width=\"600\"\n      height=\"400\"\n      title=\"Titre de l'iframe (accessibilité)\"\n      frameborder=\"0\">           <!-- 0 = sans bordure (déprécié, utiliser CSS) -->\n      Votre navigateur ne supporte pas les iframes.\n    </iframe>\n\n    <!-- iframe avec CSS -->\n    <iframe\n      src=\"autre-page.html\"\n      style=\"width:100%; height:500px; border:none; border-radius:8px;\">\n    </iframe>\n\n    <!-- Intégration Google Maps -->\n    <iframe\n      src=\"https://www.google.com/maps/embed?pb=...\"\n      width=\"600\" height=\"450\"\n      loading=\"lazy\"\n      allowfullscreen\n      referrerpolicy=\"no-referrer-when-downgrade\"\n      title=\"Localisation\">\n    </iframe>\n\n    <!-- Sécurité : attribut sandbox -->\n    <iframe\n      src=\"contenu-tiers.html\"\n      sandbox=\"allow-scripts allow-same-origin\">\n      <!-- Valeurs sandbox : allow-scripts, allow-forms,\n           allow-popups, allow-same-origin, allow-top-navigation -->\n    </iframe>\n\n    <!-- Cible une iframe depuis un lien -->\n    <iframe name=\"moniframe\" src=\"page1.html\" width=\"500\" height=\"300\"></iframe>\n    <a href=\"page2.html\" target=\"monframe\">Charger page 2 dans l'iframe</a>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-468.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-469.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-470.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-471.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-472.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2290,7 +2462,19 @@ export const htmlCourse: SubSection[] = [
         "language": "css",
         "code": "/* Reset */\n* { margin: 0; padding: 0; box-sizing: border-box; }\n\n/* Menu sticky */\n#menu-sticky {\n  position: sticky;    /* Reste fixe en défilant */\n  top: 0;              /* Collé en haut */\n  z-index: 1000;       /* Au-dessus du reste */\n  background: #2c3e50;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 15px 40px;\n}\n\n.logo {\n  color: white;\n  font-size: 1.5rem;\n  font-weight: bold;\n}\n\n#menu-sticky ul {\n  display: flex;       /* Éléments en ligne */\n  list-style: none;\n  gap: 30px;\n}\n\n#menu-sticky a {\n  color: #ecf0f1;\n  text-decoration: none;\n  font-size: 1rem;\n  transition: color 0.3s;\n}\n\n#menu-sticky a:hover {\n  color: #3498db;\n}\n\n/* Sections pour la démo */\nsection {\n  height: 100vh;       /* Chaque section fait la hauteur de l'écran */\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 40px;\n}\n\nsection:nth-child(even) { background: #ecf0f1; }\nsection:nth-child(odd) { background: #f9f9f9; }"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-618.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-619.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-620.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-622.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-623.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-624.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-625.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-626.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-627.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-628.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-629.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-630.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2335,7 +2519,16 @@ export const htmlCourse: SubSection[] = [
         "language": "css",
         "code": "* { margin: 0; padding: 0; box-sizing: border-box; }\nbody { font-family: Arial, sans-serif; }\n\nnav { background: #2c3e50; }\n\n.menu {\n  display: flex;\n  list-style: none;\n}\n\n.menu > li > a {\n  display: block;\n  padding: 18px 25px;\n  color: white;\n  text-decoration: none;\n  transition: background 0.3s;\n}\n\n.menu > li > a:hover {\n  background: #34495e;\n}\n\n/* Sous-menu caché par défaut */\n.dropdown {\n  position: relative;  /* Contexte de positionnement */\n}\n\n.sous-menu {\n  display: none;       /* Caché par défaut */\n  position: absolute;  /* Sort du flux */\n  top: 100%;           /* Sous le parent */\n  left: 0;\n  background: #34495e;\n  min-width: 200px;\n  list-style: none;\n  z-index: 100;\n  box-shadow: 0 4px 8px rgba(0,0,0,0.2);\n}\n\n.sous-menu a {\n  display: block;\n  padding: 12px 20px;\n  color: #ecf0f1;\n  text-decoration: none;\n  transition: background 0.2s;\n}\n\n.sous-menu a:hover {\n  background: #3498db;\n}\n\n/* Afficher le sous-menu au survol */\n.dropdown:hover .sous-menu {\n  display: block;\n}"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-631.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-632.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-633.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-634.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-635.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-636.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-637.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-638.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-639.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2414,7 +2607,16 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Formulaires HTML</title></head>\n  <body>\n\n    <!-- Balise form : conteneur du formulaire -->\n    <form\n      action=\"/traitement.php\"  <!-- URL vers où envoyer les données -->\n      method=\"POST\"             <!-- GET ou POST -->\n      enctype=\"multipart/form-data\" <!-- Pour les fichiers -->\n      novalidate                <!-- Désactive la validation navigateur -->\n    >\n\n      <!-- Association label + input (accessibilité) -->\n      <label for=\"prenom\">Prénom :</label>\n      <input type=\"text\" id=\"prenom\" name=\"prenom\" required>\n\n      <label for=\"email\">Email :</label>\n      <input type=\"email\" id=\"email\" name=\"email\" required>\n\n      <!-- Boutons de soumission -->\n      <button type=\"submit\">Envoyer</button>\n      <button type=\"reset\">Réinitialiser</button>\n      <input type=\"submit\" value=\"Soumettre\">\n\n    </form>\n\n    <!-- Méthodes HTTP -->\n    <!-- GET : données dans l'URL (barre d'adresse) - pour recherches -->\n    <!--       Limite de taille, données visibles, bookmarkable -->\n    <!-- POST : données dans le corps de la requête - pour formulaires -->\n    <!--        Pas de limite de taille, données non visibles dans URL -->\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-640.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-641.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-642.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-643.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-644.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-645.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-646.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-647.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-648.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2588,7 +2790,13 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Éléments de formulaire</title></head>\n  <body>\n    <form>\n      <!-- Texte, email, nombre, mot de passe, téléphone, URL -->\n      <input type=\"text\" name=\"nom\" placeholder=\"Votre nom\">\n      <input type=\"email\" name=\"email\" placeholder=\"email@exemple.fr\">\n      <input type=\"password\" name=\"mdp\" placeholder=\"Mot de passe\">\n      <input type=\"number\" name=\"age\" min=\"0\" max=\"120\" step=\"1\">\n      <input type=\"tel\" name=\"tel\" placeholder=\"0612345678\">\n      <input type=\"url\" name=\"site\" placeholder=\"https://...\">\n\n      <!-- Date, heure, couleur -->\n      <input type=\"date\" name=\"date\">\n      <input type=\"time\" name=\"heure\">\n      <input type=\"datetime-local\" name=\"datetimelocal\">\n      <input type=\"color\" name=\"couleur\" value=\"#3498db\">\n\n      <!-- Fichier -->\n      <input type=\"file\" name=\"fichier\" accept=\".pdf,.docx\" multiple>\n\n      <!-- Recherche et plage -->\n      <input type=\"search\" name=\"recherche\" placeholder=\"Rechercher...\">\n      <input type=\"range\" name=\"volume\" min=\"0\" max=\"100\" value=\"50\">\n\n      <!-- Case à cocher et bouton radio -->\n      <input type=\"checkbox\" id=\"cgv\" name=\"cgv\" value=\"oui\">\n      <label for=\"cgv\">J'accepte les CGV</label>\n\n      <input type=\"radio\" id=\"h\" name=\"genre\" value=\"H\">\n      <label for=\"h\">Homme</label>\n      <input type=\"radio\" id=\"f\" name=\"genre\" value=\"F\">\n      <label for=\"f\">Femme</label>\n\n      <!-- Liste déroulante -->\n      <select name=\"pays\">\n        <option value=\"\">-- Choisissez un pays --</option>\n        <optgroup label=\"Europe\">\n          <option value=\"fr\">France</option>\n          <option value=\"be\">Belgique</option>\n          <option value=\"ch\">Suisse</option>\n        </optgroup>\n      </select>\n\n      <!-- Zone de texte multiligne -->\n      <textarea name=\"message\" rows=\"5\" cols=\"40\"\n                placeholder=\"Votre message...\"></textarea>\n\n      <!-- Champ caché (envoyé mais non affiché) -->\n      <input type=\"hidden\" name=\"token\" value=\"abc123\">\n\n      <!-- Boutons -->\n      <button type=\"submit\">Envoyer</button>\n      <button type=\"button\" onclick=\"alert('Clic!')\">Action JS</button>\n      <button type=\"reset\">Réinitialiser</button>\n    </form>\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-649.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-650.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-651.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-652.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-653.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-654.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2659,7 +2867,9 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head><meta charset=\"UTF-8\"><title>Attributs des formulaires</title></head>\n  <body>\n    <form action=\"/inscription\" method=\"POST\">\n\n      <!-- required : champ obligatoire -->\n      <input type=\"text\" name=\"nom\" required placeholder=\"Nom*\">\n\n      <!-- minlength / maxlength : longueur min/max -->\n      <input type=\"text\" name=\"prenom\" minlength=\"2\" maxlength=\"50\"\n             placeholder=\"Prénom (2-50 caractères)\">\n\n      <!-- min, max, step pour les nombres -->\n      <input type=\"number\" name=\"age\" min=\"18\" max=\"120\" step=\"1\" value=\"25\">\n\n      <!-- pattern : expression régulière de validation -->\n      <input type=\"text\" name=\"codePostal\"\n             pattern=\"[0-9]{5}\"\n             title=\"5 chiffres requis\"\n             placeholder=\"Code postal (12345)\">\n\n      <!-- disabled : désactivé (non envoyé) -->\n      <input type=\"text\" name=\"id\" value=\"12345\" disabled>\n\n      <!-- readonly : en lecture seule (envoyé) -->\n      <input type=\"text\" name=\"reference\" value=\"REF-001\" readonly>\n\n      <!-- autocomplete : activer/désactiver l'autocomplétion -->\n      <input type=\"email\" name=\"email\" autocomplete=\"email\">\n      <input type=\"new-password\" name=\"mdp\" autocomplete=\"new-password\">\n\n      <!-- autofocus : focus automatique au chargement -->\n      <input type=\"text\" name=\"recherche\" autofocus>\n\n      <!-- multiple : plusieurs valeurs (email, file) -->\n      <input type=\"email\" name=\"emails\" multiple>\n      <input type=\"file\" name=\"fichiers\" multiple>\n\n      <!-- Sécurité CSRF : toujours utiliser un token -->\n      <input type=\"hidden\" name=\"csrf_token\" value=\"token-securise-genere-cote-serveur\">\n\n      <button type=\"submit\">S'inscrire</button>\n    </form>\n\n    <!--\n    SÉCURITÉ CÔTÉ SERVEUR (INDISPENSABLE) :\n    1. Toujours valider les données côté serveur (jamais faire confiance au client)\n    2. Échapper les sorties HTML pour éviter les XSS\n    3. Utiliser des requêtes préparées pour éviter les injections SQL\n    4. Valider les fichiers uploadés (type, taille, contenu)\n    5. Utiliser HTTPS pour chiffrer les données en transit\n    -->\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-655.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-656.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2803,7 +3013,10 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>HTML Sémantique</title>\n  </head>\n  <body>\n\n    <!-- header : en-tête de la page ou d'une section -->\n    <header>\n      <nav>\n        <a href=\"/\">Accueil</a>\n        <a href=\"/services\">Services</a>\n        <a href=\"/contact\">Contact</a>\n      </nav>\n    </header>\n\n    <!-- main : contenu principal (un seul par page) -->\n    <main>\n\n      <!-- article : contenu autonome (article, post de blog) -->\n      <article>\n        <header>\n          <h1>Titre de l'article</h1>\n          <time datetime=\"2024-06-15\">15 juin 2024</time>\n          <p>Par <address>Pierre Dupont</address></p>\n        </header>\n        <p>Contenu de l'article...</p>\n        <footer>\n          <p>Tags : <a href=\"#\">HTML</a>, <a href=\"#\">Web</a></p>\n        </footer>\n      </article>\n\n      <!-- section : section thématique (avec un titre) -->\n      <section>\n        <h2>Nos Services</h2>\n        <p>...</p>\n      </section>\n\n      <!-- aside : contenu secondaire (sidebar, publicité) -->\n      <aside>\n        <h3>Articles récents</h3>\n        <ul>\n          <li><a href=\"#\">Article 1</a></li>\n          <li><a href=\"#\">Article 2</a></li>\n        </ul>\n      </aside>\n\n    </main>\n\n    <!-- footer : pied de page -->\n    <footer>\n      <p>&copy; 2024 MonSite. Tous droits réservés.</p>\n    </footer>\n\n    <!-- Autres éléments sémantiques -->\n    <!-- <nav>    : zone de navigation principale -->\n    <!-- <figure> : image avec légende -->\n    <!-- <figcaption> : légende de figure -->\n    <!-- <details> / <summary> : contenu dépliable -->\n    <!-- <dialog> : boîte de dialogue modale -->\n\n    <details>\n      <summary>Cliquez pour en savoir plus</summary>\n      <p>Contenu masqué qui s'affiche au clic.</p>\n    </details>\n\n  </body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-842.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-843.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-844.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2871,7 +3084,33 @@ export const htmlCourse: SubSection[] = [
         "language": "html",
         "code": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Pierre Dupont - Développeur Web</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id=\"header\">\n    <nav>\n      <div class=\"logo\">Pierre.dev</div>\n      <ul>\n        <li><a href=\"#accueil\">Accueil</a></li>\n        <li><a href=\"#competences\">Compétences</a></li>\n        <li><a href=\"#projets\">Projets</a></li>\n        <li><a href=\"#contact\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main>\n    <section id=\"accueil\" class=\"hero\">\n      <h1>Bonjour, je suis <span class=\"highlight\">Pierre Dupont</span></h1>\n      <p class=\"sous-titre\">Développeur Web Full Stack</p>\n      <a href=\"#projets\" class=\"btn-cta\">Voir mes projets</a>\n    </section>\n\n    <section id=\"competences\">\n      <h2>Mes Compétences</h2>\n      <div class=\"grille-competences\">\n        <div class=\"competence\"><span>HTML5</span></div>\n        <div class=\"competence\"><span>CSS3</span></div>\n        <div class=\"competence\"><span>JavaScript</span></div>\n        <div class=\"competence\"><span>React</span></div>\n        <div class=\"competence\"><span>Node.js</span></div>\n        <div class=\"competence\"><span>SQL</span></div>\n      </div>\n    </section>\n\n    <section id=\"projets\">\n      <h2>Mes Projets</h2>\n      <div class=\"grille-projets\">\n        <article class=\"carte-projet\">\n          <h3>Application Todo</h3>\n          <p>Application de gestion de tâches en JavaScript vanilla.</p>\n          <a href=\"#\" class=\"btn\">Voir le projet</a>\n        </article>\n        <article class=\"carte-projet\">\n          <h3>Site E-commerce</h3>\n          <p>Boutique en ligne avec React et Node.js.</p>\n          <a href=\"#\" class=\"btn\">Voir le projet</a>\n        </article>\n      </div>\n    </section>\n\n    <section id=\"contact\">\n      <h2>Me Contacter</h2>\n      <form>\n        <input type=\"text\" placeholder=\"Votre nom\" required>\n        <input type=\"email\" placeholder=\"Votre email\" required>\n        <textarea rows=\"5\" placeholder=\"Votre message\"></textarea>\n        <button type=\"submit\" class=\"btn-cta\">Envoyer</button>\n      </form>\n    </section>\n  </main>\n\n  <footer>\n    <p>&copy; 2024 Pierre Dupont. Tous droits réservés.</p>\n  </footer>\n</body>\n</html>"
 },
-      {
+            { "type": "image", "src": "images/htmlcss/img-845.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-846.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-847.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-848.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-849.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-850.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-851.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-852.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-853.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-854.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-855.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-856.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-857.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-858.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-859.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-860.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-861.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-862.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-863.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-864.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-865.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-866.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-867.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-868.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-869.png", "alt": "Illustration du cours HTML" },
+      { "type": "image", "src": "images/htmlcss/img-870.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "💡 Enrichi depuis tes notes",
@@ -2888,7 +3127,8 @@ export const htmlCourse: SubSection[] = [
         "text": "Nous avons désormais fait le tour des notions à connaitre en HTML et en CSS. Vous connaissez désormais le rôle de chacun de ces deux langages et savez les utiliser à bon escient. Vous êtes capables d’utiliser les bons éléments HTML pour donner le plus de sens possible à vos différents contenus et savez créer des design complexes et adapter vos pages selon l’écran de vos visiteurs. Il ne vous reste désormais qu’une chose à faire : pratiquer le plus possible. En effet, je suis de ceux qui sont persuadés qu’on n’apprend véritablement à coder qu’en pratiquant et qu’en étant confronté aux difficultés et cela est un processus long. Par de panique donc si vous ne vous sentez pas encore tout à fait prêt pour gérer un projet de A à Z : c’est tout à fait normal. Il faut du temps et il faut surtout répéter les mêmes opérations plusieurs fois pour créer des automatismes. De plus, si vous voulez devenir un développeur à part entière, vous n’allez pas pouvoir vous contenter de ne connaitre que le HTML et le CSS mais allez également devoir découvrir, comprendre et apprendre à utiliser d’autres langages comme le JavaScript par exemple si vous souhaitez vous orienter plutôt sur du développement « front side » ou « côté client » ou le PHP et un langage de gestion de bases de données si vous êtes plutôt attiré par le développement « back side » ou « côté serveur ». Connaitre et comprendre un ensemble varié de langages de programmation différents vous permettra également de bien comprendre comment fonctionnent les différents langages entre eux et le rôle de chacun dans un site web, vous donnant par la même une bien meilleure vue d’ensemble et une bien meilleure approche du code dans vos projets futurs."
       },
       
-      {
+            { "type": "image", "src": "images/htmlcss/img-975.png", "alt": "Illustration du cours HTML" },
+{
         "type": "note",
         "variant": "success",
         "title": "✅ Cours HTML terminé !",
