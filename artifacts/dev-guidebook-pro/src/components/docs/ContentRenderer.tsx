@@ -76,7 +76,8 @@ export function ContentRenderer({ blocks }: { blocks: Block[] }) {
                 <img
                   src={`${BASE}${block.src}`}
                   alt={block.alt}
-                  className="max-w-full rounded-lg border border-border shadow-sm"
+                  className="w-full border border-border"
+                  style={{ borderRadius: 0, display: "block" }}
                   loading="lazy"
                 />
               </div>
