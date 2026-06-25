@@ -1,7 +1,4 @@
 import type { Section } from "./types";
-import { jsCourse } from "./sections/jsCourse";
-import { htmlCourse } from "./sections/htmlCourse";
-import { cssCourse } from "./sections/cssCourse";
 import { html } from "./sections/html";
 import { css } from "./sections/css";
 import { js } from "./sections/js";
@@ -21,37 +18,10 @@ import { rest } from "./sections/rest";
 import { security } from "./sections/security";
 import { tools } from "./sections/tools";
 
-const jsCourseSection: Section = {
-  id: "cours-javascript",
-  title: "Cours JavaScript",
-  icon: "Code2",
-  tags: ["js"],
-  subsections: jsCourse,
-};
-
-const htmlCourseSection: Section = {
-  id: "cours-html",
-  title: "Cours HTML",
-  icon: "FileCode",
-  tags: ["html"],
-  subsections: htmlCourse,
-};
-
-const cssCourseSection: Section = {
-  id: "cours-css",
-  title: "Cours CSS",
-  icon: "Palette",
-  tags: ["css"],
-  subsections: cssCourse,
-};
-
 export const sections: Section[] = [
-  jsCourseSection,
-  htmlCourseSection,
-  cssCourseSection,
+  js,
   html,
   css,
-  js,
   ts,
   react,
   next,
