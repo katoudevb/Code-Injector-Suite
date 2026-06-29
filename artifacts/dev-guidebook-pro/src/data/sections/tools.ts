@@ -44,6 +44,35 @@ debugger;                          // point d'arrêt` },
       ],
     },
     {
+      id: "routing-comparatif",
+      title: "Routing JS — Comparatif frameworks",
+      blocks: [
+        {
+          type: "diagram",
+          content: `┌───────────────┬────────────────────────────────┬──────────────────────────────┐
+                    │ Framework     │ Type de routing                │ Idée clé                     │
+                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
+                    │ Vue.js        │ Vue Router (officiel)          │ Séparation claire des vues   │
+                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
+                    │ React         │ React Router (externe)         │ Très flexible                │
+                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
+                    │ Angular       │ Routing intégré                │ Solution tout-en-un          │
+                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
+                    │ SvelteKit     │ Basé sur les fichiers          │ Zéro configuration           │
+                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
+                    │ Next.js       │ Basé sur fichiers (React)      │ React + backend intégré      │
+                    └───────────────┴────────────────────────────────┴──────────────────────────────┘`,
+        },
+        { type: "list", items: [
+          "Vue.js → Vue Router officiel — Routes déclaratives, dynamiques, imbriquées",
+          "React → React Router externe — Très flexible, nécessite configuration",
+          "Angular → Router intégré — Guards, Lazy loading natif, tout-en-un",
+          "SvelteKit → Routes créées selon l'arborescence — SSR et génération statique intégrées",
+          "Next.js → File-based routing, API routes intégrées, optimisé SEO",
+        ]},
+      ],
+    },
+    {
       id: "principes",
       title: "DRY, SOLID et README",
       blocks: [

@@ -1,4 +1,4 @@
-export type Tech = "html" | "css" | "js" | "php" | "ts";
+export type Tech = "html" | "css" | "js" | "php" | "ts" | "bootstrap";
 
 export type Block =
   | { type: "p"; text: string }

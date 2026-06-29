@@ -1607,5 +1607,245 @@ const usePanier = create((set) => ({
         },
       ],
     },
+
+    // ── STRUCTURE D'UN COMPOSANT (fichiers) ───────────────────────────────
+    {
+      id: "react-structure-composant",
+      title: "Structure d'un composant React — fichiers",
+      blocks: [
+        {
+          type: "diagram",
+          content: `NomComposant/
+├── NomComposant.jsx      # Fichier principal du composant
+├── NomComposant.css      # Style du composant
+└── NomComposant.test.jsx # Test unitaire du composant`,
+        },
+      ],
+    },
+
+    // ── GUIDE DE STYLE JSX ─────────────────────────────────────────────────
+    {
+      id: "react-guide-jsx",
+      title: "Guide de style JSX",
+      blocks: [
+        {
+          type: "diagram",
+          content: `JSX = extension de JavaScript pour React
+
+Règles :
+├── Un seul élément parent retourné
+├── Expressions JS dans { }
+├── Composants avec majuscule
+├── className au lieu de class
+├── htmlFor au lieu de for
+├── props en camelCase
+├── booléens props={true}
+├── commentaires {/* ... */}
+├── éviter fonctions lourdes dans JSX
+└── sécurité contre XSS`,
+        },
+      ],
+    },
+
+    // ── COMMANDES ESSENTIELLES ─────────────────────────────────────────────
+    {
+      id: "react-commandes",
+      title: "Commandes essentielles",
+      blocks: [
+        { type: "h", text: "Création de projet" },
+        { type: "code", filename: "terminal", language: "bash", code: `# CRA (Create React App)
+npx create-react-app nom-du-projet
+
+# CRA + TypeScript
+npx create-react-app nom-du-projet --template typescript
+
+# Vite (recommandé aujourd'hui)
+npm create vite@latest nom-du-projet --template react
+
+# Vite + TypeScript
+npm create vite@latest nom-du-projet --template react-ts` },
+        { type: "h", text: "Dépendances" },
+        { type: "code", filename: "terminal", language: "bash", code: `npm install nom-du-package` },
+        { type: "h", text: "Lancer le projet" },
+        { type: "code", filename: "terminal", language: "bash", code: `# Aller dans le projet
+cd nomProjet
+
+# CRA
+npm start
+
+# Vite
+npm run dev` },
+      ],
+    },
+
+    // ── TYPES DE COMPOSANTS ────────────────────────────────────────────────
+    {
+      id: "react-types-composants",
+      title: "Types de composants",
+      blocks: [
+        { type: "h", text: "Fonctionnel (recommandé)" },
+        { type: "code", filename: "MonComposant.jsx", language: "jsx", code: `function MyComponent(props) {
+  return <h1>{props.name}</h1>
+}` },
+        { type: "h", text: "Classe (ancien style)" },
+        { type: "code", filename: "MonComposant.jsx", language: "jsx", code: `class MyComponent extends React.Component {
+  render() {
+    return <h1>{this.props.name}</h1>
+  }
+}` },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────┐
+│ COMPOSANT REACT                                     │
+├────────────────┬────────────────────────────────────┤
+│ Imbrication    │ parent → enfants                   │
+├────────────────┼────────────────────────────────────┤
+│ Responsabilité │ 1 composant = 1 partie de l'UI     │
+│ unique         │ (bouton, formulaire, liste, header) │
+├────────────────┼────────────────────────────────────┤
+│ Réutilisabilité│ Utilisable plusieurs fois          │
+│                │ → code propre, moins de duplication│
+├────────────────┼────────────────────────────────────┤
+│ Encapsulation  │ son propre state + logique + style │
+│                │ Isolé du reste de l'application    │
+├────────────────┼────────────────────────────────────┤
+│ État (state)   │ Local state : propre au composant  │
+│                │ Global state : partagé entre compos│
+└────────────────┴────────────────────────────────────┘`,
+        },
+      ],
+    },
+
+    // ── TYPES DE ROUTER ────────────────────────────────────────────────────
+    {
+      id: "react-types-router",
+      title: "Types de Router",
+      blocks: [
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────┐
+│ Types de Router                                     │
+├─────────────────┬───────────────────────────────────┤
+│ BrowserRouter   │ URL propre ( /home ) — recommandé │
+│ HashRouter      │ URL avec # — ancien support       │
+│ MemoryRouter    │ Navigation en mémoire (tests)     │
+│ StaticRouter    │ Rendu serveur                     │
+│ NativeRouter    │ React Native (mobile)             │
+└─────────────────┴───────────────────────────────────┘`,
+        },
+      ],
+    },
+
+    // ── COMMUNICATION PARENT → ENFANT ──────────────────────────────────────
+    {
+      id: "react-communication",
+      title: "Communication parent → enfant",
+      blocks: [
+        {
+          type: "diagram",
+          content: `Parent ──[props]──► Enfant
+Enfant ──[callback]──► Parent`,
+        },
+        { type: "code", filename: "App.jsx", language: "jsx", code: `function Parent() {
+  const handleMessage = (msg) => {
+    console.log(msg);
+  };
+
+  return <Child sendMessage={handleMessage} />;
+}
+
+function Child({ sendMessage }) {
+  return (
+    <button onClick={() => sendMessage("Hello parent")}>
+      Envoyer
+    </button>
+  );
+}` },
+      ],
+    },
+
+    // ── CYCLE DE VIE (CLASS COMPONENTS) ───────────────────────────────────
+    {
+      id: "react-cycle-vie",
+      title: "Cycle de vie (class components)",
+      blocks: [
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────┐
+│ CYCLE DE VIE D'UN COMPOSANT                         │
+├───────────────┬─────────────────────────────────────┤
+│  1. MONTAGE   │ constructor()      → init state     │
+│               │ render()           → affiche JSX    │
+│               │ componentDidMount()→ après affichage│
+├───────────────┼─────────────────────────────────────┤
+│  2. MISE À    │ render()           → re-affiche UI  │
+│     JOUR      │ componentDidUpdate()→ après update  │
+├───────────────┼─────────────────────────────────────┤
+│  3. DÉMONTAGE │ componentWillUnmount() → avant suppr│
+└───────────────┴─────────────────────────────────────┘`,
+        },
+        { type: "h", text: "1. Montage" },
+        { type: "code", filename: "MonComposant.jsx", language: "jsx", code: `componentDidMount() {
+  console.log("Composant affiché");
+}` },
+        { type: "h", text: "2. Mise à jour" },
+        { type: "code", filename: "MonComposant.jsx", language: "jsx", code: `componentDidUpdate(prevProps, prevState) {
+  console.log("Composant mis à jour");
+}` },
+        { type: "h", text: "3. Démontage" },
+        { type: "code", filename: "MonComposant.jsx", language: "jsx", code: `componentWillUnmount() {
+  console.log("Composant supprimé");
+}` },
+      ],
+    },
+
+    // ── HOOKS ─────────────────────────────────────────────────────────────
+    {
+      id: "react-hooks-intro",
+      title: "Introduction aux Hooks",
+      blocks: [
+        { type: "p", text: "Les Hooks sont des fonctions spéciales de React qui permettent aux composants fonctionnels d'utiliser des fonctionnalités internes de React (state, cycle de vie, etc.) sans utiliser de classes." },
+        {
+          type: "list",
+          items: [
+            "Utilisés uniquement dans les composants fonctionnels",
+            "Permettent de gérer l'état et les effets",
+            "Rendent le code plus lisible, modulaire et concis",
+            "Toujours appeler les Hooks au niveau supérieur du composant",
+            "Ne pas les appeler dans des conditions ou boucles",
+            "Ne les utiliser que dans des composants React ou des hooks personnalisés",
+          ],
+        },
+        { type: "h", text: "Hooks principaux" },
+        { type: "list", items: [
+          "useState → gérer un état local",
+          "useEffect → gérer les effets (API, timers, etc.)",
+          "useRef → accéder à un élément du DOM ou garder une valeur persistante",
+        ]},
+        { type: "code", filename: "Counter.jsx", language: "jsx", code: `import { useState, useEffect } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Le compteur a changé :", count);
+
+    return () => {
+      console.log("Nettoyage avant la prochaine mise à jour");
+    };
+  }, [count]);
+
+  return (
+    <div>
+      <h1>Compteur : {count}</h1>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+      <button onClick={() => setCount(count - 1)}>-1</button>
+    </div>
+  );
+}
+
+export default Counter;` },
+      ],
+    },
   ],
 };

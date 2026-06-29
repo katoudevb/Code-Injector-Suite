@@ -17,12 +17,14 @@ import { docker } from "./sections/docker";
 import { rest } from "./sections/rest";
 import { security } from "./sections/security";
 import { tools } from "./sections/tools";
+import { bootstrap } from "./sections/bootstrap";
 
 export const sections: Section[] = [
   js,
   html,
   css,
   ts,
+  bootstrap,
   react,
   next,
   vue,
