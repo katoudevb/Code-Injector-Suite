@@ -50,18 +50,18 @@ debugger;                          // point d'arrêt` },
         {
           type: "diagram",
           content: `┌───────────────┬────────────────────────────────┬──────────────────────────────┐
-                    │ Framework     │ Type de routing                │ Idée clé                     │
-                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
-                    │ Vue.js        │ Vue Router (officiel)          │ Séparation claire des vues   │
-                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
-                    │ React         │ React Router (externe)         │ Très flexible                │
-                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
-                    │ Angular       │ Routing intégré                │ Solution tout-en-un          │
-                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
-                    │ SvelteKit     │ Basé sur les fichiers          │ Zéro configuration           │
-                    ├───────────────┼────────────────────────────────┼──────────────────────────────┤
-                    │ Next.js       │ Basé sur fichiers (React)      │ React + backend intégré      │
-                    └───────────────┴────────────────────────────────┴──────────────────────────────┘`,
+│ Framework     │ Type de routing                │ Idée clé                     │
+├───────────────┼────────────────────────────────┼──────────────────────────────┤
+│ Vue.js        │ Vue Router (officiel)          │ Séparation claire des vues   │
+├───────────────┼────────────────────────────────┼──────────────────────────────┤
+│ React         │ React Router (externe)         │ Très flexible                │
+├───────────────┼────────────────────────────────┼──────────────────────────────┤
+│ Angular       │ Routing intégré                │ Solution tout-en-un          │
+├───────────────┼────────────────────────────────┼──────────────────────────────┤
+│ SvelteKit     │ Basé sur les fichiers          │ Zéro configuration           │
+├───────────────┼────────────────────────────────┼──────────────────────────────┤
+│ Next.js       │ Basé sur fichiers (React)      │ React + backend intégré      │
+└───────────────┴────────────────────────────────┴──────────────────────────────┘`,
         },
         { type: "list", items: [
           "Vue.js → Vue Router officiel — Routes déclaratives, dynamiques, imbriquées",

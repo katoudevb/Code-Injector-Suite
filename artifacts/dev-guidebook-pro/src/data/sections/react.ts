@@ -394,6 +394,18 @@ export default MonComposant;`,
         },
         {
           type: "code",
+          filename: "Welcome.jsx",
+          language: "jsx",
+          code: `function Welcome(props) {
+  return <h1>Bonjour {props.name}</h1>;
+}
+
+function App() {
+  return <Welcome name="Ali" />;
+}`,
+        },
+        {
+          type: "code",
           filename: "Bienvenue.jsx",
           language: "jsx",
           code: `const Bienvenue = ({ nom }) => {
@@ -624,6 +636,27 @@ function Produit() {
         {
           type: "p",
           text: "DEF : Objet interne d'un composant React qui stocke des données dynamiques. Ces données peuvent changer dans le temps et déclencher un nouveau rendu lorsqu'elles sont modifiées.",
+        },
+        {
+          type: "code",
+          filename: "Counter.jsx",
+          language: "jsx",
+          code: `import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Compteur : {count}
+    </button>
+  );
+}`,
+        },
+        {
+          type: "note",
+          variant: "info",
+          text: "setCount(count + 1) met à jour le state et déclenche automatiquement un re-render.",
         },
         {
           type: "diagram",
@@ -1608,21 +1641,6 @@ const usePanier = create((set) => ({
       ],
     },
 
-    // ── STRUCTURE D'UN COMPOSANT (fichiers) ───────────────────────────────
-    {
-      id: "react-structure-composant",
-      title: "Structure d'un composant React — fichiers",
-      blocks: [
-        {
-          type: "diagram",
-          content: `NomComposant/
-├── NomComposant.jsx      # Fichier principal du composant
-├── NomComposant.css      # Style du composant
-└── NomComposant.test.jsx # Test unitaire du composant`,
-        },
-      ],
-    },
-
     // ── GUIDE DE STYLE JSX ─────────────────────────────────────────────────
     {
       id: "react-guide-jsx",
@@ -1678,6 +1696,21 @@ npm run dev` },
       ],
     },
 
+    // ── STRUCTURE D'UN COMPOSANT ────────────────────────────────────────────
+    {
+      id: "react-structure-composant-fichiers",
+      title: "Structure d'un composant React (fichiers)",
+      blocks: [
+        {
+          type: "diagram",
+          content: `NomComposant/
+├── NomComposant.jsx      # Fichier principal du composant
+├── NomComposant.css      # Style du composant
+└── NomComposant.test.jsx # Test unitaire du composant`,
+        },
+      ],
+    },
+
     // ── TYPES DE COMPOSANTS ────────────────────────────────────────────────
     {
       id: "react-types-composants",
@@ -1721,6 +1754,32 @@ npm run dev` },
       id: "react-types-router",
       title: "Types de Router",
       blocks: [
+        { type: "h", text: "Déclaration avec pages séparées" },
+        { type: "code", filename: "App.jsx", language: "jsx", code: `import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Contact from "./pages/Contact"
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}` },
+        { type: "h", text: "Navigation" },
+        { type: "code", filename: "Menu.jsx", language: "jsx", code: `import { Link } from "react-router-dom";
+
+function Menu() {
+  return (
+    <nav>
+      <Link to="/">Accueil</Link>
+      <Link to="/contact">Contact</Link>
+    </nav>
+  );
+}` },
         {
           type: "diagram",
           content: `┌─────────────────────────────────────────────────────┐

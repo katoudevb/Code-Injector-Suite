@@ -986,6 +986,51 @@ export class UserDisplayComponent {
   username = 'charlie';
 }` },
         { type: "note", variant: "info", text: "Le Service est utilisé dans le .ts du composant pour récupérer/traiter des données (souvent via Observable). Le Pipe est utilisé dans le .html du composant pour transformer l'affichage (vue uniquement)." },
+        { type: "h", text: "Exemple complet — service multi-utilisateurs + pipe" },
+        { type: "code", filename: "user.service.ts", language: "typescript", code: `@Injectable({ providedIn: 'root' })
+export class UserService {
+  private users: User[] = [
+    { id: 1, name: 'alice', role: 'admin' },
+    { id: 2, name: 'bob', role: 'editor' },
+    { id: 3, name: 'charlie', role: 'viewer' },
+    { id: 4, name: 'david', role: 'admin' },
+    { id: 5, name: 'eva', role: 'editor' },
+    { id: 6, name: 'frank', role: 'viewer' }
+  ];
+
+  getUserById$(id: number): Observable<User> {
+    const user = this.users.find(u => u.id === id);
+    return of(user as User);
+  }
+}` },
+        { type: "code", filename: "user.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UserService, User } from './user.service';
+import { UserLabelPipe } from './user-label.pipe';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-user',
+  standalone: true,
+  imports: [CommonModule, AsyncPipe, UserLabelPipe],
+  templateUrl: './user.component.html'
+})
+export class UserComponent {
+  user$: Observable<User>;
+
+  constructor(private userService: UserService) {
+    this.user$ = this.userService.getUserById$(1);
+  }
+}` },
+        { type: "code", filename: "user.component.html", language: "html", code: `<h2>Données utilisateur</h2>
+<div *ngIf="user$ | async as user; else loading">
+  <p>Nom formaté : {{ user.name | userLabel:user.role }}</p>
+</div>
+
+<ng-template #loading>
+  <p>Chargement...</p>
+</ng-template>` },
       ],
     },
 
