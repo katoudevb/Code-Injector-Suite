@@ -696,7 +696,6 @@ export class EncadrerPipe implements PipeTransform {
   ]
 })
 export class AppModule {}` },
-        { type: "h", text: "Pipe de tri sortByName" },
         { type: "code", filename: "sort-by-name.pipe.ts", language: "typescript", code: `@Pipe({ name: 'sortByName' })
 export class SortByNamePipe implements PipeTransform {
   transform(array: any[], order: 'asc' | 'desc' = 'asc'): any[] {
@@ -713,6 +712,25 @@ export class SortByNamePipe implements PipeTransform {
         { type: "code", filename: "template.html", language: "html", code: `<li *ngFor="let item of items | sortByName:'asc'">
   {{ item.name }}
 </li>` },
+        { type: "h", text: "Composant TypeScript associé" },
+        { type: "code", filename: "app.component.ts", language: "typescript", code: `export class AppComponent {
+  items = [
+    { name: 'Zoé' },
+    { name: 'Albert' },
+    { name: 'Mathieu' }
+  ];
+}` },
+        { type: "h", text: "Enregistrement dans app.module.ts (pipe non-standalone)" },
+        { type: "code", filename: "app.module.ts", language: "typescript", code: `import { SortByNamePipe } from './sort-by-name.pipe';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    SortByNamePipe
+  ],
+  // ...
+})
+export class AppModule {}` },
         { type: "h", text: "Pipe avec locale (fr-FR)" },
         { type: "code", filename: "app.module.ts", language: "typescript", code: `import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -727,6 +745,9 @@ registerLocaleData(localeFr);
 })
 export class AppModule {}` },
         { type: "code", filename: "template.html", language: "html", code: `<p>Date localisée : {{ today | date:'fullDate' }}</p>` },
+        { type: "code", filename: "app.component.ts", language: "typescript", code: `export class AppComponent {
+  today: Date = new Date();
+}` },
         { type: "h", text: "Pipe Standalone" },
         { type: "code", filename: "nom-du-pipe.pipe.ts", language: "typescript", code: `import { Pipe, PipeTransform } from '@angular/core';
 
@@ -784,6 +805,187 @@ import { CapitalizePipe } from './capitalize.pipe';
   imports: [CapitalizePipe] // on importe le pipe ici
 })
 export class DemoComponent {}` },
+      ],
+    },
+
+    // ── PIPES AVEC ARGUMENTS — EXEMPLES COMPLETS ────────────────────────────
+    {
+      id: "angular-pipes-arguments",
+      title: "Pipes standalone avec arguments — exemples complets",
+      blocks: [
+        { type: "h", text: "Utilisation d'un pipe simple dans un composant standalone" },
+        { type: "code", filename: "exemple.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
+import { CapitalizePipe } from './capitalize.pipe'; // chemin à adapter
+
+@Component({
+  selector: 'app-exemple',
+  standalone: true,
+  imports: [CapitalizePipe], // obligatoire
+  templateUrl: './exemple.component.html'
+})
+export class ExempleComponent {
+  titre = 'angular standalone pipe';
+}` },
+        { type: "code", filename: "exemple.component.html", language: "html", code: `<p>{{ titre | capitalize }}</p>` },
+        { type: "h", text: "Pipe truncate avec arguments (limite, suffixe)" },
+        { type: "code", filename: "truncate.pipe.ts", language: "typescript", code: `import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'truncate',
+  standalone: true
+})
+export class TruncatePipe implements PipeTransform {
+  transform(value: string, limit: number = 20, suffix: string = '...'): string {
+    if (!value) return '';
+    return value.length > limit ? value.substring(0, limit) + suffix : value;
+  }
+}` },
+        { type: "code", filename: "demo.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
+import { TruncatePipe } from './truncate.pipe';
+
+@Component({
+  standalone: true,
+  selector: 'app-demo',
+  imports: [TruncatePipe],
+  templateUrl: './demo.component.html'
+})
+export class DemoComponent {
+  texteLong = 'Ceci est une très longue chaîne de caractères destinée à être tronquée.';
+}` },
+        { type: "code", filename: "demo.component.html", language: "html", code: `<p>{{ texteLong | truncate:30:' [...]' }}</p>` },
+        { type: "h", text: "Pipe userLabel avec capitalisation + suffixe configurables" },
+        { type: "code", filename: "user-label.pipe.ts", language: "typescript", code: `import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'userLabel',
+  standalone: true
+})
+export class UserLabelPipe implements PipeTransform {
+  transform(
+    value: string,
+    capitalize: boolean = true,
+    suffix: string = ''
+  ): string {
+    if (!value) return '';
+    let result = value;
+    if (capitalize) {
+      result = value.charAt(0).toUpperCase() + value.slice(1);
+    }
+    return suffix ? \`\${result}\${suffix}\` : result;
+  }
+}` },
+        { type: "code", filename: "user-display.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UserLabelPipe } from './user-label.pipe';
+
+@Component({
+  standalone: true,
+  selector: 'app-user-display',
+  imports: [CommonModule, UserLabelPipe],
+  templateUrl: './user-display.component.html'
+})
+export class UserDisplayComponent {
+  username = 'charlie';
+}` },
+        { type: "code", filename: "user-display.component.html", language: "html", code: `<h3>Affichage du nom</h3>
+
+<!-- Capitalisation + suffixe personnalisé -->
+<p>{{ username | userLabel:true:'(admin)' }}</p>
+
+<!-- Sans capitalisation, avec suffixe -->
+<p>{{ username | userLabel:false:'[readonly]' }}</p>
+
+<!-- Capitalisation seule -->
+<p>{{ username | userLabel }}</p>` },
+      ],
+    },
+
+    // ── CYCLE DE RÉCUPÉRATION DE DONNÉES BASÉES SUR LA ROUTE ────────────────
+    {
+      id: "angular-cycle-route-donnees",
+      title: "Cycle de récupération de données basées sur la route",
+      blocks: [
+        { type: "h", text: "1. Définir la route" },
+        { type: "code", filename: "app.routes.ts", language: "typescript", code: `import { Routes } from '@angular/router';
+import { UserDetailComponent } from './user-detail.component';
+
+export const routes: Routes = [
+  { path: 'users/:id', component: UserDetailComponent }
+];` },
+        { type: "h", text: "2. Récupération de l'ID dans le composant" },
+        { type: "code", filename: "user-detail.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { UserService, User } from './user.service';
+import { AsyncPipe } from '@angular/common';
+import { Observable, switchMap } from 'rxjs';
+
+@Component({
+  standalone: true,
+  selector: 'app-user-detail',
+  imports: [CommonModule, AsyncPipe],
+  templateUrl: './user-detail.component.html'
+})
+export class UserDetailComponent {
+  user$: Observable<User>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService
+  ) {
+    // Récupère l'ID dans l'URL, puis charge l'utilisateur
+    this.user$ = this.route.paramMap.pipe(
+      switchMap(params => {
+        const id = Number(params.get('id'));
+        return this.userService.getUserById$(id);
+      })
+    );
+  }
+}` },
+        { type: "code", filename: "user-detail.component.html", language: "html", code: `<div *ngIf="user$ | async as user; else loading">
+  <h2>Détail de l'utilisateur</h2>
+  <p>Nom : {{ user.name }}</p>
+  <p>Email : {{ user.email }}</p>
+</div>
+
+<ng-template #loading>
+  <p>Chargement...</p>
+</ng-template>` },
+        { type: "h", text: "3. Appliquer un pipe sur les données récupérées" },
+        { type: "code", filename: "user-label.pipe.ts", language: "typescript", code: `import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'userLabel',
+  standalone: true
+})
+export class UserLabelPipe implements PipeTransform {
+  transform(
+    value: string,
+    capitalize: boolean = true,
+    suffix: string = ''
+  ): string {
+    if (!value) return '';
+    let result = value;
+    if (capitalize) {
+      result = value.charAt(0).toUpperCase() + value.slice(1);
+    }
+    return suffix ? \`\${result}\${suffix}\` : result;
+  }
+}` },
+        { type: "code", filename: "user.display.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UserLabelPipe } from './user-label.pipe';
+
+@Component({
+  standalone: true,
+  selector: 'app-user-display',
+  imports: [CommonModule, UserLabelPipe],
+  templateUrl: './user-display.component.html'
+})
+export class UserDisplayComponent {
+  username = 'charlie';
+}` },
+        { type: "note", variant: "info", text: "Le Service est utilisé dans le .ts du composant pour récupérer/traiter des données (souvent via Observable). Le Pipe est utilisé dans le .html du composant pour transformer l'affichage (vue uniquement)." },
       ],
     },
 
@@ -1117,110 +1319,6 @@ const form = fb.group({
 });
 
 if (form.valid) console.log(form.value);` },
-      ],
-    },
-
-    // ── STRUCTURE D'UN COMPOSANT (fichiers) ────────────────────────────────
-    {
-      id: "angular-structure-composant",
-      title: "Structure d'un composant React — fichiers",
-      blocks: [
-        {
-          type: "diagram",
-          content: `MonComposant/
-├── mon-composant.component.ts       # logique TypeScript
-├── mon-composant.component.html     # template HTML
-├── mon-composant.component.css      # style CSS
-└── mon-composant.component.spec.ts  # test unitaire`,
-        },
-      ],
-    },
-
-    // ── PIPES STANDALONE ───────────────────────────────────────────────────
-    {
-      id: "angular-pipes-standalone",
-      title: "Les pipes standalone",
-      blocks: [
-        { type: "h", text: "Créer un pipe standalone" },
-        { type: "code", filename: "terminal", language: "bash", code: `ng generate pipe NomPipe` },
-        { type: "code", filename: "capitalize.pipe.ts", language: "typescript", code: `import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({
-  name: 'capitalize',
-  standalone: true,
-})
-export class CapitalizePipe implements PipeTransform {
-  transform(value: any, ...args: any[]): any {
-    if (!value) return '';
-    return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
-  }
-}` },
-        { type: "h", text: "Utilisation dans un composant standalone" },
-        { type: "code", filename: "demo.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
-import { CapitalizePipe } from './capitalize.pipe';
-
-@Component({
-  selector: 'app-demo',
-  standalone: true,
-  template: \`<p>{{ 'angular' | capitalize }}</p>\`,
-  imports: [CapitalizePipe] // importer le pipe ici
-})
-export class DemoComponent {}` },
-      ],
-    },
-
-    // ── ROUTER STANDALONE ──────────────────────────────────────────────────
-    {
-      id: "angular-router-standalone",
-      title: "Router — composants standalone",
-      blocks: [
-        { type: "h", text: "Définir les composants standalone" },
-        { type: "code", filename: "home.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-home',
-  standalone: true,
-  template: \`<h2>Accueil</h2>\`
-})
-export class HomeComponent {}` },
-        { type: "h", text: "Configurer le router" },
-        { type: "code", filename: "app.routes.ts", language: "typescript", code: `import { Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { AboutComponent } from './about.component';
-
-export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: '**', redirectTo: '' }
-];
-
-export const appConfig = [provideRouter(routes)];` },
-        { type: "h", text: "Point d'entrée (main.ts)" },
-        { type: "code", filename: "main.ts", language: "typescript", code: `import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
-import { AppComponent } from './app.component';
-import { routes } from './app.routes';
-
-bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)]
-});` },
-        { type: "h", text: "Composant racine avec router-outlet" },
-        { type: "code", filename: "app.component.ts", language: "typescript", code: `import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterModule],
-  template: \`
-    <nav>
-      <a routerLink="/">Accueil</a> |
-      <a routerLink="/about">À propos</a>
-    </nav>
-    <router-outlet></router-outlet>
-  \`
-})
-export class AppComponent {}` },
       ],
     },
   ],
