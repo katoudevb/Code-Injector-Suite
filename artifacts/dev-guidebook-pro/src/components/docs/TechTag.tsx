@@ -6,6 +6,8 @@ const LABELS: Record<Tech, string> = {
   js: "JS",
   php: "PHP",
   ts: "TS",
+  bootstrap: "Bootstrap",
+  python: "Python",
 };
 
 const CLASSES: Record<Tech, string> = {
@@ -14,6 +16,8 @@ const CLASSES: Record<Tech, string> = {
   js: "tag-js",
   php: "tag-php",
   ts: "tag-ts",
+  bootstrap: "tag-bootstrap",
+  python: "tag-python",
 };
 
 export function TechTag({ tech }: { tech: Tech }) {

@@ -8,6 +8,7 @@ import { next } from "./sections/next";
 import { vue } from "./sections/vue";
 import { angular } from "./sections/angular";
 import { node } from "./sections/node";
+import { django } from "./sections/django";
 import { symfony } from "./sections/symfony";
 import { laravel } from "./sections/laravel";
 import { sql } from "./sections/sql";
@@ -30,6 +31,7 @@ export const sections: Section[] = [
   vue,
   angular,
   node,
+  django,
   symfony,
   laravel,
   sql,

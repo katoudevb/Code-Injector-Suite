@@ -59,7 +59,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ── Light theme (white) ─────────────────────────────────────────────────── */
+/* â”€â”€ Light theme (white) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --button-outline: rgba(0,0,0,.10);
   --badge-outline: rgba(0,0,0,.05);
@@ -81,7 +81,7 @@
   --popover-foreground: 222 47% 11%;
   --popover-border: 214 32% 91%;
 
-  /* Sidebar — light gray */
+  /* Sidebar â€” light gray */
   --sidebar:      220 14% 96%;
   --sidebar-foreground: 222 47% 20%;
   --sidebar-border: 214 32% 89%;
@@ -137,22 +137,24 @@
   body { @apply font-sans antialiased bg-background text-foreground; }
 }
 
-/* ── Note blocks ─────────────────────────────────────────────────────────── */
+/* â”€â”€ Note blocks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .note-info    { background-color: hsl(221 83% 53% / 0.08); border-left: 3px solid hsl(var(--info)); }
 .note-warning { background-color: hsl(38 92% 50% / 0.10); border-left: 3px solid hsl(var(--warning)); }
 .note-success { background-color: hsl(142 71% 45% / 0.08); border-left: 3px solid hsl(var(--success)); }
 
-/* ── Code block background ───────────────────────────────────────────────── */
+/* â”€â”€ Code block background â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .bg-code-bg { background-color: hsl(var(--code-bg)); }
 
-/* ── Tech tags ───────────────────────────────────────────────────────────── */
+/* â”€â”€ Tech tags â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .tag-html { background-color: hsl(20 80% 50% / 0.12); color: hsl(20 80% 40%); }
 .tag-css  { background-color: hsl(221 83% 53% / 0.12); color: hsl(221 83% 40%); }
 .tag-js   { background-color: hsl(51 100% 50% / 0.15); color: hsl(40 90% 35%); }
 .tag-php  { background-color: hsl(271 76% 53% / 0.12); color: hsl(271 76% 45%); }
 .tag-ts   { background-color: hsl(204 100% 40% / 0.12); color: hsl(204 100% 35%); }
+.tag-bootstrap { background-color: hsl(291 64% 42% / 0.12); color: hsl(291 64% 35%); }
+.tag-python     { background-color: hsl(175 60% 35% / 0.14); color: hsl(175 65% 28%); }
 
-/* ── Prism syntax highlighting (dark code blocks on light bg) ────────────── */
+/* â”€â”€ Prism syntax highlighting (dark code blocks on light bg) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 code[class*="language-"],
 pre[class*="language-"] {
   color: #e2e8f0;

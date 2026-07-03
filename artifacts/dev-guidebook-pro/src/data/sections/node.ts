@@ -45,6 +45,148 @@ app.listen(3000, () => console.log("Serveur sur le port 3000"));` },
       ],
     },
     {
+      id: "express-schema-fonctionnement",
+      title: "Express.js — Schéma de fonctionnement",
+      blocks: [
+        { type: "p", text: "Express est un framework web minimal et flexible pour Node.js. Il fournit : un système de gestion des requêtes HTTP, des middlewares puissants, une architecture simple pour créer des APIs et sites web." },
+        {
+          type: "diagram",
+          content: `Client (navigateur)
+       │
+       │ Requête HTTP (GET /products)
+       ▼
++──────────────────────────────────────────+
+|           Express.js App                 |
+|                                          |
+|  app.get('/products', (req, res) => {    |
+|      // Traitement                       |
+|      res.json(data)                      |
+|  })                                      |
++──────────────────────────────────────────+
+       │
+       │ Réponse HTTP (JSON / HTML / Fichier)
+       ▼
+Client (navigateur)`,
+        },
+      ],
+    },
+    {
+      id: "express-installation",
+      title: "Express.js — Installation",
+      blocks: [
+        { type: "code", filename: "terminal", language: "bash", code: `# Création du projet
+mkdir server
+cd server
+npm init -y
+
+# Installer Express
+npm install express` },
+        { type: "h", text: "Création d'un serveur Express simple" },
+        { type: "code", filename: "server.js", language: "javascript", code: `// server.js
+const express = require("express");
+const app = express();
+
+const port = 8000;
+
+app.listen(port, () => {
+    console.log("Serveur lancé sur http://localhost:" + port);
+});` },
+        { type: "h", text: "Syntaxe importante" },
+        { type: "code", filename: "server.js", language: "javascript", code: `app.listen(port, host, backlog, callback)` },
+        { type: "table", headers: ["Paramètre", "Description"], rows: [
+          ["port", "Port d'écoute (ex: 3000, 8000)"],
+          ["host", "Adresse IP (optionnel)"],
+          ["backlog", "Taille de file d'attente (optionnel)"],
+          ["callback", "Fonction exécutée au démarrage"],
+        ]},
+        { type: "h", text: "Démarrer le serveur" },
+        { type: "code", filename: "terminal", language: "bash", code: `node server.js
+
+# Ou via npm :
+npm start
+
+# http://localhost:8000` },
+      ],
+    },
+    {
+      id: "express-routes",
+      title: "Express.js — Routes et réponses",
+      blocks: [
+        { type: "code", filename: "server.js", language: "javascript", code: `// Exemple GET simple
+app.get("/", (req, res) => {
+    res.send("Hello world!");
+});` },
+        { type: "table", headers: ["Variable", "Description"], rows: [
+          ["req", "Requête utilisateur"],
+          ["res", "Réponse serveur"],
+        ]},
+        { type: "h", text: "Réponses possibles" },
+        { type: "code", filename: "server.js", language: "javascript", code: `// Texte
+res.send("Hello");
+
+// JSON
+res.json({ message: "Hello" });
+
+// Fichier
+res.sendFile(__dirname + "/index.html");` },
+      ],
+    },
+    {
+      id: "express-middleware-avance",
+      title: "Express.js — Middleware, fichiers statiques et erreurs",
+      blocks: [
+        { type: "h", text: "Middleware" },
+        { type: "p", text: "Un middleware est une fonction qui : lit la requête, modifie req/res si besoin, appelle next() pour continuer." },
+        { type: "code", filename: "server.js", language: "javascript", code: `// Exemple de middleware
+app.use((req, res, next) => {
+    console.log("Requête reçue");
+    next();
+});
+
+// Ajout de middleware pour parser le JSON
+app.use(express.json());` },
+        { type: "h", text: "Fichiers statiques" },
+        { type: "p", text: "Permet de servir : CSS, images, JS frontend." },
+        { type: "code", filename: "server.js", language: "javascript", code: `app.use(express.static("public"));
+// Tout le dossier public/ devient accessible` },
+        { type: "h", text: "Gestion des erreurs" },
+        { type: "code", filename: "server.js", language: "javascript", code: `app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send("Erreur serveur");
+});` },
+      ],
+    },
+    {
+      id: "express-nodemon-generator",
+      title: "Express.js — Nodemon et Express Generator",
+      blocks: [
+        { type: "h", text: "Nodemon (auto-reload)" },
+        { type: "p", text: "Nodemon permet de redémarrer automatiquement le serveur." },
+        { type: "code", filename: "terminal", language: "bash", code: `# Installation
+npm install --save-dev nodemon
+
+# Lancer
+nodemon server.js` },
+        { type: "h", text: "Express Generator" },
+        { type: "p", text: "express-generator permet de générer une structure complète." },
+        { type: "code", filename: "terminal", language: "bash", code: `# Installation
+npm install -g express-generator
+
+# Création projet
+express mon_app
+cd mon_app
+npm install
+
+# Lancement
+npm start` },
+        { type: "h", text: "Liens utiles Express.js" },
+        { type: "table", headers: ["Ressource", "URL"], rows: [
+          ["Documentation officielle", "https://expressjs.com/"],
+          ["Guide routing", "https://expressjs.com/en/guide/routing.html"],
+        ]},
+      ],
+    },
+    {
       id: "middleware",
       title: "Middleware et erreurs",
       blocks: [
