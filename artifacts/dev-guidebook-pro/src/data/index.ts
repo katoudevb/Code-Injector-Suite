@@ -10,6 +10,11 @@ import { angular } from "./sections/angular";
 import { node } from "./sections/node";
 import { django } from "./sections/django";
 import { symfony } from "./sections/symfony";
+import { php } from "./sections/php";
+import { cms } from "./sections/cms";
+import { ecommerce } from "./sections/ecommerce";
+import { prestashop } from "./sections/prestashop";
+import { wordpress } from "./sections/wordpress";
 import { laravel } from "./sections/laravel";
 import { sql } from "./sections/sql";
 import { mongo } from "./sections/mongo";
@@ -33,6 +38,11 @@ export const sections: Section[] = [
   node,
   django,
   symfony,
+  php,
+  cms,
+  ecommerce,
+  prestashop,
+  wordpress,
   laravel,
   sql,
   mongo,

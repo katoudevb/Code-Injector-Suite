@@ -18,6 +18,124 @@ npm run dev            # lance un script du package.json` },
       ],
     },
     {
+      id: "node-intro-fonctionnement",
+      title: "Node.js — Qu'est-ce que c'est ?",
+      blocks: [
+        { type: "note", variant: "info", text: "Node.js est un environnement d'exécution JavaScript multiplateforme qui permet de créer des applications côté serveur (sites web, API). Ce n'est ni un langage ni un framework, mais un moteur qui exécute du JavaScript sur un serveur." },
+        { type: "h", text: "Comment Node.js fonctionne" },
+        { type: "p", text: "Node.js combine plusieurs éléments :" },
+        { type: "list", items: [
+          "Le moteur JavaScript V8 (utilisé par Google Chrome)",
+          "Une boucle d'événements (event loop) pour gérer les tâches asynchrones",
+          "Des API d'entrée/sortie (I/O) pour gérer fichiers, réseau, etc.",
+        ]},
+        { type: "p", text: "Résultat : Node.js peut gérer beaucoup de requêtes en même temps sans bloquer le serveur." },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────┐
+│                   NODE.JS                   │
+│                                             │
+│  ┌──────────┐  ┌──────────┐  ┌───────────┐ │
+│  │ Moteur V8│  │Event Loop│  │  API I/O  │ │
+│  │(Google)  │  │(async)   │  │(fs,réseau)│ │
+│  └──────────┘  └──────────┘  └───────────┘ │
+│                                             │
+│       JavaScript exécuté côté SERVEUR       │
+└─────────────────────────────────────────────┘
+         ▲                     ▼
+   Requêtes HTTP          Réponses HTTP
+      clients                clients`,
+        },
+        { type: "h", text: "Ce qu'on peut faire avec Node.js" },
+        { type: "list", items: [
+          "1. Créer un serveur HTTP : déclarer un serveur web, écouter des requêtes, envoyer des réponses",
+          "2. Gérer les routes : définir des URL (/accueil, /login, /produits), chaque URL déclenche une action différente",
+          "3. Récupérer des données utilisateur : paramètres dans l'URL, données envoyées par un formulaire",
+          "4. Envoyer du contenu au client : texte, JSON (API), fichiers HTML",
+          "5. Accéder au système de fichiers : lire, écrire, envoyer des fichiers au navigateur",
+        ]},
+        { type: "h", text: "Genèse de JavaScript et Node.js" },
+        { type: "list", items: [
+          "JavaScript est un langage créé pour fonctionner dans les navigateurs web",
+          "À l'origine, il était uniquement utilisé côté client (dans le navigateur)",
+          "Avec le temps, on a voulu utiliser JavaScript côté serveur, ce qui a conduit à la création de Node.js",
+          "Node.js permet donc d'exécuter JavaScript en dehors du navigateur, sur un serveur",
+        ]},
+        {
+          type: "diagram",
+          content: `Avant Node.js
+─────────────
+  Navigateur
+  ┌─────────────────┐
+  │   JavaScript    │  ← uniquement côté client
+  │   (front-end)   │
+  └─────────────────┘
+
+Avec Node.js
+────────────
+  Navigateur               Serveur
+  ┌──────────┐          ┌──────────────────┐
+  │JavaScript│  ─HTTP→  │     Node.js      │
+  │(front)   │  ←HTTP─  │  JavaScript V8   │
+  └──────────┘          │   (back-end)     │
+                        └──────────────────┘`,
+        },
+        { type: "h", text: "Les versions de Node.js" },
+        { type: "p", text: "Version LTS (Long Term Support) : recommandée pour la production, très stable, largement testée, contient peu de bugs, reçoit des mises à jour de sécurité régulières. C'est la version à utiliser pour les vrais projets." },
+        { type: "p", text: "Version Current : dernière version disponible, contient les nouvelles fonctionnalités, peut être instable, moins testée que LTS. Utilisée pour tester les nouveautés et faire du développement expérimental." },
+        { type: "note", variant: "warning", text: "La version Current n'est pas recommandée en production !" },
+        { type: "table", headers: ["Critère", "LTS", "Current"], rows: [
+          ["Stabilité", "Très stable", "Instable possible"],
+          ["Usage", "Production", "Expérimental"],
+          ["Bugs", "Peu", "Possibles"],
+          ["Mises à jour sécurité", "Régulières", "Variable"],
+          ["Nouvelles fonctionnalités", "Limitées", "Oui"],
+        ]},
+      ],
+    },
+    {
+      id: "node-npm-detail",
+      title: "NPM (Node Package Manager)",
+      blocks: [
+        { type: "p", text: "npm est le plus grand registre de logiciels JavaScript au monde. Il est principalement utilisé pour partager, installer et gérer des paquets (packages) utilisés dans les projets Node.js." },
+        { type: "note", variant: "info", text: "npm est installé automatiquement avec Node.js." },
+        { type: "h", text: "Les 3 composants principaux de NPM" },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────┐
+│                      NPM                        │
+│                                                 │
+│  ┌────────────┐  ┌──────────┐  ┌─────────────┐ │
+│  │  Site web  │  │   CLI    │  │  Registre   │ │
+│  │ npmjs.com  │  │ Terminal │  │ (base de    │ │
+│  │            │  │ commands │  │  données)   │ │
+│  └────────────┘  └──────────┘  └─────────────┘ │
+└─────────────────────────────────────────────────┘`,
+        },
+        { type: "p", text: "1. Le site web (https://www.npmjs.com/) permet de : rechercher des packages, consulter leur documentation, voir leur popularité et versions, gérer son compte utilisateur." },
+        { type: "p", text: "2. La CLI (Command Line Interface) est l'outil en ligne de commande. Elle permet d'installer un package, supprimer un package, initialiser un projet." },
+        { type: "code", filename: "terminal", language: "bash", code: `npm install express` },
+        { type: "p", text: "3. Le registre NPM est une énorme base de données en ligne contenant des millions de packages JavaScript, leurs versions, leurs métadonnées. Par défaut, accessible ici : https://registry.npmjs.org/" },
+        { type: "h", text: "Comment fonctionne NPM ?" },
+        { type: "p", text: "NPM utilise un système de registre pour identifier les packages par leur nom, récupérer une version précise, installer les dépendances dans un projet. Tout cela est souvent décrit dans un fichier important : package.json, qui contient le nom du projet, les dépendances, les scripts, et la version du projet." },
+        { type: "h", text: "Utilisation de NPM (workflow simple)" },
+        {
+          type: "diagram",
+          content: `1. Rechercher       2. Installer       3. Utiliser
+─────────────       ────────────       ───────────
+npmjs.com     →     npm install    →   require()
+- popularité         nom-package        dans le code
+- version
+- date MAJ`,
+        },
+        { type: "code", filename: "terminal", language: "bash", code: `npm install nom-du-package
+# Exemple :
+npm install express` },
+        { type: "code", filename: "app.js", language: "javascript", code: `const express = require("express");` },
+        { type: "note", variant: "info", text: "Registres privés : certaines entreprises peuvent utiliser leur propre registre NPM privé ou héberger des packages internes." },
+      ],
+    },
+    {
       id: "modules",
       title: "CommonJS vs ESM",
       blocks: [
@@ -27,6 +145,624 @@ module.exports = { calculerTotal };
 // ESM (import) — "type": "module" dans package.json
 import express from "express";
 export function calculerTotal() {}` },
+      ],
+    },
+    {
+      id: "node-modules-types",
+      title: "Les modules dans Node.js",
+      blocks: [
+        { type: "p", text: "Dans Node.js, un module est un ensemble de fonctionnalités réutilisables. Un module permet de séparer le code en plusieurs fichiers pour mieux organiser une application." },
+        { type: "h", text: "Le dossier node_modules" },
+        { type: "p", text: "Le dossier node_modules contient tous les modules installés via npm et les dépendances de ton projet. Il est créé automatiquement quand tu installes des packages." },
+        { type: "h", text: "Qu'est-ce qu'un module ?" },
+        { type: "p", text: "Un module peut être : une fonctionnalité native de Node.js (ex: fs, http), un package installé via npm, ou un module que tu crées toi-même. On dit qu'un module expose une API (des fonctions utilisables par d'autres fichiers)." },
+        {
+          type: "diagram",
+          content: `              MODULES NODE.JS
+                    │
+    ┌───────────────┼──────────────────┐
+    ▼               ▼                  ▼
+Modules natifs  Packages NPM     Modules custom
+┌──────────┐   ┌──────────┐    ┌──────────────┐
+│ fs       │   │ express  │    │ math.js      │
+│ http     │   │ mongoose │    │ monModule.js │
+│ events   │   │ cors     │    │ ...          │
+│ timer    │   │ ...      │    └──────────────┘
+└──────────┘   └──────────┘`,
+        },
+        { type: "h", text: "Créer ses propres modules" },
+        { type: "code", filename: "math.js", language: "javascript", code: `// math.js
+function add(a, b) {
+  return a + b;
+}
+module.exports = add;` },
+        { type: "code", filename: "app.js", language: "javascript", code: `// app.js
+const add = require("./math");
+console.log(add(2, 3));` },
+        {
+          type: "diagram",
+          content: `       app.js                  math.js
+┌──────────────┐          ┌──────────────────┐
+│              │  ──────▶ │ function add()   │
+│ require(     │          │                  │
+│ "./math"     │          │ module.exports   │
+│ )            │ ◀─────── │ = add            │
+│ add(2, 3)    │          └──────────────────┘
+└──────────────┘
+    résultat: 5`,
+        },
+        { type: "h", text: "L'approche modulaire dans Node.js" },
+        { type: "p", text: "Node.js repose sur une approche modulaire : une application est découpée en plusieurs fichiers (modules) qui communiquent entre eux." },
+        { type: "list", items: ["Code plus organisé", "Réutilisation des fonctionnalités", "Maintenance plus facile", "Meilleure lisibilité"] },
+      ],
+    },
+    {
+      id: "node-fs-bases",
+      title: "Manipulation de fichiers avec le module fs",
+      blocks: [
+        { type: "p", text: "Le module fs (File System) permet de travailler avec les fichiers : lire, écrire, supprimer un fichier." },
+        { type: "h", text: "Importer le module fs" },
+        { type: "code", filename: "js", language: "javascript", code: `// Version CommonJS (la plus utilisée en Node.js)
+const fs = require("fs");
+
+// Version ES Modules
+import * as fs from "fs";
+// OU
+import { readFileSync } from "fs";` },
+        { type: "h", text: "1. Créer ou ajouter un fichier : appendFile()" },
+        { type: "p", text: "La méthode appendFile() permet de créer un fichier s'il n'existe pas, et d'ajouter du contenu à la fin d'un fichier." },
+        { type: "code", filename: "js", language: "javascript", code: `const fs = require("fs");
+
+fs.appendFile("test.txt", "Bonjour Node.js !\\n", (err) => {
+  if (err) throw err;
+  console.log("Fichier créé ou modifié !");
+});` },
+        { type: "p", text: "Résultat : si test.txt n'existe pas → il est créé. Sinon → le texte est ajouté à la suite." },
+        { type: "h", text: "2. Lire un fichier : readFile()" },
+        { type: "code", filename: "js", language: "javascript", code: `const fs = require("fs");
+
+fs.readFile("test.txt", "utf8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});` },
+        { type: "p", text: "Explication : \"utf8\" = format de lecture (texte lisible), data = contenu du fichier, err = erreur éventuelle." },
+        { type: "note", variant: "info", text: "Principe important : ces méthodes sont asynchrones. Node.js ne bloque pas l'exécution du programme pendant la lecture ou l'écriture." },
+      ],
+    },
+    {
+      id: "node-debogage-console",
+      title: "Débogage dans Node.js (console / logs)",
+      blocks: [
+        { type: "p", text: "Node.js fournit un module global appelé console (déjà disponible sans import). Il permet d'afficher des informations dans le terminal." },
+        { type: "p", text: "La fonction console.log() est utilisée pour afficher des messages, vérifier le comportement du code, déboguer une application." },
+        { type: "code", filename: "js", language: "javascript", code: `console.log("Application démarrée");` },
+        { type: "h", text: "Sorties standard" },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────┐
+│          FLUX STANDARD NODE.JS           │
+│                                          │
+│ stdout → console.log()  (messages)       │
+│ stderr → console.error() (erreurs)       │
+│ stdin  → entrée utilisateur              │
+└──────────────────────────────────────────┘`,
+        },
+        { type: "p", text: "stderr est utilisé pour afficher les erreurs, il est écrit immédiatement (non bufferisé) et ne bloque pas forcément le programme." },
+        { type: "code", filename: "js", language: "javascript", code: `console.error("Une erreur est survenue");` },
+        { type: "h", text: "Récapitulatif des principaux modules de l'API Node.js" },
+        { type: "p", text: "Exemples : console, file (fs), events, timer." },
+        { type: "code", filename: "js", language: "javascript", code: `// Module console
+console.log("Hello");
+console.error("Erreur");
+
+// Module file (fs)
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  console.log(data);
+});` },
+      ],
+    },
+    {
+      id: "node-util-fs-avance",
+      title: "Modules util et fs (usages avancés)",
+      blocks: [
+        { type: "h", text: "Module utilitaire : util" },
+        { type: "p", text: "Le module util fournit des fonctions utilitaires pour aider au développement : formater des messages, transformer des fonctions en promesses, outils de debug avancés." },
+        { type: "code", filename: "js", language: "javascript", code: `const util = require("util");
+
+// Exemple (promisification)
+const fs = require("fs");
+const readFile = util.promisify(fs.readFile);` },
+        { type: "h", text: "Module système de fichiers : fs (usages avancés)" },
+        { type: "p", text: "Le module fs est utilisé pour lire, écrire, supprimer des fichiers, et créer des logs." },
+        { type: "code", filename: "js", language: "javascript", code: `// Exemple : création de logs
+const fs = require("fs");
+
+fs.appendFile("log.txt", "Nouvelle requête reçue\\n", (err) => {
+  if (err) throw err;
+});` },
+        { type: "p", text: "Dans les outils CLI, fs peut organiser des fichiers, créer des dossiers, archiver des données. Exemples d'usages : scripts de tri, outils de backup, automatisation système." },
+      ],
+    },
+    {
+      id: "node-events-timer",
+      title: "Les modules events & timer",
+      blocks: [
+        { type: "h", text: "Le module events" },
+        { type: "p", text: "Le module events permet de gérer des événements dans ton application. Tu peux émettre un événement (emit) et d'autres parties du code peuvent écouter cet événement (on)." },
+        {
+          type: "diagram",
+          content: `Émetteur                     Écouteur
+──────────                   ────────
+emitter.emit('message')  →   emitter.on('message', fn)
+                                    │
+                                    ▼
+                         console.log('Message reçu !')`,
+        },
+        { type: "code", filename: "js", language: "javascript", code: `const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+// écouter un événement
+emitter.on('message', () => {
+  console.log('Message reçu !');
+});
+
+// émettre un événement
+emitter.emit('message');` },
+        { type: "p", text: "Très utile pour : architecture événementielle, communication entre fichiers/modules. Node.js fonctionne avec une architecture événementielle : quand un événement se produit → une fonction est exécutée." },
+        { type: "h", text: "Le module timer" },
+        { type: "p", text: "Le module timer contient des fonctions pour exécuter du code après un certain délai." },
+        { type: "code", filename: "js", language: "javascript", code: `// setTimeout — Exécute une fois après un délai
+setTimeout(() => {
+  console.log('Exécuté après 2 secondes');
+}, 2000);
+
+// setInterval — Exécute en boucle
+setInterval(() => {
+  console.log('Toutes les 1 seconde');
+}, 1000);
+
+// Annuler
+const id = setTimeout(() => {}, 2000);
+clearTimeout(id);
+clearInterval(id);` },
+        { type: "note", variant: "info", text: "Source : W3Schools Node.js Events" },
+      ],
+    },
+    {
+      id: "node-child-process",
+      title: "Processus fils (child processes)",
+      blocks: [
+        { type: "p", text: "Un processus fils permet d'exécuter des commandes du système d'exploitation depuis Node.js. Module utilisé : child_process." },
+        {
+          type: "diagram",
+          content: `child_process
+      │
+      ├── spawn() → asynchrone (events) → gros flux de données
+      │                                   (stdin/stdout/stderr streams)
+      │
+      └── exec()  → callback             → commandes simples
+                                           (résultat direct)`,
+        },
+        { type: "h", text: "spawn() — asynchrone, non bloquant" },
+        { type: "p", text: "Lance un processus sans bloquer la boucle d'événements. Utilise des streams (stdin, stdout, stderr). Idéal pour : tâches longues, traitement en flux (stream)." },
+        { type: "code", filename: "js", language: "javascript", code: `const { spawn } = require('child_process');
+
+const child = spawn('ls');
+
+child.stdout.on('data', (data) => {
+  console.log(\`Résultat :\${data}\`);
+});` },
+        { type: "h", text: "exec() — avec callback" },
+        { type: "p", text: "Exécute une commande et retourne le résultat dans un callback. Idéal pour : commandes simples, récupérer directement le résultat." },
+        { type: "code", filename: "js", language: "javascript", code: `const { exec } = require('child_process');
+
+exec('ls', (error, stdout, stderr) => {
+  console.log(stdout);
+});` },
+        { type: "table", headers: ["Méthode", "Type", "Usage"], rows: [
+          ["spawn", "asynchrone (events)", "gros flux de données"],
+          ["exec", "callback", "commandes simples"],
+        ]},
+      ],
+    },
+    {
+      id: "node-https-sockets",
+      title: "Serveur HTTPS et Sockets TCP/UDP",
+      blocks: [
+        { type: "h", text: "Créer un serveur HTTPS" },
+        { type: "p", text: "Le module https permet de créer un serveur sécurisé avec TLS/SSL." },
+        { type: "code", filename: "js", language: "javascript", code: `const https = require('https');
+const fs = require('fs');
+
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+
+https.createServer(options, (req, res) => {
+  res.write('Hello HTTPS');
+  res.end();
+}).listen(443);` },
+        { type: "h", text: "Socket TCP (module net)" },
+        { type: "code", filename: "js", language: "javascript", code: `// Client TCP
+const net = require('net');
+
+const client = net.connect({ port: 3000 }, () => {
+  console.log('Connecté au serveur');
+});
+
+// Serveur TCP
+const server = net.createServer((socket) => {
+  socket.write('Hello client');
+});
+
+server.listen(3000);` },
+        { type: "h", text: "Socket UDP (module dgram)" },
+        { type: "code", filename: "js", language: "javascript", code: `const dgram = require('dgram');
+const socket = dgram.createSocket('udp4');
+
+socket.send('Hello UDP', 41234, 'localhost');` },
+        { type: "h", text: "Différence TCP vs UDP" },
+        {
+          type: "diagram",
+          content: `TCP                            UDP
+────────────────────           ────────────────────
+✅ Fiable                      ⚡ Rapide
+🔗 Connecté                   🔓 Sans connexion
+🐢 Plus lent                   🪶 Plus léger
+✅ Ordre garanti               ❌ Ordre non garanti
+Exemple : HTTP, HTTPS          Exemple : streaming, jeux`,
+        },
+        { type: "table", headers: ["TCP", "UDP"], rows: [["Fiable", "Rapide"], ["Connecté", "Sans connexion"], ["Plus lent", "Plus léger"]] },
+      ],
+    },
+    {
+      id: "node-event-loop-detail",
+      title: "La boucle d'événements (Event Loop) en détail",
+      blocks: [
+        { type: "p", text: "L'asynchronisme en JavaScript signifie que le programme peut continuer à exécuter du code pendant qu'il attend la fin d'une opération longue, comme une requête réseau (API), la lecture d'un fichier, ou un timer (setTimeout). L'utilisateur peut donc continuer à utiliser l'application sans blocage." },
+        { type: "p", text: "La boucle d'événements est un mécanisme qui vérifie si la pile d'appels (call stack) est vide, prend les fonctions en attente dans la file de messages (callback queue), et les exécute." },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────────────────┐
+│                     EVENT LOOP                       │
+│                                                      │
+│  1. CALL STACK (pile d'appels)                       │
+│     ┌─────────────────────┐                          │
+│     │ fn en cours         │  ← LIFO (dernière entrée │
+│     │ fn précédente       │    exécutée first)       │
+│     └─────────────────────┘                          │
+│                │                                     │
+│                ▼                                     │
+│  2. Tâche async ? → envoyée à API Web / Node         │
+│     (requête, fs, timer...)  exécutée hors thread    │
+│                │                                     │
+│                ▼                                     │
+│  3. Terminé ? → callback dans CALLBACK QUEUE         │
+│     ┌─────────────────────────────────┐              │
+│     │ callback1 | callback2 | ...     │              │
+│     └─────────────────────────────────┘              │
+│                │                                     │
+│                ▼                                     │
+│  4. Call Stack vide ? → prend le prochain callback   │
+└──────────────────────────────────────────────────────┘`,
+        },
+        { type: "h", text: "Détail des étapes" },
+        { type: "list", items: [
+          "1. Call Stack (pile d'appels) : contient les fonctions en cours d'exécution, fonctionne en LIFO (Last In, First Out), la dernière fonction ajoutée est exécutée en premier",
+          "2. Opération asynchrone : JS envoie la tâche (ex: requête API) à une API Web / Node, elle s'exécute en dehors du thread principal",
+          "3. Quand c'est terminé : la fonction callback est placée dans la file d'attente",
+          "4. Event Loop : si la pile est vide → elle prend la prochaine fonction dans la file",
+        ]},
+      ],
+    },
+    {
+      id: "node-callbacks-promises-async",
+      title: "Callbacks, Promesses et async/await",
+      blocks: [
+        { type: "h", text: "Callbacks" },
+        { type: "p", text: "Fonction passée en argument à une autre fonction, exécutée plus tard :" },
+        { type: "code", filename: "js", language: "javascript", code: `setTimeout(() => {
+  console.log("Exécuté après 2 secondes");
+}, 2000);` },
+        { type: "note", variant: "warning", text: "Problème : le callback hell (code difficile à lire quand imbriqué)" },
+        { type: "h", text: "Les Promesses (Promises)" },
+        { type: "p", text: "Une promesse est un objet qui représente une valeur disponible maintenant, plus tard… ou jamais." },
+        {
+          type: "diagram",
+          content: `Promise
+  │
+  ├── pending   → en attente (état initial)
+  │
+  ├── fulfilled → réussie  (resolve)
+  │
+  └── rejected  → échouée  (reject)`,
+        },
+        { type: "code", filename: "js", language: "javascript", code: `fetch("https://api.example.com/data")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));` },
+        { type: "h", text: "async / await" },
+        { type: "p", text: "C'est une syntaxe moderne pour travailler avec les promesses. Rend le code plus lisible (comme du synchrone)." },
+        { type: "code", filename: "js", language: "javascript", code: `async function getData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}` },
+        { type: "p", text: "Dans Node.js, on utilise : Promises (.then()/.catch()), async/await, et des modules comme fs (version promesse : fs.promises)." },
+        { type: "list", items: ["Code non bloquant", "Meilleure performance", "Gestion d'erreurs propre"] },
+      ],
+    },
+    {
+      id: "node-env-variables",
+      title: "Variables d'environnement en Node.js",
+      blocks: [
+        { type: "p", text: "Les variables d'environnement servent à gérer la configuration selon l'environnement : développement, production, test. Exemples : URL de base de données, port du serveur, clés API." },
+        { type: "h", text: "Utiliser env-cmd" },
+        { type: "p", text: "Avec Node.js, tu peux utiliser env-cmd (alternative à dotenv)." },
+        { type: "code", filename: "terminal", language: "bash", code: `npm install env-cmd --save-dev` },
+        { type: "h", text: "Structure du projet" },
+        {
+          type: "diagram",
+          content: `/env
+├── .env
+├── .env.dev
+└── .env.prod`,
+        },
+        { type: "code", filename: ".env", language: "text", code: `PORT=3000
+URL_MONGO=mongodb://localhost:27017/mydb` },
+        { type: "code", filename: "package.json", language: "json", code: `{
+  "scripts": {
+    "start": "env-cmd -f ./env/.env nodemon ./bin/www",
+    "dev":   "env-cmd -f ./env/.env.dev nodemon ./bin/www",
+    "prod":  "env-cmd -f ./env/.env.prod nodemon ./bin/www"
+  }
+}` },
+        { type: "code", filename: "terminal", language: "bash", code: `npm run dev
+npm run prod` },
+      ],
+    },
+    {
+      id: "node-mongodb-connexion-cors",
+      title: "Connexion à MongoDB et CORS",
+      blocks: [
+        { type: "h", text: "Installer les modules" },
+        { type: "code", filename: "terminal", language: "bash", code: `npm install mongoose cors` },
+        { type: "list", items: ["mongoose → gérer MongoDB", "cors → autoriser les requêtes externes"] },
+        { type: "h", text: "Organisation" },
+        { type: "code", filename: "structure", language: "text", code: `/db/mongo.js` },
+        { type: "code", filename: "db/mongo.js", language: "javascript", code: `const mongoose = require("mongoose");
+
+mongoose.connect(process.env.URL_MONGO)
+  .then(() => console.log("Connexion MongoDB réussie"))
+  .catch(err => console.error("Erreur MongoDB :", err));` },
+        { type: "note", variant: "warning", text: "URL_MONGO doit être dans ton .env" },
+        { type: "h", text: "Configuration dans app.js" },
+        { type: "code", filename: "app.js", language: "javascript", code: `const cors = require("cors");
+require("./db/mongo");
+
+app.use(cors());` },
+        { type: "h", text: "CORS (Cross-Origin)" },
+        { type: "p", text: "Permet aux autres domaines d'appeler ton API :" },
+        { type: "code", filename: "js", language: "javascript", code: `app.use(cors({
+  origin: "*"
+}));` },
+        { type: "note", variant: "warning", text: "* = autorise toutes les origines (à éviter en prod si possible)" },
+      ],
+    },
+    {
+      id: "node-routes-erreurs-404",
+      title: "Routes et gestion des erreurs 404",
+      blocks: [
+        { type: "h", text: "Route principale" },
+        { type: "code", filename: "js", language: "javascript", code: `app.use("/api", require("./routes"));` },
+        { type: "h", text: "Gestion 404" },
+        { type: "code", filename: "js", language: "javascript", code: `app.use((req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});` },
+        { type: "h", text: "Autres packages utiles" },
+        { type: "code", filename: "terminal", language: "bash", code: `npm install cookie-parser morgan` },
+        { type: "list", items: ["cookie-parser → gérer les cookies", "morgan → logger les requêtes HTTP"] },
+      ],
+    },
+    {
+      id: "node-api-http-natif",
+      title: "Créer une API simple avec le module http natif",
+      blocks: [
+        { type: "p", text: "La programmation asynchrone permet une communication non bloquante avec un serveur API. Avec Node.js, le serveur peut gérer plusieurs requêtes en même temps sans bloquer l'exécution. C'est basé sur un modèle événementiel (event-driven)." },
+        { type: "code", filename: "js", language: "javascript", code: `const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+
+  switch(req.url) {
+    case '/breeds':
+      res.writeHead(200);
+      res.end(JSON.stringify(["Siamese", "Persian", "Maine Coon"]));
+      break;
+    case '/facts':
+      res.writeHead(200);
+      res.end(JSON.stringify([
+        "Les chats dorment beaucoup",
+        "Les chats ronronnent"
+      ]));
+      break;
+    case '/fact':
+      res.writeHead(200);
+      res.end(JSON.stringify({
+        fact: "Les chats peuvent faire 100 sons différents."
+      }));
+      break;
+    default:
+      res.writeHead(404);
+      res.end(JSON.stringify({
+        error: "Ressource non trouvée"
+      }));
+  }
+});
+
+server.listen(3000, () => {
+  console.log('Serveur API lancé sur le port 3000');
+});` },
+        { type: "h", text: "Schéma des routes de l'API" },
+        {
+          type: "diagram",
+          content: `Client HTTP
+      │
+      ▼
+Node.js Serveur (port 3000)
+      │
+      ├── /breeds  → 200 → ["Siamese", "Persian", "Maine Coon"]
+      │
+      ├── /facts   → 200 → ["Les chats dorment...", "...ronronnent"]
+      │
+      ├── /fact    → 200 → { fact: "Les chats peuvent faire 100 sons" }
+      │
+      └── (autre)  → 404 → { error: "Ressource non trouvée" }`,
+        },
+        { type: "p", text: "Ce qu'il faut comprendre : /breeds, /facts, /fact sont des routes. Chaque route renvoie une réponse différente. Le serveur peut répondre à plusieurs utilisateurs sans se bloquer." },
+      ],
+    },
+    {
+      id: "node-tester-fichier-terminal",
+      title: "Tester un fichier JavaScript avec Node.js",
+      blocks: [
+        { type: "list", items: [
+          "1. Préparer le fichier JS : créer ou déposer ton fichier nom_dufichier.js dans un dossier accessible",
+          "2. Ouvrir le terminal : accéder au terminal (cmd, PowerShell, bash, etc.) sur ton PC",
+          "3. Se positionner dans le dossier : utiliser la commande cd chemin/du/dossier",
+          "4. Exécuter le fichier avec Node.js",
+        ]},
+        { type: "code", filename: "terminal", language: "bash", code: `node nom_dufichier.js` },
+        { type: "p", text: "puis appuyer sur Entrée. OU glisser/déposer le fichier." },
+        { type: "p", text: "5. Observer la sortie : les résultats de ton script s'affichent dans le terminal. En cas d'erreur, Node te fournit un message utile pour le débogage." },
+      ],
+    },
+    {
+      id: "node-api-express-exemple",
+      title: "Créer une API avec Node.js et Express",
+      blocks: [
+        { type: "p", text: "On utilise en général Express.js pour exposer facilement une API REST." },
+        { type: "code", filename: "js", language: "javascript", code: `const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Exemple de données
+const breeds = ['Siamois', 'Persan', 'Maine Coon'];
+const facts = [
+  "Les chats dorment 70% de leur vie",
+  "Le ronronnement peut avoir des vertus curatives",
+  "Un chat peut faire jusqu'à 100 sons différents"
+];
+
+// Routes API
+app.get('/breeds', (req, res) => {
+  res.json(breeds);
+});
+
+app.get('/facts', (req, res) => {
+  res.json(facts);
+});
+
+app.get('/fact', (req, res) => {
+  const random = facts[Math.floor(Math.random() * facts.length)];
+  res.json({ fact: random });
+});
+
+app.listen(PORT, () => {
+  console.log(\`Serveur API en ligne sur http://localhost:\${PORT}\`);
+});` },
+        { type: "h", text: "Côté client : consommer cette API" },
+        { type: "p", text: "Avec fetch ou axios :" },
+        { type: "code", filename: "js", language: "javascript", code: `fetch('http://localhost:3000/breeds')
+  .then(res => res.json())
+  .then(data => console.log('Races de chats :', data));` },
+      ],
+    },
+    {
+      id: "node-avantages-inconvenients",
+      title: "Avantages et inconvénients de Node.js",
+      blocks: [
+        { type: "p", text: "Node.js est très utilisé côté serveur, mais comme toute techno, il a ses forces et ses limites." },
+        { type: "h", text: "Avantages de Node.js" },
+        { type: "list", items: [
+          "Très rapide et léger — Basé sur le moteur V8 (Google Chrome), exécution rapide du JavaScript",
+          "Non bloquant (asynchrone) — Gère plusieurs requêtes en même temps. Idéal pour : API, applications web",
+          "Multitâche (concurrent) — Grâce à l'event loop, peut traiter plusieurs utilisateurs simultanément",
+          "Facile pour créer un serveur — Peu de code pour lancer une API. Parfait pour les débutants en backend",
+          "Applications en temps réel — Très bon pour : chat, streaming, jeux en ligne",
+          "Écosystème NPM énorme — Des milliers de packages disponibles, gain de temps énorme",
+        ]},
+        { type: "h", text: "Inconvénients de Node.js" },
+        { type: "list", items: [
+          "Sécurité — Dépend beaucoup des packages externes. Certaines failles possibles si mal géré",
+          "Écosystème parfois instable — Beaucoup de librairies pas toujours maintenues. Qualité variable",
+          "Pas adapté aux calculs lourds — CPU intensif (ex: traitement d'image, IA). Bloque le thread principal",
+          "Gestion asynchrone parfois complexe — Callbacks / Promises / async-await. Peut devenir difficile à maintenir",
+          "Pas de typage fort natif — JavaScript est dynamique, risque d'erreurs. Solution souvent utilisée : TypeScript",
+        ]},
+        { type: "table", headers: ["Critère", "✅ Avantage", "❌ Inconvénient"], rows: [
+          ["Performance", "Très rapide (V8)", "Calculs CPU lourds"],
+          ["Concurrence", "Non bloquant, event loop", "Async parfois complexe"],
+          ["Facilité", "Peu de code pour serveur", "Typage non natif"],
+          ["Temps réel", "Chat, streaming, jeux", "—"],
+          ["Écosystème", "NPM énorme", "Librairies parfois instables"],
+          ["Sécurité", "—", "Dépend des packages externes"],
+        ]},
+      ],
+    },
+    {
+      id: "node-bonus-typeof-guillemets",
+      title: "Bonus JS — typeof et guillemets",
+      blocks: [
+        { type: "h", text: "Vérifier le type d'une variable (typeof)" },
+        { type: "code", filename: "js", language: "javascript", code: `let nombre = 42;
+console.log(typeof nombre); // "number"
+
+let texte = "Bonjour";
+console.log(typeof texte); // "string"
+
+let bool = true;
+console.log(typeof bool); // "boolean"
+
+let obj = { nom: "Kat" };
+console.log(typeof obj); // "object"
+
+let und;
+console.log(typeof und); // "undefined"
+
+let fn = function() {};
+console.log(typeof fn); // "function"
+
+let nul = null;
+console.log(typeof nul); // "object" ⚠️ cas particulier` },
+        { type: "note", variant: "warning", text: "null retourne \"object\" → c'est une erreur historique de JavaScript" },
+        { type: "table", headers: ["Valeur", "typeof retourne"], rows: [
+          ["42", '"number"'],
+          ['"Bonjour"', '"string"'],
+          ["true", '"boolean"'],
+          ['{ nom: "Kat" }', '"object"'],
+          ["undefined", '"undefined"'],
+          ["function() {}", '"function"'],
+          ["null", '"object" ⚠️'],
+        ]},
+        { type: "h", text: "Gérer les guillemets dans une chaîne" },
+        { type: "code", filename: "js", language: "javascript", code: "// Avec échappement\n'Je m\\'appelle'\n\"Je m'appelle\\\"Pierre\\\"\"\n\n// Ou plus simple (recommandé)\n\"Je m'appelle\"\n'Je m\\'appelle \"Pierre\"'" },
+        { type: "h", text: "Interaction utilisateur (prompt)" },
+        { type: "note", variant: "warning", text: "Dans le navigateur uniquement (pas dans Node.js)" },
+        { type: "code", filename: "js", language: "javascript", code: `const nom = prompt("Quel est votre nom ?");
+
+if (nom !== null && nom.trim() !== "") {
+  console.log("Bonjour, " + nom + " !");
+} else {
+  console.log("Aucun nom saisi.");
+}` },
       ],
     },
     {

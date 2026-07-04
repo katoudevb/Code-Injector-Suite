@@ -1,0 +1,274 @@
+import type { Section } from "../types";
+
+export const prestashop: Section = {
+  id: "prestashop",
+  title: "PrestaShop",
+  icon: "Store",
+  tags: ["php"],
+  subsections: [
+    {
+      id: "prestashop-intro",
+      title: "Présentation",
+      blocks: [
+        { type: "p", text: "Logiciel open-source gratuit permettant de créer des sites de e-commerce. Il fonctionne avec un système de modules et de plugins tiers, ce qui permet d'ajouter des fonctionnalités facilement." },
+      ],
+    },
+    {
+      id: "prestashop-catalogue",
+      title: "Création du catalogue",
+      blocks: [
+        { type: "p", text: "Le catalogue sert à organiser tes produits." },
+        { type: "h", text: "Création des catégories" },
+        { type: "code", filename: "chemin", language: "text", code: `Catalogue → Catégories → Ajouter une catégorie` },
+        { type: "p", text: "Tu dois remplir : Nom, Description, Image (optionnelle), SEO (très important pour Google)" },
+        { type: "note", variant: "info", text: "Travaille bien le SEO pour te différencier de la concurrence." },
+        { type: "h", text: "Création des produits" },
+        { type: "code", filename: "chemin", language: "text", code: `Catalogue → Produits → Créer un produit` },
+        { type: "p", text: "Un produit dans PrestaShop est structuré en plusieurs parties :" },
+        { type: "table", headers: ["Section", "Contenu"], rows: [
+          ["1. Essentiel", "Nom, description, images, infos principales"],
+          ["2. Quantités", "Stocks, quantité disponible, emplacement stock"],
+          ["3. Livraison", "Transporteur, délais, dimensions, frais"],
+          ["4. Prix", "Prix d'achat, prix de vente, taxes"],
+          ["5. Référencement (SEO)", "Titre SEO, méta description, URL simplifiée"],
+          ["6. Options", "Fichiers joints, informations supplémentaires"],
+        ]},
+        { type: "h", text: "Produits avancés" },
+        { type: "list", items: [
+          "Tu peux ajouter plusieurs images par produit",
+          "Créer des déclinaisons (taille, couleur, etc.)",
+        ]},
+        { type: "code", filename: "chemin", language: "text", code: `Déclinaisons : Catalogue → Attributs et caractéristiques (Taille (S, M, L), Couleur (rouge, bleu))` },
+        { type: "note", variant: "info", text: "Import en masse : Si tu as beaucoup de produits, utilise un fichier CSV ou XLS puis importe-le dans PrestaShop. Cela permet de gagner énormément de temps." },
+      ],
+    },
+    {
+      id: "prestashop-configuration-generale",
+      title: "Configuration générale",
+      blocks: [
+        { type: "p", text: "Documentation : https://docs.prestashop-project.org" },
+        { type: "p", text: "Tu peux configurer :" },
+        { type: "list", items: ["la boutique", "les paiements", "les transporteurs", "les taxes"] },
+      ],
+    },
+    {
+      id: "prestashop-gestion-clients",
+      title: "Gestion des clients",
+      blocks: [
+        { type: "code", filename: "chemin", language: "text", code: `Clients → Clients` },
+        { type: "p", text: "Tu peux :" },
+        { type: "list", items: ["ajouter des clients", "activer/désactiver des comptes", "gérer les newsletters"] },
+        { type: "note", variant: "info", text: "Adresses clients : chaque client peut avoir une adresse de livraison et une adresse de facturation." },
+      ],
+    },
+    {
+      id: "prestashop-gerer-commandes",
+      title: "Gérer les commandes",
+      blocks: [
+        { type: "p", text: "Dans PrestaShop, toutes les commandes reçues sont centralisées dans le back-office." },
+        { type: "code", filename: "chemin", language: "text", code: `Vendre → Commandes` },
+        { type: "p", text: "Tu y retrouves : commandes clients, factures, avoirs (remboursements), bons de livraison, paniers abandonnés" },
+        { type: "h", text: "1. Consulter une commande" },
+        { type: "list", items: ["Cliquer sur une commande", "Voir les détails (produits, client, paiement, livraison)"] },
+        { type: "h", text: "2. Suivi des statuts" },
+        {
+          type: "diagram",
+          content: `En attente de paiement
+       │
+Paiement accepté
+       │
+En préparation
+       │
+Expédiée
+       │
+Livrée
+       │
+(Annulée)`,
+        },
+        { type: "p", text: "Chaque changement de statut peut déclencher un email automatique au client." },
+        { type: "h", text: "3. Communication automatique" },
+        { type: "list", items: [
+          "Quand tu modifies un statut → un email est envoyé automatiquement au client",
+          "Tu peux aussi renvoyer un email manuellement",
+        ]},
+        { type: "h", text: "4. Modules complémentaires" },
+        { type: "p", text: "Il existe des modules pour :" },
+        { type: "list", items: [
+          "automatiser la gestion des commandes",
+          "connecter des marketplaces (Amazon, eBay, Rakuten)",
+          "améliorer le suivi client",
+        ]},
+      ],
+    },
+    {
+      id: "prestashop-solutions-paiement",
+      title: "Intégrer les solutions de paiement",
+      blocks: [
+        { type: "p", text: "PrestaShop permet plusieurs moyens de paiement : carte bancaire, PayPal, virement bancaire, chèque, autres solutions e-commerce" },
+        { type: "h", text: "1. Module principal" },
+        { type: "p", text: "Le module recommandé est souvent : PrestaShop Checkout (solution officielle)" },
+        { type: "h", text: "2. Installation et configuration" },
+        { type: "code", filename: "chemin", language: "text", code: `Modules → Payment → Modes de paiement` },
+        { type: "p", text: "Étapes :" },
+        { type: "list", items: [
+          "1. Installer le module de paiement choisi",
+          "2. Cliquer sur Configurer",
+          "3. Se connecter ou créer un compte chez le prestataire (Stripe, PayPal, etc.)",
+          "4. Récupérer la clé API",
+          "5. Lier le compte à ta boutique",
+          "6. Tester le paiement",
+        ]},
+        { type: "note", variant: "warning", text: "Certains modules demandent une validation du compte marchand avant activation." },
+      ],
+    },
+    {
+      id: "prestashop-solutions-livraison",
+      title: "Intégrer les solutions de livraison",
+      blocks: [
+        { type: "p", text: "Les livraisons sont gérées via les transporteurs." },
+        { type: "code", filename: "chemin", language: "text", code: `Livraison → Transporteurs` },
+        { type: "h", text: "1. Créer un transporteur" },
+        { type: "list", items: ["Cliquer sur Créer un nouveau transporteur", "Remplir : nom, délais, zones géographiques, tarifs"] },
+        { type: "h", text: "2. Paramétrage des tarifs" },
+        { type: "p", text: "Tu peux définir les frais selon : le poids du colis, la zone géographique, le prix total du panier" },
+        { type: "h", text: "3. Configuration avancée" },
+        { type: "p", text: "Dans les paramètres transporteurs : logo, URL de suivi colis, délais estimés, conditions de livraison gratuite" },
+        { type: "h", text: "4. Modules transporteurs" },
+        { type: "p", text: "Dans Modules → Marketplace, tu peux installer : transporteurs partenaires (Colissimo, DHL, Chronopost…), systèmes automatiques de calcul des frais" },
+        { type: "h", text: "5. Options importantes" },
+        { type: "list", items: [
+          "Livraison gratuite au-dessus d'un certain montant",
+          "Priorité des transporteurs affichés au client",
+          "Groupes de clients avec tarifs différents",
+        ]},
+      ],
+    },
+    {
+      id: "prestashop-tester-boutique",
+      title: "Tester ma e-boutique",
+      blocks: [
+        { type: "h", text: "1. Tester la page d'accueil" },
+        { type: "p", text: "Ta page d'accueil doit contenir :" },
+        { type: "list", items: [
+          "Slider de produits",
+          "Produits en promotion",
+          "Inscription newsletter",
+          "Footer bien structuré",
+          "Produits mis en avant",
+          "Lien vers la boutique",
+        ]},
+        { type: "h", text: "2. Tester avec un compte utilisateur" },
+        { type: "list", items: ["création de compte", "connexion", "navigation", "ajout au panier", "commande"] },
+        { type: "note", variant: "warning", text: "Important : simule un vrai client du début à la fin." },
+        { type: "h", text: "3. Améliorations des paramètres" },
+        { type: "p", text: "Dans le back-office, vérifie : messages d'aide, champs supplémentaires (date de naissance, etc.), offres partenaires, réglages utilisateurs" },
+        { type: "h", text: "4. Tester les produits" },
+        { type: "p", text: "Étapes :" },
+        { type: "list", items: [
+          "1. Passer la souris sur un produit → vérifier si l'aperçu rapide fonctionne",
+          "2. Cliquer sur le produit → vérifier : images, description, prix, options",
+          "3. Vérifier les modules affichés : réassurance (livraison, garantie, etc.), produits liés",
+        ]},
+        { type: "h", text: "5. Tester le panier" },
+        { type: "p", text: "Actions : ajouter plusieurs produits, modifier quantités, supprimer produits" },
+        { type: "p", text: "Vérifier : calcul des prix, frais de livraison, seuil de livraison gratuite" },
+        { type: "p", text: "Vérification admin : dans le back-office → paniers abandonnés, commandes en cours" },
+        { type: "p", text: "Validation de commande — le client doit :" },
+        { type: "list", items: [
+          "1. entrer une adresse",
+          "2. choisir une livraison",
+          "3. choisir un paiement",
+          "4. valider la commande",
+        ]},
+        { type: "note", variant: "info", text: "Vérifie que tous les champs sont bien obligatoires si nécessaire." },
+        { type: "h", text: "6. Vérifier livraison et paiement" },
+        { type: "p", text: "Livraison : transporteurs bien affichés, tarifs corrects, délais visibles" },
+        { type: "p", text: "Paiement : tous les moyens activés, test des modules de paiement (si possible)" },
+        { type: "note", variant: "warning", text: "Les paiements réels ne sont pas toujours testables sans mode sandbox. Utiliser l'option chèque pour le test." },
+        { type: "h", text: "7. Vérifier les commandes (back-office)" },
+        { type: "p", text: "Après test : vérifier si la commande apparaît, voir son statut, vérifier les emails envoyés" },
+        { type: "h", text: "8. Tester la version mobile" },
+        { type: "list", items: [
+          "affichage responsive",
+          "menu mobile",
+          "panier mobile",
+          "boutons visibles",
+          "vitesse de chargement",
+        ]},
+        { type: "note", variant: "warning", text: "Plus de 45% des utilisateurs naviguent sur mobile." },
+        { type: "note", variant: "success", text: "Astuce importante : Crée une boutique de test (ou environnement de démo) pour éviter de casser la vraie boutique et tester librement les fonctionnalités." },
+      ],
+    },
+    {
+      id: "prestashop-mode-maintenance",
+      title: "Mode maintenance & suivi de la boutique",
+      blocks: [
+        { type: "p", text: "Le mode maintenance permet de travailler sur ta boutique sans que les clients voient les changements." },
+        { type: "code", filename: "chemin", language: "text", code: `Paramètres avancés → Maintenance` },
+        { type: "p", text: "Étapes :" },
+        { type: "list", items: [
+          "1. Activer le mode maintenance",
+          '2. Ajouter un message personnalisé (ex : "Site en maintenance")',
+          "3. Ajouter ton IP pour continuer à accéder au site",
+        ]},
+      ],
+    },
+    {
+      id: "prestashop-tableau-de-bord",
+      title: "Tableau de bord (Dashboard)",
+      blocks: [
+        { type: "p", text: "Le tableau de bord permet de suivre l'activité globale de ta boutique." },
+        { type: "p", text: "Il affiche : ventes, commandes, visiteurs, paniers, tendances" },
+        { type: "h", text: "Choisir une période" },
+        { type: "p", text: "Tu peux sélectionner : aujourd'hui, ce mois, cette année, période personnalisée" },
+        { type: "h", text: "Explorer le tableau de bord" },
+        { type: "p", text: "Sections principales :" },
+        { type: "p", text: "Ventes et commandes : nombre de commandes, chiffre d'affaires, panier moyen" },
+        { type: "p", text: "Clients : nouveaux clients, clients actifs" },
+        { type: "p", text: "Produits : produits les plus vendus, produits les plus vus, recherches populaires" },
+        { type: "p", text: "Personnalisation : En cliquant sur l'icône ⚙️ → modifier les données affichées, adapter les statistiques visibles, ajuster les indicateurs" },
+      ],
+    },
+    {
+      id: "prestashop-bloc-previsions",
+      title: 'Bloc "Prévisions"',
+      blocks: [
+        { type: "p", text: "Ce bloc sert à comparer : objectifs de ventes, ventes réelles, prévisions" },
+        { type: "h", text: "Fonctionnement" },
+        { type: "list", items: ["graphique interactif", "survol pour voir les détails", "comparaison automatique des données"] },
+        { type: "h", text: "Configuration du bloc" },
+        { type: "list", items: [
+          "réglage des objectifs",
+          "adaptation des colonnes (ventes, prévisions, etc.)",
+          "mise à jour automatique des données",
+        ]},
+      ],
+    },
+    {
+      id: "prestashop-bloc-produits-ventes",
+      title: 'Bloc "Produits et ventes"',
+      blocks: [
+        { type: "p", text: "Ce bloc permet de voir rapidement : meilleures ventes, commandes récentes, produits les plus vus, recherches clients" },
+        { type: "h", text: "Personnalisation" },
+        { type: "list", items: ["nombre d'éléments affichés", "type de données visibles"] },
+      ],
+    },
+    {
+      id: "prestashop-bloc-apercu-activite",
+      title: 'Bloc "Aperçu de l\'activité"',
+      blocks: [
+        { type: "p", text: "Ce bloc donne une vue rapide en temps réel :" },
+        { type: "h", text: "Données visibles" },
+        { type: "list", items: [
+          "visiteurs en ligne (30 dernières minutes)",
+          "paniers actifs",
+          "paniers abandonnés",
+          "commandes en cours",
+          "produits en rupture",
+        ]},
+        { type: "h", text: "Connexions externes" },
+        { type: "list", items: ["Google Analytics (trafic, visiteurs, sources)"] },
+      ],
+    },
+  ],
+};
