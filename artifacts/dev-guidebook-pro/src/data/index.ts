@@ -15,6 +15,10 @@ import { cms } from "./sections/cms";
 import { ecommerce } from "./sections/ecommerce";
 import { prestashop } from "./sections/prestashop";
 import { wordpress } from "./sections/wordpress";
+import { configurationProjet } from "./sections/configurationProjet";
+import { deploiementWeb } from "./sections/deploiementWeb";
+import { cda } from "./sections/cda";
+import { maquettage } from "./sections/maquettage";
 import { laravel } from "./sections/laravel";
 import { sql } from "./sections/sql";
 import { mongo } from "./sections/mongo";
@@ -43,6 +47,10 @@ export const sections: Section[] = [
   ecommerce,
   prestashop,
   wordpress,
+  configurationProjet,
+  deploiementWeb,
+  cda,
+  maquettage,
   laravel,
   sql,
   mongo,
