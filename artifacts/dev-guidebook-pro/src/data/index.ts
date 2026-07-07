@@ -28,6 +28,9 @@ import { rest } from "./sections/rest";
 import { security } from "./sections/security";
 import { tools } from "./sections/tools";
 import { bootstrap } from "./sections/bootstrap";
+import { outilsDev } from "./sections/outilsDev";
+import { python } from "./sections/python";
+import { hebergementAlwaysdata } from "./sections/hebergementAlwaysdata";
 
 export const sections: Section[] = [
   js,
@@ -59,6 +62,9 @@ export const sections: Section[] = [
   rest,
   security,
   tools,
+  outilsDev,
+  python,
+  hebergementAlwaysdata,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";

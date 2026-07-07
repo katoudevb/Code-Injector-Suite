@@ -7,6 +7,90 @@ export const next: Section = {
   tags: ["ts", "js"],
   subsections: [
     {
+      id: "nextjs-intro",
+      title: "Next.js — Présentation",
+      blocks: [
+        { type: "p", text: "Next.js est un framework full-stack basé sur React permettant de créer des applications web modernes (front + back) avec rendu optimisé." },
+      ],
+    },
+    {
+      id: "nextjs-creation-projet",
+      title: "Création d'un projet Next.js",
+      blocks: [
+        { type: "h", text: "1. Commande d'installation" },
+        { type: "code", filename: "terminal", language: "bash", code: `npx create-next-app@latest` },
+        { type: "p", text: "Options proposées à la création :" },
+        { type: "list", items: ["Nom du projet : my-app", "TypeScript, ESLint, Tailwind, App Router, etc."] },
+        { type: "h", text: "2. Lancer le projet" },
+        { type: "code", filename: "terminal", language: "bash", code: `npm run dev` },
+        { type: "p", text: "Accessible sur : http://localhost:3000" },
+      ],
+    },
+    {
+      id: "nextjs-structure-projet",
+      title: "Structure d'un projet Next.js (App Router)",
+      blocks: [
+        {
+          type: "diagram",
+          content: `my-app/
+├── app/                    # Système de routing (App Router)
+│   ├── layout.tsx          # Layout global (structure commune)
+│   ├── page.tsx            # Page d'accueil "/"
+│   │
+│   ├── about/
+│   │   └── page.tsx        # Route "/about"
+│   │
+│   └── contact/
+│       └── page.tsx        # Route "/contact"
+│
+├── public/                 # Fichiers statiques (images, favicon…)
+│   └── logo.png
+│
+├── components/             # Composants réutilisables
+│   └── Header.tsx
+│
+├── lib/                    # Fonctions utilitaires / API
+│   └── fetchData.ts
+│
+├── styles/                 # CSS global / modules
+│   └── globals.css
+│
+├── middleware.ts           # Middleware (auth, redirections…)
+├── next.config.js          # Configuration Next.js
+├── package.json            # Dépendances et scripts
+└── tsconfig.json           # Configuration TypeScript`,
+        },
+        { type: "h", text: "Schéma du routing automatique" },
+        {
+          type: "diagram",
+          content: `app/
+├── page.tsx          →  /
+├── about/page.tsx    →  /about
+├── contact/page.tsx  →  /contact
+└── blog/
+    ├── page.tsx      →  /blog
+    └── [id]/
+        └── page.tsx  →  /blog/:id   (route dynamique)`,
+        },
+      ],
+    },
+    {
+      id: "nextjs-avantages-inconvenients",
+      title: "Avantages / Inconvénients",
+      blocks: [
+        { type: "table", headers: ["Avantages", "Inconvénients"], rows: [
+          ["Installation simple et rapide", "Moins de gestion d'état intégrée (Redux, Zustand nécessaires)"],
+          ["Développement accéléré", "Courbe d'apprentissage du App Router"],
+          ["Très bon pour le SEO (rendu serveur)", "Certaines extensions/configurations nécessaires"],
+          ["Images optimisées automatiquement", "Structure parfois complexe au début"],
+          ["Routing automatique (App Router)", "—"],
+          ["Support SSR / SSG / ISR", "—"],
+          ["Applications multi-pages faciles", "—"],
+          ["Pré-rendu HTML (meilleures performances)", "—"],
+        ]},
+      ],
+    },
+    {
       id: "routers",
       title: "App Router vs Pages Router",
       blocks: [

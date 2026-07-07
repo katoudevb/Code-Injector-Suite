@@ -73,5 +73,77 @@ volumes:
 docker compose down   # arrête et supprime` },
       ],
     },
+    {
+      id: "docker-outils-md",
+      title: "Docker — Installation et commandes de gestion",
+      blocks: [
+        { type: "p", text: "Docker est un outil qui permet de : créer des conteneurs, gérer des images, exécuter des applications isolées." },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────┐
+│              DOCKER HOST                 │
+│  ┌──────────┐  ┌──────────┐             │
+│  │Container1│  │Container2│             │
+│  │  App A   │  │  App B   │             │
+│  └────┬─────┘  └────┬─────┘             │
+│       │              │                  │
+│  ┌────▼──────────────▼──────────────┐   │
+│  │         Docker Engine            │   │
+│  └──────────────────────────────────┘   │
+└──────────────────────────────────────────┘
+          │
+    ┌─────▼──────┐
+    │ Docker Hub │  (images officielles, perso, versions)
+    └────────────┘`,
+        },
+        { type: "h", text: "Dockerfile" },
+        { type: "p", text: "Fichier qui décrit comment construire une image : système, dépendances, application." },
+        { type: "h", text: "Installation" },
+        { type: "p", text: "Linux :" },
+        { type: "code", filename: "terminal", language: "bash", code: `sudo apt install docker.io
+sudo apt install docker-compose` },
+        { type: "p", text: "Windows : installer Docker Desktop, redémarrer l'ordinateur." },
+        { type: "p", text: "macOS : installer Docker Desktop, suivre l'installation officielle." },
+        { type: "h", text: "Utilisation — Télécharger une image" },
+        { type: "code", filename: "terminal", language: "bash", code: `docker pull mysql` },
+        { type: "p", text: "Récupère une image depuis la bibliothèque Docker." },
+        { type: "h", text: "Lancer un conteneur" },
+        { type: "code", filename: "terminal", language: "bash", code: `docker run mysql` },
+        { type: "p", text: "Démarre un conteneur basé sur l'image MySQL." },
+        { type: "h", text: "Images" },
+        { type: "p", text: "Une image Docker est un modèle prêt à l'emploi pour créer un conteneur." },
+        { type: "p", text: "Bibliothèque : Docker propose des images officielles, différentes versions, images personnalisées." },
+        { type: "h", text: "Commandes Docker" },
+        { type: "code", filename: "terminal", language: "bash", code: `# Lancer un conteneur à partir d'une image
+docker run <nom_image>
+
+# Lister les conteneurs actifs
+docker ps
+
+# Lister tous les conteneurs
+docker ps -a
+
+# Arrêter un conteneur en cours
+docker stop <id_conteneur>
+
+# Redémarrer un conteneur arrêté
+docker restart <id_conteneur>
+
+# Supprimer un conteneur
+docker rm <id_conteneur>
+
+# Télécharger une image depuis Docker Hub
+docker pull <nom_image>
+
+# Télécharger une version spécifique
+docker pull <nom_image>:<version>
+
+# Lister les images téléchargées
+docker images
+
+# Supprimer une image locale
+docker rmi <id_image>` },
+      ],
+    },
   ],
 };
