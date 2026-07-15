@@ -36,6 +36,8 @@ import { uxUiDesign } from "./sections/uxUiDesign";
 import { fondamentauxWeb } from "./sections/fondamentauxWeb";
 import { algorithmesIA } from "./sections/algorithmesIA";
 import { glossaire } from "./sections/glossaire";
+import { devops } from "./sections/devops";
+import { gestionProjet } from "./sections/gestionProjet";
 
 export const sections: Section[] = [
   js,
@@ -75,6 +77,8 @@ export const sections: Section[] = [
   fondamentauxWeb,
   algorithmesIA,
   glossaire,
+  devops,
+  gestionProjet,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
