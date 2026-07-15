@@ -33,6 +33,9 @@ import { python } from "./sections/python";
 import { hebergementAlwaysdata } from "./sections/hebergementAlwaysdata";
 import { programmationBackend } from "./sections/programmationBackend";
 import { uxUiDesign } from "./sections/uxUiDesign";
+import { fondamentauxWeb } from "./sections/fondamentauxWeb";
+import { algorithmesIA } from "./sections/algorithmesIA";
+import { glossaire } from "./sections/glossaire";
 
 export const sections: Section[] = [
   js,
@@ -69,6 +72,9 @@ export const sections: Section[] = [
   hebergementAlwaysdata,
   programmationBackend,
   uxUiDesign,
+  fondamentauxWeb,
+  algorithmesIA,
+  glossaire,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
