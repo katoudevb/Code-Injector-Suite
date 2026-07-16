@@ -544,5 +544,104 @@ script:
         },
       ],
     },
+    {
+      id: "devops-veille-technologique-methodes",
+      title: "Mettre en place une veille technologique",
+      blocks: [
+        { type: "p", text: "La veille technologique consiste à surveiller les nouveautés techniques, suivre les évolutions des outils (DevOps, CI/CD…) et améliorer en continu ses pratiques et pipelines." },
+        { type: "h", text: "Pourquoi faire une veille ?" },
+        { type: "list", items: [
+          "Améliorer les pipelines CI/CD",
+          "Gagner du temps",
+          "Utiliser les meilleurs outils",
+          "Éviter d'être obsolète",
+          "Garantir la qualité des livrables",
+        ]},
+        { type: "h", text: "Deux méthodes de veille" },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────┐
+│              MÉTHODES DE VEILLE                 │
+├──────────────────────┬──────────────────────────┤
+│   PUSH (passif)      │   PULL (actif)            │
+│  L'info vient à toi  │  Tu vas chercher l'info   │
+│  (moins efficace)    │  toi-même                 │
+├──────────────────────┼──────────────────────────┤
+│  • Newsletters       │  • Recherches ciblées     │
+│  • Alertes Google    │  • Lecture d'articles     │
+│  • Notifications     │  • Blogs techniques       │
+└──────────────────────┴──────────────────────────┘`,
+        },
+        { type: "h", text: "1. Push (passif)" },
+        { type: "p", text: "L'information vient à toi (moins efficace)" },
+        { type: "list", items: ["Newsletters", "Alertes Google", "Notifications"] },
+        { type: "h", text: "2. Pull (actif)" },
+        { type: "p", text: "Tu vas chercher l'information toi-même" },
+        { type: "list", items: ["Recherches ciblées", "Lecture d'articles", "Blogs techniques"] },
+        { type: "h", text: "Outils de veille" },
+        { type: "table", headers: ["Outil", "Description"], rows: [
+          ["Feedly", "Agrégateur de flux RSS pour suivre plusieurs sources"],
+          ["Hacker News", "Actualités tech, startups, open source"],
+          ["Pocket", "Sauvegarder articles / vidéos pour plus tard"],
+          ["Humans Coders News", "Articles tech classés par tags"],
+        ]},
+        { type: "h", text: "Autres sources utiles" },
+        { type: "list", items: ["Blogs techniques", "Vidéos YouTube", "Newsletters", "Réseaux sociaux", "Google Alerts"] },
+        { type: "h", text: "Qualité des sources" },
+        { type: "p", text: "Toujours vérifier :" },
+        { type: "list", items: ["Crédibilité", "Source officielle", "Expertise de l'auteur"] },
+        { type: "h", text: "Types de contenus à suivre" },
+        { type: "list", items: [
+          "Articles techniques",
+          "Blogs DevOps",
+          "Vidéos tutoriels",
+          "Actualités cloud / CI/CD",
+          "Discussions communautaires",
+        ]},
+        { type: "note", variant: "info", title: "Ressource", text: "gdevops.gitlab.io — Comment organiser sa veille technologique : https://gdevops.gitlab.io/tuto_devops/news/2020/04/15/comment_organiser_sa_veille_technologique.html" },
+      ],
+    },
+    {
+      id: "devops-veille-filtrage-sources",
+      title: "Filtrer ses sources de veille",
+      blocks: [
+        { type: "p", text: "Le filtrage des sources permet d'éviter les informations inutiles, de gagner du temps et d'améliorer la qualité de la veille." },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────────────┐
+│           CRITÈRES DE FILTRAGE                   │
+├─────────┬────────────────────────────────────────┤
+│ 1. Date │ Article récent = plus fiable            │
+│         │ Article ancien = peut être obsolète     │
+├─────────┼────────────────────────────────────────┤
+│ 2. Per- │ Correspond à mon sujet ?                │
+│ tinence │ Utile pour mon projet ou ma veille ?    │
+├─────────┼────────────────────────────────────────┤
+│ 3. Fia- │ Auteur connu ?                          │
+│ bilité  │ Site officiel ?                         │
+│         │ Expertise technique ?                   │
+├─────────┼────────────────────────────────────────┤
+│ 4. News-│ Bon outil MAIS à utiliser avec          │
+│ letters │ modération — risque de surcharge        │
+└─────────┴────────────────────────────────────────┘`,
+        },
+        { type: "h", text: "1. La date (fraîcheur de l'information)" },
+        { type: "p", text: "Vérifier si la source est récente" },
+        { type: "list", items: ["Article récent = plus fiable", "Article ancien = peut être obsolète"] },
+        { type: "h", text: "2. La pertinence" },
+        { type: "p", text: "Une bonne source doit répondre à ton besoin" },
+        { type: "list", items: ["Est-ce que ça correspond à mon sujet ?", "Est-ce utile pour mon projet ou ma veille ?"] },
+        { type: "h", text: "3. La fiabilité" },
+        { type: "p", text: "Vérifier la crédibilité de la source" },
+        { type: "list", items: ["Auteur connu ?", "Site officiel ?", "Expertise technique ?"] },
+        { type: "h", text: "4. Les newsletters" },
+        { type: "p", text: "Bon outil mais à utiliser avec modération :" },
+        { type: "list", items: [
+          "Ne pas s'abonner à tout",
+          "Éviter la surcharge d'information",
+          "Risque de ne jamais tout lire",
+        ]},
+      ],
+    },
   ],
 };

@@ -2148,5 +2148,141 @@ DYNAMIQUE :
         ]},
       ],
     },
+    {
+      id: "php-architecture-technique-site",
+      title: "Créer et maintenir l'architecture technique d'un site",
+      blocks: [
+        { type: "p", text: "L'architecture d'un site web est composée de deux points essentiels : la hiérarchie de l'information, qui permet une meilleure compréhension de l'organisation du site par les moteurs de recherche (créer un diagramme d'architecture), et l'organisation du code, qui contribue à garder la meilleure structure possible pour réduire les bugs et améliorer la fluidité." },
+        { type: "h", text: "Priorisation de l'information" },
+        { type: "p", text: "Ce premier point concerne l'organisation des pages du site. Un site mal organisé aura un maillage interne faible — les robots des moteurs de recherche qui indexent le site baisseront son classement dans les résultats de recherche." },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────────┐
+│        EXEMPLE D'ARCHITECTURE DE SITE — BLOG            │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│                        [Home]                           │
+│                           │                             │
+│              ┌────────────┼────────────┐               │
+│              │            │            │               │
+│         [Privacy      [Posts]      [Categories]        │
+│          Policy]         │                │             │
+│                    ┌─────┴─────┐    ┌────┴────┐        │
+│                    │           │    │         │         │
+│                  [Post]  [Most       [Category] [Contact]
+│                          Recent]                        │
+└─────────────────────────────────────────────────────────┘
+
+Règle : Respecter cette architecture → les robots comprendront
+et augmenteront votre score SEO.`,
+        },
+        { type: "note", variant: "info", text: "L'élément principal est la page d'accueil. Ensuite on a deux parties, Posts et Categories, et des pages finales : Privacy Policy, Post, Most Recent, Category et Contact us." },
+        { type: "h", text: "Organisation du code" },
+        { type: "p", text: "Le code doit être propre et bien documenté. Les architectures d'organisation du code incluent : l'architecture MVC, le clean code, et bien d'autres. Elles ont toutes un point commun : trier le code dans différents fichiers et dossiers." },
+        { type: "h", text: "Refactorisation" },
+        { type: "p", text: "Cette étape consiste à découper son code en fonctions." },
+        { type: "list", items: [
+          "Éviter la répétition → dès qu'il y a une répétition, une fonction est créée",
+          "Cette fonction est stockée dans un fichier dédié (ex : functions.php)",
+          "S'il y en a plusieurs, elles sont regroupées dans un fichier dédié selon le thème (ex : postFunctions.php)",
+        ]},
+        { type: "h", text: "L'organisation" },
+        { type: "p", text: "Cela implique de créer des dossiers contenant :" },
+        { type: "list", items: [
+          "Les templates (le code HTML)",
+          "Les fichiers dédiés aux articles",
+          "Les fichiers pour les catégories",
+          "Les liens vers la base de données",
+          "etc.",
+        ]},
+        { type: "note", variant: "success", text: "Apprendre les différentes architectures de code, y compris MVC et le clean code. Bien maîtrisés rapidement, ces points seront un réel plus lors des entretiens d'embauche." },
+      ],
+    },
+    {
+      id: "php-ajouter-commentaires",
+      title: "Ajouter des commentaires et typer son code PHP",
+      blocks: [
+        { type: "h", text: "Pourquoi commenter ?" },
+        { type: "p", text: "Il faut garder un code clair et commenté car :" },
+        { type: "list", items: [
+          "On peut avoir à travailler à plusieurs sur un projet — il doit être clair pour tout le monde ce que l'on fait",
+          "C'est particulièrement important quand on travaille sur des interfaces ou des classes destinées à être héritées",
+          "Si on revient sur un projet plus tard, on peut se souvenir de ce qu'on a fait précédemment",
+        ]},
+        { type: "h", text: "Comment commenter" },
+        { type: "p", text: "Il existe deux types de commentaires en PHP : les commentaires en ligne et les commentaires en bloc." },
+        { type: "h", text: "Commentaires en ligne" },
+        { type: "p", text: "Les commentaires en ligne sont des commentaires à insérer entre deux lignes de code. Ils n'ont aucun effet sur le code et servent à indiquer ce que fait la ligne suivante. Ils commencent toujours par 2 slashs //." },
+        { type: "code", filename: "comment-ligne.php", language: "php", code: `// Un commentaire en ligne` },
+        { type: "h", text: "Commentaires en bloc" },
+        { type: "p", text: "Pour ces commentaires, il est recommandé d'installer l'extension VsCode \"PHP Docblocker\", qui permet de générer ces commentaires avec des raccourcis." },
+        { type: "p", text: "Ces commentaires servent à donner des informations sur les propriétés, méthodes et classes (ainsi que les variables et fonctions). Ils sont représentés par /** */ et chaque ligne commence par une étoile." },
+        { type: "code", filename: "classe-comment.php", language: "php", code: `/**
+ * Controller comprenant toutes les pages liées aux utilisateurs
+ *
+ *@author John Doe<john@doe.fr>
+ *@copyright2022Découverte
+ *@categoryUser
+ */
+class UserController {` },
+        { type: "p", text: "Pour une fonction :" },
+        { type: "code", filename: "function-comment.php", language: "php", code: `/**
+ * Fonction prenant un tableau en paramètre et le retournant
+ *
+ *@paramarray $param
+ *@return array
+ */
+public function withParam($param)
+{
+    return $param;
+}` },
+        { type: "note", variant: "info", text: "En faisant un \"ctrl + click\" sur la fonction, on est amené à la fonction en question." },
+        { type: "h", text: "Le typage" },
+        { type: "p", text: "Le typage est une autre forme de commentaire. Il consiste à indiquer le type de valeur d'une propriété, le type d'un paramètre de fonction ou le type de retour d'une fonction. Le typage est apparu en PHP avec la version 8." },
+        { type: "code", filename: "typage-propriete.php", language: "php", code: `/**
+ * Propriété de UserController
+ *
+ *@varstring
+ */
+public string $property;
+
+/**
+ * Fonction prenant un tableau en paramètre et le retournant
+ *
+ *@paramarray $param
+ *@return array
+ */
+public function withParam($param)
+{
+    return $param;
+}` },
+        { type: "p", text: "Avec paramètre nullable (PHP 8) :" },
+        { type: "code", filename: "typage-nullable.php", language: "php", code: `/**
+ *@paramarray|null $param
+ *@return array
+ */
+public function withParam(?array $param = null): array
+{
+    if (!$param) {
+        $param = array();
+    }
+    return $param;
+}` },
+        { type: "p", text: "Le ? signifie \"ou null\" — donc ici array ou null." },
+        { type: "p", text: "Depuis PHP 8.1 — types de retour multiples :" },
+        { type: "code", filename: "typage-union.php", language: "php", code: `/**
+ *@paramarray|null $param
+ *@return array|string|Exception
+ */
+public function withParam(?array $param = null): array|string|Exception
+{
+    if (!$param) {
+        $param = "Aucun tableau n'est récupéré";
+    }
+    return $param;
+}` },
+        { type: "note", variant: "success", title: "Petit bonus", text: "Typer sa méthode et utiliser le raccourci docblocker pour créer son commentaire en bloc. Tout le commentaire sera généré automatiquement et il ne reste plus qu'à ajouter la description." },
+      ],
+    },
   ],
 };

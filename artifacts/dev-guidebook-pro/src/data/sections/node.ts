@@ -954,5 +954,194 @@ exports.creer = async (req, res) => {
 };` },
       ],
     },
+    {
+      id: "node-recherche-solution-technique-en",
+      title: "Search for a technical solution (rechercher une solution technique)",
+      blocks: [
+        { type: "h", text: "Identifier le problème" },
+        { type: "p", text: "Avant de se lancer dans la recherche proprement dite, il est important d'identifier le problème rencontré. Cela permet de poser les bonnes questions avec le bon vocabulaire technique." },
+        { type: "note", variant: "info", title: "Poser la bonne question", text: "On se rend souvent compte que les problèmes rencontrés ont déjà été rencontrés par d'autres. Pour se donner les meilleures chances de trouver une réponse pertinente, poser sa question en anglais, en utilisant le vocabulaire utilisé par ces communautés." },
+        { type: "h", text: "La communauté" },
+        { type: "p", text: "L'anglais est le langage de l'informatique, et il faut maîtriser au moins le vocabulaire technique et les bases de la langue pour s'immerger dans la communauté des développeurs." },
+        { type: "h", text: "Rechercher sur Google" },
+        { type: "p", text: "Commencer par une recherche Google. Si la question est bien formulée, on trouvera sa réponse sur un forum ou une vidéo. Souvent, mais pas toujours, la réponse viendra de la plus grande communauté : Stack Overflow." },
+        { type: "h", text: "Stack Overflow" },
+        { type: "p", text: "Stack Overflow est la communauté la plus grande et la plus active. Il ne s'agit pas seulement de poser des questions — il s'agit aussi de participer en partageant son expérience et en répondant aux questions quand on en est capable." },
+        { type: "h", text: "Comment utiliser Stack Overflow" },
+        { type: "list", items: [
+          "En haut, le titre de la question",
+          "Filtrer selon le nombre de réponses",
+          "La meilleure réponse est parfois validée par la communauté (signe vert à côté de la réponse)",
+        ]},
+        { type: "h", text: "La communauté Node.js" },
+        { type: "p", text: "Pour des problèmes spécifiques aux projets basés sur Node.js, on peut accéder à la communauté Node (nodejs.org). On y trouve des liens vers la documentation officielle ainsi que la NodeSchool. Le tag DEV Community Node.js est un endroit pour partager des projets, des articles et des tutoriels Node.js." },
+        { type: "h", text: "MDN Web Docs" },
+        { type: "p", text: "Pour tout ce qui concerne JavaScript, MDN (developer.mozilla.org) est une communauté de développeurs très active. Sa documentation sur JavaScript est un très bon support." },
+        { type: "note", variant: "success", text: "Il est important de maintenir une veille technologique constante, car les langages et les technologies évoluent en permanence. Wakelet peut être utilisé pour organiser sa veille technologique. Il faut identifier le problème et le vocabulaire technique associé. Si l'on se pose la question, quelqu'un d'autre se l'est déjà posée — s'appuyer sur la communauté, et poser ses questions en anglais." },
+      ],
+    },
+    {
+      id: "node-http-https",
+      title: "HTTP-HTTPS request/response management",
+      blocks: [
+        { type: "h", text: "Les messages HTTP" },
+        { type: "p", text: "Les messages HTTP sont la façon dont les données sont échangées entre un serveur et un client. Il existe deux types de messages : les requêtes (Requests), envoyées par le client pour déclencher une action sur le serveur, et les réponses (Responses), la réponse du serveur." },
+        { type: "p", text: "Les messages HTTP sont composés de :" },
+        { type: "list", items: [
+          "Une start-line (ligne unique) décrivant la requête ou son statut (succès ou échec)",
+          "Un ensemble optionnel d'en-têtes HTTP précisant la requête ou décrivant le corps",
+          "Une ligne vide indiquant que toutes les méta-informations ont été envoyées",
+          "Un corps (body, optionnel) contenant les données associées à la requête ou à la réponse",
+        ]},
+        { type: "h", text: "La requête HTTP (HTTP request)" },
+        { type: "p", text: "Les requêtes HTTP sont des messages envoyés par le client pour déclencher une action sur le serveur." },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────────┐
+│                  STRUCTURE D'UNE REQUÊTE HTTP           │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  START-LINE :                                           │
+│  [HTTP Method] [Request Target] [HTTP Version]         │
+│  ex : GET /api/users HTTP/1.1                          │
+│                                                         │
+│  HEADERS :                                              │
+│  Content-Type: application/json                        │
+│  Authorization: Bearer token                           │
+│  ...                                                    │
+│                                                         │
+│  [BLANK LINE]                                           │
+│                                                         │
+│  BODY (optional) :                                      │
+│  { "name": "Alice" }  ← Pour POST/PUT                  │
+│  (GET, HEAD, DELETE n'ont généralement pas de body)    │
+└─────────────────────────────────────────────────────────┘`,
+        },
+        { type: "p", text: "La start-line contient trois éléments : une méthode HTTP (GET, PUT, POST, HEAD, OPTIONS…) décrivant l'action à réaliser, la cible de la requête (request target, généralement une URL), et la version HTTP (qui définit la structure du reste du message)." },
+        { type: "table", headers: ["Méthode", "Usage"], rows: [
+          ["GET", "Récupérer une ressource"],
+          ["POST", "Envoyer des données au serveur"],
+          ["PUT", "Mettre à jour une ressource"],
+          ["DELETE", "Supprimer une ressource"],
+          ["HEAD", "Comme GET mais sans body dans la réponse"],
+          ["OPTIONS", "Décrire les options de communication"],
+        ]},
+        { type: "note", variant: "info", title: "Body", text: "Toutes les requêtes n'en ont pas une. Les requêtes qui récupèrent des ressources (GET, HEAD, DELETE, OPTIONS) n'en ont généralement pas besoin. Les requêtes POST contiennent souvent des données de formulaire HTML." },
+        { type: "h", text: "La réponse HTTP (HTTP response)" },
+        { type: "p", text: "La status-line contient : la version du protocole, un code de statut indiquant le succès ou l'échec, et un texte de statut pour aider un humain à comprendre le message HTTP." },
+        { type: "p", text: "Header : même structure que n'importe quel autre en-tête. Body : la dernière partie d'une réponse (optionnelle)." },
+        { type: "h", text: "Le module HTTP" },
+        { type: "p", text: "Pour gérer les requêtes et les réponses, Node.js possède un module appelé http, qui permet à Node.js de transférer des données via le protocole HTTP (Hyper Text Transfer Protocol)." },
+        { type: "code", filename: "http-server.js", language: "javascript", code: `var http = require('http')
+
+// Create a server object:
+const server = http.createServer(function (req, res) {
+    // Declare the end of the response
+    res.end('The server response')
+})
+
+server.listen(3000) // the server object listens on port 3000` },
+        { type: "p", text: "Les deux paramètres passés à la fonction sont req pour la requête et res pour la réponse. Pour démarrer le serveur : node filename.js." },
+        { type: "h", text: "Ajouter un en-tête HTTP et écrire la réponse" },
+        { type: "code", filename: "http-server-header.js", language: "javascript", code: `var http = require('http');
+
+const server = http.createServer(function (req, res) {
+    // Define the header with the expected response content
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    // Write a response to the client
+    res.write('<html>any html structures</html>')
+    // Declare the end of the response
+    res.end()
+})
+
+server.listen(3000) // the server object listens on port 3000` },
+        { type: "p", text: "On peut écrire du HTML directement dans res.write()." },
+        { type: "h", text: "Le module HTTPS" },
+        { type: "p", text: "HTTPS est le protocole HTTP au-dessus de TLS/SSL. Dans Node.js, il est implémenté comme un module séparé, utilisé sensiblement de la même manière que http." },
+        { type: "code", filename: "https-server.js", language: "javascript", code: `var https = require('https');
+
+https.createServer(options, (req, res) => {
+    res.writeHead(200);
+    res.end('hello world');
+}).listen(8000);` },
+        { type: "note", variant: "success", text: "Avec Node.js, on peut utiliser les modules HTTP et HTTPS pour créer un serveur. La fonction createServer() prend la requête et la réponse en paramètres, permettant de les manipuler." },
+      ],
+    },
+    {
+      id: "node-documentation-api",
+      title: "Produire une documentation technique (API)",
+      blocks: [
+        { type: "h", text: "Qu'est-ce qu'une documentation d'API ?" },
+        { type: "p", text: "C'est un document présentant : les fonctions de l'API, comment l'intégrer dans son programme, et les cas d'usage de l'API, avec des exemples." },
+        { type: "p", text: "La documentation d'une API est un contenu technique. Elle doit rester lisible et facile à comprendre. La tâche de documenter l'API est souvent confiée à un technical writer (rédacteur technique)." },
+        { type: "h", text: "Quel est le contenu d'une documentation d'API ?" },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────────┐
+│           STRUCTURE D'UNE DOCUMENTATION API             │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  1. OVERVIEW                                            │
+│     └── Summary of the API — what problem it solves    │
+│     └── Advantages over similar APIs                   │
+│                                                         │
+│  2. TUTORIALS (core of the documentation)              │
+│     └── Different content formats                      │
+│     └── Links for reference                            │
+│     └── Steps to integrate and consume the API         │
+│                                                         │
+│  3. EXAMPLES                                            │
+│     └── Describe some examples of use                  │
+│                                                         │
+│  4. GLOSSARY (optional)                                 │
+│     └── For readers who may not have full command      │
+│         of technical vocabulary                         │
+└─────────────────────────────────────────────────────────┘`,
+        },
+        { type: "h", text: "Prérequis pour rédiger" },
+        { type: "list", items: [
+          "Connaître son API — une bonne compréhension de l'architecture et des fonctionnalités de l'API est nécessaire",
+          "Choix du contenu — en plus du texte, on peut utiliser de courtes vidéos ou images pour illustrer l'intégration de l'API",
+          "Être technique mais clair : utiliser des termes techniques mais éviter les constructions grammaticales complexes, expliquer les acronymes la première fois qu'ils apparaissent, écrire aussi simplement que possible — la documentation est plus facile à comprendre si elle est détaillée",
+          "Chercher les erreurs — il y a toujours quelque chose à changer, mettre à jour ou même supprimer",
+        ]},
+        { type: "h", text: "Les meilleurs outils pour la produire" },
+        { type: "list", items: ["Postman", "DrapperDox", "SwaggerHub"] },
+        { type: "h", text: "Produire une documentation avec Postman" },
+        { type: "p", text: "Postman permet de sauvegarder les requêtes faites à l'API dans des collections. À partir de ces collections, on peut générer une nouvelle documentation." },
+        { type: "h", text: "Étapes" },
+        { type: "list", items: [
+          "Appuyer sur \"New\" → sélectionner \"API Documentation\"",
+          "Sélectionner la collection de requêtes que l'on veut documenter",
+          "Un template est fourni au format Markdown",
+        ]},
+        { type: "p", text: "Structure du template Postman :" },
+        { type: "code", filename: "postman-template.md", language: "markdown", code: `# Introduction
+What does your API do?
+
+# Overview
+Things that the developers should know about
+
+# Authentication
+What is the preferred way of using the API?
+
+# Error Codes
+What errors and status codes can a user expect?
+
+# Rate limit
+Is there a limit to the number of requests a user can send?` },
+        { type: "list", items: [
+          "Postman propose une version bêta d'un éditeur de texte si l'on n'est pas familier avec Markdown",
+          "La dernière étape permet de partager la documentation avec son équipe ou le monde entier, et d'ajouter des exemples de réponses de l'API",
+        ]},
+        { type: "h", text: "Partager sa collection" },
+        { type: "list", items: [
+          "Partager un lien par e-mail",
+          "Partager via un bouton intégré sur son site web",
+          "Partager via un lien JSON",
+        ]},
+        { type: "note", variant: "success", text: "La documentation d'une API présente les fonctions de l'API, comment l'intégrer dans son programme et les cas d'usage de l'API, avec des exemples. Cette documentation se compose d'un aperçu avec des tutoriels et quelques exemples de réponses de l'API ainsi qu'un glossaire. Postman permet, à partir de collections de requêtes, de fournir une bonne documentation." },
+      ],
+    },
   ],
 };

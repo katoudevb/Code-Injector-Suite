@@ -1314,4 +1314,54 @@ getData('https://jsonplaceholder.typicode.com/posts/1', (err, data) => {
       { type: "p", text: ">" },
     ],
   },
+  {
+    id: "js-fe-documentation",
+    title: "Documenter son code (JSDoc)",
+    blocks: [
+      { type: "p", text: "En JavaScript, la documentation désigne les commentaires placés dans le code qui expliquent ce qu'il fait. Elle peut être utilisée par d'autres développeurs pour mieux comprendre le code, ou par des outils automatisés pour générer une documentation de référence." },
+      { type: "note", variant: "info", text: "Une bonne documentation JavaScript doit être claire et concise, et fournir assez d'informations pour permettre à quelqu'un d'autre de comprendre et d'utiliser le code." },
+      { type: "h", text: "Pourquoi documenter son code ?" },
+      { type: "list", items: [
+        "Rend le code plus facilement compréhensible, pour soi-même et pour les autres.",
+        "Aide les autres développeurs à comprendre ce que fait le code et comment l'utiliser (important en travail d'équipe).",
+        "Facilite le débogage : des commentaires clairs aident à identifier où se situent les problèmes.",
+        "Un code bien documenté sert d'outil d'apprentissage pour les nouveaux développeurs.",
+      ]},
+      { type: "h", text: "Utiliser des commentaires simples" },
+      { type: "p", text: "La façon la plus courante d'ajouter de la documentation est d'utiliser les syntaxes de commentaires natives de JavaScript : // ou /* */." },
+      { type: "code", filename: "comments.js", language: "javascript", code: `// This is a single-line comment
+
+/* This is a
+multi-line comment*/` },
+      { type: "code", filename: "example.js", language: "javascript", code: `// This code displays a welcoming message to the user
+console.log(\`Hello\${firstname}!\`)` },
+      { type: "code", filename: "example-regex.js", language: "javascript", code: `// Checking if the format of the email is correct
+if (!/[a-z0-9]+@[a-z]+\\.[a-z]{2,3}/.test(email)) {
+}` },
+      { type: "code", filename: "example-function.js", language: "javascript", code: `// Function multiplying the two parameters given to it
+function multiply(a, b) {
+  return a * b
+}` },
+      { type: "h", text: "Utiliser JSDoc" },
+      { type: "p", text: "La meilleure façon de documenter son code JavaScript est d'utiliser la convention JSDoc. JSDoc utilise des tags spéciaux pour annoter le code, qui peuvent ensuite servir à générer une documentation dans le format souhaité (HTML, XML, JSON). On ajoute un bloc de commentaire /** ... */ au-dessus du code à documenter." },
+      { type: "code", filename: "multiply.js", language: "javascript", code: `/**
+ * Multiply two numbers
+ *
+ *@param{number} a
+ *@param{number} b
+ *@return {number}
+ */
+function multiply(a, b) {
+  return a * b
+}` },
+      { type: "table", headers: ["Tag", "Utilité"], rows: [
+        ["@param {type} name", "Décrit un paramètre de fonction"],
+        ["@returns {type}", "Décrit la valeur retournée"],
+        ["@author", "Nom de l'auteur"],
+        ["@version", "Version"],
+        ["@example", "Exemple d'utilisation"],
+      ]},
+      { type: "note", variant: "success", text: "JSDoc est un outil extrêmement puissant pour générer une documentation de haute qualité, quelle que soit la taille du projet JavaScript." },
+    ],
+  },
 ];

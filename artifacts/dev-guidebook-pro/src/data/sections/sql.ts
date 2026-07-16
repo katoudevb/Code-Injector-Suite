@@ -1616,5 +1616,195 @@ app.listen(3000);` },
         ]},
       ],
     },
+    {
+      id: "sql-contraintes",
+      title: "Contraintes de champs (NOT NULL, DEFAULT, UNIQUE, intégrité)",
+      blocks: [
+        { type: "p", text: "Par défaut, tous les champs de tous les enregistrements d'une table doivent contenir une valeur. Il est possible de rendre un champ \"Nullable\" (autoriser une absence de valeur) via le mot-clé NULL. Sinon, on a une contrainte NOT NULL." },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────────────────────┐
+│                TABLE ÉTUDIANT — STRUCTURE                │
+├───┬──────────────────────────┬──────┬────────────────────┤
+│ # │ Nom                      │ Null │ Extra              │
+├───┼──────────────────────────┼──────┼────────────────────┤
+│ 1 │ Num_et (PK)              │ Non  │ AUTO_INCREMENT      │
+│ 2 │ Nom_et varchar(26)       │ Non  │                    │
+│ 3 │ Prenom_et varchar(20)    │ Non  │                    │
+│ 4 │ date_naissance_et date   │ Oui  │ NULL               │
+│ 5 │ id_classe                │ Non  │                    │
+└───┴──────────────────────────┴──────┴────────────────────┘
+
+Les 4 premiers champs ont une contrainte NOT NULL
+Le champ date_naissance_et autorise NULL`,
+        },
+        { type: "h", text: "Contrainte DEFAULT" },
+        { type: "p", text: "On peut forcer la base de données à définir une valeur par défaut pour tout champ manquant dans une table. Exemple : dans une table Étudiant, on peut imposer le prénom \"Alphonse\" pour toute insertion où ce champ n'est pas spécifié." },
+        { type: "code", filename: "default.sql", language: "sql", code: `-- Le champ Prenom_et a comme valeur par défaut "Alphonse"` },
+        { type: "h", text: "Contrainte UNIQUE" },
+        { type: "p", text: "On peut interdire à un champ d'avoir la même valeur pour deux enregistrements différents. C'est une contrainte de type UNIQUE — on crée un Index Unique sur le champ concerné." },
+        { type: "code", filename: "unique.sql", language: "sql", code: `Index name  : Date_unique
+Index type  : UNIQUE
+Column      : date_naissance_et [date]
+
+→ Prevents 2 Students from having the same date of birth` },
+        { type: "h", text: "Contraintes d'intégrité" },
+        { type: "p", text: "Si une table contient une référence vers une autre table, une contrainte d'intégrité va forcer l'information présente dans la première table à exister également dans la seconde." },
+        {
+          type: "diagram",
+          content: `┌────────────────────────┐        ┌──────────────────────┐
+│  ecolebis.etudiant     │        │  ecolebis.classe     │
+├────────────────────────┤        ├──────────────────────┤
+│ * num_et : int(11)     │        │ * num_classe : int(11│
+│ @ nom_et : varchar(50) │        │ @ nom_classe : varcha│
+│ @ prenom_et : varchar  │        └──────────────────────┘
+│ @ date_naiss_et : date │              ▲
+│ # num_classe : int(11) │──────────────┘
+└────────────────────────┘
+    Integrity constraint:
+    Student.num_classe → Classe.num_classe
+    Vérifie que la classe existe bien`,
+        },
+        { type: "list", items: [
+          "Un SGBD permet de créer des obligations sur les valeurs autorisées de certains champs d'une table — ce sont des contraintes.",
+          "Les contraintes d'intégrité sont utilisées pour vérifier la cohérence des données entre deux tables.",
+        ]},
+      ],
+    },
+    {
+      id: "sql-optimisation-requetes",
+      title: "Optimisation des requêtes SQL",
+      blocks: [
+        { type: "p", text: "Les SGBDR sont manipulés à l'aide de requêtes en langage SQL. L'exécution de ces requêtes peut prendre du temps si elles sont mal écrites et si le volume de données hébergées dans la base est important." },
+        { type: "h", text: "Différentes façons de réduire le temps d'exécution d'une requête SQL" },
+        { type: "list", items: [
+          "Diminuer le nombre d'enregistrements retournés par la requête",
+          "Créer un index basé sur les critères de recherche",
+          "Filtrer les enregistrements retournés avant de les trier",
+          "Chercher des valeurs précises plutôt qu'approximatives",
+        ]},
+        { type: "note", variant: "info", text: "Il est parfois nécessaire d'optimiser les requêtes SQL pour réduire leur temps d'exécution." },
+      ],
+    },
+    {
+      id: "sql-introduction-bases-de-donnees",
+      title: "Introduction aux bases de données SQL",
+      blocks: [
+        { type: "p", text: "Une base de données est un ensemble d'informations stockées sur un support informatique. Les bases de données relationnelles stockent l'information de façon parfaitement structurée dans des tables qui regroupent des enregistrements dont les champs sont tous identiques." },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────────────────────┐
+│              EXEMPLE — TABLE ÉTUDIANT                    │
+├──────────┬───────────┬───────────┬──────────────┬────────┤
+│ num_et   │ nom_et    │ prenom_et │ date_naiss_et│ classe │
+├──────────┼───────────┼───────────┼──────────────┼────────┤
+│ 3        │ Hill      │ Benny     │ 1935-06-05   │ 23     │
+│ 4        │ Durant    │ Karine    │ 1956-06-15   │ 23     │
+│ 5        │ Hallyday  │ Helene    │ 1969-06-15   │ 23     │
+│ 6        │ Ferrat    │ Alain     │ 1929-06-15   │ 37     │
+│ 7        │ Brassens  │ Jean      │ 1989-06-15   │ 38     │
+│ 8        │ Voulzy    │ Patrica   │ 1979-06-15   │ 23     │
+└──────────┴───────────┴───────────┴──────────────┴────────┘
+Each row = a record. All records have exactly the same fields.`,
+        },
+        { type: "h", text: "Utilité d'une base de données" },
+        { type: "p", text: "Un SGBD (Système de Gestion de Base de Données) est un logiciel qui permet de manipuler une base de données. Il permet de créer, mettre à jour et supprimer tous les éléments de la structure de la base de données :" },
+        { type: "list", items: [
+          "Les tables qui contiennent les données",
+          "Les vues qui contiennent un point de vue sur les données",
+          "Les procédures stockées qui sont des requêtes SQL enregistrées",
+          "Les triggers, qui déclenchent l'exécution de requêtes selon certains événements",
+          "Les utilisateurs associés avec leurs privilèges",
+        ]},
+        { type: "p", text: "Les tables peuvent avoir des relations entre elles permettant à la base de données d'assurer la cohérence des données." },
+        { type: "h", text: "Fonctionnement d'un SGBD" },
+        { type: "p", text: "Les bases de données relationnelles sont entièrement gérées à l'aide d'un langage appelé SQL. Il existe différents SGBDR sur le marché : MS SQL Server, Oracle Database, MySQL. Chacun stocke les informations dans un format propriétaire et est capable de comprendre une requête SQL pour la manipuler." },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────────┐
+│              PRINCIPAUX RDBMS                           │
+├──────────────────┬──────────────────────────────────────┤
+│ MS SQL Server    │ Propriétaire Microsoft               │
+│ Oracle Database  │ Propriétaire Oracle                  │
+│ MySQL            │ Open source (Oracle) — le + populaire│
+│ PostgreSQL       │ Open source                          │
+│ MariaDB          │ Open source (clone MySQL)            │
+│ CockroachDB      │ Open source distribué                │
+└──────────────────┴──────────────────────────────────────┘`,
+        },
+        { type: "note", variant: "info", text: "Un SGBD est un logiciel capable d'exécuter des requêtes SQL sur des bases de données." },
+      ],
+    },
+    {
+      id: "sql-manipulation-donnees",
+      title: "Manipulation des données (INSERT, UPDATE, DELETE)",
+      blocks: [
+        { type: "h", text: "Insérer des enregistrements" },
+        { type: "p", text: "Le langage SQL permet de remplir des tables avec la commande INSERT." },
+        { type: "list", items: [
+          "On ne peut pas ajouter un \"demi-enregistrement\" — on l'ajoute en entier ou pas du tout",
+          "Les enregistrements ajoutés doivent avoir des champs conformes à la structure de la table",
+          "Il est possible d'avoir un champ (souvent la clé primaire) auto-incrémenté — le SGBD ajoute une valeur prédéfinie automatiquement",
+          "Les enregistrements sont ajoutés à la fin de la table",
+        ]},
+        { type: "code", filename: "insert-syntax1.sql", language: "sql", code: `INSERT INTO table (column_name_1, column_name_2, ...) VALUES ('value 1', 'value 2', ...)` },
+        { type: "code", filename: "insert-exemple1.sql", language: "sql", code: `INSERT INTO student (\`num_et\`, \`nom_et\`, \`firstname_and\`, \`date_naiss_et\`, \`num_classe\`)
+VALUES (NULL, 'Dupont', 'Alain', '1987-05-15', 23)` },
+        { type: "code", filename: "insert-syntax2.sql", language: "sql", code: `INSERT INTO table VALUES('value 1', 'value 2', ...)` },
+        { type: "code", filename: "insert-exemple2.sql", language: "sql", code: `INSERT INTO student VALUES (NULL, 'Durand', 'Alain', '1987-05-12', 23)` },
+        { type: "h", text: "Modifier des enregistrements" },
+        { type: "code", filename: "update.sql", language: "sql", code: `UPDATE table SET column_1 = 'val 1', column_2 = 'val 2' … WHERE condition` },
+        { type: "list", items: [
+          "Ne spécifier que les colonnes dont on veut changer la valeur — les autres restent inchangées",
+          "Les nouvelles valeurs doivent être compatibles avec le type du champ",
+          "La condition est essentielle — elle précise la liste des enregistrements à modifier",
+        ]},
+        { type: "note", variant: "warning", text: "⚠️ Attention : si la condition WHERE est omise, toute la table est mise à jour !" },
+        { type: "code", filename: "update-exemple.sql", language: "sql", code: `UPDATE \`etudiant\` SET \`Nom_et\`='Dupont', \`Prenom_et\`='Arthur' WHERE num_et = 7` },
+        { type: "h", text: "Supprimer des enregistrements" },
+        { type: "code", filename: "delete.sql", language: "sql", code: `DELETE FROM \`table\` WHERE condition` },
+        { type: "note", variant: "info", text: "La suppression d'un ou plusieurs enregistrements se fait par la commande DELETE." },
+      ],
+    },
+    {
+      id: "sql-sgbd-open-source",
+      title: "Comparatif des SGBD Open Source",
+      blocks: [
+        { type: "p", text: "Le classement est fait à partir : du nombre de mentions sur les sites web, de l'intérêt général pour le logiciel, de la fréquence des discussions techniques, et du nombre d'offres d'emploi. En dehors de MySQL (de loin la solution SGBD open source la plus populaire au monde), il existe d'autres solutions de qualité." },
+        { type: "h", text: "PostgreSQL" },
+        { type: "table", headers: ["Caractéristique", "Description"], rows: [
+          ["Types de données", "Built-in Array, Range, UUID, Geolocation…"],
+          ["Stockage document", "Native JSON (style), XML, key-value (Hstore)"],
+          ["Réplication", "Synchronous and asynchronous"],
+          ["Scripting", "PL, Perl, Python and more"],
+          ["Recherche", "Full text search"],
+        ]},
+        { type: "h", text: "MariaDB" },
+        { type: "p", text: "MariaDB a été créé par le créateur de MySQL après qu'il l'ait vendu à Oracle en 2010. MariaDB est largement un clone de MySQL, mais possède quelques fonctionnalités supplémentaires :" },
+        { type: "list", items: [
+          "Plusieurs autres options de moteur de stockage pour des besoins spécialisés",
+          "Colonnes dynamiques pour différentes lignes d'une table",
+          "Meilleures capacités de réplication",
+          "Beaucoup plus rapide que MySQL",
+        ]},
+        { type: "h", text: "CockroachDB" },
+        { type: "p", text: "CockroachDB est un SGBDR open source distribué sur plusieurs serveurs." },
+        { type: "list", items: [
+          "Basé sur un dictionnaire clé-valeur transactionnel et cohérent",
+          "S'adapte horizontalement ; résiste aux pannes de disque, machine, rack et même de datacenter avec peu de perturbation de latence",
+          "Supporte des transactions ACID fortement cohérentes",
+          "Fournit une API SQL familière pour structurer, manipuler et interroger les données",
+        ]},
+        { type: "h", text: "Neo4j" },
+        { type: "p", text: "Neo4j est un SGBD qui permet de travailler avec des graphes." },
+        { type: "list", items: [
+          "Support des applications transactionnelles et de l'analyse graphique",
+          "Capacités de transformation de données pour digérer des données tabulaires à grande échelle en graphes",
+          "Langage de requête spécialisé : Cypher",
+          "Fonctions de visualisation et de découverte",
+        ]},
+        { type: "note", variant: "info", text: "Le marché des SGBD comprend plusieurs SGBD propriétaires (Oracle, IBM, Microsoft), mais de nombreuses solutions open source sont disponibles et présentent de nombreux avantages." },
+      ],
+    },
   ],
 };

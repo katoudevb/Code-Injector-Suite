@@ -795,5 +795,114 @@ class TestTodos(unittest.TestCase):
         ]},
       ],
     },
+    {
+      id: "py-webscraping",
+      title: "Webscraping avec Python (requests, BeautifulSoup)",
+      blocks: [
+        { type: "p", text: "Le webscraping est un processus automatisé consistant à récupérer des données d'un site web à partir de son adresse HTTP uniquement. Il est possible d'obtenir des pages HTML complètes, mais aussi de gérer des requêtes personnalisées comme récupérer et analyser des données partielles, tant que ces données ne sont pas soumises à des authentifications spéciales." },
+        { type: "h", text: "L'outil requests" },
+        { type: "code", filename: "scrape.py", language: "python", code: `import requests
+
+url = "https://en.wikipedia.org/wiki/Python_(programming_language)"
+page = requests.get(url)
+print(page.content)` },
+        { type: "p", text: "Ce code utilise la librairie requests. L'URL de la page Wikipédia est définie et la requête est effectuée. Le print sert à confirmer que les données ont bien été reçues." },
+        { type: "note", variant: "warning", title: "Note légale", text: "Le webscraping est totalement légal. Il peut se faire sur des données publiquement disponibles sur Internet. Mais les données personnelles, ou protégées par des réglementations internationales, ne doivent pas être manipulées sans précaution juridique." },
+        { type: "h", text: "Analyse des données (parsing)" },
+        { type: "p", text: "Pour parser le HTML (découper, trier, chercher), la librairie Beautiful Soup est utile." },
+        { type: "code", filename: "install.sh", language: "bash", code: `pip install beautifulsoup4` },
+        { type: "code", filename: "scrape-soup.py", language: "python", code: `import requests
+from bs4 import BeautifulSoup
+
+url = "https://en.wikipedia.org/wiki/Python_(programming_language)"
+page = requests.get(url)
+soup = BeautifulSoup(page.content, 'html.parser')
+print(soup)` },
+        { type: "code", filename: "find-p-tags.py", language: "python", code: `paras = soup.find_all("p")
+print(paras)` },
+        { type: "code", filename: "find-title.py", language: "python", code: `title = soup.title
+print("Python" in title.string)` },
+        { type: "code", filename: "count-occurrences.py", language: "python", code: `import requests
+from bs4 import BeautifulSoup
+import re
+
+url = "https://en.wikipedia.org/wiki/Python_(programming_language)"
+page = requests.get(url)
+soup = BeautifulSoup(page.content, 'html.parser')
+
+i = 0
+matches = soup.find_all(string=re.compile("Python"))
+print(len(matches))` },
+        { type: "note", variant: "info", text: "La librairie re permet de formater une chaîne spéciale servant de base à la recherche. Le webscraping est une méthode efficace pour obtenir différents types de données, qui peuvent ensuite être recherchées, triées et analysées via diverses librairies comme re." },
+      ],
+    },
+    {
+      id: "py-multithreading",
+      title: "Multithreading en Python",
+      blocks: [
+        { type: "p", text: "Un logiciel exécute généralement les instructions les unes après les autres. Mais parfois, le temps nécessaire pour exécuter une instruction est long, et l'instruction suivante peut être exécutée sans dépendre du résultat de la première." },
+        {
+          type: "diagram",
+          content: `┌─────────────────────────────────────────────────────────┐
+│            SÉQUENTIEL vs MULTITHREADING                 │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  SÉQUENTIEL :                                           │
+│  ─────────────────────────────────────────────────────  │
+│  [  Appel A (2s)  ] → [  Appel B (3s)  ]               │
+│  Durée totale = 5s                                      │
+│                                                         │
+│  MULTITHREADING :                                       │
+│  ─────────────────────────────────────────────────────  │
+│  [  Appel A (2s)  ]                                     │
+│  [  Appel B (3s)              ]                         │
+│  Durée totale = max(A, B) = 3s                          │
+│                                                         │
+│  → Gain de temps si les tâches sont indépendantes      │
+└─────────────────────────────────────────────────────────┘`,
+        },
+        { type: "p", text: "Le multithreading permet de créer et contrôler des flux d'exécution (threads) qui peuvent prendre et exécuter des processus, s'ils ne dépendent pas les uns des autres. Un thread peut être : lancé, mis en pause, mis en attente d'un événement, détruit après un événement…" },
+        { type: "list", items: [
+          "La programmation multithread peut entraîner un comportement étrange si elle est utilisée sans contrôle approprié",
+          "Le multithreading permet une réduction du temps d'exécution",
+        ]},
+        { type: "h", text: "Classe Thread" },
+        { type: "code", filename: "mon_thread.py", language: "python", code: `import threading
+import time
+
+class MonThread(threading.Thread):
+    def __init__(self, number, end, time_sleep):
+        threading.Thread.__init__(self)
+        self.end = end
+        self.time_sleep = time_sleep
+        self.number = number
+
+    def run(self):
+        for i in range(0, self.end):
+            print("thread number : ", self.number, ", value of i :", i)
+            time.sleep(self.time_sleep)
+
+m = MonThread(1, 6, 0.10)
+m.start()
+m2 = MonThread(2, 6, 0.20)
+m2.start()` },
+        { type: "p", text: "Une classe MonThread est créée, qui étend la classe Thread et redéfinit la méthode run. La seule différence entre les objets est leur numéro, et le time.sleep qui impose une pause avant de reprendre l'exécution." },
+        { type: "code", filename: "resultat-console.txt", language: "bash", code: `thread number :  thread number :  2 , value of i : 0
+ 1 , value of i : 0
+thread number :  1 , value of i : 1
+thread number :  2 , value of i : 1
+thread number :  1 , value of i : 2
+thread number :  1 , value of i : 3
+thread number :  2 , value of i : 2
+thread number :  1 , value of i : 4
+thread number :  1 , value of i : 5
+thread number :  2 , value of i : 3
+thread number :  2 , value of i : 4
+thread number :  2 , value of i : 5
+
+Process finished with exit code 0` },
+        { type: "note", variant: "info", text: "La première ligne montre que les deux threads s'entremêlent. Après le premier et le second tour de boucle, le thread numéro 1 exécute deux fois sa boucle avant que le thread numéro 2 n'exécute la sienne une fois." },
+      ],
+    },
   ],
 };

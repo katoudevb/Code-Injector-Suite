@@ -38,6 +38,7 @@ import { algorithmesIA } from "./sections/algorithmesIA";
 import { glossaire } from "./sections/glossaire";
 import { devops } from "./sections/devops";
 import { gestionProjet } from "./sections/gestionProjet";
+import { tests } from "./sections/tests";
 
 export const sections: Section[] = [
   js,
@@ -79,6 +80,7 @@ export const sections: Section[] = [
   glossaire,
   devops,
   gestionProjet,
+  tests,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
