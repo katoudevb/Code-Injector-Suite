@@ -39,6 +39,9 @@ import { glossaire } from "./sections/glossaire";
 import { devops } from "./sections/devops";
 import { gestionProjet } from "./sections/gestionProjet";
 import { tests } from "./sections/tests";
+import { reseaux } from "./sections/reseaux";
+import { performance } from "./sections/performance";
+import { cybersecuriteAnalyste } from "./sections/cybersecuriteAnalyste";
 
 export const sections: Section[] = [
   js,
@@ -81,6 +84,9 @@ export const sections: Section[] = [
   devops,
   gestionProjet,
   tests,
+  reseaux,
+  performance,
+  cybersecuriteAnalyste,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
