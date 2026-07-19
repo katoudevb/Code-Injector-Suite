@@ -42,6 +42,10 @@ import { tests } from "./sections/tests";
 import { reseaux } from "./sections/reseaux";
 import { performance } from "./sections/performance";
 import { cybersecuriteAnalyste } from "./sections/cybersecuriteAnalyste";
+import { liens } from "./sections/liens";
+import { developpementWeb } from "./sections/developpementWeb";
+import { documentationTechnique } from "./sections/documentationTechnique";
+import { conceptsIA } from "./sections/conceptsIA";
 
 export const sections: Section[] = [
   js,
@@ -87,6 +91,10 @@ export const sections: Section[] = [
   reseaux,
   performance,
   cybersecuriteAnalyste,
+  liens,
+  developpementWeb,
+  documentationTechnique,
+  conceptsIA,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
