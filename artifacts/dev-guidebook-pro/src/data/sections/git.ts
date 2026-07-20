@@ -381,5 +381,95 @@ git push -u origin branche-cible` },
         ]},
       ],
     },
+    {
+      id: "git-versioning-revision",
+      title: "Qu'est-ce que le versioning ? (révision)",
+      blocks: [
+        { type: "p", text: "Le versioning est un système qui permet de suivre les modifications apportées à un projet au fil du temps. Il permet de revenir à des versions précédentes, voir l'historique, et gérer plusieurs versions en parallèle." },
+        { type: "h", text: "Les cycles de versions" },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────────────────────────┐
+│                  CYCLE DE DÉVELOPPEMENT                      │
+│                                                              │
+│  Alpha ──► Bêta ──► Release Candidate ──► Stable ──► Maint. │
+│                                                              │
+│  Alpha   : Fonctionnalités de base, tests internes           │
+│  Bêta    : Tests avec groupe restreint d'utilisateurs        │
+│  RC      : Candidats à la sortie, corrections de bugs bêta   │
+│  Stable  : Version finale, production                        │
+│  Maint.  : Correctifs mineurs, bugs post-production          │
+└──────────────────────────────────────────────────────────────┘`,
+        },
+        { type: "h", text: "Pourquoi le versioning est important ?" },
+        { type: "list", items: [
+          "Historique des modifications — chaque modification enregistrée avec un commit (identifiant unique)",
+          "Restauration — retourner à une version antérieure stable",
+          "Collaboration — plusieurs développeurs travaillent simultanément, modifications fusionnées",
+          "Branches — travailler sur des fonctionnalités sans affecter la version principale",
+          "Suivi des bugs — identifier quand et où un bug a été introduit",
+        ]},
+        { type: "h", text: "Qu'est-ce que Git ?" },
+        { type: "p", text: "Git est le système de versioning le plus utilisé. Il est distribué : chaque développeur possède une copie complète de l'historique." },
+        {
+          type: "diagram",
+          content: `┌───────────────────────────────────────────────────────────┐
+│                    CONCEPTS GIT                           │
+│                                                           │
+│  DÉPÔT (Repository)                                       │
+│  ├── Local : sur votre ordinateur                         │
+│  └── Distant : GitHub, GitLab…                            │
+│                                                           │
+│  COMMIT = Instantané du projet à un moment donné          │
+│  (message descriptif + fichiers modifiés + métadonnées)   │
+│                                                           │
+│  BRANCHE (Branch) = Version distincte du projet           │
+│  ├── Branche principale : main / master                   │
+│  └── Branches de fonctionnalités / correctifs             │
+│                                                           │
+│  FUSION (Merge) = Intégrer modifications d'une branche    │
+└───────────────────────────────────────────────────────────┘`,
+        },
+        { type: "h", text: "Avantages de Git" },
+        { type: "list", items: [
+          "Fiabilité et redondance — copies complètes, pas de point de défaillance unique",
+          "Flexibilité — s'adapte à différents workflows",
+          "Performance — opérations courantes optimisées",
+        ]},
+        { type: "h", text: "Créer votre premier dépôt local (VS Code)" },
+        { type: "list", items: [
+          "Ouvrir VS Code et votre projet (bouton \"Ouvrir le dossier\")",
+          "Ouvrir le terminal intégré (clic droit sur le dossier → \"Ouvrir dans le terminal intégré\")",
+        ]},
+        { type: "code", filename: "git-init.sh", language: "bash", code: `git init` },
+        { type: "list", items: [
+          "Dans l'explorateur VS Code, les fichiers non suivis sont marqués \"U\" (Untracked)",
+          "Aller dans l'icône \"Source Control\" (barre latérale gauche)",
+          "Cliquer sur \"+\" pour ajouter des fichiers au suivi (ou \"Ajouter tout\")",
+          "Entrer un message de commit dans le champ en haut",
+          "Cliquer sur l'icône de Validation (✔) pour effectuer le commit",
+        ]},
+        { type: "note", variant: "info", text: "Les messages de commit doivent être explicites : \"ajout de la barre de navigation au header\" plutôt que \"premier commit\"." },
+        { type: "h", text: "Utiliser GitHub pour déposer vos projets à distance" },
+        { type: "p", text: "GitHub est une plateforme de développement collaboratif qui héberge des dépôts Git à distance. Fonctionnalités : issues, pull requests, GitHub Actions (CI/CD)." },
+        { type: "h", text: "Pourquoi utiliser GitHub ?" },
+        { type: "list", items: [
+          "Collaboration — travail en équipe",
+          "Hébergement — projets accessibles depuis partout",
+          "Historique et traçabilité — suivi complet des modifications",
+          "Sécurité — sauvegarde cloud",
+        ]},
+        { type: "h", text: "Étapes pour lier un dépôt local à GitHub" },
+        { type: "list", items: [
+          "Créer un compte sur https://github.com",
+          "Dans VS Code, après le premier commit, cliquer sur \"Publier Branch\" dans le Source Control",
+          "S'authentifier à GitHub via VS Code",
+          "Choisir public ou privé selon le projet",
+          "Le push (envoi vers GitHub) s'effectue automatiquement",
+        ]},
+        { type: "p", text: "Pousser les modifications vers GitHub : après un commit, cliquer sur l'icône \"Push\" dans le Source Control pour pousser vers le dépôt distant." },
+        { type: "note", variant: "success", text: "Vérification : aller sur GitHub pour confirmer que les modifications apparaissent (message du dernier commit visible)." },
+      ],
+    },
   ],
 };

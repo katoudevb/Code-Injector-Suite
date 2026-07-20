@@ -1806,5 +1806,234 @@ VALUES (NULL, 'Dupont', 'Alain', '1987-05-15', 23)` },
         { type: "note", variant: "info", text: "Le marché des SGBD comprend plusieurs SGBD propriétaires (Oracle, IBM, Microsoft), mais de nombreuses solutions open source sont disponibles et présentent de nombreux avantages." },
       ],
     },
+    {
+      id: "sql-composant-serveur-sgbd",
+      title: "Le rôle du composant serveur d'un SGBD",
+      blocks: [
+        { type: "p", text: "Les données d'une base de données se trouvent sur des fichiers hébergés sur un support de stockage. Y accéder directement poserait deux problèmes : l'obligation d'être sur la même machine que la base de données, et l'impossibilité de gérer les accès concurrents. C'est pourquoi le modèle client/serveur a été inventé." },
+        {
+          type: "diagram",
+          content: `┌───────────────────────────────────────────────────────────┐
+│                MODÈLE CLIENT / SERVEUR SGBD               │
+│                                                           │
+│  [Client 1]  [Client 2]  [Client 3]                       │
+│      │            │           │                           │
+│      └────────────┴───────────┘                           │
+│                   │  Réseau                               │
+│                   ▼                                       │
+│  ┌─────────────────────────────────┐                      │
+│  │  COMPOSANT SERVEUR DU SGBD      │                      │
+│  │  (processus sur la machine)     │                      │
+│  └──────────────┬──────────────────┘                      │
+│                 │                                         │
+│                 ▼                                         │
+│  ┌─────────────────────────────────┐                      │
+│  │  FICHIERS DE LA BASE DE DONNÉES │                      │
+│  └─────────────────────────────────┘                      │
+└───────────────────────────────────────────────────────────┘
+
+Pour une application web :
+[Browser] → [Serveur Web] → [Composant Serveur SGBD] → [BDD]`,
+        },
+        { type: "h", text: "Tâches du composant serveur SGBD" },
+        { type: "list", items: [
+          "Manipuler les données des fichiers",
+          "Permettre un accès optimisé aux données",
+          "Gérer la cohérence des données",
+          "Gérer la journalisation (toutes les opérations réalisées)",
+          "Gérer la confidentialité d'accès",
+          "Gérer les accès concurrents par un système de verrous",
+          "Enregistrer des procédures stockées",
+          "Gérer la sécurité (pannes)",
+          "Gérer un système de déclencheurs (triggers)",
+        ]},
+        { type: "h", text: "Les protocoles réseau" },
+        { type: "table", headers: ["Protocole", "Description"], rows: [
+          ["Mémoire partagée (Shared Memory)", "Simple, clients sur la même machine, rarement utilisé"],
+          ["TCP/IP", "Plus populaire, nécessite une configuration serveur/client"],
+          ["Canaux nommés (Named Pipes)", "Canaux FIFO (premier entré, premier sorti)"],
+        ]},
+        { type: "p", text: "Connexion TCP/IP : le composant serveur doit définir le port d'écoute et son adresse IP. Un login et un mot de passe sont fortement conseillés. Options supplémentaires : chiffrer la communication, définir la taille du paquet réseau, définir le délai de connexion au-delà duquel la tentative sera rejetée." },
+      ],
+    },
+    {
+      id: "sql-decouvrez-base-donnees",
+      title: "Découvrez la base de données",
+      blocks: [
+        { type: "p", text: "Une base de données est un système qui enregistre des informations de manière structurée et organisée. Elle permet de gagner du temps lors de la création, mise à jour, suppression ou récupération des données." },
+        { type: "note", variant: "info", text: "Un fichier texte, une feuille de calcul ou un fichier audio/vidéo sont des bases de données." },
+        { type: "p", text: "Exemple simple : CV/Portfolio en ligne → stocker informations de connexion, projets, expériences professionnelles, diplômes…" },
+        { type: "h", text: "Les deux types de base de données" },
+        { type: "p", text: "Base de données relationnelle : très structurée. Stocke les données sous forme de tableaux (tables) avec des lignes et des colonnes." },
+        {
+          type: "diagram",
+          content: `TABLE : Utilisateurs
+┌─────┬─────────┬──────────┬───────────────────────┐
+│ id  │ nom     │ prenom   │ email                 │
+├─────┼─────────┼──────────┼───────────────────────┤
+│  1  │ Dupont  │ Alain    │ alain@example.com     │
+│  2  │ Martin  │ Sophie   │ sophie@example.com    │
+│  3  │ Bernard │ Paul     │ paul@example.com      │
+└─────┴─────────┴──────────┴───────────────────────┘`,
+        },
+        { type: "p", text: "Base de données non relationnelle (NoSQL) : données stockées sous un format clé-valeur. Plus adapté au stockage de données très volumineuses." },
+        { type: "code", filename: "exemple.json", language: "json", code: `{
+  "id": "1",
+  "nom": "Dupont",
+  "prenom": "Alain",
+  "email": "alain@example.com"
+}` },
+        { type: "h", text: "La gestion des données" },
+        { type: "p", text: "Le SGBD (Système de Gestion de Base de Données) est un logiciel qui permet de créer et gérer une ou plusieurs bases de données. Relationnel : MySQL, PostgreSQL. Non relationnel : Oracle NoSQL, MongoDB." },
+        { type: "h", text: "Concepts clés" },
+        { type: "list", items: [
+          "Le modèle (schéma de données) — décrit visuellement l'organisation des données, les types et les relations",
+          "L'entité (table) — représente un type de donnée (utilisateurs, articles, événements). Chaque table comporte des enregistrements (lignes)",
+          "Les attributs (champs/colonnes) — caractéristiques de l'entité (prénom, nom, mot de passe…)",
+          "La clé primaire — attribut dont la valeur unique change à chaque nouvelle ligne. Généralement un id auto-incrémenté",
+          "L'association — possibilité de relier un enregistrement d'une table avec un enregistrement d'une autre table",
+          "La clé étrangère (foreign key) — attribut présent dans une table qui contient une référence vers l'enregistrement d'une autre table",
+        ]},
+        { type: "h", text: "Notion de cardinalité" },
+        { type: "p", text: "La cardinalité représente le nombre d'enregistrements A qu'il existe pour un enregistrement B." },
+        {
+          type: "diagram",
+          content: `┌───────────────────────────────────────────────────────────┐
+│                    CARDINALITÉS                           │
+├──────────────────┬────────────────────────────────────────┤
+│  UN à UN (1:1)   │  Un utilisateur ↔ Une adresse          │
+├──────────────────┼────────────────────────────────────────┤
+│  UN à PLUSIEURS  │  Un utilisateur → Plusieurs articles   │
+│  (1:N)           │  Un article ← Un auteur                │
+├──────────────────┼────────────────────────────────────────┤
+│  PLUSIEURS à     │  Un article ↔ Plusieurs catégories     │
+│  PLUSIEURS (N:N) │  Une catégorie ↔ Plusieurs articles    │
+└──────────────────┴────────────────────────────────────────┘`,
+        },
+        { type: "h", text: "Le stockage des données" },
+        { type: "table", headers: ["Type de stockage", "Description"], rows: [
+          ["Logiciel", "Logiciel sépare données du matériel. Pour micro-services et données non structurées"],
+          ["Cloud", "Données accessibles depuis internet. Principaux : Microsoft, Google, IBM"],
+          ["Mode objet", "Fichiers décomposés en éléments répartis (objets distincts)"],
+          ["Mode fichier", "Fichiers organisés avec identifiant unique (nom, URL…)"],
+          ["Mode bloc", "Volume divisé en blocs indépendants. Rapide, adapté aux bases multimédias"],
+        ]},
+        { type: "h", text: "Stockage relationnel et propriétés ACID" },
+        { type: "table", headers: ["Propriété", "Description"], rows: [
+          ["Atomicité", "Tout changement doit être effectué de bout en bout. En cas d'interruption, annulation complète"],
+          ["Cohérence", "Une transaction n'enfreint pas les contraintes d'intégrité définies"],
+          ["Isolation", "Écriture/lecture n'impacte pas les autres transactions en cours"],
+          ["Durabilité", "Tout changement apporté à la BDD est permanent"],
+        ]},
+      ],
+    },
+    {
+      id: "sql-mcd-mld-mpd",
+      title: "Le Modèle Conceptuel de Données (MCD) et méthode Merise",
+      blocks: [
+        { type: "p", text: "Le MCD est un langage de haut niveau, utilisant un formalisme graphique pour représenter les différents éléments d'un problème à formaliser." },
+        { type: "h", text: "Il est composé de" },
+        { type: "list", items: [
+          "Entités — éléments de base du problème à modéliser, avec des propriétés dont un identifiant unique",
+          "Relations — liens entre les entités, pouvant porter des propriétés",
+          "Cardinalités — nombre d'entités mises en jeu dans une relation",
+        ]},
+        { type: "p", text: "Méthode Merise : convertit le MCD en MLD, puis en MPD." },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────────────────────┐
+│                 MÉTHODE MERISE                           │
+│                                                          │
+│  MCD (Modèle Conceptuel de Données)                      │
+│  → Indépendant de toute informatisation                  │
+│           │                                              │
+│           ▼ Merise                                       │
+│  MLD (Modèle Logique de Données)                         │
+│  → Tables et champs, sans cibler de SGBD particulier     │
+│           │                                              │
+│           ▼ Merise                                       │
+│  MPD (Modèle Physique de Données)                        │
+│  → Associé à un SGBD précis                              │
+└──────────────────────────────────────────────────────────┘`,
+        },
+        { type: "note", variant: "info", title: "Logiciels", text: "JMerise, PowerAMC" },
+      ],
+    },
+    {
+      id: "sql-langage-sql-4-sous-langages",
+      title: "Le langage SQL — les 4 sous-langages",
+      blocks: [
+        { type: "p", text: "Le langage SQL (Structured Query Language) est un langage informatique descriptif permettant de manipuler entièrement une base de données relationnelle." },
+        { type: "table", headers: ["Sous-langage", "Sigle", "Commandes", "Rôle"], rows: [
+          ["Langage de Définition des Données", "LDD / DDL", "CREATE, ALTER, DROP, TRUNCATE", "Créer/modifier le schéma"],
+          ["Langage de Manipulation des Données", "LMD / DML", "INSERT, UPDATE, DELETE", "Manipuler les données"],
+          ["Langage de Contrôle des Données", "LCD / DQL", "SELECT", "Interroger les données"],
+          ["Langage de Contrôle des Transactions", "LCT / TCL", "COMMIT, ROLLBACK", "Gérer les transactions"],
+        ]},
+        { type: "h", text: "Commandes de base SQL" },
+        { type: "p", text: "SELECT — récupérer des données :" },
+        { type: "code", filename: "select.sql", language: "sql", code: `SELECT nom, prenom FROM etudiant WHERE num_classe = 23;` },
+        { type: "p", text: "INSERT INTO — insérer un enregistrement :" },
+        { type: "code", filename: "insert.sql", language: "sql", code: `-- Avec liste de colonnes
+INSERT INTO etudiant (nom_et, prenom_et, date_naiss_et, num_classe)
+VALUES ('Dupont', 'Alain', '1987-05-15', 23);
+
+-- Sans liste (respecter l'ordre des colonnes)
+INSERT INTO etudiant VALUES (NULL, 'Durand', 'Alain', '1987-05-12', 23);` },
+        { type: "p", text: "Insérer plusieurs enregistrements :" },
+        { type: "code", filename: "insert-multiple.sql", language: "sql", code: `INSERT INTO etudiant VALUES
+(NULL, 'boumaiville', 'Edguar', '1937-08-12', 23),
+(NULL, 'de la roche', 'eric', '1980-02-12', 23),
+(NULL, 'Noah', 'Yanick', '1961-01-12', 23);` },
+        { type: "p", text: "UPDATE — modifier un enregistrement :" },
+        { type: "code", filename: "update.sql", language: "sql", code: `UPDATE etudiant
+SET prenom_et = 'Jean', date_naiss_et = '1990-01-01'
+WHERE num_et = 4;` },
+        { type: "note", variant: "warning", text: "Si on omet la condition, toute la table est mise à jour." },
+        { type: "p", text: "DELETE — supprimer un enregistrement :" },
+        { type: "code", filename: "delete.sql", language: "sql", code: `DELETE FROM etudiant WHERE num_et = 4;` },
+        { type: "note", variant: "warning", text: "Sans condition, la table entière est vidée." },
+        { type: "p", text: "TRUNCATE : supprime tous les enregistrements ET réinitialise la clé primaire auto-incrémentée (contrairement à DELETE)." },
+        { type: "note", variant: "info", title: "Documentation SQL", text: "https://sql.sh/cours" },
+        { type: "h", text: "Créer une base de données" },
+        { type: "code", filename: "create-database.sql", language: "sql", code: `CREATE DATABASE ma_base;` },
+        { type: "p", text: "Options supplémentaires selon le SGBD : nom du propriétaire, nom des fichiers et leurs tailles, interclassement (collation) pour la comparaison de chaînes." },
+        { type: "p", text: "Chaque SGBD a créé son propre SQL étendu : Microsoft → Transact SQL (SQL Server), Oracle → PL SQL. SQL est normalisé depuis 1986 et purement descriptif (pas de boucle, pas de branchement conditionnel)." },
+        { type: "p", text: "Logiciels clients : SSMS (SQL Server Management Studio) pour SQL Server, phpMyAdmin pour MySQL (web)." },
+      ],
+    },
+    {
+      id: "sql-sgbd-formats-comparaison",
+      title: "SGBD — Formats et comparaison",
+      blocks: [
+        { type: "p", text: "Un SGBD (Système de Gestion de Base de Données) est un logiciel permettant de manipuler les données stockées. Il réalise les opérations CRUD (Create, Read, Update, Delete)." },
+        { type: "h", text: "Un SGBD doit aussi" },
+        { type: "list", items: [
+          "Gérer les accès concurrents",
+          "Garantir l'intégrité logique",
+          "Gérer les sauvegardes et restaurations",
+          "Être responsable de la sécurité et confidentialité",
+          "Comprendre un langage déclaratif (SQL)",
+          "Permettre la création et l'utilisation de vues logiques",
+        ]},
+        { type: "h", text: "Formats de SGBD" },
+        { type: "table", headers: ["Format", "Description"], rows: [
+          ["Relationnel", "Données en tables avec lignes/colonnes. Langage SQL. Le plus répandu"],
+          ["Hiérarchique", "Données en structure arborescente"],
+          ["Orienté objet", "Données en objets persistants, compatible C++, Java, C#"],
+          ["XML", "Données en fichiers XML, langage XPath/XQuery"],
+        ]},
+        { type: "h", text: "Comparaison entre SGBD relationnels" },
+        { type: "table", headers: ["SGBD", "Points forts", "Points faibles"], rows: [
+          ["MySQL", "Simple, logiciel client web, installation rapide", "Partiellement open source (Oracle), peu scalable"],
+          ["MariaDB", "Fork MySQL, meilleures performances, cryptographie avancée", "—"],
+          ["Oracle", "N°1 mondial, cloud, performances remarquables", "Coût élevé, forte consommation CPU/RAM, complexe"],
+          ["PostgreSQL", "Types personnalisés, totalement open source, outils riches", "Documentation limitée"],
+          ["SQL Server", "Large gamme, outils ETL, cloud, communauté importante", "Coût élevé en entreprise"],
+        ]},
+        { type: "h", text: "Le SGBDR" },
+        { type: "p", text: "Le SGBDR (Système de Gestion de Base de Données Relationnel) propose trois fonctions principales : définition des données sous forme de relations, manipulation des données par un langage déclaratif, administration des données." },
+      ],
+    },
   ],
 };

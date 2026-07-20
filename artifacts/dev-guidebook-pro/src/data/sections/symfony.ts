@@ -5602,5 +5602,363 @@ symfony cloud:tunnel:close` },
         ]},
       ],
     },
+    {
+      id: "symfony7-presentation-versions",
+      title: "Symfony 7 — Présentation et calendrier des versions",
+      blocks: [
+        { type: "p", text: "Symfony est un framework PHP open-source développé par Sensiolabs, lancé en 2005 par Fabien Potencier. Modèle MVC, moteur de templates, architecture modulaire grâce aux bundles et composants réutilisables." },
+        { type: "h", text: "Calendrier des versions Symfony" },
+        {
+          type: "diagram",
+          content: `┌──────────────────────────────────────────────────────────┐
+│            CALENDRIER DES VERSIONS SYMFONY               │
+├──────────────────────────┬───────────────────────────────┤
+│  Correctifs sécurité      │  Chaque mois                 │
+│  Versions mineures        │  Tous les 6 mois (mai/nov)   │
+│  Versions majeures        │  Tous les 2 ans (nov impairs)│
+│  Support standard         │  6 mois                      │
+│  LTS (version x.4)        │  3 ans + 1 an sécurité       │
+└──────────────────────────┴───────────────────────────────┘`,
+        },
+        { type: "note", variant: "info", text: "Version Symfony 7.1." },
+        { type: "h", text: "Prérequis" },
+        { type: "list", items: [
+          "PHP ≥ 8.2 pour Symfony 7.1",
+          "Extensions PHP : CType, Iconv, PCRE, Session, SimpleXML, Tokenizer",
+          "Composer : https://getcomposer.org/",
+          "Git (recommandé)",
+          "Symfony CLI (recommandé) : https://symfony.com/download",
+        ]},
+        { type: "p", text: "Vérifier la configuration :" },
+        { type: "code", filename: "check.sh", language: "bash", code: `symfony check:requirements
+symfony check:requirements -v  # mode verbose` },
+        { type: "p", text: "Vérifier la sécurité des dépendances :" },
+        { type: "code", filename: "security-check.sh", language: "bash", code: `symfony security:check` },
+      ],
+    },
+    {
+      id: "symfony7-creation-projet-structure",
+      title: "Symfony 7 — Création de projet et structure",
+      blocks: [
+        { type: "h", text: "Version légère (API / microservices)" },
+        { type: "code", filename: "install-api.sh", language: "bash", code: `# Avec Composer
+composer create-project symfony/skeleton:"7.1.*" nom_dossier_projet
+
+# Avec Symfony CLI
+symfony new nom_dossier_projet --version="7.1.*"` },
+        { type: "h", text: "Version complète (application Web)" },
+        { type: "code", filename: "install-webapp.sh", language: "bash", code: `# Avec Composer
+composer create-project symfony/skeleton:"7.1.*" nom_dossier_projet
+cd nom_dossier_projet
+composer require webapp
+
+# Avec Symfony CLI
+symfony new nom_dossier_projet --version="7.1.*" --webapp` },
+        { type: "note", variant: "info", title: "Paramètre version", text: "lts, stable (défaut), next, previous, dev" },
+        { type: "h", text: "Structure d'un projet Symfony 7" },
+        { type: "table", headers: ["Dossier/Fichier", "Description", "API", "WebApp"], rows: [
+          ["/.git", "Dossier de travail de GIT", "✓", "✓"],
+          ["/bin", "Exécutables (console, phpunit)", "✓", "✓"],
+          ["/config", "Fichiers de configuration du framework", "✓", "✓"],
+          ["/migrations", "Historique des étapes de construction de la BDD", "—", "✓"],
+          ["/public", "Seul dossier accessible par le visiteur (CSS, JS, images)", "✓", "✓"],
+          ["/src", "Dossier principal de l'application", "✓", "✓"],
+          ["/src/Controller", "Contrôleurs de l'application", "✓", "✓"],
+          ["/src/Entity", "Description des entités", "—", "✓"],
+          ["/src/Repository", "Classes pour manipuler les données en BDD", "—", "✓"],
+          ["/templates", "Vues de l'application (Twig)", "—", "✓"],
+          ["/tests", "Tests unitaires et d'intégration", "—", "✓"],
+          ["/translations", "Fichiers de traduction", "—", "✓"],
+          ["/var", "Fichiers temporaires, cache", "✓", "✓"],
+          ["/vendor", "Dépendances Symfony et Composer", "✓", "✓"],
+          [".env", "Variables d'environnement (ne pas versionner)", "✓", "✓"],
+          [".gitignore", "Fichiers exclus du versioning", "✓", "✓"],
+          ["composer.json", "Liste des dépendances de premier niveau", "✓", "✓"],
+          ["composer.lock", "Dépendances réellement installées et versions exactes", "✓", "✓"],
+        ]},
+        { type: "h", text: "Lancement du serveur" },
+        { type: "code", filename: "server.sh", language: "bash", code: `symfony server:start           # Lance le serveur
+symfony server:start -d        # Lance en tâche de fond
+symfony server:log             # Affiche les logs (tâche de fond)
+symfony serve                  # Alias de server:start
+symfony server:stop            # Arrête le serveur
+symfony server:list            # Liste des serveurs en cours
+symfony server:status          # État du serveur` },
+        { type: "note", variant: "info", text: "Vérifier depuis le dossier racine du projet. Accessible à https://localhost:8000" },
+        { type: "h", text: "Premier contrôleur" },
+        { type: "code", filename: "src/Controller/HomeController.php", language: "php", code: `<?php
+namespace App\\Controller;
+
+use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;
+use Symfony\\Component\\HttpFoundation\\Response;
+use Symfony\\Component\\Routing\\Attribute\\Route;
+
+class HomeController extends AbstractController
+{
+    #[Route('/')]
+    public function index(): Response
+    {
+        return new Response('<h1>Bienvenue</h1>');
+    }
+}` },
+        { type: "h", text: "Les routes (attributs PHP 8)" },
+        { type: "code", filename: "route-syntaxe.php", language: "php", code: `#[Route('/products', name: 'products_list')]
+public function index(): Response { }` },
+        { type: "code", filename: "route-parametres.php", language: "php", code: `// Methods — restreindre aux méthodes HTTP
+#[Route('/products', name: 'products_list', methods: ['GET'])]
+
+// Schemes — HTTP, HTTPS ou les deux
+#[Route('/products', name: 'products_list', schemes: ['https'])]
+
+// Route dynamique avec paramètre
+#[Route('/products/{id}', name: 'product_show')]
+public function show(int $id): Response { }
+
+// Route dynamique avec valeur par défaut et format
+#[Route('/products/{id}', name: 'product_show', defaults: ['id' => 1], requirements: ['id' => '\\d+'])]` },
+        { type: "h", text: "Outils de débogage des routes" },
+        { type: "code", filename: "debug-router.sh", language: "bash", code: `# Lister toutes les routes
+symfony console debug:router
+
+# Détails d'une route spécifique
+symfony console debug:router products_list
+
+# Vérifier qu'une URL est associée à une route
+symfony console router:match /products` },
+        { type: "h", text: "Le MakerBundle" },
+        { type: "p", text: "Composant indispensable pour générer le code de base des éléments fréquents." },
+        { type: "code", filename: "maker-bundle.sh", language: "bash", code: `# Installation (environnement de développement uniquement)
+composer require symfony/maker-bundle --dev
+
+# Lister toutes les commandes du MakerBundle
+symfony console list make` },
+        { type: "code", filename: "make-controller.sh", language: "bash", code: `symfony console make:controller NomDuController` },
+        { type: "p", text: "Crée deux fichiers : src/Controller/NomDuController.php et templates/nom_du_controller/index.html.twig." },
+      ],
+    },
+    {
+      id: "symfony7-twig-syntaxe",
+      title: "Symfony 7 — TWIG, syntaxe de base",
+      blocks: [
+        { type: "p", text: "Twig est le moteur de templates open-source de Symfony (SensioLabs)." },
+        { type: "code", filename: "install-twig.sh", language: "bash", code: `composer require twig/twig
+# ou (si non inclus)
+composer require symfony/twig-bundle` },
+        { type: "table", headers: ["Syntaxe", "Rôle"], rows: [
+          ["{{ variable }}", "Afficher le contenu d'une variable ou expression"],
+          ["{% action %}", "Exécuter une action (boucle, condition…)"],
+          ["{# commentaire #}", "Commentaire (non affiché)"],
+        ]},
+        { type: "h", text: "Les variables" },
+        { type: "code", filename: "variables.twig", language: "text", code: `{# Affichage simple #}
+{{ titre }}
+{{ user.nom }}
+{{ tableau.element }}` },
+        { type: "h", text: "Les filtres" },
+        { type: "code", filename: "filtres.twig", language: "text", code: `{# Modifier une variable (ne modifie pas côté PHP) #}
+{{ nom | upper }}
+{{ texte | trim | capitalize }}` },
+        { type: "h", text: "Les fonctions" },
+        { type: "code", filename: "fonctions.twig", language: "text", code: `{{ date('Y-m-d') }}
+{{ dump(variable) }}
+{{ max(valeurs) }}
+{{ min(valeurs) }}` },
+        { type: "h", text: "Les conditions" },
+        { type: "code", filename: "conditions.twig", language: "text", code: `{% if age >= 18 %}
+  <p>Majeur</p>
+{% elseif age >= 13 %}
+  <p>Adolescent</p>
+{% else %}
+  <p>Enfant</p>
+{% endif %}` },
+        { type: "p", text: "Opérateurs disponibles : + - / * %, and or not, == != <= >= <>, | (filtre), ~ (concaténation), ? : (ternaire). Tests : constant, defined, divisible by, empty, null, even/odd, iterable, same as." },
+        { type: "h", text: "Les boucles" },
+        { type: "code", filename: "boucles.twig", language: "text", code: `{% for item in items %}
+  <li>{{ item.nom }}</li>
+{% endfor %}` },
+        { type: "h", text: "Héritage TWIG" },
+        { type: "code", filename: "templates/base.html.twig", language: "text", code: `{# templates/base.html.twig — template de base #}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Mon Site{% endblock %}</title>
+  {% block stylesheets %}{% endblock %}
+</head>
+<body>
+  {% block body %}{% endblock %}
+  {% block javascripts %}{% endblock %}
+</body>
+</html>` },
+        { type: "code", filename: "templates/home/index.html.twig", language: "text", code: `{# templates/home/index.html.twig — template enfant #}
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+  <h1>Bienvenue sur mon site</h1>
+{% endblock %}` },
+        { type: "h", text: "Inclusion" },
+        { type: "code", filename: "inclusion.twig", language: "text", code: `{# Inclure un fichier (header, footer, formulaire…) #}
+{% include "partials/header.html.twig" %}` },
+      ],
+    },
+    {
+      id: "symfony7-doctrine-entites-migrations",
+      title: "Symfony 7 — Doctrine, entités et migrations",
+      blocks: [
+        { type: "p", text: "ORM (Object Relational Mapping) : fait le pont entre le monde relationnel (SQL) et le monde objet (PHP/Symfony)." },
+        { type: "code", filename: "install-orm.sh", language: "bash", code: `composer require symfony/orm-pack` },
+        { type: "p", text: "Configuration de la connexion, dans le fichier .env :" },
+        { type: "code", filename: ".env", language: "bash", code: `# MySQL / MariaDB
+DATABASE_URL="mysql://user:password@127.0.0.1:3306/ma_base?serverVersion=8.0"` },
+        { type: "code", filename: "create-db.sh", language: "bash", code: `symfony console doctrine:database:create` },
+        { type: "h", text: "Entités" },
+        { type: "p", text: "Une entité est un objet PHP décrivant une table de la BDD." },
+        { type: "table", headers: ["SQL", "Entité PHP"], rows: [
+          ["Nom de la table", "Nom de la classe"],
+          ["Nom de la colonne", "Nom de la propriété"],
+          ["Type de la colonne", "Type de la propriété"],
+          ["Clé primaire", "Propriété id"],
+          ["Ligne", "Objet de la classe"],
+        ]},
+        { type: "code", filename: "make-entity.sh", language: "bash", code: `symfony console make:entity NomEntite` },
+        { type: "h", text: "Relations entre entités" },
+        { type: "p", text: "Doctrine connaît 4 types de relations :" },
+        { type: "table", headers: ["Type", "Description"], rows: [
+          ["OneToOne", "Un enregistrement A ↔ Un enregistrement B"],
+          ["ManyToOne", "Plusieurs A ↔ Un B"],
+          ["OneToMany", "Un A ↔ Plusieurs B"],
+          ["ManyToMany", "Plusieurs A ↔ Plusieurs B"],
+        ]},
+        { type: "h", text: "Migrations" },
+        { type: "p", text: "Fichier de migration = classe permettant d'exécuter le SQL correspondant à l'évolution du modèle." },
+        { type: "code", filename: "migrations.sh", language: "bash", code: `# Créer un fichier de migration
+symfony console make:migration
+
+# Exécuter les migrations
+symfony console doctrine:migrations:migrate
+
+# Options disponibles
+symfony console doctrine:migrations:migrate -h` },
+        { type: "p", text: "Méthodes d'un fichier de migration : getDescription() (documenter la migration), up() (exécuter les requêtes SQL), down() (annuler les actions de up())." },
+        { type: "h", text: "EntityManager" },
+        { type: "code", filename: "entity-manager.php", language: "php", code: `// Persister (demander à Doctrine de gérer l'entité)
+$entityManager->persist($cours);
+
+// Flush (appliquer les changements en BDD)
+$entityManager->flush();` },
+        { type: "h", text: "Repositories" },
+        { type: "code", filename: "repository.php", language: "php", code: `// Méthodes disponibles pour chaque repository
+$repo->find($id);                  // Trouver par id
+$repo->findAll();                  // Tous les enregistrements
+$repo->findBy(['champ' => val]);   // Selon critères
+$repo->findOneBy(['champ' => val]);// Un enregistrement selon critères` },
+        { type: "note", variant: "info", title: "QueryBuilder", text: "Pour requêtes personnalisées en DQL (Doctrine Query Language)." },
+        { type: "h", text: "Les fixtures" },
+        { type: "p", text: "Les fixtures sont des données statiques pour initialiser la BDD pendant le développement." },
+        { type: "code", filename: "fixtures.sh", language: "bash", code: `composer require orm/doctrine-fixtures-bundle --dev
+symfony console make:fixture CoursFixtures
+symfony console doctrine:fixtures:load` },
+        { type: "p", text: "Méthodes de gestion des dépendances : addReference() (ajoute une référence, exception si elle existe), setReference() (ajoute/écrase une référence), getReference() (charge l'objet référencé), getDependencies() (définit l'ordre d'exécution)." },
+      ],
+    },
+    {
+      id: "symfony7-formulaires-securite",
+      title: "Symfony 7 — Formulaires et sécurité",
+      blocks: [
+        { type: "h", text: "Créer un formulaire" },
+        { type: "code", filename: "make-form.sh", language: "bash", code: `symfony console make:form DevoirType Devoir` },
+        { type: "p", text: "Crée une classe avec deux méthodes : buildForm() (définit les champs du formulaire) et configureOptions() (lie le formulaire à une entité)." },
+        { type: "code", filename: "champ-options.php", language: "php", code: `$builder->add('nom', TextType::class, [
+    'required' => true,
+    'label' => 'Votre nom',
+    'attr' => ['class' => 'form-control', 'placeholder' => 'Entrez votre nom']
+]);` },
+        { type: "code", filename: "controller-form.php", language: "php", code: `// createFormBuilder
+$form = $this->createFormBuilder()
+    ->add('nom', TextType::class)
+    ->add('email', EmailType::class)
+    ->getForm();
+
+// createForm
+$devoir = new Devoir();
+$form = $this->createForm(DevoirType::class, $devoir);
+
+// Rendre la vue
+return $this->render('devoir/new.html.twig', [
+    'form' => $form->createView(),
+]);` },
+        { type: "code", filename: "form-twig.twig", language: "text", code: `{# Affichage en une seule fonction #}
+{{ form(form) }}
+
+{# Affichage champ par champ #}
+{{ form_start(form) }}
+  {{ form_row(form.nom) }}
+  {{ form_row(form.email) }}
+  <button type="submit">Envoyer</button>
+{{ form_end(form) }}` },
+        { type: "h", text: "Traitement du formulaire" },
+        { type: "code", filename: "traitement-form.php", language: "php", code: `public function new(Request $request): Response
+{
+    $devoir = new Devoir();
+    $form = $this->createForm(DevoirType::class, $devoir);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $entityManager->persist($devoir);
+        $entityManager->flush();
+        return $this->redirectToRoute('devoir_list');
+    }
+
+    return $this->render('devoir/new.html.twig', [
+        'form' => $form->createView(),
+    ]);
+}` },
+        { type: "p", text: "Méthodes clés : handleRequest($request) (traite la requête), isSubmitted() (vérifie si le formulaire a été soumis), isValid() (vérifie si les données sont valides)." },
+        { type: "h", text: "Validation" },
+        { type: "code", filename: "validation-form.php", language: "php", code: `use Symfony\\Component\\Validator\\Constraints as Assert;
+
+$builder->add('email', EmailType::class, [
+    'constraints' => [
+        new Assert\\NotBlank(),
+        new Assert\\Email()
+    ]
+]);` },
+        { type: "code", filename: "validation-entite.php", language: "php", code: `use Symfony\\Component\\Validator\\Constraints as Assert;
+
+class Cours
+{
+    #[Assert\\NotBlank]
+    #[Assert\\Length(min: 3, max: 100)]
+    private string $nom;
+}` },
+        { type: "h", text: "Sécurité et gestion des utilisateurs" },
+        { type: "code", filename: "install-security.sh", language: "bash", code: `composer require symfony/security-bundle` },
+        { type: "code", filename: "make-user.sh", language: "bash", code: `symfony console make:user` },
+        { type: "p", text: "Attributs créés automatiquement : id, email (identifiant), tableau des roles. Méthodes ajoutées : getUserIdentifier() (retourne l'attribut identifiant), eraseCredentials() (efface les données sensibles temporaires)." },
+        { type: "code", filename: "hash-password.sh", language: "bash", code: `symfony console security:hash-password` },
+        { type: "code", filename: "config/packages/security.yaml", language: "yaml", code: `# config/packages/security.yaml
+security:
+password_hashers:
+App\\Entity\\User: auto   # algorithme le plus performant
+
+providers:
+app_user_provider:
+entity:
+class: App\\Entity\\User
+property: email
+
+firewalls:
+main:
+            # Configuration de l'authentification
+
+access_control:
+-{path: ^/admin,roles: ROLE_ADMIN}
+-{path: ^/profile,roles: ROLE_USER}` },
+        { type: "p", text: "Clés de configuration : password_hashers (interface de hashage utilisée), providers (entité et propriété identifiant pour la connexion), firewalls (gère toutes les URLs et l'authentification), access_control (restrictions de routes selon les rôles)." },
+        { type: "code", filename: "make-auth.sh", language: "bash", code: `symfony console make:auth` },
+        { type: "p", text: "Crée/modifie : LoginAuthenticator (redirection après authentification réussie), SecurityController (routes /login et /logout), templates/security/login.html.twig (vue du formulaire de connexion)." },
+      ],
+    },
   ],
 };

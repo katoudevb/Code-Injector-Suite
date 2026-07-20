@@ -46,6 +46,11 @@ import { liens } from "./sections/liens";
 import { developpementWeb } from "./sections/developpementWeb";
 import { documentationTechnique } from "./sections/documentationTechnique";
 import { conceptsIA } from "./sections/conceptsIA";
+import { seo } from "./sections/seo";
+import { langagesServeur } from "./sections/langagesServeur";
+import { carriereFreelance } from "./sections/carriereFreelance";
+import { aspectsJuridiques } from "./sections/aspectsJuridiques";
+import { cicdConcepts } from "./sections/cicdConcepts";
 
 export const sections: Section[] = [
   js,
@@ -95,6 +100,11 @@ export const sections: Section[] = [
   developpementWeb,
   documentationTechnique,
   conceptsIA,
+  seo,
+  langagesServeur,
+  carriereFreelance,
+  aspectsJuridiques,
+  cicdConcepts,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";

@@ -380,5 +380,24 @@ git --version` },
         { type: "list", items: ["https://highlighted.codes/", "https://formatcode.app/"] },
       ],
     },
+    {
+      id: "outils-wine",
+      title: "Wine — exécuter des applications Windows sur Mac/Linux",
+      blocks: [
+        { type: "p", text: "Wine permet d'exécuter des applications Windows sur Linux ou macOS." },
+        { type: "h", text: "Installation via Homebrew" },
+        { type: "code", filename: "install-wine.sh", language: "bash", code: `brew install --cask wine-stable` },
+        { type: "h", text: "Configuration" },
+        { type: "list", items: [
+          "Ouvrir Finder → Applications, cliquer sur Wine",
+          "Environnement applis → Créer une bouteille (\"+\") → renseigner \"Nom application\", \"Version Windows 10\" → Create (apparaît à gauche)",
+        ]},
+        { type: "h", text: "Ajouter / ouvrir une application" },
+        { type: "list", items: [
+          "Télécharger l'application (.exe) voulue, puis la déplacer dans le dossier \"Documents\" du Mac",
+          "Dans Wine : \"Exécuter\", \"Documents\" → choisir le dossier ou l'application à ouvrir → \"Ouvrir\"",
+        ]},
+      ],
+    },
   ],
 };
