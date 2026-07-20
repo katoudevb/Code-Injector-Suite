@@ -51,6 +51,7 @@ import { langagesServeur } from "./sections/langagesServeur";
 import { carriereFreelance } from "./sections/carriereFreelance";
 import { aspectsJuridiques } from "./sections/aspectsJuridiques";
 import { cicdConcepts } from "./sections/cicdConcepts";
+import { notesProjet } from "./sections/notesProjet";
 
 export const sections: Section[] = [
   js,
@@ -105,6 +106,7 @@ export const sections: Section[] = [
   carriereFreelance,
   aspectsJuridiques,
   cicdConcepts,
+  notesProjet,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
