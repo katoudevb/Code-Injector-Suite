@@ -52,6 +52,7 @@ import { carriereFreelance } from "./sections/carriereFreelance";
 import { aspectsJuridiques } from "./sections/aspectsJuridiques";
 import { cicdConcepts } from "./sections/cicdConcepts";
 import { notesProjet } from "./sections/notesProjet";
+import { dpProjetSymfony } from "./sections/dpProjetSymfony";
 
 export const sections: Section[] = [
   js,
@@ -107,6 +108,7 @@ export const sections: Section[] = [
   aspectsJuridiques,
   cicdConcepts,
   notesProjet,
+  dpProjetSymfony,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
