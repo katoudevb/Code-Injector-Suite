@@ -304,5 +304,78 @@ export const usePanier = defineStore("panier", {
 });` },
       ],
     },
+    {
+    id: "vue-organisation-projet-portfolio",
+    title: "Organisation d'un projet Vue — Exemple portfolio",
+    blocks: [
+      { type: "h", text: "Fichiers d'un projet Vue" },
+      { type: "table", headers: ["Fichier/Dossier", "Rôle"], rows: [
+        ["src", "Les sources de votre projet"],
+        ["public", "Tout le contenu qui sera directement copié tel quel à la racine du serveur web"],
+        ["package.json", "Les informations de package NPM du projet (version, dépendances, scripts etc.)"],
+        ["vite.config.js", "Le fichier de configuration pour Vite sur ce projet"],
+      ]},
+      { type: "p", text: "D'autres fichiers de configuration pour les outils de build peuvent également se trouver ici." },
+      { type: "h", text: "Dans le dossier src" },
+      { type: "table", headers: ["Dossier/Fichier", "Rôle"], rows: [
+        ["assets", "Ressources statiques (images, fichiers) utilisées au sein de vos composants Vue"],
+        ["components", "Vos composants Vue (répartis par dossier par \"module\" de votre application)"],
+        ["App.vue", "Votre composant Vue racine, qui contient toute l'application"],
+        ["main.js", "Le point d'entrée du code JavaScript de toute l'application"],
+        ["views", "Dossier pour les différentes pages de mon portfolio"],
+      ]},
+      { type: "p", text: "Par la suite, vous pourrez être amenés à créer d'autres dossiers dans src selon vos besoins. Par exemple un dossier services qui contient des briques de logique métier avec des fonctions utilisées dans plusieurs composants. Un dossier utils pour stocker diverses fonctions utilitaires en JavaScript plutôt que de les répéter à plusieurs endroits." },
+      {
+        type: "diagram",
+        content: `mon-projet-vue/
+├── src/
+│   ├── assets/       (images, ressources statiques)
+│   ├── components/   (composants réutilisables)
+│   ├── views/        (pages de l'application)
+│   ├── services/     (logique métier partagée)
+│   ├── utils/        (fonctions utilitaires)
+│   ├── App.vue       (composant racine)
+│   └── main.js       (point d'entrée)
+├── public/           (copié tel quel à la racine)
+├── package.json
+└── vite.config.js`,
+      },
+      { type: "h", text: "Fichiers monocomposants *.vue" },
+      { type: "list", items: [
+        "Une application Vue.js est divisée en plusieurs composants",
+        "Un composant correspond à un fichier .vue",
+        "Un fichier .vue est composé de 3 éléments optionnels",
+      ]},
+      { type: "table", headers: ["Balise", "Rôle"], rows: [
+        ["<template>", "Contient le code HTML du composant"],
+        ["<script> (optionnelle)", "Contient le code JS du composant"],
+        ["<style> (optionnelle)", "Contient le style CSS du composant"],
+      ]},
+      { type: "h", text: "Exemple de composants d'un portfolio" },
+      { type: "table", headers: ["Composant", "Rôle"], rows: [
+        ["Header.vue", "Pour le titre et la navigation"],
+        ["About.vue", "Section qui parle de moi"],
+        ["Projects.vue", "Sections pour présenter mes projets"],
+        ["Contact.vue", "Un formulaire de contact"],
+      ]},
+      { type: "h", text: "Référencer une image dans un composant" },
+      { type: "p", text: "La bonne manière avec Vue de décrire le chemin vers une image qui se trouve dans le dossier src/assets/img :" },
+      { type: "code", filename: "Composant.vue", language: "html", code: `<img src="@/assets/img/nom-de-mon-fichier.png" alt="…"> <!-- ou .jpg ou peu importe le format -->` },
+      { type: "note", variant: "info", text: "Cette particularité est un alias dont on retrouve la déclaration dans le fichier vite.config.js généré via un projet Vue." },
+      { type: "h", text: "Méthode de travail recommandée" },
+      { type: "p", text: "La méthode doit toujours être la même pour toute appli web : commencer par réfléchir à l'interface, l'apparence, puis en déduire la structure HTML (avec toujours le souci de la sémantique des balises) qui sera retranscrite par le biais des composants de Vue. Une fois la structure et les composants créés, passer au dynamisme de l'application en implémentant la logique de chaque fonctionnalité, une après l'autre." },
+      { type: "h", text: "Ressources complémentaires citées" },
+      { type: "list", items: [
+        "pierre-giraud.com — cours JavaScript",
+        "Apple Support — guide Mac (raccourcis, utilitaires)",
+        "freeCodeCamp — JavaScript Algorithms and Data Structures",
+        "laconsole.dev — Cases : camelCase, PascalCase, snake_case, kebab-case",
+        "Stack Overflow — différence entre npm run serve et npm run dev en Vue.js",
+        "vite.dev — guide env-and-mode",
+        "eslint-plugin-vue — règle multi-word-component-names",
+        "EmailJS — tutoriel de création d'un formulaire de contact",
+      ]},
+    ],
+  },
   ],
 };
