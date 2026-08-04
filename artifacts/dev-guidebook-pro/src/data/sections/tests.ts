@@ -654,5 +654,171 @@ class TestClass:
         ]},
       ],
     },
+  {
+      id: "vitest-vue-intro",
+      title: "Vitest + Vue Test Utils — Introduction et premier test",
+      blocks: [
+        { type: "p", text: "Vitest est un framework de test unitaire nativement intégré à Vite, conçu pour être rapide et compatible avec l'écosystème Vue. Il partage la même configuration que Vite (résolution de modules, plugins, alias) et propose une API très proche de Jest." },
+        { type: "h", text: "Installation" },
+        { type: "code", filename: "install-vitest.sh", language: "bash", code: `npm install -D vitest
+# ou
+yarn add -D vitest` },
+        { type: "p", text: "Pour tester des composants Vue, on ajoute également @vue/test-utils :" },
+        { type: "code", filename: "install-vue-test-utils.sh", language: "bash", code: `npm install -D @vue/test-utils
+# ou
+yarn add -D @vue/test-utils` },
+        { type: "h", text: "Configuration dans package.json" },
+        { type: "code", filename: "package.json", language: "json", code: `{
+  "scripts": {
+    "test": "vitest"
+  }
+}` },
+        { type: "h", text: "Premier test" },
+        { type: "p", text: "Un test Vitest se compose d'une fonction test() (ou it()) qui prend un nom descriptif et une fonction de test, à l'intérieur de laquelle on utilise expect() pour formuler des assertions." },
+        { type: "code", filename: "example.test.js", language: "javascript", code: `import { test, expect } from 'vitest'
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(1 + 2).toBe(3)
+})` },
+        { type: "h", text: "Lancer les tests" },
+        { type: "code", filename: "run.sh", language: "bash", code: `npm run test` },
+        { type: "p", text: "Par défaut, Vitest se lance en mode watch : il surveille les fichiers et relance automatiquement les tests concernés à chaque modification." },
+        { type: "h", text: "Interface graphique Vitest UI" },
+        { type: "code", filename: "install-ui.sh", language: "bash", code: `npm install -D @vitest/ui` },
+        { type: "code", filename: "run-ui.sh", language: "bash", code: `npx vitest --ui` },
+        { type: "p", text: "Vitest UI ouvre un tableau de bord dans le navigateur listant tous les tests, leur statut (succès/échec) et le détail des assertions — pratique pour visualiser rapidement l'état d'une suite de tests." },
+        { type: "h", text: "Les matchers principaux" },
+        { type: "table", headers: ["Matcher", "Utilité"], rows: [
+          ["toBe(valeur)", "Comparaison stricte (===)"],
+          ["toEqual(objet)", "Comparaison profonde d'objets/tableaux"],
+          ["toBeTruthy() / toBeFalsy()", "Vérifie qu'une valeur est vraie/fausse"],
+          ["toContain(élément)", "Vérifie qu'un tableau ou une chaîne contient un élément"],
+          ["toHaveProperty(clé)", "Vérifie qu'un objet possède une propriété"],
+          ["toThrow()", "Vérifie qu'une fonction lève une exception"],
+        ]},
+      ],
+    },
+    {
+      id: "vitest-vue-test-utils-mount",
+      title: "Vue Test Utils — Monter et tester un composant",
+      blocks: [
+        { type: "p", text: "@vue/test-utils fournit la fonction mount() pour instancier un composant Vue dans un environnement de test, en simulant son rendu et en donnant accès à une API pour interagir avec lui (classes, texte, événements)." },
+        { type: "h", text: "Composant testé — NotificationToast.vue" },
+        { type: "p", text: "Un composant de notification qui affiche un message, se masque quand le message est vide (classe notification--slide) et émet un événement clear-notification au clic sur le bouton de fermeture." },
+        { type: "h", text: "Test 1 — masquer la notification quand le message est vide" },
+        { type: "code", filename: "NotificationToast.test.js", language: "javascript", code: `import { mount } from '@vue/test-utils'
+import { test, expect } from 'vitest'
+import NotificationToast from '../NotificationToast.vue'
+
+test('notification slides up when message is empty', () => {
+  const message = ''
+  const wrapper = mount(NotificationToast, {
+    props: { message },
+  })
+  expect(wrapper.classes('notification--slide')).toBe(false)
+})` },
+        { type: "p", text: "wrapper.classes(nomClasse) retourne un booléen indiquant si l'élément racine du composant possède cette classe CSS." },
+        { type: "h", text: "Test 2 — émettre un événement au clic sur le bouton de fermeture" },
+        { type: "p", text: "Ce test est asynchrone car trigger() déclenche un événement qui renvoie une promesse — il faut attendre sa résolution avant de vérifier les changements qu'il provoque." },
+        { type: "code", filename: "NotificationToast.test.js", language: "javascript", code: `test('emits event when close button is clicked', async () => {
+  const wrapper = mount(NotificationToast, {
+    data() {
+      return {
+        clicked: false
+      }
+    }
+  })
+  const closeButton = wrapper.find('button')
+  await closeButton.trigger('click')
+  expect(wrapper.emitted()).toHaveProperty('clear-notification')
+})` },
+        { type: "table", headers: ["Méthode", "Rôle"], rows: [
+          ["wrapper.find(sélecteur)", "Similaire à querySelector — accepte classe, id ou attribut, renvoie un élément"],
+          ["élément.trigger(événement)", "Déclenche un événement (click, focus, blur, keydown…), renvoie une promesse"],
+          ["wrapper.emitted()", "Renvoie un objet listant tous les événements émis par le composant"],
+        ]},
+        { type: "h", text: "Test 3 — afficher le bon message" },
+        { type: "code", filename: "NotificationToast.test.js", language: "javascript", code: `test('renders correct message to viewer', () => {
+  const message = 'Something happened, try again'
+  const wrapper = mount(NotificationToast, {
+    props: { message },
+  })
+  expect(wrapper.find('p').text()).toBe(message)
+})` },
+        { type: "p", text: "wrapper.find('p').text() extrait le contenu textuel de l'élément, de façon similaire à innerText en JavaScript natif. On préfère parfois cibler une classe ou un attribut plutôt que la balise elle-même si plusieurs éléments du même type existent dans le composant." },
+      ],
+    },
+    {
+      id: "vitest-mocking-api-axios",
+      title: "Vitest — Simuler (mock) des appels API avec Axios",
+      blocks: [
+        { type: "p", text: "Le mocking est une technique utilisée en test logiciel pour simuler le comportement d'objets ou de systèmes externes dont dépend le code testé, afin d'isoler ce code des variables hors de son contrôle (connexions réseau, services externes)." },
+        { type: "note", variant: "info", text: "Les mocks permettent de tester le code de manière plus approfondie et plus fiable, sans dépendre de la disponibilité ou du comportement réel des services externes." },
+        { type: "h", text: "Composant testé — PostCard.vue (appel API avec Axios)" },
+        { type: "code", filename: "install-axios.sh", language: "bash", code: `npm install axios
+#or
+yarn add axios` },
+        { type: "code", filename: "src/components/PostCard.vue", language: "html", code: `<template>
+  <div>
+    <div v-if="post">
+      <h1 data-testid="post-title">{{ post.title }}</h1>
+      <p data-testid="post-body">{{ post.body }}</p>
+    </div>
+    <p v-if="loading" data-testid="loader">Loading...</p>
+    <p v-if="error" data-testid="error-message">{{ error }}</p>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import axios from "axios";
+
+const post = ref(null);
+const loading = ref(true);
+const error = ref(null);
+
+const fetchPost = async () => {
+  try {
+    const { data } = await axios.get(
+      "https://jsonplaceholder.typicode.com/posts/1"
+    );
+    post.value = data;
+  } catch (err) {
+    error.value = err.message;
+  } finally {
+    loading.value = false;
+  }
+};
+
+onMounted(() => {
+  fetchPost();
+});
+</script>` },
+        { type: "p", text: "Le composant importe Vue et Axios, crée trois variables d'état (post, loading, error), définit une fonction fetchPost() qui récupère un article via l'API JSONPlaceholder et met à jour l'état en conséquence, puis appelle cette fonction au montage du composant. Le template affiche titre et corps de l'article en tenant compte des états loading et error." },
+        { type: "h", text: "Ce qu'on va tester" },
+        { type: "list", items: [
+          "L'application effectue une requête API avec succès et affiche les bonnes données",
+          "L'application gère correctement les erreurs et affiche un message d'erreur si la requête échoue",
+        ]},
+        { type: "note", variant: "info", text: "On peut tester ces deux cas sans jamais effectuer de véritable appel réseau vers le serveur JSONPlaceholder — c'est tout l'intérêt du mocking." },
+        { type: "h", text: "Réponse simulée et suite de tests" },
+        { type: "code", filename: "src/components/tests/PostCard.test.js", language: "javascript", code: `import axios from "axios";
+import { mount } from "@vue/test-utils";
+import PostCard from "../PostCard.vue";
+
+const mockPost = {
+  userId: 1,
+  id: 1,
+  title:
+    "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  body: "quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto",
+};
+
+describe("Post Component", () => {
+  // tests à suivre...
+});` },
+        { type: "p", text: "Pour intercepter la requête GET faite par Axios et lui faire renvoyer une valeur simulée (plutôt que d'appeler le vrai serveur), on utilise la fonction spyOn de Vitest, accessible via l'assistant vi importé depuis vitest (import { vi } from 'vitest')." },
+      ],
+    },
   ],
 };
