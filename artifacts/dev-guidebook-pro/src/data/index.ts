@@ -53,6 +53,7 @@ import { aspectsJuridiques } from "./sections/aspectsJuridiques";
 import { cicdConcepts } from "./sections/cicdConcepts";
 import { notesProjet } from "./sections/notesProjet";
 import { dpProjetSymfony } from "./sections/dpProjetSymfony";
+import { autonomieRessources } from "./sections/autonomieRessources";
 
 export const sections: Section[] = [
   js,
@@ -109,6 +110,7 @@ export const sections: Section[] = [
   cicdConcepts,
   notesProjet,
   dpProjetSymfony,
+  autonomieRessources,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";
