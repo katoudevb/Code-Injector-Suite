@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleArticlesDevops } from "./laConsoleArticlesDevops";
 
 export const devops: Section = {
   id: "devops",
@@ -643,5 +644,6 @@ script:
         ]},
       ],
     },
+    ...laConsoleArticlesDevops,
   ],
 };

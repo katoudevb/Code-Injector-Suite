@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleTests } from "./laConsoleTests";
 
 export const tests: Section = {
   id: "tests",
@@ -820,5 +821,6 @@ describe("Post Component", () => {
         { type: "p", text: "Pour intercepter la requête GET faite par Axios et lui faire renvoyer une valeur simulée (plutôt que d'appeler le vrai serveur), on utilise la fonction spyOn de Vitest, accessible via l'assistant vi importé depuis vitest (import { vi } from 'vitest')." },
       ],
     },
+    ...laConsoleTests,
   ],
 };

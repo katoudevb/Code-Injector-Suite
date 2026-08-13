@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleSymfony } from "./laConsoleSymfony";
 
 export const symfony: Section = {
   id: "symfony",
@@ -5960,5 +5961,6 @@ access_control:
         { type: "p", text: "Crée/modifie : LoginAuthenticator (redirection après authentification réussie), SecurityController (routes /login et /logout), templates/security/login.html.twig (vue du formulaire de connexion)." },
       ],
     },
+    ...laConsoleSymfony,
   ],
 };

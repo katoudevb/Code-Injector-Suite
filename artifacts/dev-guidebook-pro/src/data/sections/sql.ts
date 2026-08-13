@@ -1,4 +1,6 @@
 import type { Section } from "../types";
+import { laConsoleSql } from "./laConsoleSql";
+import { laConsoleArticlesSql } from "./laConsoleArticlesSql";
 
 export const sql: Section = {
   id: "sql",
@@ -2035,5 +2037,7 @@ WHERE num_et = 4;` },
         { type: "p", text: "Le SGBDR (Système de Gestion de Base de Données Relationnel) propose trois fonctions principales : définition des données sous forme de relations, manipulation des données par un langage déclaratif, administration des données." },
       ],
     },
+    ...laConsoleSql,
+    ...laConsoleArticlesSql,
   ],
 };

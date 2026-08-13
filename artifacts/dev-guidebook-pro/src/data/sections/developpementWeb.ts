@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleArticlesBonnesPratiques } from "./laConsoleArticlesBonnesPratiques";
 
 export const developpementWeb: Section = {
   id: "developpement-web",
@@ -790,5 +791,6 @@ ErrorDocument 403 /403.html` },
         ]},
       ],
     },
+    ...laConsoleArticlesBonnesPratiques,
   ],
 };

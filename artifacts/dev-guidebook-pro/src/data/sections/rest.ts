@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleArticlesRest } from "./laConsoleArticlesRest";
 
 export const rest: Section = {
   id: "rest",
@@ -599,5 +600,6 @@ module.exports = router;` },
         },
       ],
     },
+    ...laConsoleArticlesRest,
   ],
 };

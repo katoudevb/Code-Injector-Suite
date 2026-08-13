@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsolePython } from "./laConsolePython";
 
 export const python: Section = {
   id: "python",
@@ -904,5 +905,6 @@ Process finished with exit code 0` },
         { type: "note", variant: "info", text: "La première ligne montre que les deux threads s'entremêlent. Après le premier et le second tour de boucle, le thread numéro 1 exécute deux fois sa boucle avant que le thread numéro 2 n'exécute la sienne une fois." },
       ],
     },
+    ...laConsolePython,
   ],
 };

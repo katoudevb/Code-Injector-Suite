@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleNode } from "./laConsoleNode";
 
 export const node: Section = {
   id: "node",
@@ -1143,5 +1144,6 @@ Is there a limit to the number of requests a user can send?` },
         { type: "note", variant: "success", text: "La documentation d'une API présente les fonctions de l'API, comment l'intégrer dans son programme et les cas d'usage de l'API, avec des exemples. Cette documentation se compose d'un aperçu avec des tutoriels et quelques exemples de réponses de l'API ainsi qu'un glossaire. Postman permet, à partir de collections de requêtes, de fournir une bonne documentation." },
       ],
     },
+    ...laConsoleNode,
   ],
 };

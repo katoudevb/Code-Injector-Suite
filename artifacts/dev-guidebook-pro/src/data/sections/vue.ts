@@ -1,5 +1,6 @@
 import type { Section } from "../types";
 import { vueFormationWeb } from "./vueFormationWeb";
+import { laConsoleVue } from "./laConsoleVue";
 
 export const vue: Section = {
   id: "vuejs",
@@ -379,5 +380,6 @@ export const usePanier = defineStore("panier", {
     ],
   },
     ...vueFormationWeb,
+    ...laConsoleVue,
   ],
 };

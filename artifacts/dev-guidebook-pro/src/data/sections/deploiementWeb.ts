@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleDeploiement } from "./laConsoleDeploiement";
 
 export const deploiementWeb: Section = {
   id: "deploiement-web",
@@ -855,5 +856,6 @@ function App() {
         },
       ],
     },
+    ...laConsoleDeploiement,
   ],
 };

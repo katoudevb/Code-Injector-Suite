@@ -1,0 +1,101 @@
+import type { Section } from "../types";
+
+export const promptsMethodesIA: Section = {
+  id: "prompts-methodes-ia",
+  title: "Prompts & Méthodes IA",
+  icon: "MessageSquareCode",
+  tags: ["ts", "php"],
+  subsections: [
+    {
+      id: "prompt-pdf-markdown-notion",
+      title: "Importer dans Notion des fichiers PDF en Markdown",
+      blocks: [
+        { type: "p", text: "Tu es un assistant qui transforme mes fichiers PDF de cours en fichiers Markdown (.md) prêts à importer dans Notion, optimisés pour une lecture mobile." },
+        { type: "h", text: "Règles absolues" },
+        { type: "list", items: [
+          "100% du contenu du PDF doit être présent — rien n'est résumé, oublié ou simplifié",
+          "Schémas ASCII intégrés pour chaque concept visuel (structures, hiérarchies, flux, layouts, comparatifs, modèles...) directement dans le fichier .md",
+          "Tout le code dans des blocs de code avec le bon langage (css, html, js, sql, bash...)",
+          "Tableaux Markdown pour les références et comparatifs",
+          "Structure claire avec H1 / H2 / H3 pour être lisible sur mobile",
+          "Les schémas ASCII doivent être dans des blocs de code (triple backtick sans langage)",
+          "Le fichier final doit être téléchargeable en .md",
+        ]},
+        { type: "h", text: "Format de livraison" },
+        { type: "list", items: [
+          "1 fichier .md par PDF partagé",
+          "Le fichier est créé et présenté avec le bouton de téléchargement",
+        ]},
+        { type: "note", variant: "info", text: "Je vais te partager des PDF de cours un par un. Pour chaque PDF, générez immédiatement le fichier .md complet sans me demander de confirmation." },
+      ],
+    },
+    {
+      id: "prompt-markdown-dev-guidebook",
+      title: "Ajouter un fichier Markdown au projet dev-guidebook-pro",
+      blocks: [
+        { type: "h", text: "Contexte du projet — À lire avant de commencer" },
+        { type: "p", text: "Je travaille sur un projet React/TypeScript appelé dev-guidebook-pro : un site de documentation développeur avec thème clair, sidebar de navigation, et contenu organisé en Sections → Sous-sections → Blocks." },
+        { type: "h", text: "Structure technique" },
+        { type: "list", items: [
+          "Chemin des fichiers de contenu : artifacts/dev-guidebook-pro/src/data/sections/*.ts",
+          "Chaque section exporte un objet Section (voir src/data/types.ts) avec id, title, icon, tags, subsections[]",
+          "Chaque SubSection a un id, title, blocks[]",
+          "Types de blocks disponibles : p, h, list, note (variant: info/warning/success), code (filename, language, code), image, diagram, table (headers, rows)",
+          "Le fichier src/data/index.ts importe et liste toutes les sections dans le tableau sections[]",
+        ]},
+        { type: "h", text: "Ma tâche récurrente" },
+        { type: "p", text: "Je t'envoie des fichiers Markdown (souvent exportés de Notion, parfois zippés) contenant mes notes de cours sur différentes technos (React, Angular, Vue, Symfony, SQL, Bootstrap, Django, etc.). Tu dois intégrer intégralement leur contenu dans les fichiers .ts correspondants du projet — soit en enrichissant une section existante, soit en créant une nouvelle section/fichier si besoin." },
+        { type: "h", text: "Règles impératives" },
+        { type: "list", items: [
+          "Lire le MD en entier avant d'écrire quoi que ce soit (pas de lecture partielle sur les gros fichiers — utiliser sed -n 'X,Yp' par tranches de 300-400 lignes si le fichier est trop long pour un seul view)",
+          "Schémas ASCII → DiagramBlock visuel, dans le même style que l'existant : fond sombre, cadre arrondi, caractères d'arbre (├└│) en bleu, flèches (→↓) en vert, ✅ en vert, ❌ en rouge, police monospace, en-tête « Schéma » avec 3 dots décoratifs. Le composant existe déjà dans le projet (DiagramBlock.tsx) — ne pas le recréer, juste utiliser { type: \"diagram\", content: \u0060...\u0060 }",
+          "Ne jamais supprimer de contenu existant — uniquement enrichir/ajouter",
+          "Vérification obligatoire et rigoureuse avant de livrer avec le script Python suivant",
+        ]},
+        { type: "code", filename: "check_file.py", language: "python", code: [
+          "import re",
+          "def check_file(md_path, ts_path, name):",
+          "    with open(md_path, 'r') as f: md_content = f.read()",
+          "    with open(ts_path, 'r') as f: ts_content = f.read()",
+          "    def normalize(s): return re.sub(r'\\s+', ' ', s).strip()",
+          "    code_blocks = re.findall(r'\u0060\u0060\u0060(?:\\w+)?\\n(.*?)\u0060\u0060\u0060', md_content, re.DOTALL)",
+          "    ts_norm = normalize(ts_content)",
+          "    missing = []",
+          "    for i, code in enumerate(code_blocks):",
+          "        lines = [l for l in code.split('\\n') if l.strip() and not l.strip().startswith(('//','<!--','#','--'))]",
+          "        if not lines: continue",
+          "        test_line = next((normalize(l) for l in lines if len(l.strip())>10), None)",
+          "        if test_line and test_line not in ts_norm:",
+          "            missing.append((i, test_line[:100]))",
+          "    print(f\"{name}: {len(code_blocks)} blocs, {len(missing)} manquants\")",
+          "    for i, l in missing: print(f\"  #{i}: {l}\")",
+          "check_file('/mnt/user-data/uploads/FICHIER.md', '/chemin/vers/fichier.ts', 'NOM')",
+        ].join("\n") },
+        { type: "list", items: [
+          "Chaque « manquant » détecté doit être vérifié manuellement (souvent des faux positifs dus à l'échappement \\ en TS vs \ en PHP/autre — vérifier avec grep -c \"signature unique\" fichier.ts avant de conclure qu'il manque vraiment)",
+          "Ne jamais dire « c'est complet à 100% » sans avoir fait tourner cette vérification et corrigé les vrais manquants trouvés",
+          "Valider aussi la syntaxe TypeScript (backticks pairs, accolades équilibrées)",
+        ]},
+        { type: "code", filename: "verification-syntaxe.sh", language: "bash", code: "node -e \"\nconst fs = require('fs');\nconst c = fs.readFileSync('FICHIER.ts', 'utf8');\nconst bt = (c.match(/\\\u0060/g)||[]).length;\nconsole.log('Backticks:', bt, bt%2===0?'✅':'❌');\nconst bo = (c.match(/{/g)||[]).length, bc = (c.match(/}/g)||[]).length;\nconsole.log('Accolades:', bo, bc, bo===bc?'✅':'❌');\n\"" },
+        { type: "list", items: [
+          "Pour les très gros fichiers (>150 blocs), me demander comment procéder plutôt que de tout faire d'un coup sans validation (ex: ordre de priorité, ou résumé condensé vs intégration intégrale)",
+          "Livrer à la fin uniquement les fichiers modifiés/créés (pas tout le projet zippé), avec un tableau récapitulatif Fichier MD → blocs → statut",
+        ]},
+      ],
+    },
+    {
+      id: "prompt-explication-code-php-symfony",
+      title: "Explication du code PHP/Symfony",
+      blocks: [
+        { type: "p", text: "Je suis développeur junior et j'apprends à expliquer mon code à l'oral. Joue le rôle d'un mentor bienveillant et pédagogue. Quand je te donne un morceau de code PHP/Symfony :" },
+        { type: "list", items: [
+          "Corrige et complète mon explication en gardant un langage simple",
+          "Réponds à mes questions avec des analogies concrètes",
+          "Si je dis quelque chose d'approximatif, nuance sans me décourager",
+        ]},
+        { type: "note", variant: "info", title: "Stack", text: "Mon stack : PHP, Symfony, Doctrine, Twig" },
+        { type: "p", text: "convertissant tous les schémas ASCII en DiagramBlock" },
+      ],
+    },
+  ],
+};

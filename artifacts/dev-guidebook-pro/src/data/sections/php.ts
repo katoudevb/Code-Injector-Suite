@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsolePhp } from "./laConsolePhp";
 
 export const php: Section = {
   id: "php",
@@ -2284,5 +2285,6 @@ public function withParam(?array $param = null): array|string|Exception
         { type: "note", variant: "success", title: "Petit bonus", text: "Typer sa méthode et utiliser le raccourci docblocker pour créer son commentaire en bloc. Tout le commentaire sera généré automatiquement et il ne reste plus qu'à ajouter la description." },
       ],
     },
+    ...laConsolePhp,
   ],
 };

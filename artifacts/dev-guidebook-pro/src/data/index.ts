@@ -54,6 +54,7 @@ import { cicdConcepts } from "./sections/cicdConcepts";
 import { notesProjet } from "./sections/notesProjet";
 import { dpProjetSymfony } from "./sections/dpProjetSymfony";
 import { autonomieRessources } from "./sections/autonomieRessources";
+import { promptsMethodesIA } from "./sections/promptsMethodesIA";
 
 export const sections: Section[] = [
   js,
@@ -111,6 +112,7 @@ export const sections: Section[] = [
   notesProjet,
   dpProjetSymfony,
   autonomieRessources,
+  promptsMethodesIA,
 ];
 
 export type { Section, SubSection, Block, Tech } from "./types";

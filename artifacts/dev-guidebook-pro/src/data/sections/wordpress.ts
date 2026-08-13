@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleWordpress } from "./laConsoleWordpress";
 
 export const wordpress: Section = {
   id: "wordpress",
@@ -1024,5 +1025,6 @@ Créer identifiants WordPress
         ]},
       ],
     },
+    ...laConsoleWordpress,
   ],
 };

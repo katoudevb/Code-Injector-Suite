@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleArticlesEcommerce } from "./laConsoleArticlesEcommerce";
 
 export const ecommerce: Section = {
   id: "ecommerce",
@@ -228,5 +229,6 @@ export const ecommerce: Section = {
         ]},
       ],
     },
+    ...laConsoleArticlesEcommerce,
   ],
 };

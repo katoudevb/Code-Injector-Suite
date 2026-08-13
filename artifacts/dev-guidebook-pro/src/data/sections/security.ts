@@ -1,4 +1,6 @@
 import type { Section } from "../types";
+import { laConsoleSecurity } from "./laConsoleSecurity";
+import { laConsoleArticlesSecurity } from "./laConsoleArticlesSecurity";
 
 export const security: Section = {
   id: "securite",
@@ -1093,5 +1095,7 @@ module.exports = router;` },
         { type: "list", items: ["HTTPS (sites web sécurisés)", "Authentification", "Signature numérique", "Échanges sécurisés"] },
       ],
     },
+    ...laConsoleSecurity,
+    ...laConsoleArticlesSecurity,
   ],
 };

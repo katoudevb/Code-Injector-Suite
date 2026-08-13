@@ -1,4 +1,6 @@
 import type { Section } from "../types";
+import { laConsoleOutils } from "./laConsoleOutils";
+import { laConsoleArticlesOutils } from "./laConsoleArticlesOutils";
 
 export const outilsDev: Section = {
   id: "outils-dev",
@@ -399,5 +401,7 @@ git --version` },
         ]},
       ],
     },
+    ...laConsoleOutils,
+    ...laConsoleArticlesOutils,
   ],
 };
