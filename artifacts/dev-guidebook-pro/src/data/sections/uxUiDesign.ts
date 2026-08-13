@@ -1,5 +1,6 @@
 import type { Section } from "../types";
 import { laConsoleArticlesAccessibilite } from "./laConsoleArticlesAccessibilite";
+import { laConsoleArticles6UxUi } from "./laConsoleArticles6UxUi";
 
 export const uxUiDesign: Section = {
   id: "ux-ui-design",
@@ -2036,5 +2037,6 @@ https://monsite.com/page?id=42&cat=3&lang=fr&v=2` },
       ],
     },
     ...laConsoleArticlesAccessibilite,
+    ...laConsoleArticles6UxUi,
   ],
 };

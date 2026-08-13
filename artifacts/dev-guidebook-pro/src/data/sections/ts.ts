@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleArticles7Typescript } from "./laConsoleArticles7Typescript";
 
 export const ts: Section = {
   id: "typescript",
@@ -85,5 +86,6 @@ async function getProduits(): Promise<Produit[]> {
 interface CarteProps { produit: Produit; enPromo?: boolean; }` },
       ],
     },
+    ...laConsoleArticles7Typescript,
   ],
 };

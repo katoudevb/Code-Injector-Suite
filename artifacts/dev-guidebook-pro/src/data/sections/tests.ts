@@ -1,5 +1,7 @@
 import type { Section } from "../types";
 import { laConsoleTests } from "./laConsoleTests";
+import { laConsoleArticles4Tests } from "./laConsoleArticles4Tests";
+import { laConsoleArticles7Tests } from "./laConsoleArticles7Tests";
 
 export const tests: Section = {
   id: "tests",
@@ -822,5 +824,7 @@ describe("Post Component", () => {
       ],
     },
     ...laConsoleTests,
+    ...laConsoleArticles4Tests,
+    ...laConsoleArticles7Tests,
   ],
 };

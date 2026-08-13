@@ -1,5 +1,6 @@
 import type { Section } from "../types";
 import { laConsolePhp } from "./laConsolePhp";
+import { laConsoleArticles5Php } from "./laConsoleArticles5Php";
 
 export const php: Section = {
   id: "php",
@@ -2286,5 +2287,6 @@ public function withParam(?array $param = null): array|string|Exception
       ],
     },
     ...laConsolePhp,
+    ...laConsoleArticles5Php,
   ],
 };

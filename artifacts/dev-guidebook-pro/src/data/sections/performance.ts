@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleArticles2Performance } from "./laConsoleArticles2Performance";
 
 export const performance: Section = {
   id: "performance",
@@ -366,5 +367,6 @@ clinic flame --on-port 'autocannon localhost:8080' --node fichier.js` },
         ]},
       ],
     },
+    ...laConsoleArticles2Performance,
   ],
 };

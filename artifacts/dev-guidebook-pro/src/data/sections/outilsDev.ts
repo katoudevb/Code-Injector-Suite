@@ -1,6 +1,11 @@
 import type { Section } from "../types";
 import { laConsoleOutils } from "./laConsoleOutils";
 import { laConsoleArticlesOutils } from "./laConsoleArticlesOutils";
+import { laConsoleArticles2Outils } from "./laConsoleArticles2Outils";
+import { laConsoleArticles4Outils } from "./laConsoleArticles4Outils";
+import { laConsoleArticles5Outils } from "./laConsoleArticles5Outils";
+import { laConsoleArticles6Outils } from "./laConsoleArticles6Outils";
+import { laConsoleArticles7Outils } from "./laConsoleArticles7Outils";
 
 export const outilsDev: Section = {
   id: "outils-dev",
@@ -403,5 +408,10 @@ git --version` },
     },
     ...laConsoleOutils,
     ...laConsoleArticlesOutils,
+    ...laConsoleArticles2Outils,
+    ...laConsoleArticles4Outils,
+    ...laConsoleArticles5Outils,
+    ...laConsoleArticles6Outils,
+    ...laConsoleArticles7Outils,
   ],
 };

@@ -1,4 +1,5 @@
 import type { Section } from "../types";
+import { laConsoleArticles2Versions } from "./laConsoleArticles2Versions";
 
 export const gestionProjet: Section = {
   id: "gestion-projet",
@@ -308,5 +309,6 @@ Afin de       [bénéfice]`,
         ]},
       ],
     },
+    ...laConsoleArticles2Versions,
   ],
 };

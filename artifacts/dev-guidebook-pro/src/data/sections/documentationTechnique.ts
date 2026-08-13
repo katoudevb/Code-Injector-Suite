@@ -1,4 +1,6 @@
 import type { Section } from "../types";
+import { laConsoleArticles2Documentation } from "./laConsoleArticles2Documentation";
+import { laConsoleArticles7Documentation } from "./laConsoleArticles7Documentation";
 
 export const documentationTechnique: Section = {
   id: "documentation-technique",
@@ -276,5 +278,7 @@ npm run dev
         ]},
       ],
     },
+    ...laConsoleArticles2Documentation,
+    ...laConsoleArticles7Documentation,
   ],
 };

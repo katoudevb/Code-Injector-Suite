@@ -1,5 +1,7 @@
 import type { Section } from "../types";
 import { laConsoleDeploiement } from "./laConsoleDeploiement";
+import { laConsoleArticles6Deploiement } from "./laConsoleArticles6Deploiement";
+import { laConsoleArticles7Deploiement } from "./laConsoleArticles7Deploiement";
 
 export const deploiementWeb: Section = {
   id: "deploiement-web",
@@ -857,5 +859,7 @@ function App() {
       ],
     },
     ...laConsoleDeploiement,
+    ...laConsoleArticles6Deploiement,
+    ...laConsoleArticles7Deploiement,
   ],
 };

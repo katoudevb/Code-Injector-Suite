@@ -1,6 +1,9 @@
 import type { Section } from "../types";
 import { laConsoleSql } from "./laConsoleSql";
 import { laConsoleArticlesSql } from "./laConsoleArticlesSql";
+import { laConsoleArticles3Sql } from "./laConsoleArticles3Sql";
+import { laConsoleArticles6Sql } from "./laConsoleArticles6Sql";
+import { laConsoleArticles7Sql } from "./laConsoleArticles7Sql";
 
 export const sql: Section = {
   id: "sql",
@@ -2039,5 +2042,8 @@ WHERE num_et = 4;` },
     },
     ...laConsoleSql,
     ...laConsoleArticlesSql,
+    ...laConsoleArticles3Sql,
+    ...laConsoleArticles6Sql,
+    ...laConsoleArticles7Sql,
   ],
 };

@@ -1,5 +1,8 @@
 import type { Section } from "../types";
 import { laConsoleArticlesRest } from "./laConsoleArticlesRest";
+import { laConsoleArticles5Rest } from "./laConsoleArticles5Rest";
+import { laConsoleArticles6Rest } from "./laConsoleArticles6Rest";
+import { laConsoleArticles7Rest } from "./laConsoleArticles7Rest";
 
 export const rest: Section = {
   id: "rest",
@@ -601,5 +604,8 @@ module.exports = router;` },
       ],
     },
     ...laConsoleArticlesRest,
+    ...laConsoleArticles5Rest,
+    ...laConsoleArticles6Rest,
+    ...laConsoleArticles7Rest,
   ],
 };

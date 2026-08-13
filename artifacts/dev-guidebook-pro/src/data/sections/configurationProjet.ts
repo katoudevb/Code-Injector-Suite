@@ -1,4 +1,6 @@
 import type { Section } from "../types";
+import { laConsoleArticles2Configuration } from "./laConsoleArticles2Configuration";
+import { laConsoleArticles5Configuration } from "./laConsoleArticles5Configuration";
 
 export const configurationProjet: Section = {
   id: "configuration-projet",
@@ -523,5 +525,7 @@ php test-mail.php
         { type: "p", text: "Si ce n'est pas le cas → il faut utiliser le fichier d'exportation .sql de la base." },
       ],
     },
+    ...laConsoleArticles2Configuration,
+    ...laConsoleArticles5Configuration,
   ],
 };

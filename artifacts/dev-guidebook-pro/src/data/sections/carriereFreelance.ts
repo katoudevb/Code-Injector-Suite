@@ -1,5 +1,7 @@
 import type { Section } from "../types";
 import { laConsoleArticlesCarriere } from "./laConsoleArticlesCarriere";
+import { laConsoleArticles2Carriere } from "./laConsoleArticles2Carriere";
+import { laConsoleArticles5Carriere } from "./laConsoleArticles5Carriere";
 
 export const carriereFreelance: Section = {
   id: "carriere-freelance",
@@ -80,5 +82,7 @@ Seul le top 3% des candidats est accepté.
       ],
     },
     ...laConsoleArticlesCarriere,
+    ...laConsoleArticles2Carriere,
+    ...laConsoleArticles5Carriere,
   ],
 };

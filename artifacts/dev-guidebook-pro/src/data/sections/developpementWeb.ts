@@ -1,5 +1,11 @@
 import type { Section } from "../types";
 import { laConsoleArticlesBonnesPratiques } from "./laConsoleArticlesBonnesPratiques";
+import { laConsoleArticles2Developpement } from "./laConsoleArticles2Developpement";
+import { laConsoleArticles3Developpement } from "./laConsoleArticles3Developpement";
+import { laConsoleArticles4Developpement } from "./laConsoleArticles4Developpement";
+import { laConsoleArticles5Developpement } from "./laConsoleArticles5Developpement";
+import { laConsoleArticles6Developpement } from "./laConsoleArticles6Developpement";
+import { laConsoleArticles7Developpement } from "./laConsoleArticles7Developpement";
 
 export const developpementWeb: Section = {
   id: "developpement-web",
@@ -792,5 +798,11 @@ ErrorDocument 403 /403.html` },
       ],
     },
     ...laConsoleArticlesBonnesPratiques,
+    ...laConsoleArticles2Developpement,
+    ...laConsoleArticles3Developpement,
+    ...laConsoleArticles4Developpement,
+    ...laConsoleArticles5Developpement,
+    ...laConsoleArticles6Developpement,
+    ...laConsoleArticles7Developpement,
   ],
 };

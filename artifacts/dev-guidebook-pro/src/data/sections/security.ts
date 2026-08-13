@@ -1,6 +1,10 @@
 import type { Section } from "../types";
 import { laConsoleSecurity } from "./laConsoleSecurity";
 import { laConsoleArticlesSecurity } from "./laConsoleArticlesSecurity";
+import { laConsoleArticles2Security } from "./laConsoleArticles2Security";
+import { laConsoleArticles4Security } from "./laConsoleArticles4Security";
+import { laConsoleArticles5Security } from "./laConsoleArticles5Security";
+import { laConsoleArticles6Security } from "./laConsoleArticles6Security";
 
 export const security: Section = {
   id: "securite",
@@ -1097,5 +1101,9 @@ module.exports = router;` },
     },
     ...laConsoleSecurity,
     ...laConsoleArticlesSecurity,
+    ...laConsoleArticles2Security,
+    ...laConsoleArticles4Security,
+    ...laConsoleArticles5Security,
+    ...laConsoleArticles6Security,
   ],
 };
